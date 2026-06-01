@@ -1,0 +1,20 @@
+{
+  "name": "icom-server",
+  "version": "1.0.0",
+  "description": "ICOM Technical Service Support Limited - Backend API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.4.1",
+    "express-validator": "^7.3.2",
+    "helmet": "^8.2.0",
+    "nodemailer": "^6.9.15",
+    "xss": "^1.0.15"
+  }
+}

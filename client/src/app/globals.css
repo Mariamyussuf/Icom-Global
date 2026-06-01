@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy: #0F1B2D;
+  --color-navy-light: #162840;
+  --color-navy-dark: #080F1A;
+  --color-blue: #1E3A5F;
+  --color-blue-light: #2A4A6F;
+  --color-orange: #B91C2C;
+  --color-orange-dark: #991B1B;
+  --color-orange-light: #D64550;
+  --color-gold: #1E3A5F;
+  --color-gold-light: #2A4A6F;
+  --color-gray-bg: #F4F6F9;
+  --color-gray-100: #E8ECF1;
+  --color-gray-200: #D1D7E0;
+  --color-gray-300: #9BA5B4;
+  --color-gray-400: #6B7A8D;
+  --color-gray-500: #4A5568;
+  --color-white: #FFFFFF;
+  --font-heading: 'DM Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* ─── Reset ─── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--color-gray-500);
+  background: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Navbar offset — push all content below the fixed 80px navbar ─── */
+main {
+  padding-top: 80px;
+}
+
+/* ─── Animated grid pattern for hero ─── */
+.hero-grid-pattern {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
+}
+
+/* ─── Circuit pattern overlay ─── */
+.circuit-overlay {
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(185, 28, 44, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(30, 58, 95, 0.06) 0%, transparent 50%);
+}
+
+/* ─── Gradient text ─── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-orange) 0%, var(--color-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Orange accent bar (SectionHeading) ─── */
+.accent-bar {
+  width: 48px;
+  height: 3px;
+  background: var(--color-orange);
+  border-radius: 2px;
+}
+
+/* ─── Card hover glow ─── */
+.card-glow:hover {
+  box-shadow: 0 8px 30px rgba(185, 28, 44, 0.12);
+}
+
+/* ─── Prose block — readable max-width for body text ─── */
+.prose-block {
+  max-width: 680px;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-gray-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-gray-300); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-navy); }
+
+/* ─── Focus ring ─── */
+:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 2px;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: var(--color-orange);
+  color: white;
+}
