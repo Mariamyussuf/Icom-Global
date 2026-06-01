@@ -108,10 +108,10 @@ function Section({ children, bg = 'white', className = '', ...props }) {
       {...props}
     >
       <div
+        className="px-6 md:px-10 py-16 md:py-20"
         style={{
           maxWidth: '1200px',
           margin: '0 auto',
-          padding: '80px 40px',
         }}
       >
         {children}
@@ -185,7 +185,7 @@ export default function HomePage() {
 
       {/* ═══════════════ 3. WHY CHOOSE ICOM ═══════════════ */}
       <Section bg="white" aria-label="Why choose ICOM">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: content */}
           <div>
             <ScrollReveal>
@@ -217,7 +217,7 @@ export default function HomePage() {
 
           {/* Right: stats grid */}
           <ScrollReveal delay={0.15}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { value: '15+', label: 'Years of Experience', accent: '#B91C2C' },
                 { value: '8', label: 'Core Service Lines', accent: '#1E3A5F' },
@@ -264,7 +264,7 @@ export default function HomePage() {
           </div>
         </ScrollReveal>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px' }}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
           {industries.map((ind, i) => {
             const Icon = ind.icon;
             return (
@@ -307,7 +307,7 @@ export default function HomePage() {
           </div>
         </ScrollReveal>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <ScrollReveal>
             <div style={{ background: '#FFFFFF', borderRadius: '16px', padding: '36px 32px', boxShadow: '0 4px 20px rgba(0,0,0,0.06)', borderLeft: '4px solid #1E3A5F', height: '100%' }}>
               <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: 'rgba(30,58,95,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
@@ -438,7 +438,7 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '28px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {qualityCards.map((card, i) => {
               const Icon = card.icon;
               return (

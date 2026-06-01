@@ -102,10 +102,10 @@ export default function ContactPage() {
 
       {/* Contact Form + Info */}
       <section style={{ backgroundColor: '#FFFFFF' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 48px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '3fr 2fr', gap: '64px' }}>
+        <div className="px-6 md:px-12 py-16 md:py-20" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Form */}
-            <div>
+            <div className="lg:col-span-3">
               <ScrollReveal>
                 <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#0F1B2D', marginBottom: '32px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                   Send Us a Message
@@ -133,7 +133,7 @@ export default function ContactPage() {
                     <input type="text" name="website" value={formData.website} onChange={handleChange} tabIndex={-1} autoComplete="off" />
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                     <div>
                       <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0F1B2D', marginBottom: '8px' }}>
                         Full Name <span style={{ color: '#B91C2C' }}>*</span>
@@ -148,7 +148,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                     <div>
                       <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0F1B2D', marginBottom: '8px' }}>
                         Email <span style={{ color: '#B91C2C' }}>*</span>
@@ -206,7 +206,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Info Cards */}
-            <div>
+            <div className="lg:col-span-2">
               <ScrollReveal direction="right">
                 <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#0F1B2D', marginBottom: '32px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                   Contact Information

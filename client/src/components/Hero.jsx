@@ -60,20 +60,19 @@ export default function Hero() {
       }} />
 
       {/* Main two-column grid */}
-      <div style={{
-        position: 'relative',
-        zIndex: 10,
-        maxWidth: '1200px',
-        margin: '0 auto',
-        padding: '0 48px',
-        width: '100%',
-      }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '64px',
-          alignItems: 'center',
-        }}>
+      <div 
+        className="px-6 md:px-12"
+        style={{
+          position: 'relative',
+          zIndex: 10,
+          maxWidth: '1200px',
+          margin: '0 auto',
+          width: '100%',
+        }}
+      >
+        <div 
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+        >
 
           {/* ── LEFT COLUMN ── */}
           <motion.div

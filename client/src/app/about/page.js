@@ -135,7 +135,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left — 2x2 stat grid */}
           <ScrollReveal direction="left">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { value: 'Est. 2009', label: 'Year Founded', accent: '#B91C2C' },
                 { value: 'RC 1043812', label: 'Registration', accent: '#1E3A5F' },
@@ -283,35 +283,35 @@ export default function AboutPage() {
 
         <div style={{ maxWidth: '800px', margin: '0 auto', position: 'relative' }}>
           {/* Vertical line */}
-          <div style={{
-            position: 'absolute',
-            left: '50%',
-            top: 0,
-            bottom: 0,
-            width: '2px',
-            background: '#B91C2C',
-            transform: 'translateX(-50%)',
-          }} />
+          <div 
+            className="left-4 md:left-1/2 transform -translate-x-1/2"
+            style={{
+              position: 'absolute',
+              top: 0,
+              bottom: 0,
+              width: '2px',
+              background: '#B91C2C',
+            }} 
+          />
 
           {milestones.map((milestone, i) => (
             <ScrollReveal key={i} delay={i * 0.2}>
-              <div style={{
-                display: 'flex',
-                alignItems: 'flex-start',
-                flexDirection: i % 2 === 0 ? 'row' : 'row-reverse',
-                marginBottom: i < milestones.length - 1 ? '48px' : 0,
-                position: 'relative',
-              }}>
+              <div 
+                className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start md:items-center justify-start relative mb-12`}
+              >
                 {/* Content card */}
-                <div className="w-[calc(50%-32px)]" style={{ textAlign: i % 2 === 0 ? 'right' : 'left' }}>
+                <div 
+                  className={`w-full md:w-[calc(50%-32px)] pl-12 md:pl-0 ${i % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}
+                >
                   <div style={{
                     background: '#FFFFFF',
                     borderRadius: '14px',
                     padding: '24px',
                     boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
                     border: '1px solid #E8ECF1',
+                    textAlign: 'left'
                   }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', justifyContent: i % 2 === 0 ? 'flex-end' : 'flex-start' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                       <Calendar style={{ width: '18px', height: '18px', color: '#B91C2C' }} />
                       <span style={{ color: '#B91C2C', fontWeight: 700, fontSize: '16px' }}>{milestone.year}</span>
                     </div>
@@ -323,16 +323,16 @@ export default function AboutPage() {
                 </div>
 
                 {/* Center node */}
-                <div style={{
-                  position: 'absolute',
-                  left: '50%',
-                  top: '24px',
-                  transform: 'translateX(-50%)',
-                  zIndex: 2,
-                }}>
+                <div 
+                  className="absolute left-4 md:left-1/2 transform -translate-x-1/2"
+                  style={{
+                    top: '24px',
+                    zIndex: 2,
+                  }}
+                >
                   <div style={{
-                    width: '40px',
-                    height: '40px',
+                    width: '32px',
+                    height: '32px',
                     background: '#B91C2C',
                     borderRadius: '50%',
                     display: 'flex',
@@ -340,12 +340,12 @@ export default function AboutPage() {
                     justifyContent: 'center',
                     boxShadow: '0 4px 12px rgba(185,28,44,0.3)',
                   }}>
-                    <div style={{ width: '14px', height: '14px', background: '#fff', borderRadius: '50%' }} />
+                    <div style={{ width: '10px', height: '10px', background: '#fff', borderRadius: '50%' }} />
                   </div>
                 </div>
 
                 {/* Empty space */}
-                <div className="w-[calc(50%-32px)]" />
+                <div className="hidden md:block w-[calc(50%-32px)]" />
               </div>
             </ScrollReveal>
           ))}

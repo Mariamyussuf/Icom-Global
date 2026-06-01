@@ -28,7 +28,7 @@ const iconMap = {
 function Section({ children, bg = '#FFFFFF' }) {
   return (
     <section style={{ backgroundColor: bg }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 48px' }}>
+      <div className="px-6 md:px-12 py-16 md:py-20" style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {children}
       </div>
     </section>
@@ -70,7 +70,7 @@ export default function ServiceDetailContent({ service }) {
           <div style={{ position: 'absolute', bottom: '25%', left: '33%', width: '192px', height: '192px', border: '1px solid white', borderRadius: '50%' }} />
         </div>
 
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px', position: 'relative' }}>
+        <div className="px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', color: 'rgba(255,255,255,0.45)', marginBottom: '28px' }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none', transition: 'color 0.2s' }}
@@ -85,7 +85,7 @@ export default function ServiceDetailContent({ service }) {
           </nav>
 
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-            style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+            className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
             <div style={{
               width: '72px', height: '72px', background: 'rgba(185,28,44,0.15)', borderRadius: '16px',
               display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
@@ -207,7 +207,7 @@ export default function ServiceDetailContent({ service }) {
       {service.subServices && service.subServices.length > 0 && (
         <Section bg="#F4F6F9">
           <Heading title="What We Offer" />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {service.subServices.map((sub, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div style={{
@@ -238,7 +238,7 @@ export default function ServiceDetailContent({ service }) {
       {service.benefits && service.benefits.length > 0 && (
         <Section bg="#FFFFFF">
           <Heading title="Key Benefits" />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {service.benefits.map((benefit, i) => {
               const BenefitIcon = iconMap[benefit.icon] || CheckCircle;
               return (
@@ -313,7 +313,7 @@ export default function ServiceDetailContent({ service }) {
       {/* ═══════ RELATED SERVICES ═══════ */}
       <Section bg="#FFFFFF">
         <Heading title="Related Services" subtitle="Explore our other engineering and technology solutions." />
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {relatedServices.map((relService, i) => (
             <ServiceCard key={relService.slug} service={relService} index={i} />
           ))}

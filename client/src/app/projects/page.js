@@ -56,7 +56,7 @@ export default function ProjectsPage() {
 
       {/* Filter + Grid */}
       <section style={{ backgroundColor: '#FFFFFF' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 48px' }}>
+        <div className="px-6 md:px-12 py-16 md:py-20" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           {/* Filter Tabs */}
           <ScrollReveal>
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px', marginBottom: '48px' }}>
@@ -91,7 +91,7 @@ export default function ProjectsPage() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
             >
               {filteredProjects.map((project, i) => (
                 <ProjectCard key={project.id} project={project} index={i} />

@@ -65,16 +65,16 @@ export default function Footer() {
       </div>
 
       {/* ── Newsletter / CTA strip ── */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 48px 0', position: 'relative' }}>
-        <div style={{
-          background: 'rgba(185,28,44,0.08)',
-          borderRadius: '14px',
-          padding: '32px 36px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          border: '1px solid rgba(255,255,255,0.06)',
-        }}>
+      <div className="px-6 md:px-12 pt-10" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
+        <div 
+          className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between"
+          style={{
+            background: 'rgba(185,28,44,0.08)',
+            borderRadius: '14px',
+            padding: '32px 36px',
+            border: '1px solid rgba(255,255,255,0.06)',
+          }}
+        >
           <div>
             <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#FFFFFF', marginBottom: '6px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               Ready to start your next project?
@@ -99,8 +99,8 @@ export default function Footer() {
       </div>
 
       {/* ── Main 4-column grid ── */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '48px 48px 40px', position: 'relative' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr 1.2fr', gap: '48px' }}>
+      <div className="px-6 md:px-12 py-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 lg:gap-16">
 
           {/* Col 1: Brand */}
           <div>
@@ -227,13 +227,13 @@ export default function Footer() {
       </div>
 
       {/* ── Divider ── */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px' }}>
+      <div className="px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div style={{ height: '1px', background: 'rgba(255,255,255,0.08)' }} />
       </div>
 
       {/* ── Bottom bar ── */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px 48px', position: 'relative' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div className="px-6 md:px-12 py-6" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
+        <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
           <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.3)' }}>
             © {new Date().getFullYear()} ICOM Technical Service Support Limited. RC: 1043812
           </p>
