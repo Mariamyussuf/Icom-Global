@@ -106,7 +106,7 @@ export default function Footer() {
           <div style={{ paddingTop: '8px' }}>
             <Link href="/" aria-label="ICOM - Home" style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '20px' }}>
               <Image
-                src="/images/icom-logo.png"
+                src="/images/Icom-logo.png"
                 alt="ICOM Technical Support Limited"
                 width={180}
                 height={120}
