@@ -23,7 +23,7 @@ const inputStyle = {
   border: '1px solid #D1D7E0',
   outline: 'none',
   fontSize: '14px',
-  color: '#0F1B2D',
+  color: '#0A2D73',
   transition: 'border-color 0.3s',
   fontFamily: 'inherit',
 };
@@ -73,7 +73,7 @@ export default function ContactPage() {
     <>
       {/* Hero Banner */}
       <section style={{
-        backgroundColor: '#0F1B2D',
+        backgroundColor: '#0A2D73',
         marginTop: '-80px',
         paddingTop: '160px',
         paddingBottom: '80px',
@@ -87,7 +87,7 @@ export default function ContactPage() {
 
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px', position: 'relative', textAlign: 'center' }}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span style={{ display: 'inline-block', background: 'rgba(185,28,44,0.15)', color: '#B91C2C', fontSize: '14px', fontWeight: 600, padding: '8px 20px', borderRadius: '999px', marginBottom: '24px' }}>
+            <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.15)', color: '#D9041B', fontSize: '14px', fontWeight: 600, padding: '8px 20px', borderRadius: '999px', marginBottom: '24px' }}>
               Contact Us
             </span>
             <h1 style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, color: '#FFFFFF', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.15 }}>
@@ -107,7 +107,7 @@ export default function ContactPage() {
             {/* Form */}
             <div className="lg:col-span-3">
               <ScrollReveal>
-                <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#0F1B2D', marginBottom: '32px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#0A2D73', marginBottom: '32px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                   Send Us a Message
                 </h2>
 
@@ -121,7 +121,7 @@ export default function ContactPage() {
 
                 {error && (
                   <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
-                    style={{ display: 'flex', alignItems: 'center', gap: '12px', background: '#FEF2F2', border: '1px solid #FECACA', color: '#991B1B', borderRadius: '10px', padding: '16px', marginBottom: '24px' }}>
+                    style={{ display: 'flex', alignItems: 'center', gap: '12px', background: '#FEF2F2', border: '1px solid #FECACA', color: '#B50316', borderRadius: '10px', padding: '16px', marginBottom: '24px' }}>
                     <AlertCircle style={{ width: '20px', height: '20px', flexShrink: 0 }} />
                     <p style={{ fontWeight: 500, fontSize: '14px' }}>{error}</p>
                   </motion.div>
@@ -135,49 +135,49 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                     <div>
-                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0F1B2D', marginBottom: '8px' }}>
-                        Full Name <span style={{ color: '#B91C2C' }}>*</span>
+                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0A2D73', marginBottom: '8px' }}>
+                        Full Name <span style={{ color: '#D9041B' }}>*</span>
                       </label>
                       <input type="text" name="name" required value={formData.name} onChange={handleChange} placeholder="John Doe" style={inputStyle}
-                        onFocus={(e) => (e.target.style.borderColor = '#B91C2C')} onBlur={(e) => (e.target.style.borderColor = '#D1D7E0')} />
+                        onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = '#D1D7E0')} />
                     </div>
                     <div>
-                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0F1B2D', marginBottom: '8px' }}>Company</label>
+                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0A2D73', marginBottom: '8px' }}>Company</label>
                       <input type="text" name="company" value={formData.company} onChange={handleChange} placeholder="Your Company" style={inputStyle}
-                        onFocus={(e) => (e.target.style.borderColor = '#B91C2C')} onBlur={(e) => (e.target.style.borderColor = '#D1D7E0')} />
+                        onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = '#D1D7E0')} />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                     <div>
-                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0F1B2D', marginBottom: '8px' }}>
-                        Email <span style={{ color: '#B91C2C' }}>*</span>
+                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0A2D73', marginBottom: '8px' }}>
+                        Email <span style={{ color: '#D9041B' }}>*</span>
                       </label>
                       <input type="email" name="email" required value={formData.email} onChange={handleChange} placeholder="john@example.com" style={inputStyle}
-                        onFocus={(e) => (e.target.style.borderColor = '#B91C2C')} onBlur={(e) => (e.target.style.borderColor = '#D1D7E0')} />
+                        onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = '#D1D7E0')} />
                     </div>
                     <div>
-                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0F1B2D', marginBottom: '8px' }}>Phone</label>
+                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0A2D73', marginBottom: '8px' }}>Phone</label>
                       <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+234 800 000 0000" style={inputStyle}
-                        onFocus={(e) => (e.target.style.borderColor = '#B91C2C')} onBlur={(e) => (e.target.style.borderColor = '#D1D7E0')} />
+                        onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = '#D1D7E0')} />
                     </div>
                   </div>
 
                   <div style={{ marginBottom: '20px' }}>
-                    <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0F1B2D', marginBottom: '8px' }}>
-                      Subject <span style={{ color: '#B91C2C' }}>*</span>
+                    <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0A2D73', marginBottom: '8px' }}>
+                      Subject <span style={{ color: '#D9041B' }}>*</span>
                     </label>
                     <input type="text" name="subject" required value={formData.subject} onChange={handleChange} placeholder="How can we help?" style={inputStyle}
-                      onFocus={(e) => (e.target.style.borderColor = '#B91C2C')} onBlur={(e) => (e.target.style.borderColor = '#D1D7E0')} />
+                      onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = '#D1D7E0')} />
                   </div>
 
                   <div style={{ marginBottom: '24px' }}>
-                    <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0F1B2D', marginBottom: '8px' }}>
-                      Message <span style={{ color: '#B91C2C' }}>*</span>
+                    <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0A2D73', marginBottom: '8px' }}>
+                      Message <span style={{ color: '#D9041B' }}>*</span>
                     </label>
                     <textarea name="message" required rows={6} value={formData.message} onChange={handleChange} placeholder="Tell us about your project..."
                       style={{ ...inputStyle, resize: 'vertical' }}
-                      onFocus={(e) => (e.target.style.borderColor = '#B91C2C')} onBlur={(e) => (e.target.style.borderColor = '#D1D7E0')} />
+                      onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = '#D1D7E0')} />
                   </div>
 
                   <motion.button type="submit" disabled={loading} whileHover={{ scale: loading ? 1 : 1.02 }} whileTap={{ scale: loading ? 1 : 0.98 }}
@@ -187,7 +187,7 @@ export default function ContactPage() {
                       alignItems: 'center',
                       justifyContent: 'center',
                       gap: '8px',
-                      background: loading ? 'rgba(185,28,44,0.6)' : '#B91C2C',
+                      background: loading ? 'rgba(217,4,27,0.6)' : '#D9041B',
                       color: '#FFFFFF',
                       fontWeight: 600,
                       fontSize: '16px',
@@ -196,7 +196,7 @@ export default function ContactPage() {
                       border: 'none',
                       cursor: loading ? 'not-allowed' : 'pointer',
                       transition: 'background 0.3s',
-                      boxShadow: '0 4px 16px rgba(185,28,44,0.3)',
+                      boxShadow: '0 4px 16px rgba(217,4,27,0.3)',
                     }}>
                     {loading ? (<><Loader2 style={{ width: '20px', height: '20px', animation: 'spin 1s linear infinite' }} /> Sending...</>)
                       : (<><Send style={{ width: '20px', height: '20px' }} /> Send Message</>)}
@@ -208,7 +208,7 @@ export default function ContactPage() {
             {/* Contact Info Cards */}
             <div className="lg:col-span-2">
               <ScrollReveal direction="right">
-                <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#0F1B2D', marginBottom: '32px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#0A2D73', marginBottom: '32px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                   Contact Information
                 </h2>
 
@@ -220,7 +220,7 @@ export default function ContactPage() {
                         background: '#FFFFFF',
                         borderRadius: '12px',
                         boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-                        border: '1px solid #E8ECF1',
+                        border: '1px solid #E2E8F0',
                         padding: '24px',
                         transition: 'box-shadow 0.3s',
                       }}
@@ -230,13 +230,13 @@ export default function ContactPage() {
                         <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
                           <div style={{
                             width: '44px', height: '44px', borderRadius: '50%',
-                            background: 'rgba(185,28,44,0.1)',
+                            background: 'rgba(217,4,27,0.1)',
                             display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
                           }}>
-                            <InfoIcon style={{ width: '20px', height: '20px', color: '#B91C2C' }} />
+                            <InfoIcon style={{ width: '20px', height: '20px', color: '#D9041B' }} />
                           </div>
                           <div>
-                            <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0F1B2D', marginBottom: '4px' }}>{info.title}</h3>
+                            <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0A2D73', marginBottom: '4px' }}>{info.title}</h3>
                             {info.lines.map((line, j) => (
                               <p key={j} style={{ fontSize: '14px', color: '#6B7A8D', lineHeight: 1.5 }}>{line}</p>
                             ))}
@@ -253,7 +253,7 @@ export default function ContactPage() {
       </section>
 
       {/* Google Map */}
-      <section style={{ backgroundColor: '#F4F6F9' }}>
+      <section style={{ backgroundColor: '#F5F7FA' }}>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7272648753387!2d3.4206!3d6.4281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf53280e7648d%3A0x4d01e5de6b847fe8!2sVictoria%20Island%2C%20Lagos!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng"
           width="100%"

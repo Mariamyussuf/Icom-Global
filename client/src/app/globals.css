@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-navy: #0F1B2D;
+  --color-navy: #0A2D73;
   --color-navy-light: #162840;
-  --color-navy-dark: #080F1A;
-  --color-blue: #1E3A5F;
+  --color-navy-dark: #061E52;
+  --color-blue: #0D3A8A;
   --color-blue-light: #2A4A6F;
-  --color-orange: #B91C2C;
-  --color-orange-dark: #991B1B;
+  --color-orange: #D9041B;
+  --color-orange-dark: #B50316;
   --color-orange-light: #D64550;
-  --color-gold: #1E3A5F;
+  --color-gold: #0D3A8A;
   --color-gold-light: #2A4A6F;
-  --color-gray-bg: #F4F6F9;
-  --color-gray-100: #E8ECF1;
+  --color-gray-bg: #F5F7FA;
+  --color-gray-100: #E2E8F0;
   --color-gray-200: #D1D7E0;
   --color-gray-300: #9BA5B4;
   --color-gray-400: #6B7A8D;
@@ -65,8 +65,8 @@ main {
 /* ─── Circuit pattern overlay ─── */
 .circuit-overlay {
   background-image:
-    radial-gradient(circle at 20% 30%, rgba(185, 28, 44, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(30, 58, 95, 0.06) 0%, transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(217, 4, 27, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(13, 58, 138, 0.06) 0%, transparent 50%);
 }
 
 /* ─── Gradient text ─── */
@@ -87,7 +87,7 @@ main {
 
 /* ─── Card hover glow ─── */
 .card-glow:hover {
-  box-shadow: 0 8px 30px rgba(185, 28, 44, 0.12);
+  box-shadow: 0 8px 30px rgba(217, 4, 27, 0.12);
 }
 
 /* ─── Prose block — readable max-width for body text ─── */

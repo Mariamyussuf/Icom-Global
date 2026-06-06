@@ -38,8 +38,8 @@ function Section({ children, bg = '#FFFFFF' }) {
 function Heading({ title, subtitle }) {
   return (
     <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-      <div style={{ width: '48px', height: '3px', background: '#B91C2C', borderRadius: '2px', margin: '0 auto 20px' }} />
-      <h2 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 700, color: '#0F1B2D', marginBottom: subtitle ? '12px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+      <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
+      <h2 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 700, color: '#0A2D73', marginBottom: subtitle ? '12px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
         {title}
       </h2>
       {subtitle && <p style={{ fontSize: '15px', color: '#6B7A8D', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>{subtitle}</p>}
@@ -58,7 +58,7 @@ export default function ServiceDetailContent({ service }) {
     <>
       {/* ═══════ HERO ═══════ */}
       <section style={{
-        backgroundColor: '#0F1B2D',
+        backgroundColor: '#0A2D73',
         marginTop: '-80px',
         paddingTop: '140px',
         paddingBottom: '60px',
@@ -81,16 +81,16 @@ export default function ServiceDetailContent({ service }) {
               onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}>Services</Link>
             <ChevronRight style={{ width: '14px', height: '14px' }} />
-            <span style={{ color: '#B91C2C' }}>{service.title}</span>
+            <span style={{ color: '#D9041B' }}>{service.title}</span>
           </nav>
 
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
             className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
             <div style={{
-              width: '72px', height: '72px', background: 'rgba(185,28,44,0.15)', borderRadius: '16px',
+              width: '72px', height: '72px', background: 'rgba(217,4,27,0.15)', borderRadius: '16px',
               display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
             }}>
-              <ServiceIcon style={{ width: '36px', height: '36px', color: '#B91C2C' }} />
+              <ServiceIcon style={{ width: '36px', height: '36px', color: '#D9041B' }} />
             </div>
             <div>
               <h1 style={{ fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 700, color: '#FFFFFF', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", marginBottom: '6px' }}>
@@ -107,7 +107,7 @@ export default function ServiceDetailContent({ service }) {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
           <div className="lg:col-span-3">
             <ScrollReveal>
-              <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#0F1B2D', marginBottom: '24px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+              <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#0A2D73', marginBottom: '24px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                 Overview
               </h2>
             </ScrollReveal>
@@ -129,7 +129,7 @@ export default function ServiceDetailContent({ service }) {
                   borderRadius: '16px',
                   overflow: 'hidden',
                   boxShadow: '0 12px 32px rgba(0,0,0,0.06)',
-                  border: '1px solid #E8ECF1',
+                  border: '1px solid #E2E8F0',
                   position: 'relative',
                   height: '320px',
                   width: '100%',
@@ -146,13 +146,13 @@ export default function ServiceDetailContent({ service }) {
                       onClick={() => setCurrentImageIndex((prev) => (prev - 1 + imgList.length) % imgList.length)}
                       style={{
                         position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)',
-                        background: 'rgba(15,27,45,0.65)', color: '#fff', border: 'none', borderRadius: '50%',
+                        background: 'rgba(10,45,115,0.65)', color: '#fff', border: 'none', borderRadius: '50%',
                         width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center',
                         cursor: 'pointer', zIndex: 10, transition: 'background 0.2s', fontSize: '16px',
                         backdropFilter: 'blur(4px)', outline: 'none'
                       }}
-                      onMouseEnter={(e) => (e.currentTarget.style.background = '#B91C2C')}
-                      onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(15,27,45,0.65)')}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = '#D9041B')}
+                      onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(10,45,115,0.65)')}
                     >
                       &#10094;
                     </button>
@@ -164,13 +164,13 @@ export default function ServiceDetailContent({ service }) {
                       onClick={() => setCurrentImageIndex((prev) => (prev + 1) % imgList.length)}
                       style={{
                         position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)',
-                        background: 'rgba(15,27,45,0.65)', color: '#fff', border: 'none', borderRadius: '50%',
+                        background: 'rgba(10,45,115,0.65)', color: '#fff', border: 'none', borderRadius: '50%',
                         width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center',
                         cursor: 'pointer', zIndex: 10, transition: 'background 0.2s', fontSize: '16px',
                         backdropFilter: 'blur(4px)', outline: 'none'
                       }}
-                      onMouseEnter={(e) => (e.currentTarget.style.background = '#B91C2C')}
-                      onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(15,27,45,0.65)')}
+                      onMouseEnter={(e) => (e.currentTarget.style.background = '#D9041B')}
+                      onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(10,45,115,0.65)')}
                     >
                       &#10095;
                     </button>
@@ -188,7 +188,7 @@ export default function ServiceDetailContent({ service }) {
                           onClick={() => setCurrentImageIndex(idx)}
                           style={{
                             width: '8px', height: '8px', borderRadius: '50%',
-                            background: idx === currentImageIndex ? '#B91C2C' : 'rgba(255,255,255,0.5)',
+                            background: idx === currentImageIndex ? '#D9041B' : 'rgba(255,255,255,0.5)',
                             cursor: 'pointer', transition: 'all 0.2s',
                             transform: idx === currentImageIndex ? 'scale(1.2)' : 'none'
                           }}
@@ -205,7 +205,7 @@ export default function ServiceDetailContent({ service }) {
 
       {/* ═══════ SUB-SERVICES ═══════ */}
       {service.subServices && service.subServices.length > 0 && (
-        <Section bg="#F4F6F9">
+        <Section bg="#F5F7FA">
           <Heading title="What We Offer" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {service.subServices.map((sub, i) => (
@@ -218,15 +218,15 @@ export default function ServiceDetailContent({ service }) {
                   borderRadius: '12px',
                   padding: '24px',
                   boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
-                  border: '1px solid #E8ECF1',
+                  border: '1px solid #E2E8F0',
                   transition: 'box-shadow 0.3s, transform 0.3s',
                   height: '100%',
                 }}
                   onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.08)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.04)'; e.currentTarget.style.transform = 'translateY(0)'; }}
                 >
-                  <CheckCircle style={{ width: '20px', height: '20px', color: '#B91C2C', marginTop: '2px', flexShrink: 0 }} />
-                  <span style={{ fontSize: '14px', fontWeight: 600, color: '#0F1B2D', lineHeight: 1.5 }}>{sub}</span>
+                  <CheckCircle style={{ width: '20px', height: '20px', color: '#D9041B', marginTop: '2px', flexShrink: 0 }} />
+                  <span style={{ fontSize: '14px', fontWeight: 600, color: '#0A2D73', lineHeight: 1.5 }}>{sub}</span>
                 </div>
               </ScrollReveal>
             ))}
@@ -247,20 +247,20 @@ export default function ServiceDetailContent({ service }) {
                     textAlign: 'center',
                     padding: '28px 20px',
                     borderRadius: '16px',
-                    background: '#F4F6F9',
+                    background: '#F5F7FA',
                     height: '100%',
                     transition: 'all 0.3s',
                   }}
                     onMouseEnter={(e) => { e.currentTarget.style.background = '#FFFFFF'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(0,0,0,0.08)'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.background = '#F4F6F9'; e.currentTarget.style.boxShadow = 'none'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = '#F5F7FA'; e.currentTarget.style.boxShadow = 'none'; }}
                   >
                     <div style={{
-                      width: '56px', height: '56px', background: 'rgba(185,28,44,0.1)', borderRadius: '14px',
+                      width: '56px', height: '56px', background: 'rgba(217,4,27,0.1)', borderRadius: '14px',
                       display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px',
                     }}>
-                      <BenefitIcon style={{ width: '28px', height: '28px', color: '#B91C2C' }} />
+                      <BenefitIcon style={{ width: '28px', height: '28px', color: '#D9041B' }} />
                     </div>
-                    <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0F1B2D', marginBottom: '8px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                    <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0A2D73', marginBottom: '8px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                       {benefit.title}
                     </h3>
                     <p style={{ fontSize: '13px', color: '#6B7A8D', lineHeight: 1.6 }}>{benefit.description}</p>
@@ -274,7 +274,7 @@ export default function ServiceDetailContent({ service }) {
 
       {/* ═══════ PROCESS ═══════ */}
       {service.process && service.process.length > 0 && (
-        <Section bg="#F4F6F9">
+        <Section bg="#F5F7FA">
           <Heading title="Our Process" />
           <div style={{ maxWidth: '700px', margin: '0 auto' }}>
             {service.process.map((step, i) => (
@@ -285,12 +285,12 @@ export default function ServiceDetailContent({ service }) {
                     <div style={{
                       position: 'absolute', left: '24px', top: '52px',
                       width: '2px', height: 'calc(100% - 52px)',
-                      background: '#B91C2C',
+                      background: '#D9041B',
                     }} />
                   )}
                   {/* Step number */}
                   <div style={{
-                    width: '48px', height: '48px', background: '#B91C2C', borderRadius: '50%',
+                    width: '48px', height: '48px', background: '#D9041B', borderRadius: '50%',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     color: '#fff', fontWeight: 700, fontSize: '18px', flexShrink: 0, zIndex: 1,
                   }}>
@@ -298,7 +298,7 @@ export default function ServiceDetailContent({ service }) {
                   </div>
                   {/* Content */}
                   <div style={{ paddingTop: '4px' }}>
-                    <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#0F1B2D', marginBottom: '6px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                    <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#0A2D73', marginBottom: '6px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                       {step.title}
                     </h3>
                     <p style={{ fontSize: '14px', color: '#6B7A8D', lineHeight: 1.7, maxWidth: '540px' }}>{step.description}</p>
@@ -321,10 +321,10 @@ export default function ServiceDetailContent({ service }) {
         <div style={{ textAlign: 'center', marginTop: '40px' }}>
           <Link href="/services" style={{
             display: 'inline-flex', alignItems: 'center', gap: '8px',
-            color: '#1E3A5F', fontWeight: 600, fontSize: '15px', textDecoration: 'none', transition: 'color 0.2s',
+            color: '#0D3A8A', fontWeight: 600, fontSize: '15px', textDecoration: 'none', transition: 'color 0.2s',
           }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = '#B91C2C')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = '#1E3A5F')}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = '#0D3A8A')}
           >
             <ArrowLeft style={{ width: '16px', height: '16px' }} />
             View All Services

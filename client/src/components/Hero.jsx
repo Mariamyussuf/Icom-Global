@@ -39,25 +39,39 @@ export default function Hero() {
   return (
     <section
       style={{
-        backgroundColor: '#0F1B2D',
+        backgroundColor: '#FFFFFF',
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        marginTop: '-80px',
-        paddingTop: '120px',
+        marginTop: '-100px',
+        paddingTop: '140px',
         paddingBottom: '40px',
         position: 'relative',
         overflow: 'hidden',
       }}
       aria-label="Hero"
     >
-      {/* Background decorative layers */}
-      <div className="hero-grid-pattern" style={{ position: 'absolute', inset: 0, opacity: 0.1 }} />
-      <div className="circuit-overlay" style={{ position: 'absolute', inset: 0, opacity: 0.05 }} />
+      {/* Subtle background decorative elements */}
       <div style={{
-        position: 'absolute', inset: 0,
-        background: 'linear-gradient(135deg, transparent, rgba(15,27,45,0.3), #080F1A)',
-      }} />
+        position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none',
+      }}>
+        <div style={{
+          position: 'absolute', top: '-200px', right: '-150px',
+          width: '500px', height: '500px', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(10,45,115,0.04) 0%, transparent 70%)',
+        }} />
+        <div style={{
+          position: 'absolute', bottom: '-100px', left: '-100px',
+          width: '400px', height: '400px', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(217,4,27,0.03) 0%, transparent 70%)',
+        }} />
+        {/* Subtle grid dots */}
+        <div style={{
+          position: 'absolute', inset: 0, opacity: 0.3,
+          backgroundImage: 'radial-gradient(circle, rgba(10,45,115,0.08) 1px, transparent 1px)',
+          backgroundSize: '32px 32px',
+        }} />
+      </div>
 
       {/* Main two-column grid */}
       <div 
@@ -81,7 +95,7 @@ export default function Hero() {
             animate="visible"
             style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', maxWidth: '520px' }}
           >
-            {/* Orange pill badge */}
+            {/* Pill badge */}
             <div
               style={{
                 display: 'inline-flex',
@@ -91,18 +105,18 @@ export default function Hero() {
                 padding: '6px 16px',
                 marginBottom: '28px',
                 alignSelf: 'flex-start',
-                border: '1px solid rgba(185, 28, 44, 0.3)',
-                background: 'rgba(185, 28, 44, 0.08)',
+                border: '1px solid rgba(217, 4, 27, 0.25)',
+                background: 'rgba(217, 4, 27, 0.06)',
               }}
             >
-              <span style={{ height: '6px', width: '6px', borderRadius: '50%', backgroundColor: '#B91C2C' }} />
-              <span style={{ fontSize: '12px', fontWeight: 500, letterSpacing: '0.04em', color: '#B91C2C' }}>
+              <span style={{ height: '6px', width: '6px', borderRadius: '50%', backgroundColor: '#D9041B' }} />
+              <span style={{ fontSize: '12px', fontWeight: 500, letterSpacing: '0.04em', color: '#D9041B' }}>
                 Engineering excellence since 2009
               </span>
             </div>
 
             {/* Accent bar */}
-            <div style={{ width: '40px', height: '3px', background: '#B91C2C', borderRadius: '2px', marginBottom: '24px' }} />
+            <div style={{ width: '40px', height: '3px', background: '#D9041B', borderRadius: '2px', marginBottom: '24px' }} />
 
             {/* Headline */}
             <h1
@@ -115,11 +129,11 @@ export default function Hero() {
                 marginBottom: '20px',
               }}
             >
-              <span style={{ color: '#FFFFFF' }}>Engineering Reliable</span>
+              <span style={{ color: '#0A2D73' }}>Engineering Reliable</span>
               <br />
-              <span style={{ color: '#B91C2C' }}>Power, Telecom</span>
+              <span style={{ color: '#D9041B' }}>Power, Telecom</span>
               <br />
-              <span style={{ color: '#FFFFFF' }}>&amp; IT Solutions</span>
+              <span style={{ color: '#0A2D73' }}>&amp; IT Solutions</span>
             </h1>
 
             {/* Subheadline */}
@@ -127,7 +141,7 @@ export default function Hero() {
               fontFamily: "'Inter', sans-serif",
               fontSize: '15px',
               lineHeight: 1.7,
-              color: 'rgba(255, 255, 255, 0.55)',
+              color: '#6B7A8D',
               maxWidth: '440px',
               marginBottom: '32px',
             }}>
@@ -136,28 +150,6 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '12px' }}>
-              <Link
-                href="/contact"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  borderRadius: '8px',
-                  padding: '14px 28px',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: '#FFFFFF',
-                  backgroundColor: '#B91C2C',
-                  textDecoration: 'none',
-                  transition: 'all 0.3s',
-                  boxShadow: '0 4px 14px rgba(185, 28, 44, 0.3)',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#991B1B')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#B91C2C')}
-              >
-                Get a Quote
-                <ArrowRight style={{ width: '16px', height: '16px' }} />
-              </Link>
               <Link
                 href="/services"
                 style={{
@@ -169,15 +161,37 @@ export default function Hero() {
                   fontSize: '14px',
                   fontWeight: 600,
                   color: '#FFFFFF',
+                  backgroundColor: '#D9041B',
                   textDecoration: 'none',
-                  border: '1.5px solid rgba(255, 255, 255, 0.25)',
+                  transition: 'all 0.3s',
+                  boxShadow: '0 4px 14px rgba(217, 4, 27, 0.25)',
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#B50316'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#D9041B'; e.currentTarget.style.transform = 'translateY(0)'; }}
+              >
+                Explore Services
+                <ArrowRight style={{ width: '16px', height: '16px' }} />
+              </Link>
+              <Link
+                href="/contact"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  borderRadius: '8px',
+                  padding: '14px 28px',
+                  fontSize: '14px',
+                  fontWeight: 600,
+                  color: '#0A2D73',
+                  textDecoration: 'none',
+                  border: '1.5px solid rgba(10,45,115,0.25)',
                   background: 'transparent',
                   transition: 'all 0.3s',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(255,255,255,0.1)')}
-                onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
+                onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(10,45,115,0.06)'; e.currentTarget.style.borderColor = '#0A2D73'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(10,45,115,0.25)'; }}
               >
-                Explore Services
+                Contact Us
               </Link>
             </div>
           </motion.div>
@@ -198,23 +212,24 @@ export default function Hero() {
                     alignItems: 'center',
                     gap: '16px',
                     padding: '20px 24px',
-                    background: 'rgba(255, 255, 255, 0.06)',
-                    border: '1px solid rgba(255, 255, 255, 0.12)',
+                    background: '#0A2D73',
+                    border: '1px solid rgba(10,45,115,0.15)',
                     borderRadius: '10px',
+                    boxShadow: '0 4px 16px rgba(10,45,115,0.12)',
                   }}
                 >
-                  {/* Orange icon box */}
+                  {/* Icon box */}
                   <div style={{
                     flexShrink: 0,
                     width: '44px',
                     height: '44px',
                     borderRadius: '8px',
-                    background: 'rgba(185, 28, 44, 0.12)',
+                    background: 'rgba(217, 4, 27, 0.15)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}>
-                    <Icon style={{ width: '20px', height: '20px', color: '#B91C2C' }} />
+                    <Icon style={{ width: '20px', height: '20px', color: '#D9041B' }} />
                   </div>
 
                   {/* Stat value + label */}
@@ -230,7 +245,7 @@ export default function Hero() {
                       {card.value}
                     </p>
                     <p style={{
-                      color: 'rgba(255, 255, 255, 0.45)',
+                      color: 'rgba(255, 255, 255, 0.55)',
                       fontSize: '12px',
                       lineHeight: 1.4,
                       marginTop: '2px',
@@ -256,15 +271,15 @@ export default function Hero() {
           flexDirection: 'column',
           alignItems: 'center',
           gap: '4px',
-          opacity: 0.2,
+          opacity: 0.25,
         }}
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
       >
-        <span style={{ fontSize: '10px', color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.2em' }}>
+        <span style={{ fontSize: '10px', color: '#0A2D73', textTransform: 'uppercase', letterSpacing: '0.2em' }}>
           Scroll
         </span>
-        <ChevronDown style={{ width: '16px', height: '16px', color: '#FFFFFF' }} />
+        <ChevronDown style={{ width: '16px', height: '16px', color: '#0A2D73' }} />
       </motion.div>
     </section>
   );

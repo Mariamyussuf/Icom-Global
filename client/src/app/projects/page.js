@@ -11,6 +11,7 @@ const categories = [
   { key: 'all', label: 'All' },
   { key: 'telecom', label: 'Telecom' },
   { key: 'solar', label: 'Solar' },
+  { key: 'power', label: 'Power' },
   { key: 'electrical', label: 'Electrical' },
   { key: 'it', label: 'IT' },
   { key: 'infrastructure', label: 'Infrastructure' },
@@ -27,7 +28,7 @@ export default function ProjectsPage() {
     <>
       {/* Hero Banner */}
       <section style={{
-        backgroundColor: '#0F1B2D',
+        backgroundColor: '#0A2D73',
         marginTop: '-80px',
         paddingTop: '160px',
         paddingBottom: '80px',
@@ -41,7 +42,7 @@ export default function ProjectsPage() {
 
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px', position: 'relative', textAlign: 'center' }}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span style={{ display: 'inline-block', background: 'rgba(185,28,44,0.15)', color: '#B91C2C', fontSize: '14px', fontWeight: 600, padding: '8px 20px', borderRadius: '999px', marginBottom: '24px' }}>
+            <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.15)', color: '#D9041B', fontSize: '14px', fontWeight: 600, padding: '8px 20px', borderRadius: '999px', marginBottom: '24px' }}>
               Our Work
             </span>
             <h1 style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, color: '#FFFFFF', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.15 }}>
@@ -72,9 +73,9 @@ export default function ProjectsPage() {
                     border: 'none',
                     cursor: 'pointer',
                     transition: 'all 0.3s',
-                    background: activeFilter === cat.key ? '#B91C2C' : '#F4F6F9',
-                    color: activeFilter === cat.key ? '#FFFFFF' : '#0F1B2D',
-                    boxShadow: activeFilter === cat.key ? '0 4px 12px rgba(185,28,44,0.3)' : 'none',
+                    background: activeFilter === cat.key ? '#D9041B' : '#F5F7FA',
+                    color: activeFilter === cat.key ? '#FFFFFF' : '#0A2D73',
+                    boxShadow: activeFilter === cat.key ? '0 4px 12px rgba(217,4,27,0.3)' : 'none',
                   }}
                 >
                   {cat.label}

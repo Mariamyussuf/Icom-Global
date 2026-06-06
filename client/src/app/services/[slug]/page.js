@@ -8,7 +8,8 @@ const slugRedirects = {
   'solar-power': 'specialized-infrastructure-solutions',
   'generator-services': 'network-operations-maintenance',
   'electrical-infrastructure': 'civil-works',
-  'it-solutions': 'in-building-coverage',
+  'it-solutions': 'power-solutions',
+  'in-building-coverage': 'power-solutions',
   'procurement': 'specialized-infrastructure-solutions',
   'project-management': 'technical-consulting-project-management'
 };

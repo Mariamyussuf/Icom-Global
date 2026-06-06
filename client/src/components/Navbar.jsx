@@ -13,7 +13,7 @@ const serviceLinks = [
   { name: 'BSS Equipment Installation', href: '/services/bss-equipment-installation' },
   { name: 'Fiber Optic Transmission', href: '/services/fiber-optic-transmission' },
   { name: 'Network Operations (O&M)', href: '/services/network-operations-maintenance' },
-  { name: 'In-Building Coverage', href: '/services/in-building-coverage' },
+  { name: 'Power Solutions', href: '/services/power-solutions' },
   { name: 'Repeater Systems Solutions', href: '/services/repeater-systems-solutions' },
   { name: 'Technical Consulting & PM', href: '/services/technical-consulting-project-management' },
 ];
@@ -66,11 +66,11 @@ export default function Navbar() {
           left: 0,
           right: 0,
           zIndex: 50,
-          height: '80px',
+          height: '100px',
           display: 'flex',
           alignItems: 'center',
           transition: 'background-color 0.3s, box-shadow 0.3s',
-          backgroundColor: scrolled ? '#0F1B2D' : 'transparent',
+          backgroundColor: scrolled ? '#0A2D73' : 'transparent',
           boxShadow: scrolled ? '0 4px 20px rgba(0,0,0,0.15)' : 'none',
         }}
         role="navigation"
@@ -90,12 +90,12 @@ export default function Navbar() {
           {/* ── Logo ── */}
           <Link href="/" aria-label="ICOM - Home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
             <Image
-              src="/images/logo.png"
+              src="/images/icom-logo-transparent.png"
               alt="ICOM Technical Support Limited"
-              width={72}
-              height={48}
-              className="h-10 lg:h-12 w-auto"
-              style={{ objectFit: 'contain', display: 'block' }}
+              width={160}
+              height={104}
+              className="h-16 lg:h-20 w-auto"
+              style={{ objectFit: 'contain', display: 'block', filter: scrolled ? 'drop-shadow(0 0 1px rgba(255,255,255,0.4))' : 'none' }}
               priority
             />
           </Link>
@@ -119,12 +119,12 @@ export default function Navbar() {
                     borderRadius: '8px',
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: isActive(link.href) ? '#B91C2C' : 'rgba(255,255,255,0.75)',
+                    color: isActive(link.href) ? '#D9041B' : (scrolled ? 'rgba(255,255,255,0.75)' : '#0A2D73'),
                     textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
-                  onMouseEnter={(e) => { if (!isActive(link.href)) e.currentTarget.style.color = '#FFFFFF'; }}
-                  onMouseLeave={(e) => { if (!isActive(link.href)) e.currentTarget.style.color = 'rgba(255,255,255,0.75)'; }}
+                  onMouseEnter={(e) => { if (!isActive(link.href)) e.currentTarget.style.color = scrolled ? '#FFFFFF' : '#D9041B'; }}
+                  onMouseLeave={(e) => { if (!isActive(link.href)) e.currentTarget.style.color = scrolled ? 'rgba(255,255,255,0.75)' : '#0A2D73'; }}
                 >
                   {link.name}
                   {link.hasDropdown && (
@@ -152,7 +152,7 @@ export default function Navbar() {
                           background: '#FFFFFF',
                           borderRadius: '12px',
                           boxShadow: '0 16px 48px rgba(0,0,0,0.12)',
-                          border: '1px solid #E8ECF1',
+                          border: '1px solid #E2E8F0',
                           padding: '8px 0',
                           overflow: 'hidden',
                         }}
@@ -165,15 +165,15 @@ export default function Navbar() {
                               display: 'block',
                               padding: '10px 16px',
                               fontSize: '14px',
-                              color: isActive(service.href) ? '#B91C2C' : '#4A5568',
+                              color: isActive(service.href) ? '#D9041B' : '#4A5568',
                               textDecoration: 'none',
-                              background: isActive(service.href) ? 'rgba(185,28,44,0.05)' : 'transparent',
+                              background: isActive(service.href) ? 'rgba(217,4,27,0.05)' : 'transparent',
                               transition: 'all 0.15s',
                             }}
-                            onMouseEnter={(e) => { e.currentTarget.style.background = '#F4F6F9'; e.currentTarget.style.color = '#B91C2C'; }}
+                            onMouseEnter={(e) => { e.currentTarget.style.background = '#F5F7FA'; e.currentTarget.style.color = '#D9041B'; }}
                             onMouseLeave={(e) => {
-                              e.currentTarget.style.background = isActive(service.href) ? 'rgba(185,28,44,0.05)' : 'transparent';
-                              e.currentTarget.style.color = isActive(service.href) ? '#B91C2C' : '#4A5568';
+                              e.currentTarget.style.background = isActive(service.href) ? 'rgba(217,4,27,0.05)' : 'transparent';
+                              e.currentTarget.style.color = isActive(service.href) ? '#D9041B' : '#4A5568';
                             }}
                           >
                             {service.name}
@@ -187,32 +187,14 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* ── CTA + Mobile Toggle ── */}
+          {/* ── Mobile Toggle ── */}
           <div className="flex items-center gap-4">
-            <Link
-              href="/contact"
-              className="hidden sm:inline-flex items-center"
-              style={{
-                padding: '10px 24px',
-                background: '#B91C2C',
-                color: '#FFFFFF',
-                fontSize: '14px',
-                fontWeight: 600,
-                borderRadius: '8px',
-                textDecoration: 'none',
-                transition: 'all 0.3s',
-                boxShadow: '0 2px 8px rgba(185,28,44,0.25)',
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = '#991B1B'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = '#B91C2C'; e.currentTarget.style.transform = 'translateY(0)'; }}
-            >
-              Get a Quote
-            </Link>
 
             {/* Mobile Hamburger Trigger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 text-white/75 hover:text-white transition-colors focus:outline-none cursor-pointer"
+              className="lg:hidden p-2 transition-colors focus:outline-none cursor-pointer"
+              style={{ color: scrolled ? 'rgba(255,255,255,0.75)' : '#0A2D73' }}
               aria-label="Toggle menu"
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -232,7 +214,7 @@ export default function Navbar() {
               position: 'fixed',
               inset: 0,
               zIndex: 40,
-              background: '#0F1B2D',
+              background: '#0A2D73',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
@@ -250,7 +232,7 @@ export default function Navbar() {
                     padding: '12px',
                     fontSize: '24px',
                     fontWeight: 600,
-                    color: isActive(link.href) ? '#B91C2C' : '#FFFFFF',
+                    color: isActive(link.href) ? '#D9041B' : '#FFFFFF',
                     textDecoration: 'none',
                     fontFamily: "var(--font-heading, 'DM Sans', sans-serif)",
                   }}
@@ -258,24 +240,7 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <Link
-                href="/contact"
-                style={{
-                  display: 'block',
-                  width: '100%',
-                  textAlign: 'center',
-                  padding: '16px',
-                  marginTop: '24px',
-                  background: '#B91C2C',
-                  color: '#FFFFFF',
-                  fontWeight: 600,
-                  fontSize: '18px',
-                  borderRadius: '10px',
-                  textDecoration: 'none',
-                }}
-              >
-                Get a Quote
-              </Link>
+
             </nav>
           </motion.div>
         )}

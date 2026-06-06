@@ -14,7 +14,7 @@ export default function ServicesPage() {
     <>
       {/* Hero Banner */}
       <section style={{
-        backgroundColor: '#0F1B2D',
+        backgroundColor: '#0A2D73',
         marginTop: '-80px',
         paddingTop: '160px',
         paddingBottom: '80px',
@@ -28,7 +28,7 @@ export default function ServicesPage() {
 
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px', position: 'relative', textAlign: 'center' }}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span style={{ display: 'inline-block', background: 'rgba(185,28,44,0.15)', color: '#B91C2C', fontSize: '14px', fontWeight: 600, padding: '8px 20px', borderRadius: '999px', marginBottom: '24px' }}>
+            <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.15)', color: '#D9041B', fontSize: '14px', fontWeight: 600, padding: '8px 20px', borderRadius: '999px', marginBottom: '24px' }}>
               What We Do
             </span>
             <h1 style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, color: '#FFFFFF', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.15 }}>
@@ -54,10 +54,10 @@ export default function ServicesPage() {
           <div style={{ marginBottom: '80px' }}>
             <ScrollReveal>
               <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '36px' }}>
-                <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 26px)', fontWeight: 800, color: '#0F1B2D', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 26px)', fontWeight: 800, color: '#0A2D73', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                   1. Wireless Network Services (WNS)
                 </h2>
-                <div style={{ flex: 1, height: '2px', background: '#B91C2C', opacity: 0.15 }} />
+                <div style={{ flex: 1, height: '2px', background: '#D9041B', opacity: 0.15 }} />
               </div>
             </ScrollReveal>
 
@@ -72,10 +72,10 @@ export default function ServicesPage() {
           <div>
             <ScrollReveal>
               <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '36px' }}>
-                <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 26px)', fontWeight: 800, color: '#0F1B2D', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 26px)', fontWeight: 800, color: '#0A2D73', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                   2. Enterprise Network Solutions (ENS)
                 </h2>
-                <div style={{ flex: 1, height: '2px', background: '#B91C2C', opacity: 0.15 }} />
+                <div style={{ flex: 1, height: '2px', background: '#D9041B', opacity: 0.15 }} />
               </div>
             </ScrollReveal>
 

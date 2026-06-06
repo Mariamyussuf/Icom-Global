@@ -10,6 +10,8 @@ export const projects = [
       '/images/projects/telecom.jpg',
       '/images/projects/telecom_2.jpg',
       '/images/projects/telecom_3.jpg',
+      '/images/projects/telecom_4.jpg',
+      '/images/projects/telecom_5.jpg',
     ],
     tags: ['RF Engineering', 'BSS Installation', 'Network Optimization'],
   },
@@ -24,6 +26,8 @@ export const projects = [
       '/images/projects/solar.jpg',
       '/images/projects/solar_2.jpg',
       '/images/projects/solar_3.jpg',
+      '/images/projects/solar_4.jpg',
+      '/images/projects/solar_5.jpg',
     ],
     tags: ['Solar PV', 'Hybrid System', 'Commercial'],
   },
@@ -68,5 +72,61 @@ export const projects = [
       '/images/projects/electrical_3.jpg',
     ],
     tags: ['Earthing', 'Lightning Protection', 'Industrial'],
+  },
+  {
+    id: 6,
+    title: 'Fiber Cable Laying',
+    category: 'infrastructure',
+    description:
+      'End-to-end fiber optic cable laying project across major urban corridors, including route survey, trenching, duct installation, cable pulling, and OTDR testing for high-speed broadband connectivity.',
+    image: '/images/projects/fiber_cable_laying.jpg',
+    images: [
+      '/images/projects/fiber_cable_laying.jpg',
+      '/images/projects/fiber_cable_laying_2.jpg',
+      '/images/projects/fiber_cable_laying_3.jpg',
+    ],
+    tags: ['Fiber Cable', 'Trenching', 'Broadband'],
+  },
+  {
+    id: 7,
+    title: 'FTTH Redesign & PCC Migration',
+    category: 'infrastructure',
+    description:
+      'Fiber-to-the-Home (FTTH) network redesign and Point of Convergence Cabinet (PCC) migration project, involving network topology optimization, splitter relocation, OLT reconfiguration, and subscriber migration with zero downtime.',
+    image: '/images/projects/ftth_redesign.jpg',
+    images: [
+      '/images/projects/ftth_redesign.jpg',
+      '/images/projects/ftth_redesign_2.jpg',
+      '/images/projects/ftth_redesign_3.jpg',
+    ],
+    tags: ['FTTH', 'PCC Migration', 'Network Redesign'],
+  },
+  {
+    id: 8,
+    title: 'Generator Sales & Maintenance',
+    category: 'power',
+    description:
+      'Supply, installation, and ongoing maintenance of industrial diesel generators for telecom base stations and commercial facilities, including scheduled servicing, overhaul, and 24/7 emergency breakdown response.',
+    image: '/images/projects/generator.jpg',
+    images: [
+      '/images/projects/generator.jpg',
+      '/images/projects/generator_2.jpg',
+      '/images/projects/generator_3.jpg',
+    ],
+    tags: ['Generator', 'Power', 'Maintenance'],
+  },
+  {
+    id: 9,
+    title: 'Transformer Sales & Maintenance',
+    category: 'power',
+    description:
+      'Procurement, installation, and preventive maintenance of power transformers for industrial and commercial applications, including oil testing, winding inspection, and load capacity analysis.',
+    image: '/images/projects/transformer.jpg',
+    images: [
+      '/images/projects/transformer.jpg',
+      '/images/projects/transformer_2.jpg',
+      '/images/projects/transformer_3.jpg',
+    ],
+    tags: ['Transformer', 'Power Infrastructure', 'Electrical'],
   },
 ];

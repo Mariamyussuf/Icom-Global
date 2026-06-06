@@ -62,8 +62,8 @@ function Section({ children, bg = '#FFFFFF' }) {
 function Heading({ title, subtitle, light = false, centered = true }) {
   return (
     <div style={{ textAlign: centered ? 'center' : 'left', marginBottom: '56px' }}>
-      <div style={{ width: '48px', height: '3px', background: '#B91C2C', borderRadius: '2px', margin: centered ? '0 auto 20px' : '0 0 20px', }} />
-      <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: light ? '#fff' : '#0F1B2D', marginBottom: subtitle ? '14px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+      <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: centered ? '0 auto 20px' : '0 0 20px', }} />
+      <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: light ? '#fff' : '#0A2D73', marginBottom: subtitle ? '14px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
         {title}
       </h2>
       {subtitle && (
@@ -80,7 +80,7 @@ export default function AboutPage() {
     <>
       {/* ═══════ HERO ═══════ */}
       <section style={{
-        backgroundColor: '#0F1B2D',
+        backgroundColor: '#0A2D73',
         marginTop: '-80px',
         paddingTop: '160px',
         paddingBottom: '80px',
@@ -97,8 +97,8 @@ export default function AboutPage() {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span style={{
               display: 'inline-block',
-              background: 'rgba(185,28,44,0.15)',
-              color: '#B91C2C',
+              background: 'rgba(217,4,27,0.15)',
+              color: '#D9041B',
               fontSize: '14px',
               fontWeight: 600,
               padding: '8px 20px',
@@ -137,13 +137,13 @@ export default function AboutPage() {
           <ScrollReveal direction="left">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { value: 'Est. 2009', label: 'Year Founded', accent: '#B91C2C' },
-                { value: 'RC 1043812', label: 'Registration', accent: '#1E3A5F' },
-                { value: 'Victoria Island', label: 'Lagos, Nigeria', accent: '#1E3A5F' },
-                { value: '15+ Years', label: 'Experience', accent: '#B91C2C' },
+                { value: 'Est. 2009', label: 'Year Founded', accent: '#D9041B' },
+                { value: 'RC 1043812', label: 'Registration', accent: '#0D3A8A' },
+                { value: 'Victoria Island', label: 'Lagos, Nigeria', accent: '#0D3A8A' },
+                { value: '15+ Years', label: 'Experience', accent: '#D9041B' },
               ].map((stat) => (
                 <div key={stat.label} style={{
-                  background: '#0F1B2D',
+                  background: '#0A2D73',
                   borderRadius: '14px',
                   padding: '28px 20px',
                   textAlign: 'center',
@@ -187,7 +187,7 @@ export default function AboutPage() {
       </Section>
 
       {/* ═══════ MISSION & PHILOSOPHY ═══════ */}
-      <Section bg="#F4F6F9">
+      <Section bg="#F5F7FA">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           {/* Mission Card */}
           <ScrollReveal direction="left">
@@ -197,16 +197,16 @@ export default function AboutPage() {
               padding: '40px',
               height: '100%',
               boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
-              border: '1px solid #E8ECF1',
+              border: '1px solid #E2E8F0',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between'
             }}>
               <div>
-                <span style={{ display: 'inline-block', background: 'rgba(185,28,44,0.1)', color: '#B91C2C', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginBottom: '20px', textTransform: 'uppercase' }}>
+                <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.1)', color: '#D9041B', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginBottom: '20px', textTransform: 'uppercase' }}>
                   Mission Statement
                 </span>
-                <h3 style={{ fontSize: 'clamp(18px, 2.5vw, 22px)', fontWeight: 800, color: '#0F1B2D', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.35 }}>
+                <h3 style={{ fontSize: 'clamp(18px, 2.5vw, 22px)', fontWeight: 800, color: '#0A2D73', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.35 }}>
                   &ldquo;Our mission is to provide high quality engineering solutions and consulting services, surpassing the requirements and expectations of our clients.&rdquo;
                 </h3>
                 <p style={{ fontSize: '14.5px', color: '#6B7A8D', lineHeight: 1.7, marginBottom: '24px' }}>
@@ -219,9 +219,9 @@ export default function AboutPage() {
                     { title: 'Requirements and Expectations', desc: 'We will continually strive to provide services to our clients in such a manner that it exceeds their expectations and requirements.' }
                   ].map((item, idx) => (
                     <div key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                      <CheckCircle style={{ width: '18px', height: '18px', color: '#B91C2C', flexShrink: 0, marginTop: '3px' }} />
+                      <CheckCircle style={{ width: '18px', height: '18px', color: '#D9041B', flexShrink: 0, marginTop: '3px' }} />
                       <div style={{ fontSize: '14px', lineHeight: 1.5 }}>
-                        <strong style={{ color: '#0F1B2D' }}>{item.title}: </strong>
+                        <strong style={{ color: '#0A2D73' }}>{item.title}: </strong>
                         <span style={{ color: '#4A5568' }}>{item.desc}</span>
                       </div>
                     </div>
@@ -239,16 +239,16 @@ export default function AboutPage() {
               padding: '40px',
               height: '100%',
               boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
-              border: '1px solid #E8ECF1',
+              border: '1px solid #E2E8F0',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between'
             }}>
               <div>
-                <span style={{ display: 'inline-block', background: 'rgba(30,58,95,0.1)', color: '#1E3A5F', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginBottom: '20px', textTransform: 'uppercase' }}>
+                <span style={{ display: 'inline-block', background: 'rgba(13,58,138,0.1)', color: '#0D3A8A', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginBottom: '20px', textTransform: 'uppercase' }}>
                   Our Philosophy
                 </span>
-                <h3 style={{ fontSize: 'clamp(18px, 2.5vw, 22px)', fontWeight: 800, color: '#0F1B2D', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                <h3 style={{ fontSize: 'clamp(18px, 2.5vw, 22px)', fontWeight: 800, color: '#0A2D73', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                   Our Basic Philosophy
                 </h3>
                 <p style={{ fontSize: '14.5px', color: '#6B7A8D', lineHeight: 1.7, marginBottom: '24px' }}>
@@ -261,11 +261,11 @@ export default function AboutPage() {
                     { label: 'Best Service, Reasonable Price', desc: 'To provide our clients with the best service available, at a reasonable price.' }
                   ].map((item, idx) => (
                     <div key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                      <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(30,58,95,0.1)', color: '#1E3A5F', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '13px', flexShrink: 0 }}>
+                      <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(13,58,138,0.1)', color: '#0D3A8A', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '13px', flexShrink: 0 }}>
                         {idx + 1}
                       </div>
                       <div>
-                        <h4 style={{ color: '#0F1B2D', fontSize: '14.5px', fontWeight: 700, marginBottom: '2px' }}>{item.label}</h4>
+                        <h4 style={{ color: '#0A2D73', fontSize: '14.5px', fontWeight: 700, marginBottom: '2px' }}>{item.label}</h4>
                         <p style={{ fontSize: '13.5px', color: '#4A5568', lineHeight: 1.5 }}>{item.desc}</p>
                       </div>
                     </div>
@@ -290,7 +290,7 @@ export default function AboutPage() {
               top: 0,
               bottom: 0,
               width: '2px',
-              background: '#B91C2C',
+              background: '#D9041B',
             }} 
           />
 
@@ -308,14 +308,14 @@ export default function AboutPage() {
                     borderRadius: '14px',
                     padding: '24px',
                     boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
-                    border: '1px solid #E8ECF1',
+                    border: '1px solid #E2E8F0',
                     textAlign: 'left'
                   }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <Calendar style={{ width: '18px', height: '18px', color: '#B91C2C' }} />
-                      <span style={{ color: '#B91C2C', fontWeight: 700, fontSize: '16px' }}>{milestone.year}</span>
+                      <Calendar style={{ width: '18px', height: '18px', color: '#D9041B' }} />
+                      <span style={{ color: '#D9041B', fontWeight: 700, fontSize: '16px' }}>{milestone.year}</span>
                     </div>
-                    <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#0F1B2D', marginBottom: '8px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                    <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#0A2D73', marginBottom: '8px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                       {milestone.title}
                     </h3>
                     <p style={{ fontSize: '14px', color: '#6B7A8D', lineHeight: 1.65 }}>{milestone.description}</p>
@@ -333,12 +333,12 @@ export default function AboutPage() {
                   <div style={{
                     width: '32px',
                     height: '32px',
-                    background: '#B91C2C',
+                    background: '#D9041B',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    boxShadow: '0 4px 12px rgba(185,28,44,0.3)',
+                    boxShadow: '0 4px 12px rgba(217,4,27,0.3)',
                   }}>
                     <div style={{ width: '10px', height: '10px', background: '#fff', borderRadius: '50%' }} />
                   </div>
@@ -353,7 +353,7 @@ export default function AboutPage() {
       </Section>
 
       {/* ═══════ LEADERSHIP TEAM ═══════ */}
-      <Section bg="#F4F6F9">
+      <Section bg="#F5F7FA">
         <Heading title="Leadership Team" subtitle="Experienced professionals driving engineering excellence." />
 
         <div className="flex justify-center">
@@ -366,7 +366,7 @@ export default function AboutPage() {
                     borderRadius: '14px',
                     overflow: 'hidden',
                     boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
-                    border: '1px solid #E8ECF1',
+                    border: '1px solid #E2E8F0',
                     transition: 'box-shadow 0.3s',
                   }}>
                     {/* Rounded avatar container */}
@@ -381,9 +381,9 @@ export default function AboutPage() {
                         height: '180px',
                         borderRadius: '50%',
                         overflow: 'hidden',
-                        border: '4px solid #F4F6F9',
+                        border: '4px solid #F5F7FA',
                         boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
-                        background: '#0F1B2D',
+                        background: '#0A2D73',
                         position: 'relative',
                       }}>
                         {member.image ? (
@@ -415,10 +415,10 @@ export default function AboutPage() {
                     </div>
 
                     <div style={{ padding: '20px' }}>
-                      <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0F1B2D', marginBottom: '4px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                      <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0A2D73', marginBottom: '4px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                         {member.name}
                       </h3>
-                      <p style={{ color: '#B91C2C', fontWeight: 500, fontSize: '13px', marginBottom: '10px' }}>{member.title}</p>
+                      <p style={{ color: '#D9041B', fontWeight: 500, fontSize: '13px', marginBottom: '10px' }}>{member.title}</p>
                       <p style={{ fontSize: '13px', color: '#6B7A8D', lineHeight: 1.6 }}>{member.bio}</p>
                     </div>
                   </div>
@@ -446,7 +446,7 @@ export default function AboutPage() {
                     padding: '28px 20px',
                     textAlign: 'center',
                     boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
-                    border: '1px solid #E8ECF1',
+                    border: '1px solid #E2E8F0',
                     height: '100%',
                     transition: 'all 0.3s',
                   }}
@@ -454,16 +454,16 @@ export default function AboutPage() {
                   <div style={{
                     width: '52px',
                     height: '52px',
-                    background: 'rgba(185,28,44,0.1)',
+                    background: 'rgba(217,4,27,0.1)',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     margin: '0 auto 14px',
                   }}>
-                    <ValueIcon style={{ width: '24px', height: '24px', color: '#B91C2C' }} />
+                    <ValueIcon style={{ width: '24px', height: '24px', color: '#D9041B' }} />
                   </div>
-                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0F1B2D', marginBottom: '6px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0A2D73', marginBottom: '6px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                     {value.title}
                   </h3>
                   <p style={{ fontSize: '13px', color: '#6B7A8D', lineHeight: 1.6 }}>{value.description}</p>
@@ -475,7 +475,7 @@ export default function AboutPage() {
       </Section>
 
       {/* ═══════ CORPORATE PRINCIPLES & COMMITMENTS ═══════ */}
-      <Section bg="#F4F6F9">
+      <Section bg="#F5F7FA">
         <Heading title="Corporate Commitments" subtitle="Our approach to quality, client success, and problem solving." />
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -484,43 +484,43 @@ export default function AboutPage() {
               title: 'Quality & Standard',
               desc: 'In achieving our set mission, ICOM puts quality and standards as a high priority, aligning processes to exceed international metrics.',
               icon: Award,
-              color: 'rgba(30,58,95,0.1)',
-              iconColor: '#1E3A5F'
+              color: 'rgba(13,58,138,0.1)',
+              iconColor: '#0D3A8A'
             },
             {
               title: "Exceed Customers' Expectations",
               desc: 'Honoring the customer as our most important asset is our priority. We work hard to understand our customers\' needs, how their network infrastructures work, and how we can provide value to help them realize their potential.',
               icon: Users,
-              color: 'rgba(185,28,44,0.1)',
-              iconColor: '#B91C2C'
+              color: 'rgba(217,4,27,0.1)',
+              iconColor: '#D9041B'
             },
             {
               title: 'Creatively Solve Problems',
               desc: 'ICOM empowers its people to think creatively, enabling a diverse workforce that generates innovative decision-making for a broad spectrum of customers and partners.',
               icon: Lightbulb,
-              color: 'rgba(30,58,95,0.1)',
-              iconColor: '#1E3A5F'
+              color: 'rgba(13,58,138,0.1)',
+              iconColor: '#0D3A8A'
             },
             {
               title: 'Knowledge & Experience',
               desc: 'By relying on our vast experience and seasoned industry technicians, ICOM can solve a range of network challenges to meet the needs of our customers.',
               icon: Shield,
-              color: 'rgba(185,28,44,0.1)',
-              iconColor: '#B91C2C'
+              color: 'rgba(217,4,27,0.1)',
+              iconColor: '#D9041B'
             },
             {
               title: 'Maximizing Opportunities',
               desc: 'Share knowledge, expertise, and relationships to open new doors of opportunity and to facilitate interaction among customers.',
               icon: Star,
-              color: 'rgba(30,58,95,0.1)',
-              iconColor: '#1E3A5F'
+              color: 'rgba(13,58,138,0.1)',
+              iconColor: '#0D3A8A'
             },
             {
               title: 'Be Accountable',
               desc: 'Take responsibility, make things happen, admit to mistakes, and commit to learning and growth.',
               icon: CheckCircle,
-              color: 'rgba(185,28,44,0.1)',
-              iconColor: '#B91C2C'
+              color: 'rgba(217,4,27,0.1)',
+              iconColor: '#D9041B'
             }
           ].map((item, idx) => {
             const Icon = item.icon;
@@ -531,10 +531,10 @@ export default function AboutPage() {
                   borderRadius: '16px',
                   padding: '32px 28px',
                   height: '100%',
-                  border: '1px solid #E8ECF1',
+                  border: '1px solid #E2E8F0',
                   transition: 'all 0.3s'
                 }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = '#0F1B2D'; e.currentTarget.style.color = '#FFFFFF'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(15,27,45,0.12)'; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = '#0A2D73'; e.currentTarget.style.color = '#FFFFFF'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(10,45,115,0.12)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = '#FFFFFF'; e.currentTarget.style.color = 'inherit'; e.currentTarget.style.boxShadow = 'none'; }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '16px' }}>
@@ -568,7 +568,7 @@ export default function AboutPage() {
                   style={{
                     background: '#FFFFFF',
                     borderRadius: '12px',
-                    border: '1px solid #E8ECF1',
+                    border: '1px solid #E2E8F0',
                     height: '80px',
                     display: 'flex',
                     alignItems: 'center',
@@ -590,7 +590,7 @@ export default function AboutPage() {
                       }}
                     />
                   ) : (
-                    <span style={{ fontWeight: 700, color: '#0F1B2D', fontSize: '14px' }}>{client}</span>
+                    <span style={{ fontWeight: 700, color: '#0A2D73', fontSize: '14px' }}>{client}</span>
                   )}
                 </motion.div>
               </ScrollReveal>

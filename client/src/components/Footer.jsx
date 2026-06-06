@@ -31,7 +31,7 @@ const serviceLinks = [
   { name: 'BSS Equipment Installation', href: '/services/bss-equipment-installation' },
   { name: 'Fiber Optic Transmission', href: '/services/fiber-optic-transmission' },
   { name: 'Network Operations (O&M)', href: '/services/network-operations-maintenance' },
-  { name: 'In-Building Coverage', href: '/services/in-building-coverage' },
+  { name: 'Power Solutions', href: '/services/power-solutions' },
   { name: 'Repeater Systems Solutions', href: '/services/repeater-systems-solutions' },
   { name: 'Technical Consulting & PM', href: '/services/technical-consulting-project-management' },
 ];
@@ -54,14 +54,14 @@ const linkStyle = {
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#0F1B2D', position: 'relative', overflow: 'hidden' }} role="contentinfo">
+    <footer style={{ backgroundColor: '#0A2D73', position: 'relative', overflow: 'hidden', marginTop: '24px' }} role="contentinfo">
       {/* Decorative top red bar */}
-      <div style={{ height: '3px', background: '#B91C2C' }} />
+      <div style={{ height: '3px', background: '#D9041B' }} />
 
       {/* Subtle background decorations */}
       <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
-        <div style={{ position: 'absolute', top: '-120px', right: '-80px', width: '300px', height: '300px', borderRadius: '50%', border: '1px solid rgba(185,28,44,0.06)' }} />
-        <div style={{ position: 'absolute', bottom: '-60px', left: '-40px', width: '200px', height: '200px', borderRadius: '50%', border: '1px solid rgba(30,58,95,0.05)' }} />
+        <div style={{ position: 'absolute', top: '-120px', right: '-80px', width: '300px', height: '300px', borderRadius: '50%', border: '1px solid rgba(217,4,27,0.06)' }} />
+        <div style={{ position: 'absolute', bottom: '-60px', left: '-40px', width: '200px', height: '200px', borderRadius: '50%', border: '1px solid rgba(13,58,138,0.05)' }} />
       </div>
 
       {/* ── Newsletter / CTA strip ── */}
@@ -69,7 +69,7 @@ export default function Footer() {
         <div 
           className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between"
           style={{
-            background: 'rgba(185,28,44,0.08)',
+            background: 'rgba(217,4,27,0.08)',
             borderRadius: '14px',
             padding: '32px 36px',
             border: '1px solid rgba(255,255,255,0.06)',
@@ -85,13 +85,13 @@ export default function Footer() {
           </div>
           <Link href="/contact" style={{
             display: 'inline-flex', alignItems: 'center', gap: '8px',
-            padding: '12px 28px', background: '#B91C2C', color: '#fff',
+            padding: '12px 28px', background: '#D9041B', color: '#fff',
             fontWeight: 600, fontSize: '14px', borderRadius: '8px',
             textDecoration: 'none', transition: 'all 0.3s', flexShrink: 0,
-            boxShadow: '0 4px 12px rgba(185,28,44,0.3)',
+            boxShadow: '0 4px 12px rgba(217,4,27,0.3)',
           }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = '#991B1B'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = '#B91C2C'; e.currentTarget.style.transform = 'translateY(0)'; }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = '#B50316'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = '#D9041B'; e.currentTarget.style.transform = 'translateY(0)'; }}
           >
             Contact Us <ArrowRight style={{ width: '16px', height: '16px' }} />
           </Link>
@@ -106,12 +106,12 @@ export default function Footer() {
           <div>
             <Link href="/" aria-label="ICOM - Home" style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '16px' }}>
               <Image
-                src="/images/logo.png"
+                src="/images/icom-logo-transparent.png"
                 alt="ICOM Technical Support Limited"
-                width={96}
-                height={64}
-                className="h-12 lg:h-16 w-auto"
-                style={{ objectFit: 'contain', display: 'block' }}
+                width={180}
+                height={120}
+                className="h-16 lg:h-20 w-auto"
+                style={{ objectFit: 'contain', display: 'block', filter: 'drop-shadow(0 0 1px rgba(255,255,255,0.4))' }}
               />
             </Link>
             <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)', lineHeight: 1.75, maxWidth: '280px' }}>
@@ -128,7 +128,7 @@ export default function Footer() {
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} style={linkStyle}
-                    onMouseEnter={(e) => { e.currentTarget.style.color = '#B91C2C'; e.currentTarget.style.paddingLeft = '6px'; }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = '#D9041B'; e.currentTarget.style.paddingLeft = '6px'; }}
                     onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.45)'; e.currentTarget.style.paddingLeft = '0'; }}>
                     {link.name}
                   </Link>
@@ -146,7 +146,7 @@ export default function Footer() {
               {serviceLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} style={linkStyle}
-                    onMouseEnter={(e) => { e.currentTarget.style.color = '#B91C2C'; e.currentTarget.style.paddingLeft = '6px'; }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = '#D9041B'; e.currentTarget.style.paddingLeft = '6px'; }}
                     onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.45)'; e.currentTarget.style.paddingLeft = '0'; }}>
                     {link.name}
                   </Link>
@@ -163,8 +163,8 @@ export default function Footer() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
               {/* Address */}
               <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(185,28,44,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                  <MapPin style={{ width: '15px', height: '15px', color: '#B91C2C' }} />
+                <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(217,4,27,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                  <MapPin style={{ width: '15px', height: '15px', color: '#D9041B' }} />
                 </div>
                 <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.45)', lineHeight: 1.6 }}>
                   164, Prince Ademola Street, Oniru Estate, Victoria Island, Lagos, Nigeria
@@ -173,17 +173,17 @@ export default function Footer() {
 
               {/* Phone */}
               <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(185,28,44,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                  <Phone style={{ width: '15px', height: '15px', color: '#B91C2C' }} />
+                <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(217,4,27,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                  <Phone style={{ width: '15px', height: '15px', color: '#D9041B' }} />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   <a href="tel:+2348035669513" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.45)', textDecoration: 'none', transition: 'color 0.2s' }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#B91C2C')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}>
                     +234 803 566 9513
                   </a>
                   <a href="tel:+2348125880579" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.45)', textDecoration: 'none', transition: 'color 0.2s' }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#B91C2C')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}>
                     +234 812 588 0579
                   </a>
@@ -192,17 +192,17 @@ export default function Footer() {
 
               {/* Email */}
               <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(185,28,44,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                  <Mail style={{ width: '15px', height: '15px', color: '#B91C2C' }} />
+                <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(217,4,27,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                  <Mail style={{ width: '15px', height: '15px', color: '#D9041B' }} />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   <a href="mailto:info@icomtsl.com" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.45)', textDecoration: 'none', transition: 'color 0.2s' }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#B91C2C')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}>
                     info@icomtsl.com
                   </a>
                   <a href="mailto:service@icomtsl.com" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.45)', textDecoration: 'none', transition: 'color 0.2s' }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#B91C2C')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}>
                     service@icomtsl.com
                   </a>
@@ -211,12 +211,12 @@ export default function Footer() {
 
               {/* Website */}
               <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(185,28,44,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
-                  <Globe style={{ width: '15px', height: '15px', color: '#B91C2C' }} />
+                <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(217,4,27,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px' }}>
+                  <Globe style={{ width: '15px', height: '15px', color: '#D9041B' }} />
                 </div>
                 <a href="https://www.icomtsl.com" target="_blank" rel="noopener noreferrer"
                   style={{ fontSize: '13px', color: 'rgba(255,255,255,0.45)', textDecoration: 'none', transition: 'color 0.2s', alignSelf: 'center' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#B91C2C')}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}>
                   www.icomtsl.com
                 </a>
@@ -254,7 +254,7 @@ export default function Footer() {
                     color: 'rgba(255,255,255,0.4)',
                     transition: 'all 0.3s',
                   }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = '#B91C2C'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = '#D9041B'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; e.currentTarget.style.color = 'rgba(255,255,255,0.4)'; e.currentTarget.style.transform = 'translateY(0)'; }}
                 >
                   <Icon size={15} />

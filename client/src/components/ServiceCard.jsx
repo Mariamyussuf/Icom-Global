@@ -26,14 +26,14 @@ export default function ServiceCard({ service, index = 0 }) {
           background: '#FFFFFF',
           borderRadius: '14px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
-          border: '1px solid #E8ECF1',
+          border: '1px solid #E2E8F0',
           borderLeft: '4px solid transparent',
           padding: '28px 24px',
           textDecoration: 'none',
           height: '100%',
           transition: 'border-color 0.3s, box-shadow 0.3s',
         }}
-        onMouseEnter={(e) => (e.currentTarget.style.borderLeftColor = '#B91C2C')}
+        onMouseEnter={(e) => (e.currentTarget.style.borderLeftColor = '#D9041B')}
         onMouseLeave={(e) => (e.currentTarget.style.borderLeftColor = 'transparent')}
       >
         {/* Icon */}
@@ -47,14 +47,14 @@ export default function ServiceCard({ service, index = 0 }) {
           justifyContent: 'center',
           marginBottom: '18px',
         }}>
-          <IconComponent size={24} style={{ color: '#1E3A5F' }} />
+          <IconComponent size={24} style={{ color: '#0D3A8A' }} />
         </div>
 
         {/* Title */}
         <h3 style={{
           fontSize: '16px',
           fontWeight: 700,
-          color: '#0F1B2D',
+          color: '#0A2D73',
           marginBottom: '10px',
           fontFamily: "var(--font-heading, 'DM Sans', sans-serif)",
           lineHeight: 1.3,
@@ -74,7 +74,7 @@ export default function ServiceCard({ service, index = 0 }) {
           gap: '6px',
           fontSize: '13px',
           fontWeight: 600,
-          color: '#B91C2C',
+          color: '#D9041B',
         }}>
           Learn More
           <ArrowRight size={14} />

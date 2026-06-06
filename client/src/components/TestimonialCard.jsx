@@ -7,7 +7,7 @@ export default function TestimonialCard({ name, role, company, quote, avatar }) 
       borderRadius: '16px',
       boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
       padding: '32px',
-      border: '1px solid #E8ECF1',
+      border: '1px solid #E2E8F0',
       textAlign: 'center',
     }}>
       {/* Quote Text */}
@@ -24,7 +24,7 @@ export default function TestimonialCard({ name, role, company, quote, avatar }) 
       </blockquote>
 
       {/* Author */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', paddingTop: '20px', borderTop: '1px solid #E8ECF1' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', paddingTop: '20px', borderTop: '1px solid #E2E8F0' }}>
         {avatar ? (
           <img
             src={avatar}
@@ -37,7 +37,7 @@ export default function TestimonialCard({ name, role, company, quote, avatar }) 
             width: '48px',
             height: '48px',
             borderRadius: '50%',
-            background: 'linear-gradient(135deg, #1E3A5F, #0F1B2D)',
+            background: 'linear-gradient(135deg, #0D3A8A, #0A2D73)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -49,7 +49,7 @@ export default function TestimonialCard({ name, role, company, quote, avatar }) 
           </div>
         )}
         <div style={{ textAlign: 'left' }}>
-          <p style={{ fontWeight: 700, fontSize: '15px', color: '#0F1B2D', marginBottom: '2px' }}>{name}</p>
+          <p style={{ fontWeight: 700, fontSize: '15px', color: '#0A2D73', marginBottom: '2px' }}>{name}</p>
           <p style={{ fontSize: '13px', color: '#6B7A8D' }}>
             {role}{company ? `, ${company}` : ''}
           </p>

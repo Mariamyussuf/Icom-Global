@@ -23,14 +23,14 @@ export default function ProjectCard({ project, index = 0 }) {
         borderRadius: '14px',
         overflow: 'hidden',
         boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
-        border: '1px solid #E8ECF1',
+        border: '1px solid #E2E8F0',
         height: '100%',
         transition: 'box-shadow 0.3s',
         cursor: 'pointer',
         position: 'relative',
       }}>
         {/* Image Container with Slider */}
-        <div style={{ height: '200px', overflow: 'hidden', position: 'relative', background: '#0F1B2D' }}>
+        <div style={{ height: '200px', overflow: 'hidden', position: 'relative', background: '#0A2D73' }}>
           {imgList.length > 0 ? (
             <img 
               src={imgList[currentImageIndex]} 
@@ -53,13 +53,13 @@ export default function ProjectCard({ project, index = 0 }) {
               }}
               style={{
                 position: 'absolute', left: '8px', top: '50%', transform: 'translateY(-50%)',
-                background: 'rgba(15,27,45,0.65)', color: '#fff', border: 'none', borderRadius: '50%',
+                background: 'rgba(10,45,115,0.65)', color: '#fff', border: 'none', borderRadius: '50%',
                 width: '30px', height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center',
                 cursor: 'pointer', zIndex: 10, transition: 'background 0.2s', fontSize: '14px',
                 backdropFilter: 'blur(4px)', outline: 'none'
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = '#B91C2C')}
-              onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(15,27,45,0.65)')}
+              onMouseEnter={(e) => (e.currentTarget.style.background = '#D9041B')}
+              onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(10,45,115,0.65)')}
             >
               &#10094;
             </button>
@@ -74,13 +74,13 @@ export default function ProjectCard({ project, index = 0 }) {
               }}
               style={{
                 position: 'absolute', right: '8px', top: '50%', transform: 'translateY(-50%)',
-                background: 'rgba(15,27,45,0.65)', color: '#fff', border: 'none', borderRadius: '50%',
+                background: 'rgba(10,45,115,0.65)', color: '#fff', border: 'none', borderRadius: '50%',
                 width: '30px', height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center',
                 cursor: 'pointer', zIndex: 10, transition: 'background 0.2s', fontSize: '14px',
                 backdropFilter: 'blur(4px)', outline: 'none'
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = '#B91C2C')}
-              onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(15,27,45,0.65)')}
+              onMouseEnter={(e) => (e.currentTarget.style.background = '#D9041B')}
+              onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(10,45,115,0.65)')}
             >
               &#10095;
             </button>
@@ -101,7 +101,7 @@ export default function ProjectCard({ project, index = 0 }) {
                   }}
                   style={{
                     width: '6px', height: '6px', borderRadius: '50%',
-                    background: idx === currentImageIndex ? '#B91C2C' : 'rgba(255,255,255,0.5)',
+                    background: idx === currentImageIndex ? '#D9041B' : 'rgba(255,255,255,0.5)',
                     cursor: 'pointer', transition: 'all 0.2s',
                     transform: idx === currentImageIndex ? 'scale(1.2)' : 'none'
                   }}
@@ -114,7 +114,7 @@ export default function ProjectCard({ project, index = 0 }) {
           {category && (
             <span style={{
               position: 'absolute', top: '12px', right: '12px',
-              padding: '4px 12px', background: '#B91C2C', color: '#FFFFFF',
+              padding: '4px 12px', background: '#D9041B', color: '#FFFFFF',
               fontSize: '11px', fontWeight: 600, borderRadius: '999px',
               textTransform: 'capitalize', zIndex: 10
             }}>
@@ -125,7 +125,7 @@ export default function ProjectCard({ project, index = 0 }) {
 
         {/* Content */}
         <div style={{ padding: '24px' }}>
-          <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0F1B2D', marginBottom: '8px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+          <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0A2D73', marginBottom: '8px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
             {title}
           </h3>
           <p style={{ fontSize: '14px', color: '#6B7A8D', lineHeight: 1.6, marginBottom: '14px' }}>
@@ -137,7 +137,7 @@ export default function ProjectCard({ project, index = 0 }) {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '14px' }}>
               {tags.map((tag) => (
                 <span key={tag} style={{
-                  padding: '4px 10px', background: '#F4F6F9', color: '#0F1B2D',
+                  padding: '4px 10px', background: '#F5F7FA', color: '#0A2D73',
                   fontSize: '11px', fontWeight: 500, borderRadius: '999px',
                 }}>
                   {tag}
@@ -146,7 +146,7 @@ export default function ProjectCard({ project, index = 0 }) {
             </div>
           )}
 
-          <span style={{ fontSize: '13px', fontWeight: 600, color: '#B91C2C' }}>View Details</span>
+          <span style={{ fontSize: '13px', fontWeight: 600, color: '#D9041B' }}>View Details</span>
         </div>
       </div>
     </motion.div>

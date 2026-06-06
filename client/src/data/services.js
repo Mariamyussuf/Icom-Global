@@ -321,31 +321,37 @@ export const services = [
 
   // ════════════ Enterprise Network Solutions (ENS) ════════════
   {
-    slug: 'in-building-coverage',
+    slug: 'power-solutions',
     division: 'ENS',
     images: [
-      '/images/services/it-solutions_1.jpg',
-      '/images/services/it-solutions_2.jpg'
+      '/images/services/power-solutions_1.jpg',
+      '/images/services/power-solutions_2.jpg'
     ],
-    title: 'In-Building Coverage Solutions',
-    icon: 'Monitor',
-    shortDesc: 'Dedicated acquisition, survey, and design to establish robust indoor coverage across 25+ story high-rises and malls.',
-    overview: 'We deliver dedicated acquisition, survey, design, and installation services to establish robust indoor capacity and coverage across multiple technologies (GSM900, DCS1800, GPRS/EDGE, UMTS, Wi-Fi, WiMax, and LTE) for environments ranging from retail shops to 25+ story high-rises.',
+    title: 'Power Solutions',
+    icon: 'Zap',
+    shortDesc: 'Comprehensive power solutions including generator sales, repair & maintenance, and solar power systems for commercial and industrial applications.',
+    overview: 'ICOM provides end-to-end power solutions encompassing generator sales, installation, repair and maintenance, as well as solar power systems design and deployment. We deliver reliable, cost-effective power infrastructure for telecommunications sites, commercial facilities, and industrial operations across Nigeria and West Africa.\n\nOur power solutions team combines deep expertise in both conventional generator systems and renewable solar energy to ensure uninterrupted power supply for mission-critical operations.',
     subServices: [
-      'Tailored environments ranging from small single-operator retail shops to massive multi-operator 100+ antenna sites.',
-      'Proven track record in high-density areas including 25+ story office high-rises, hotels, and large manufacturing plants.'
+      'Generator sales — supply of new and refurbished diesel and gas generators (20kVA – 2000kVA)',
+      'Generator repair and maintenance — scheduled servicing, overhaul, and emergency breakdown response',
+      'Solar power systems — design, supply, and installation of solar PV panels, inverters, and battery storage',
+      'Hybrid power solutions — integrated generator-solar systems for optimized fuel savings',
+      'Automatic Transfer Switch (ATS) installation and maintenance',
+      'Power audits and energy efficiency consulting',
+      'Transformer sales, installation, and maintenance',
+      'Uninterruptible Power Supply (UPS) systems'
     ],
     benefits: [
-      { icon: 'CheckCircle', title: 'Multi-Technology', description: 'Support for GSM, DCS, UMTS, Wi-Fi, WiMax, and LTE.' },
-      { icon: 'Users', title: 'Multi-Operator Layout', description: 'Sites engineered to allow multiple operators on a single DAS.' },
-      { icon: 'Shield', title: 'Clean Aesthetics', description: 'Discrete indoor antenna placements maintaining office designs.' },
-      { icon: 'Gauge', title: 'Seamless Handover', description: 'No dropped calls when walking into elevators or basement parking.' }
+      { icon: 'Zap', title: 'Reliable Power', description: 'Guaranteed uptime with expertly maintained generator and solar systems.' },
+      { icon: 'DollarSign', title: 'Cost Savings', description: 'Hybrid solar-generator solutions significantly reduce fuel and energy costs.' },
+      { icon: 'Shield', title: 'Preventive Maintenance', description: 'Scheduled maintenance programs prevent costly breakdowns and extend equipment life.' },
+      { icon: 'Leaf', title: 'Green Energy', description: 'Solar power solutions reduce carbon footprint and dependence on fossil fuels.' }
     ],
     process: [
-      { step: 1, title: 'Indoor RF Walk Test', description: 'Scanning existing signal levels throughout floors, basements, and elevators.' },
-      { step: 2, title: 'DAS Design Layout', description: 'Designing splitters, coupler locations, and antenna nominal positions.' },
-      { step: 3, title: 'Cable Pulling & Mounts', description: 'Running RF coaxial cables and mounting omni-directional indoor antennas.' },
-      { step: 4, title: 'Integration & Testing', description: 'Configuring booster nodes and verifying coverage quality and uplink noise.' }
+      { step: 1, title: 'Power Audit & Assessment', description: 'Evaluating site power requirements, load profiles, and existing infrastructure.' },
+      { step: 2, title: 'Solution Design', description: 'Engineering optimal generator sizing, solar array design, or hybrid configuration.' },
+      { step: 3, title: 'Procurement & Installation', description: 'Sourcing equipment, site preparation, and professional installation.' },
+      { step: 4, title: 'Commissioning & Support', description: 'System testing, handover, and ongoing maintenance support contracts.' }
     ]
   },
   {

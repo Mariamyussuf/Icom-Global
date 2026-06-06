@@ -98,8 +98,8 @@ const testimonialVariants = {
 function Section({ children, bg = 'white', className = '', ...props }) {
   const bgMap = {
     white: '#FFFFFF',
-    gray: '#F4F6F9',
-    navy: '#0F1B2D',
+    gray: '#F5F7FA',
+    navy: '#0A2D73',
   };
   return (
     <section
@@ -140,8 +140,8 @@ export default function HomePage() {
       <Section bg="gray" aria-label="Core services">
         <ScrollReveal>
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-            <div style={{ width: '48px', height: '3px', background: '#B91C2C', borderRadius: '2px', margin: '0 auto 20px' }} />
-            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#0F1B2D', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
+            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#0A2D73', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               Our Core Services
             </h2>
             <p style={{ fontSize: '16px', color: '#6B7A8D', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
@@ -166,16 +166,16 @@ export default function HomePage() {
               alignItems: 'center',
               gap: '8px',
               padding: '14px 32px',
-              border: '2px solid #0F1B2D',
+              border: '2px solid #0A2D73',
               borderRadius: '8px',
-              color: '#0F1B2D',
+              color: '#0A2D73',
               fontWeight: 600,
               fontSize: '15px',
               textDecoration: 'none',
               transition: 'all 0.3s',
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = '#0F1B2D'; e.currentTarget.style.color = '#fff'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#0F1B2D'; }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = '#0A2D73'; e.currentTarget.style.color = '#fff'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#0A2D73'; }}
           >
             View All Services
             <ArrowRight style={{ width: '16px', height: '16px' }} />
@@ -189,8 +189,8 @@ export default function HomePage() {
           {/* Left: content */}
           <div>
             <ScrollReveal>
-              <div style={{ width: '48px', height: '3px', background: '#B91C2C', borderRadius: '2px', marginBottom: '20px' }} />
-              <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#0F1B2D', marginBottom: '12px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+              <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', marginBottom: '20px' }} />
+              <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#0A2D73', marginBottom: '12px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                 Why Choose ICOM?
               </h2>
               <p style={{ fontSize: '15px', color: '#6B7A8D', maxWidth: '460px', lineHeight: 1.7, marginBottom: '36px' }}>
@@ -202,11 +202,11 @@ export default function HomePage() {
               {coreValues.map((v, i) => (
                 <ScrollReveal key={v.title} delay={i * 0.08}>
                   <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                    <div style={{ flexShrink: 0, width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(185,28,44,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <CheckCircle style={{ width: '20px', height: '20px', color: '#B91C2C' }} />
+                    <div style={{ flexShrink: 0, width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(217,4,27,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <CheckCircle style={{ width: '20px', height: '20px', color: '#D9041B' }} />
                     </div>
                     <div>
-                      <p style={{ fontWeight: 700, fontSize: '15px', color: '#0F1B2D', marginBottom: '4px' }}>{v.title}</p>
+                      <p style={{ fontWeight: 700, fontSize: '15px', color: '#0A2D73', marginBottom: '4px' }}>{v.title}</p>
                       <p style={{ fontSize: '14px', color: '#6B7A8D', lineHeight: 1.6 }}>{v.desc}</p>
                     </div>
                   </div>
@@ -219,15 +219,15 @@ export default function HomePage() {
           <ScrollReveal delay={0.15}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { value: '15+', label: 'Years of Experience', accent: '#B91C2C' },
-                { value: '8', label: 'Core Service Lines', accent: '#1E3A5F' },
-                { value: '10+', label: 'Major Clients Served', accent: '#1E3A5F' },
-                { value: 'Pan-Africa', label: 'Coverage & Operations', accent: '#B91C2C' },
+                { value: '15+', label: 'Years of Experience', accent: '#D9041B' },
+                { value: '8', label: 'Core Service Lines', accent: '#0D3A8A' },
+                { value: '10+', label: 'Major Clients Served', accent: '#0D3A8A' },
+                { value: 'Pan-Africa', label: 'Coverage & Operations', accent: '#D9041B' },
               ].map((stat) => (
                 <div
                   key={stat.label}
                   style={{
-                    background: '#0F1B2D',
+                    background: '#0A2D73',
                     borderRadius: '16px',
                     padding: '28px 24px',
                     textAlign: 'center',
@@ -254,8 +254,8 @@ export default function HomePage() {
       <Section bg="gray" aria-label="Industries we serve">
         <ScrollReveal>
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-            <div style={{ width: '48px', height: '3px', background: '#B91C2C', borderRadius: '2px', margin: '0 auto 20px' }} />
-            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#0F1B2D', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
+            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#0A2D73', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               Industries We Serve
             </h2>
             <p style={{ fontSize: '16px', color: '#6B7A8D', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
@@ -277,15 +277,15 @@ export default function HomePage() {
                     padding: '32px 20px',
                     textAlign: 'center',
                     boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
-                    border: '1px solid #E8ECF1',
+                    border: '1px solid #E2E8F0',
                     cursor: 'pointer',
                     transition: 'all 0.3s',
                   }}
                 >
-                  <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: 'rgba(15,27,45,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 14px' }}>
-                    <Icon style={{ width: '24px', height: '24px', color: '#0F1B2D' }} />
+                  <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: 'rgba(10,45,115,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 14px' }}>
+                    <Icon style={{ width: '24px', height: '24px', color: '#0A2D73' }} />
                   </div>
-                  <p style={{ fontSize: '14px', fontWeight: 600, color: '#0F1B2D' }}>{ind.name}</p>
+                  <p style={{ fontSize: '14px', fontWeight: 600, color: '#0A2D73' }}>{ind.name}</p>
                 </motion.div>
               </ScrollReveal>
             );
@@ -297,8 +297,8 @@ export default function HomePage() {
       <Section bg="white" aria-label="Mission and vision">
         <ScrollReveal>
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-            <div style={{ width: '48px', height: '3px', background: '#B91C2C', borderRadius: '2px', margin: '0 auto 20px' }} />
-            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#0F1B2D', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
+            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#0A2D73', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               Driving Purpose
             </h2>
             <p style={{ fontSize: '16px', color: '#6B7A8D', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
@@ -309,11 +309,11 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <ScrollReveal>
-            <div style={{ background: '#FFFFFF', borderRadius: '16px', padding: '36px 32px', boxShadow: '0 4px 20px rgba(0,0,0,0.06)', borderLeft: '4px solid #1E3A5F', height: '100%' }}>
-              <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: 'rgba(30,58,95,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
-                <Target style={{ width: '24px', height: '24px', color: '#1E3A5F' }} />
+            <div style={{ background: '#FFFFFF', borderRadius: '16px', padding: '36px 32px', boxShadow: '0 4px 20px rgba(0,0,0,0.06)', borderLeft: '4px solid #0D3A8A', height: '100%' }}>
+              <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: 'rgba(13,58,138,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+                <Target style={{ width: '24px', height: '24px', color: '#0D3A8A' }} />
               </div>
-              <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#0F1B2D', marginBottom: '12px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>Our Vision</h3>
+              <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#0A2D73', marginBottom: '12px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>Our Vision</h3>
               <p style={{ fontSize: '15px', color: '#6B7A8D', lineHeight: 1.75, maxWidth: '480px' }}>
                 To become the number one trusted technology, procurement, and supply partner for delivering solutions across Africa.
               </p>
@@ -321,11 +321,11 @@ export default function HomePage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.15}>
-            <div style={{ background: '#FFFFFF', borderRadius: '16px', padding: '36px 32px', boxShadow: '0 4px 20px rgba(0,0,0,0.06)', borderLeft: '4px solid #B91C2C', height: '100%' }}>
-              <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: 'rgba(185,28,44,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
-                <Lightbulb style={{ width: '24px', height: '24px', color: '#B91C2C' }} />
+            <div style={{ background: '#FFFFFF', borderRadius: '16px', padding: '36px 32px', boxShadow: '0 4px 20px rgba(0,0,0,0.06)', borderLeft: '4px solid #D9041B', height: '100%' }}>
+              <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: 'rgba(217,4,27,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+                <Lightbulb style={{ width: '24px', height: '24px', color: '#D9041B' }} />
               </div>
-              <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#0F1B2D', marginBottom: '12px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>Our Mission</h3>
+              <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#0A2D73', marginBottom: '12px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>Our Mission</h3>
               <p style={{ fontSize: '15px', color: '#6B7A8D', lineHeight: 1.75, maxWidth: '480px' }}>
                 To provide strategic and technical value to our customers by designing, building, and maintaining cost-effective communication networks, power systems, and technology solutions.
               </p>
@@ -338,8 +338,8 @@ export default function HomePage() {
       <Section bg="gray" aria-label="Partners">
         <ScrollReveal>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <div style={{ width: '48px', height: '3px', background: '#B91C2C', borderRadius: '2px', margin: '0 auto 20px' }} />
-            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#0F1B2D', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
+            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#0A2D73', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               Trusted Partners
             </h2>
             <p style={{ fontSize: '16px', color: '#6B7A8D', lineHeight: 1.7 }}>
@@ -353,7 +353,7 @@ export default function HomePage() {
             <ScrollReveal key={p.id} delay={i * 0.04}>
               <div
                 style={{
-                  background: '#0F1B2D',
+                  background: '#0A2D73',
                   borderRadius: '10px',
                   padding: '16px 24px',
                   minWidth: '120px',
@@ -361,7 +361,7 @@ export default function HomePage() {
                   transition: 'transform 0.3s, box-shadow 0.3s',
                   cursor: 'default',
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(15,27,45,0.3)'; }}
+                onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(10,45,115,0.3)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = 'none'; }}
               >
                 <span style={{ color: '#fff', fontSize: '14px', fontWeight: 600, whiteSpace: 'nowrap' }}>{p.name}</span>
@@ -375,8 +375,8 @@ export default function HomePage() {
       <Section bg="white" aria-label="Testimonials">
         <ScrollReveal>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <div style={{ width: '48px', height: '3px', background: '#B91C2C', borderRadius: '2px', margin: '0 auto 20px' }} />
-            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#0F1B2D', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
+            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#0A2D73', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               What Our Clients Say
             </h2>
           </div>
@@ -384,7 +384,7 @@ export default function HomePage() {
 
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '24px' }}>
-            <Quote style={{ width: '40px', height: '40px', color: 'rgba(185,28,44,0.2)' }} />
+            <Quote style={{ width: '40px', height: '40px', color: 'rgba(217,4,27,0.2)' }} />
           </div>
 
           <div style={{ position: 'relative', minHeight: '200px' }}>
@@ -413,7 +413,7 @@ export default function HomePage() {
                   borderRadius: '50%',
                   border: 'none',
                   cursor: 'pointer',
-                  background: i === activeIndex ? '#B91C2C' : '#D1D7E0',
+                  background: i === activeIndex ? '#D9041B' : '#D1D7E0',
                   transform: i === activeIndex ? 'scale(1.15)' : 'scale(1)',
                   transition: 'all 0.3s',
                 }}
@@ -424,11 +424,11 @@ export default function HomePage() {
       </Section>
 
       {/* ═══════════════ 8. QUALITY & SAFETY ═══════════════ */}
-      <section style={{ background: '#0F1B2D' }}>
+      <section style={{ background: '#0A2D73' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 40px' }}>
           <ScrollReveal>
             <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-              <div style={{ width: '48px', height: '3px', background: '#B91C2C', borderRadius: '2px', margin: '0 auto 20px' }} />
+              <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
               <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#FFFFFF', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                 Quality & Safety Commitment
               </h2>
@@ -451,8 +451,8 @@ export default function HomePage() {
                     height: '100%',
                     backdropFilter: 'blur(8px)',
                   }}>
-                    <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: 'rgba(185,28,44,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
-                      <Icon style={{ width: '24px', height: '24px', color: '#B91C2C' }} />
+                    <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: 'rgba(217,4,27,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+                      <Icon style={{ width: '24px', height: '24px', color: '#D9041B' }} />
                     </div>
                     <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#FFFFFF', marginBottom: '10px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                       {card.title}
