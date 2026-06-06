@@ -92,7 +92,7 @@ export default function Navbar() {
           {/* ── Logo ── */}
           <Link href="/" aria-label="ICOM - Home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
             <Image
-              src="/images/icom-logo.png"
+              src="/images/Icom-logo.png"
               alt="ICOM Technical Support Limited"
               width={160}
               height={104}
