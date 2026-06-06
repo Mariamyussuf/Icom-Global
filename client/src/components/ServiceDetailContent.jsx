@@ -28,7 +28,7 @@ const iconMap = {
 function Section({ children, bg = '#FFFFFF' }) {
   return (
     <section style={{ backgroundColor: bg }}>
-      <div className="px-6 md:px-12 py-16 md:py-20" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <div className="px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto', paddingTop: '64px', paddingBottom: '64px' }}>
         {children}
       </div>
     </section>
@@ -59,7 +59,7 @@ export default function ServiceDetailContent({ service }) {
       {/* ═══════ HERO ═══════ */}
       <section style={{
         backgroundColor: '#0A2D73',
-        marginTop: '-80px',
+        marginTop: '-100px',
         paddingTop: '140px',
         paddingBottom: '60px',
         position: 'relative',
@@ -337,6 +337,7 @@ export default function ServiceDetailContent({ service }) {
         title={`Need ${service.title}?`}
         subtitle="Contact our team of experts to discuss your project requirements and get a tailored solution."
         buttonText="Request This Service"
+        buttonLink={`/contact?service=${encodeURIComponent(service.title)}`}
       />
     </>
   );

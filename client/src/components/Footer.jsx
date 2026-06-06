@@ -5,16 +5,16 @@ import Image from 'next/image';
 import { MapPin, Phone, Mail, Globe, ArrowRight } from 'lucide-react';
 
 const FacebookIcon = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
 );
 const TwitterIcon = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
 );
 const LinkedinIcon = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" /></svg>
 );
 const InstagramIcon = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
 );
 
 const quickLinks = [
@@ -65,7 +65,7 @@ export default function Footer() {
       </div>
 
       {/* ── Newsletter / CTA strip ── */}
-      <div className="px-6 md:px-12 pt-10" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
+      <div className="px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', paddingTop: '56px', paddingBottom: '24px' }}>
         <div 
           className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between"
           style={{
@@ -99,14 +99,14 @@ export default function Footer() {
       </div>
 
       {/* ── Main 4-column grid ── */}
-      <div className="px-6 md:px-12 py-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
+      <div className="px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', paddingTop: '32px', paddingBottom: '48px' }}>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 lg:gap-16">
 
           {/* Col 1: Brand */}
-          <div>
-            <Link href="/" aria-label="ICOM - Home" style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '16px' }}>
+          <div style={{ paddingTop: '8px' }}>
+            <Link href="/" aria-label="ICOM - Home" style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '20px' }}>
               <Image
-                src="/images/icom-logo-transparent.png"
+                src="/images/icom-logo.png"
                 alt="ICOM Technical Support Limited"
                 width={180}
                 height={120}

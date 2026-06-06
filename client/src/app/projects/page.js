@@ -29,8 +29,8 @@ export default function ProjectsPage() {
       {/* Hero Banner */}
       <section style={{
         backgroundColor: '#0A2D73',
-        marginTop: '-80px',
-        paddingTop: '160px',
+        marginTop: '-100px',
+        paddingTop: '180px',
         paddingBottom: '80px',
         position: 'relative',
         overflow: 'hidden',
@@ -57,7 +57,7 @@ export default function ProjectsPage() {
 
       {/* Filter + Grid */}
       <section style={{ backgroundColor: '#FFFFFF' }}>
-        <div className="px-6 md:px-12 py-16 md:py-20" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div className="px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto', paddingTop: '48px', paddingBottom: '64px' }}>
           {/* Filter Tabs */}
           <ScrollReveal>
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px', marginBottom: '48px' }}>

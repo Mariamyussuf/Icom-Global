@@ -34,17 +34,17 @@ const clients = [
 ];
 
 const clientLogos = {
-  Andrews: '/images/clients/andrews.png',
-  Ericsson: '/images/clients/ericsson.png',
-  Zain: '/images/clients/zain.png',
-  MTN: '/images/clients/mtn.png',
-  RTcom: '/images/clients/rtcom.png',
-  Starcomms: '/images/clients/starcomms.png',
-  Reltel: '/images/clients/reltel.png',
-  Mtel: '/images/clients/mtel.png',
-  Visafone: '/images/clients/visafone.png',
-  ZTE: '/images/clients/zte.png',
-  Huawei: '/images/clients/huawei.png',
+  Andrews: '/images/clients/andrews.svg',
+  Ericsson: '/images/clients/ericsson.svg',
+  Zain: '/images/clients/zain.svg',
+  MTN: '/images/clients/mtn.svg',
+  RTcom: '/images/clients/rtcom.svg',
+  Starcomms: '/images/clients/starcomms.svg',
+  Reltel: '/images/clients/reltel.svg',
+  Mtel: '/images/clients/mtel.svg',
+  Visafone: '/images/clients/visafone.svg',
+  ZTE: '/images/clients/zte.svg',
+  Huawei: '/images/clients/huawei.svg',
 };
 
 /* ─── Reusable section wrapper ─── */
@@ -81,8 +81,8 @@ export default function AboutPage() {
       {/* ═══════ HERO ═══════ */}
       <section style={{
         backgroundColor: '#0A2D73',
-        marginTop: '-80px',
-        paddingTop: '160px',
+        marginTop: '-100px',
+        paddingTop: '180px',
         paddingBottom: '80px',
         position: 'relative',
         overflow: 'hidden',
@@ -578,20 +578,15 @@ export default function AboutPage() {
                     cursor: 'default',
                   }}
                 >
-                  {clientLogos[client] ? (
-                    <img
-                      src={clientLogos[client]}
-                      alt={`${client} logo`}
-                      style={{
-                        maxWidth: '85%',
-                        maxHeight: '75%',
-                        objectFit: 'contain',
-                        display: 'block',
-                      }}
-                    />
-                  ) : (
-                    <span style={{ fontWeight: 700, color: '#0A2D73', fontSize: '14px' }}>{client}</span>
-                  )}
+                  <span style={{ 
+                    fontWeight: 700, 
+                    color: '#0A2D73', 
+                    fontSize: '18px', 
+                    fontFamily: "var(--font-heading, 'DM Sans', sans-serif)",
+                    letterSpacing: '-0.3px'
+                  }}>
+                    {client}
+                  </span>
                 </motion.div>
               </ScrollReveal>
             ))}

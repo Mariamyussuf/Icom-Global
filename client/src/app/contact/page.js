@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {
   MapPin, Phone, Mail, Globe, Send, CheckCircle,
@@ -33,6 +33,19 @@ export default function ContactPage() {
     name: '', company: '', email: '', phone: '', subject: '', message: '', website: '',
   });
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const service = params.get('service');
+      if (service) {
+        setFormData((prev) => ({
+          ...prev,
+          subject: `Request for ${service}`,
+        }));
+      }
+    }
+  }, []);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
 
@@ -74,8 +87,8 @@ export default function ContactPage() {
       {/* Hero Banner */}
       <section style={{
         backgroundColor: '#0A2D73',
-        marginTop: '-80px',
-        paddingTop: '160px',
+        marginTop: '-100px',
+        paddingTop: '180px',
         paddingBottom: '80px',
         position: 'relative',
         overflow: 'hidden',
@@ -102,7 +115,7 @@ export default function ContactPage() {
 
       {/* Contact Form + Info */}
       <section style={{ backgroundColor: '#FFFFFF' }}>
-        <div className="px-6 md:px-12 py-16 md:py-20" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div className="px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto', paddingTop: '64px', paddingBottom: '80px' }}>
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Form */}
             <div className="lg:col-span-3">

@@ -32,6 +32,8 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const pathname = usePathname();
+  const isHome = pathname === '/';
+  const isNavbarDark = !isHome || scrolled;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -70,8 +72,8 @@ export default function Navbar() {
           display: 'flex',
           alignItems: 'center',
           transition: 'background-color 0.3s, box-shadow 0.3s',
-          backgroundColor: scrolled ? '#0A2D73' : 'transparent',
-          boxShadow: scrolled ? '0 4px 20px rgba(0,0,0,0.15)' : 'none',
+          backgroundColor: isNavbarDark ? '#0A2D73' : 'transparent',
+          boxShadow: isNavbarDark ? '0 4px 20px rgba(0,0,0,0.15)' : 'none',
         }}
         role="navigation"
         aria-label="Main navigation"
@@ -90,12 +92,12 @@ export default function Navbar() {
           {/* ── Logo ── */}
           <Link href="/" aria-label="ICOM - Home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
             <Image
-              src="/images/icom-logo-transparent.png"
+              src="/images/icom-logo.png"
               alt="ICOM Technical Support Limited"
               width={160}
               height={104}
               className="h-16 lg:h-20 w-auto"
-              style={{ objectFit: 'contain', display: 'block', filter: scrolled ? 'drop-shadow(0 0 1px rgba(255,255,255,0.4))' : 'none' }}
+              style={{ objectFit: 'contain', display: 'block', filter: isNavbarDark ? 'drop-shadow(0 0 1px rgba(255,255,255,0.4))' : 'none' }}
               priority
             />
           </Link>
@@ -119,12 +121,12 @@ export default function Navbar() {
                     borderRadius: '8px',
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: isActive(link.href) ? '#D9041B' : (scrolled ? 'rgba(255,255,255,0.75)' : '#0A2D73'),
+                    color: isActive(link.href) ? '#D9041B' : (isNavbarDark ? 'rgba(255,255,255,0.75)' : '#0A2D73'),
                     textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
-                  onMouseEnter={(e) => { if (!isActive(link.href)) e.currentTarget.style.color = scrolled ? '#FFFFFF' : '#D9041B'; }}
-                  onMouseLeave={(e) => { if (!isActive(link.href)) e.currentTarget.style.color = scrolled ? 'rgba(255,255,255,0.75)' : '#0A2D73'; }}
+                  onMouseEnter={(e) => { if (!isActive(link.href)) e.currentTarget.style.color = isNavbarDark ? '#FFFFFF' : '#D9041B'; }}
+                  onMouseLeave={(e) => { if (!isActive(link.href)) e.currentTarget.style.color = isNavbarDark ? 'rgba(255,255,255,0.75)' : '#0A2D73'; }}
                 >
                   {link.name}
                   {link.hasDropdown && (
@@ -194,7 +196,7 @@ export default function Navbar() {
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="lg:hidden p-2 transition-colors focus:outline-none cursor-pointer"
-              style={{ color: scrolled ? 'rgba(255,255,255,0.75)' : '#0A2D73' }}
+              style={{ color: isNavbarDark ? 'rgba(255,255,255,0.75)' : '#0A2D73' }}
               aria-label="Toggle menu"
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}

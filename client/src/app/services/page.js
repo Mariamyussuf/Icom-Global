@@ -15,8 +15,8 @@ export default function ServicesPage() {
       {/* Hero Banner */}
       <section style={{
         backgroundColor: '#0A2D73',
-        marginTop: '-80px',
-        paddingTop: '160px',
+        marginTop: '-100px',
+        paddingTop: '180px',
         paddingBottom: '80px',
         position: 'relative',
         overflow: 'hidden',

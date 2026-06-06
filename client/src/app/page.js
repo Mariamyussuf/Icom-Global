@@ -108,10 +108,14 @@ function Section({ children, bg = 'white', className = '', ...props }) {
       {...props}
     >
       <div
-        className="px-6 md:px-10 py-16 md:py-20"
+        className="px-6 md:px-10"
         style={{
           maxWidth: '1200px',
           margin: '0 auto',
+          paddingTop: '80px',
+          paddingBottom: '80px',
+          paddingLeft: '24px',
+          paddingRight: '24px',
         }}
       >
         {children}
