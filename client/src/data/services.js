@@ -40,7 +40,8 @@ export const services = [
     division: 'WNS',
     images: [
       '/images/services/telecommunications_1.jpg',
-      '/images/services/telecommunications_2.jpg'
+      '/images/services/telecommunications_2.jpg',
+      '/images/services/telecommunications_3.jpg'
     ],
     title: 'Radio Network Design & Planning',
     icon: 'ClipboardList',
