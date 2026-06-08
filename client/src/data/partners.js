@@ -39,4 +39,9 @@ export const partners = [
     name: 'Reltel',
     logo: 'https://placehold.co/200x80/F4F6F9/0B1F3A?text=Reltel',
   },
+  {
+    id: 9,
+    name: 'Fiber One',
+    logo: 'https://placehold.co/200x80/F4F6F9/0B1F3A?text=Fiber+One',
+  },
 ];
