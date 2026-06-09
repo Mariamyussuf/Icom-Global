@@ -29,6 +29,7 @@ import ServiceCard from '@/components/ServiceCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import CTABanner from '@/components/CTABanner';
 import Hero from '@/components/Hero';
+import ServiceImageMarquee from '@/components/ServiceImageMarquee';
 
 import { services } from '@/data/services';
 import { testimonials } from '@/data/testimonials';
@@ -139,6 +140,9 @@ export default function HomePage() {
     <>
       {/* ═══════════════ 1. HERO ═══════════════ */}
       <Hero />
+
+      {/* ═══════════════ 1b. SERVICE IMAGE SHOWCASE ═══════════════ */}
+      <ServiceImageMarquee />
 
       {/* ═══════════════ 2. CORE SERVICES ═══════════════ */}
       <Section bg="gray" aria-label="Core services">
