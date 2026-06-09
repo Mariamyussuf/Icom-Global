@@ -4,8 +4,8 @@ export const services = [
     slug: 'rf-drive-testing',
     division: 'WNS',
     images: [
-      '/images/services/drive_testing_handsets.jpg',
-      '/images/services/field_software_kit.jpg'
+      '/images/services/telecommunications_1.jpg',
+      '/images/services/telecommunications_2.jpg'
     ],
     title: 'RF Drive Testing, Competitive Benchmarking & Optimization',
     icon: 'Radio',
@@ -40,7 +40,7 @@ export const services = [
     division: 'WNS',
     images: [
       '/images/services/telecommunications_3.jpg',
-      '/images/services/field_software_kit.jpg',
+      '/images/services/telecommunications_1.jpg',
       '/images/services/telecommunications_2.jpg'
     ],
     title: 'Radio Network Design & Planning',
@@ -71,8 +71,8 @@ export const services = [
     slug: 'bss-equipment-installation',
     division: 'WNS',
     images: [
-      '/images/services/rack_assembly.jpg',
-      '/images/services/cable_drops.jpg'
+      '/images/services/it-solutions_1.jpg',
+      '/images/services/it-solutions_2.jpg'
     ],
     title: 'BSS Equipment Installation',
     icon: 'Plug',
@@ -104,8 +104,8 @@ export const services = [
     slug: 'civil-works',
     division: 'WNS',
     images: [
-      '/images/services/foundation_pouring.jpg',
-      '/images/services/compound_render.jpg'
+      '/images/services/electrical-infrastructure_1.jpg',
+      '/images/services/electrical-infrastructure_2.jpg'
     ],
     title: 'Civil Works',
     icon: 'Package',
@@ -136,7 +136,7 @@ export const services = [
     slug: 'transmission-access-planning',
     division: 'WNS',
     images: [
-      '/images/services/dish_assembly_grid.jpg',
+      '/images/services/telecommunications_2.jpg',
       '/images/services/telecommunications_1.jpg'
     ],
     title: 'Transmission / Access Network Planning & Implementation',
@@ -202,8 +202,8 @@ export const services = [
     slug: 'vsat-transmission',
     division: 'WNS',
     images: [
-      '/images/services/satellite_field.jpg',
-      '/images/services/wall_mounted_dish.jpg'
+      '/images/services/procurement_1.jpg',
+      '/images/services/procurement_2.jpg'
     ],
     title: 'VSAT Transmission',
     icon: 'Radio',
@@ -230,8 +230,8 @@ export const services = [
     slug: 'transmission-network-optimization',
     division: 'WNS',
     images: [
-      '/images/services/wall_mounted_dish.jpg',
-      '/images/services/telecommunications_2.jpg'
+      '/images/services/telecommunications_1.jpg',
+      '/images/services/telecommunications_3.jpg'
     ],
     title: 'Transmission Network Optimization and Sites Audit',
     icon: 'Radio',
@@ -258,7 +258,7 @@ export const services = [
     slug: 'network-operations-maintenance',
     division: 'WNS',
     images: [
-      '/images/services/transformer_station.jpg',
+      '/images/services/generator-services_1.jpg',
       '/images/services/generator-services_2.jpg'
     ],
     title: 'Network Operations & Maintenance (O&M)',
@@ -289,7 +289,7 @@ export const services = [
     slug: 'specialized-infrastructure-solutions',
     division: 'WNS',
     images: [
-      '/images/services/line_enclosures.jpg',
+      '/images/services/solar-power_1.jpg',
       '/images/services/solar-power_2.jpg'
     ],
     title: 'Specialized & Hardware Infrastructure Solutions',
@@ -359,8 +359,8 @@ export const services = [
     slug: 'repeater-systems-solutions',
     division: 'ENS',
     images: [
-      '/images/services/satellite_splicing.jpg',
-      '/images/services/procurement_2.jpg'
+      '/images/services/procurement_2.jpg',
+      '/images/services/procurement_1.jpg'
     ],
     title: 'Repeater Systems Solutions',
     icon: 'Radio',
