@@ -22,6 +22,22 @@
   --font-body: 'Inter', sans-serif;
 }
 
+:root {
+  --nav-height: 100px;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --nav-height: 80px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --nav-height: 72px;
+  }
+}
+
 /* ─── Reset ─── */
 * {
   margin: 0;
@@ -31,6 +47,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -41,11 +58,14 @@ body {
   background: var(--color-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
 }
 
-/* ─── Navbar offset — push all content below the fixed 80px navbar ─── */
+/* ─── Navbar offset — push content cleanly below fixed navbar ─── */
 main {
-  padding-top: 80px;
+  padding-top: var(--nav-height);
 }
 
 /* ─── Animated grid pattern for hero ─── */

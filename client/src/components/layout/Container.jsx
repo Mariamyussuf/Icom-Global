@@ -4,10 +4,8 @@ export default function Container({ children, className = '' }) {
       style={{
         maxWidth: '1200px',
         margin: '0 auto',
-        paddingLeft: '48px',
-        paddingRight: '48px',
       }}
-      className={className}
+      className={`px-4 sm:px-6 md:px-12 ${className}`}
     >
       {children}
     </div>

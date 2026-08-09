@@ -87,9 +87,9 @@ export default function ContactPage() {
       {/* Hero Banner */}
       <section style={{
         backgroundColor: '#0A2D73',
-        marginTop: '-100px',
-        paddingTop: '180px',
-        paddingBottom: '80px',
+        marginTop: 'calc(-1 * var(--nav-height, 100px))',
+        paddingTop: 'calc(var(--nav-height, 100px) + 40px)',
+        paddingBottom: '60px',
         position: 'relative',
         overflow: 'hidden',
       }}>
@@ -98,7 +98,7 @@ export default function ContactPage() {
           <div style={{ position: 'absolute', bottom: '25%', left: '33%', width: '192px', height: '192px', border: '1px solid white', borderRadius: '50%' }} />
         </div>
 
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px', position: 'relative', textAlign: 'center' }}>
+        <div className="px-4 sm:px-6 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', textAlign: 'center' }}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.15)', color: '#D9041B', fontSize: '14px', fontWeight: 600, padding: '8px 20px', borderRadius: '999px', marginBottom: '24px' }}>
               Contact Us
@@ -115,7 +115,7 @@ export default function ContactPage() {
 
       {/* Contact Form + Info */}
       <section style={{ backgroundColor: '#FFFFFF' }}>
-        <div className="px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto', paddingTop: '64px', paddingBottom: '80px' }}>
+        <div className="px-4 sm:px-6 lg:px-12 py-12 md:py-20" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Form */}
             <div className="lg:col-span-3">
@@ -210,6 +210,7 @@ export default function ContactPage() {
                       cursor: loading ? 'not-allowed' : 'pointer',
                       transition: 'background 0.3s',
                       boxShadow: '0 4px 16px rgba(217,4,27,0.3)',
+                      minHeight: '48px',
                     }}>
                     {loading ? (<><Loader2 style={{ width: '20px', height: '20px', animation: 'spin 1s linear infinite' }} /> Sending...</>)
                       : (<><Send style={{ width: '20px', height: '20px' }} /> Send Message</>)}
@@ -269,8 +270,7 @@ export default function ContactPage() {
       <section style={{ backgroundColor: '#F5F7FA' }}>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7272648753387!2d3.4206!3d6.4281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf53280e7648d%3A0x4d01e5de6b847fe8!2sVictoria%20Island%2C%20Lagos!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng"
-          width="100%"
-          height="450"
+          className="w-full h-[320px] sm:h-[400px] md:h-[450px]"
           style={{ border: 0, display: 'block' }}
           allowFullScreen=""
           loading="lazy"

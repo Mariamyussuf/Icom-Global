@@ -28,7 +28,7 @@ const iconMap = {
 function Section({ children, bg = '#FFFFFF' }) {
   return (
     <section style={{ backgroundColor: bg }}>
-      <div className="px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto', paddingTop: '64px', paddingBottom: '64px' }}>
+      <div className="px-4 sm:px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto', paddingTop: '56px', paddingBottom: '56px' }}>
         {children}
       </div>
     </section>
@@ -37,7 +37,7 @@ function Section({ children, bg = '#FFFFFF' }) {
 
 function Heading({ title, subtitle }) {
   return (
-    <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+    <div style={{ textAlign: 'center', marginBottom: '40px' }}>
       <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
       <h2 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 700, color: '#0A2D73', marginBottom: subtitle ? '12px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
         {title}
@@ -59,9 +59,9 @@ export default function ServiceDetailContent({ service }) {
       {/* ═══════ HERO ═══════ */}
       <section style={{
         backgroundColor: '#0A2D73',
-        marginTop: '-100px',
-        paddingTop: '140px',
-        paddingBottom: '60px',
+        marginTop: 'calc(-1 * var(--nav-height, 100px))',
+        paddingTop: 'calc(var(--nav-height, 100px) + 32px)',
+        paddingBottom: '56px',
         position: 'relative',
         overflow: 'hidden',
       }}>
@@ -70,33 +70,33 @@ export default function ServiceDetailContent({ service }) {
           <div style={{ position: 'absolute', bottom: '25%', left: '33%', width: '192px', height: '192px', border: '1px solid white', borderRadius: '50%' }} />
         </div>
 
-        <div className="px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
+        <div className="px-4 sm:px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
           {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', color: 'rgba(255,255,255,0.45)', marginBottom: '28px' }}>
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm mb-6" style={{ color: 'rgba(255,255,255,0.45)' }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none', transition: 'color 0.2s' }}
               onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}>Home</Link>
-            <ChevronRight style={{ width: '14px', height: '14px' }} />
+            <ChevronRight style={{ width: '14px', height: '14px', flexShrink: 0 }} />
             <Link href="/services" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none', transition: 'color 0.2s' }}
               onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}>Services</Link>
-            <ChevronRight style={{ width: '14px', height: '14px' }} />
-            <span style={{ color: '#D9041B' }}>{service.title}</span>
+            <ChevronRight style={{ width: '14px', height: '14px', flexShrink: 0 }} />
+            <span style={{ color: '#D9041B', fontWeight: 500 }}>{service.title}</span>
           </nav>
 
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
+            className="flex flex-col sm:flex-row gap-5 items-start sm:items-center">
             <div style={{
-              width: '72px', height: '72px', background: 'rgba(217,4,27,0.15)', borderRadius: '16px',
+              width: '64px', height: '64px', background: 'rgba(217,4,27,0.15)', borderRadius: '16px',
               display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
             }}>
-              <ServiceIcon style={{ width: '36px', height: '36px', color: '#D9041B' }} />
+              <ServiceIcon style={{ width: '32px', height: '32px', color: '#D9041B' }} />
             </div>
             <div>
-              <h1 style={{ fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 700, color: '#FFFFFF', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", marginBottom: '6px' }}>
+              <h1 style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', fontWeight: 700, color: '#FFFFFF', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", marginBottom: '6px' }}>
                 {service.title}
               </h1>
-              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>{service.shortDesc}</p>
+              <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.6 }}>{service.shortDesc}</p>
             </div>
           </motion.div>
         </div>
@@ -104,10 +104,10 @@ export default function ServiceDetailContent({ service }) {
 
       {/* ═══════ OVERVIEW ═══════ */}
       <Section bg="#FFFFFF">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
           <div className="lg:col-span-3">
             <ScrollReveal>
-              <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#0A2D73', marginBottom: '24px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+              <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#0A2D73', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                 Overview
               </h2>
             </ScrollReveal>
@@ -131,7 +131,7 @@ export default function ServiceDetailContent({ service }) {
                   boxShadow: '0 12px 32px rgba(0,0,0,0.06)',
                   border: '1px solid #E2E8F0',
                   position: 'relative',
-                  height: '320px',
+                  height: 'clamp(220px, 35vh, 320px)',
                   width: '100%',
                 }}>
                   <img 
@@ -153,6 +153,7 @@ export default function ServiceDetailContent({ service }) {
                       }}
                       onMouseEnter={(e) => (e.currentTarget.style.background = '#D9041B')}
                       onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(10,45,115,0.65)')}
+                      aria-label="Previous image"
                     >
                       &#10094;
                     </button>
@@ -171,6 +172,7 @@ export default function ServiceDetailContent({ service }) {
                       }}
                       onMouseEnter={(e) => (e.currentTarget.style.background = '#D9041B')}
                       onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(10,45,115,0.65)')}
+                      aria-label="Next image"
                     >
                       &#10095;
                     </button>
@@ -207,7 +209,7 @@ export default function ServiceDetailContent({ service }) {
       {service.subServices && service.subServices.length > 0 && (
         <Section bg="#F5F7FA">
           <Heading title="What We Offer" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
             {service.subServices.map((sub, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <div style={{
@@ -216,7 +218,7 @@ export default function ServiceDetailContent({ service }) {
                   gap: '14px',
                   background: '#FFFFFF',
                   borderRadius: '12px',
-                  padding: '24px',
+                  padding: '20px',
                   boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
                   border: '1px solid #E2E8F0',
                   transition: 'box-shadow 0.3s, transform 0.3s',
@@ -238,14 +240,14 @@ export default function ServiceDetailContent({ service }) {
       {service.benefits && service.benefits.length > 0 && (
         <Section bg="#FFFFFF">
           <Heading title="Key Benefits" />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {service.benefits.map((benefit, i) => {
               const BenefitIcon = iconMap[benefit.icon] || CheckCircle;
               return (
                 <ScrollReveal key={i} delay={i * 0.1}>
                   <div style={{
                     textAlign: 'center',
-                    padding: '28px 20px',
+                    padding: '24px 18px',
                     borderRadius: '16px',
                     background: '#F5F7FA',
                     height: '100%',
@@ -255,10 +257,10 @@ export default function ServiceDetailContent({ service }) {
                     onMouseLeave={(e) => { e.currentTarget.style.background = '#F5F7FA'; e.currentTarget.style.boxShadow = 'none'; }}
                   >
                     <div style={{
-                      width: '56px', height: '56px', background: 'rgba(217,4,27,0.1)', borderRadius: '14px',
+                      width: '52px', height: '52px', background: 'rgba(217,4,27,0.1)', borderRadius: '14px',
                       display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px',
                     }}>
-                      <BenefitIcon style={{ width: '28px', height: '28px', color: '#D9041B' }} />
+                      <BenefitIcon style={{ width: '26px', height: '26px', color: '#D9041B' }} />
                     </div>
                     <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0A2D73', marginBottom: '8px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                       {benefit.title}

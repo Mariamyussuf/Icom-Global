@@ -51,7 +51,7 @@ const clientLogos = {
 function Section({ children, bg = '#FFFFFF' }) {
   return (
     <section style={{ backgroundColor: bg }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 40px' }}>
+      <div className="px-4 sm:px-6 lg:px-12 py-12 md:py-20" style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {children}
       </div>
     </section>
@@ -61,7 +61,7 @@ function Section({ children, bg = '#FFFFFF' }) {
 /* ─── Section heading ─── */
 function Heading({ title, subtitle, light = false, centered = true }) {
   return (
-    <div style={{ textAlign: centered ? 'center' : 'left', marginBottom: '56px' }}>
+    <div style={{ textAlign: centered ? 'center' : 'left', marginBottom: '40px' }}>
       <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: centered ? '0 auto 20px' : '0 0 20px', }} />
       <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: light ? '#fff' : '#0A2D73', marginBottom: subtitle ? '14px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
         {title}
@@ -81,9 +81,9 @@ export default function AboutPage() {
       {/* ═══════ HERO ═══════ */}
       <section style={{
         backgroundColor: '#0A2D73',
-        marginTop: '-100px',
-        paddingTop: '180px',
-        paddingBottom: '80px',
+        marginTop: 'calc(-1 * var(--nav-height, 100px))',
+        paddingTop: 'calc(var(--nav-height, 100px) + 40px)',
+        paddingBottom: '60px',
         position: 'relative',
         overflow: 'hidden',
       }}>
@@ -93,7 +93,7 @@ export default function AboutPage() {
           <div style={{ position: 'absolute', bottom: '25%', left: '33%', width: '192px', height: '192px', border: '1px solid white', borderRadius: '50%' }} />
         </div>
 
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px', position: 'relative', textAlign: 'center' }}>
+        <div className="px-4 sm:px-6 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', textAlign: 'center' }}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span style={{
               display: 'inline-block',

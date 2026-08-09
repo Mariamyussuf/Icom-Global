@@ -68,18 +68,18 @@ export default function Navbar() {
           left: 0,
           right: 0,
           zIndex: 50,
-          height: '100px',
+          height: 'var(--nav-height)',
           display: 'flex',
           alignItems: 'center',
           transition: 'background-color 0.3s, box-shadow 0.3s',
-          backgroundColor: isNavbarDark ? '#0A2D73' : 'transparent',
+          backgroundColor: isNavbarDark || mobileOpen ? '#0A2D73' : 'transparent',
           boxShadow: isNavbarDark ? '0 4px 20px rgba(0,0,0,0.15)' : 'none',
         }}
         role="navigation"
         aria-label="Main navigation"
       >
         <div 
-          className="px-6 lg:px-12"
+          className="px-4 sm:px-6 lg:px-12"
           style={{
             maxWidth: '1200px',
             margin: '0 auto',
@@ -96,8 +96,8 @@ export default function Navbar() {
               alt="ICOM Technical Support Limited"
               width={160}
               height={104}
-              className="h-16 lg:h-20 w-auto"
-              style={{ objectFit: 'contain', display: 'block', filter: isNavbarDark ? 'drop-shadow(0 0 1px rgba(255,255,255,0.4))' : 'none' }}
+              className="h-12 sm:h-16 lg:h-20 w-auto"
+              style={{ objectFit: 'contain', display: 'block', filter: isNavbarDark || mobileOpen ? 'drop-shadow(0 0 1px rgba(255,255,255,0.4))' : 'none' }}
               priority
             />
           </Link>
@@ -191,58 +191,159 @@ export default function Navbar() {
 
           {/* ── Mobile Toggle ── */}
           <div className="flex items-center gap-4">
-
             {/* Mobile Hamburger Trigger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="lg:hidden p-2 transition-colors focus:outline-none cursor-pointer"
-              style={{ color: isNavbarDark ? 'rgba(255,255,255,0.75)' : '#0A2D73' }}
+              style={{
+                color: isNavbarDark || mobileOpen ? '#FFFFFF' : '#0A2D73',
+                minWidth: '44px',
+                minHeight: '44px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderRadius: '8px',
+              }}
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
           </div>
         </div>
       </motion.nav>
 
-      {/* Mobile Menu — keeping it simple since this is desktop-first */}
+      {/* Mobile Menu Drawer */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0, transition: { duration: 0.3 } }}
-            exit={{ opacity: 0, x: '100%', transition: { duration: 0.25 } }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0, transition: { duration: 0.25 } }}
+            exit={{ opacity: 0, y: -20, transition: { duration: 0.2 } }}
             style={{
               position: 'fixed',
-              inset: 0,
-              zIndex: 40,
+              top: 'var(--nav-height)',
+              left: 0,
+              right: 0,
+              bottom: 0,
+              zIndex: 45,
               background: '#0A2D73',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
+              borderTop: '1px solid rgba(255,255,255,0.1)',
+              overflowY: 'auto',
+              WebkitOverflowScrolling: 'touch',
+              padding: '24px 20px 40px',
             }}
           >
-            <nav style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', width: '100%', maxWidth: '320px', padding: '0 24px' }}>
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  style={{
-                    display: 'block',
-                    textAlign: 'center',
-                    padding: '12px',
-                    fontSize: '24px',
-                    fontWeight: 600,
-                    color: isActive(link.href) ? '#D9041B' : '#FFFFFF',
-                    textDecoration: 'none',
-                    fontFamily: "var(--font-heading, 'DM Sans', sans-serif)",
-                  }}
-                >
-                  {link.name}
-                </Link>
-              ))}
+            <nav style={{ display: 'flex', flexDirection: 'column', gap: '4px', width: '100%', maxWidth: '440px', margin: '0 auto' }}>
+              {navLinks.map((link) => {
+                if (link.hasDropdown) {
+                  return (
+                    <div key={link.name} style={{ width: '100%' }}>
+                      <div
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          padding: '12px 16px',
+                          fontSize: '20px',
+                          fontWeight: 600,
+                          color: isActive(link.href) ? '#D9041B' : '#FFFFFF',
+                          fontFamily: "var(--font-heading, 'DM Sans', sans-serif)",
+                          cursor: 'pointer',
+                          borderRadius: '8px',
+                        }}
+                        onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                      >
+                        <Link
+                          href={link.href}
+                          onClick={(e) => e.stopPropagation()}
+                          style={{ color: 'inherit', textDecoration: 'none' }}
+                        >
+                          {link.name}
+                        </Link>
+                        <button
+                          type="button"
+                          style={{
+                            background: 'transparent',
+                            border: 'none',
+                            color: '#FFFFFF',
+                            padding: '4px',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                          }}
+                          aria-label="Toggle services submenu"
+                        >
+                          <ChevronDown
+                            size={20}
+                            style={{
+                              transition: 'transform 0.25s',
+                              transform: mobileServicesOpen ? 'rotate(180deg)' : 'rotate(0)',
+                            }}
+                          />
+                        </button>
+                      </div>
 
+                      {/* Mobile Services Accordion */}
+                      <AnimatePresence>
+                        {mobileServicesOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2 }}
+                            style={{
+                              overflow: 'hidden',
+                              paddingLeft: '16px',
+                              borderLeft: '2px solid rgba(217,4,27,0.4)',
+                              margin: '4px 0 12px 16px',
+                              display: 'flex',
+                              flexDirection: 'column',
+                              gap: '2px',
+                            }}
+                          >
+                            {serviceLinks.map((s) => (
+                              <Link
+                                key={s.href}
+                                href={s.href}
+                                style={{
+                                  display: 'block',
+                                  padding: '10px 12px',
+                                  fontSize: '14px',
+                                  color: isActive(s.href) ? '#D9041B' : 'rgba(255,255,255,0.75)',
+                                  textDecoration: 'none',
+                                  borderRadius: '6px',
+                                  transition: 'color 0.2s',
+                                }}
+                              >
+                                {s.name}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    style={{
+                      display: 'block',
+                      padding: '12px 16px',
+                      fontSize: '20px',
+                      fontWeight: 600,
+                      color: isActive(link.href) ? '#D9041B' : '#FFFFFF',
+                      textDecoration: 'none',
+                      fontFamily: "var(--font-heading, 'DM Sans', sans-serif)",
+                      borderRadius: '8px',
+                    }}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
             </nav>
           </motion.div>
         )}

@@ -43,9 +43,9 @@ export default function Hero() {
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        marginTop: '-100px',
-        paddingTop: '140px',
-        paddingBottom: '40px',
+        marginTop: 'calc(-1 * var(--nav-height, 100px))',
+        paddingTop: 'calc(var(--nav-height, 100px) + 32px)',
+        paddingBottom: '48px',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -75,7 +75,7 @@ export default function Hero() {
 
       {/* Main two-column grid */}
       <div 
-        className="px-6 md:px-12"
+        className="px-4 sm:px-6 lg:px-12"
         style={{
           position: 'relative',
           zIndex: 10,
@@ -85,7 +85,7 @@ export default function Hero() {
         }}
       >
         <div 
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
         >
 
           {/* ── LEFT COLUMN ── */}
@@ -103,7 +103,7 @@ export default function Hero() {
                 gap: '8px',
                 borderRadius: '999px',
                 padding: '6px 16px',
-                marginBottom: '28px',
+                marginBottom: '24px',
                 alignSelf: 'flex-start',
                 border: '1px solid rgba(217, 4, 27, 0.25)',
                 background: 'rgba(217, 4, 27, 0.06)',
@@ -116,15 +116,15 @@ export default function Hero() {
             </div>
 
             {/* Accent bar */}
-            <div style={{ width: '40px', height: '3px', background: '#D9041B', borderRadius: '2px', marginBottom: '24px' }} />
+            <div style={{ width: '40px', height: '3px', background: '#D9041B', borderRadius: '2px', marginBottom: '20px' }} />
 
             {/* Headline */}
             <h1
               style={{
                 fontFamily: "var(--font-sora, 'DM Sans', sans-serif)",
-                fontSize: 'clamp(28px, 3.5vw, 44px)',
+                fontSize: 'clamp(28px, 4vw, 44px)',
                 fontWeight: 800,
-                letterSpacing: '-1px',
+                letterSpacing: '-0.5px',
                 lineHeight: 1.15,
                 marginBottom: '20px',
               }}
@@ -155,6 +155,7 @@ export default function Hero() {
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
+                  justifyContent: 'center',
                   gap: '8px',
                   borderRadius: '8px',
                   padding: '14px 28px',
@@ -165,6 +166,7 @@ export default function Hero() {
                   textDecoration: 'none',
                   transition: 'all 0.3s',
                   boxShadow: '0 4px 14px rgba(217, 4, 27, 0.25)',
+                  minHeight: '46px',
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#B50316'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#D9041B'; e.currentTarget.style.transform = 'translateY(0)'; }}
@@ -177,6 +179,7 @@ export default function Hero() {
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
+                  justifyContent: 'center',
                   gap: '8px',
                   borderRadius: '8px',
                   padding: '14px 28px',
@@ -187,6 +190,7 @@ export default function Hero() {
                   border: '1.5px solid rgba(10,45,115,0.25)',
                   background: 'transparent',
                   transition: 'all 0.3s',
+                  minHeight: '46px',
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(10,45,115,0.06)'; e.currentTarget.style.borderColor = '#0A2D73'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(10,45,115,0.25)'; }}
@@ -211,7 +215,7 @@ export default function Hero() {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '16px',
-                    padding: '20px 24px',
+                    padding: '18px 22px',
                     background: '#0A2D73',
                     border: '1px solid rgba(10,45,115,0.15)',
                     borderRadius: '10px',
@@ -262,12 +266,12 @@ export default function Hero() {
 
       {/* ── Scroll indicator ── */}
       <motion.div
+        className="hidden md:flex"
         style={{
           position: 'absolute',
-          bottom: '24px',
+          bottom: '16px',
           left: '50%',
           transform: 'translateX(-50%)',
-          display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           gap: '4px',

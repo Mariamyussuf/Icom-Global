@@ -65,13 +65,12 @@ export default function Footer() {
       </div>
 
       {/* ── Newsletter / CTA strip ── */}
-      <div className="px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', paddingTop: '56px', paddingBottom: '24px' }}>
+      <div className="px-4 sm:px-6 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', paddingTop: '48px', paddingBottom: '24px' }}>
         <div 
-          className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between"
+          className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between p-6 sm:p-8"
           style={{
             background: 'rgba(217,4,27,0.08)',
             borderRadius: '14px',
-            padding: '32px 36px',
             border: '1px solid rgba(255,255,255,0.06)',
           }}
         >
@@ -89,6 +88,7 @@ export default function Footer() {
             fontWeight: 600, fontSize: '14px', borderRadius: '8px',
             textDecoration: 'none', transition: 'all 0.3s', flexShrink: 0,
             boxShadow: '0 4px 12px rgba(217,4,27,0.3)',
+            minHeight: '44px',
           }}
             onMouseEnter={(e) => { e.currentTarget.style.background = '#B50316'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
             onMouseLeave={(e) => { e.currentTarget.style.background = '#D9041B'; e.currentTarget.style.transform = 'translateY(0)'; }}
@@ -99,8 +99,8 @@ export default function Footer() {
       </div>
 
       {/* ── Main 4-column grid ── */}
-      <div className="px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', paddingTop: '32px', paddingBottom: '48px' }}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 lg:gap-16">
+      <div className="px-4 sm:px-6 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', paddingTop: '32px', paddingBottom: '48px' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 lg:gap-16">
 
           {/* Col 1: Brand */}
           <div style={{ paddingTop: '8px' }}>
@@ -110,7 +110,7 @@ export default function Footer() {
                 alt="ICOM Technical Support Limited"
                 width={180}
                 height={120}
-                className="h-16 lg:h-20 w-auto"
+                className="h-14 lg:h-20 w-auto"
                 style={{ objectFit: 'contain', display: 'block', filter: 'drop-shadow(0 0 1px rgba(255,255,255,0.4))' }}
               />
             </Link>
@@ -121,7 +121,7 @@ export default function Footer() {
 
           {/* Col 2: Quick Links */}
           <div>
-            <h3 style={{ fontSize: '14px', fontWeight: 700, color: '#FFFFFF', marginBottom: '24px', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 700, color: '#FFFFFF', marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               Quick Links
             </h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
@@ -139,7 +139,7 @@ export default function Footer() {
 
           {/* Col 3: Services */}
           <div>
-            <h3 style={{ fontSize: '14px', fontWeight: 700, color: '#FFFFFF', marginBottom: '24px', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 700, color: '#FFFFFF', marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               Our Services
             </h3>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
@@ -157,7 +157,7 @@ export default function Footer() {
 
           {/* Col 4: Contact */}
           <div>
-            <h3 style={{ fontSize: '14px', fontWeight: 700, color: '#FFFFFF', marginBottom: '24px', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <h3 style={{ fontSize: '14px', fontWeight: 700, color: '#FFFFFF', marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               Contact Info
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
@@ -227,13 +227,13 @@ export default function Footer() {
       </div>
 
       {/* ── Divider ── */}
-      <div className="px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <div className="px-4 sm:px-6 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div style={{ height: '1px', background: 'rgba(255,255,255,0.08)' }} />
       </div>
 
       {/* ── Bottom bar ── */}
-      <div className="px-6 md:px-12 py-6" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
-        <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
+      <div className="px-4 sm:px-6 lg:px-12 py-6" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
+        <div className="flex flex-col sm:flex-row gap-4 items-center justify-between text-center sm:text-left">
           <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.3)' }}>
             © {new Date().getFullYear()} ICOM Technical Service Support Limited. RC: 1043812
           </p>
@@ -248,7 +248,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    width: '36px', height: '36px', borderRadius: '50%',
+                    width: '40px', height: '40px', borderRadius: '50%',
                     background: 'rgba(255,255,255,0.06)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     color: 'rgba(255,255,255,0.4)',
@@ -257,7 +257,7 @@ export default function Footer() {
                   onMouseEnter={(e) => { e.currentTarget.style.background = '#D9041B'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; e.currentTarget.style.color = 'rgba(255,255,255,0.4)'; e.currentTarget.style.transform = 'translateY(0)'; }}
                 >
-                  <Icon size={15} />
+                  <Icon size={16} />
                 </a>
               );
             })}

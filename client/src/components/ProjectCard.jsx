@@ -173,7 +173,7 @@ export default function ProjectCard({ project, index = 0 }) {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              padding: '20px',
+              padding: '16px',
             }}
           >
             {/* Modal Card */}
@@ -193,7 +193,7 @@ export default function ProjectCard({ project, index = 0 }) {
                 position: 'relative',
                 display: 'flex',
                 flexDirection: 'column',
-                maxHeight: '90vh',
+                maxHeight: '88vh',
               }}
             >
               {/* Close Button */}
@@ -201,30 +201,31 @@ export default function ProjectCard({ project, index = 0 }) {
                 onClick={() => setModalOpen(false)}
                 style={{
                   position: 'absolute',
-                  top: '16px',
-                  right: '16px',
-                  width: '36px',
-                  height: '36px',
+                  top: '14px',
+                  right: '14px',
+                  width: '40px',
+                  height: '40px',
                   borderRadius: '50%',
-                  background: 'rgba(255, 255, 255, 0.9)',
+                  background: 'rgba(255, 255, 255, 0.92)',
                   border: 'none',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
                   zIndex: 110,
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
                   color: '#0A2D73',
                   transition: 'all 0.2s',
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.background = '#D9041B'; e.currentTarget.style.color = '#FFFFFF'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.9)'; e.currentTarget.style.color = '#0A2D73'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.92)'; e.currentTarget.style.color = '#0A2D73'; }}
+                aria-label="Close modal"
               >
-                <X size={18} />
+                <X size={20} />
               </button>
 
               {/* Large Image Slider */}
-              <div style={{ height: '320px', position: 'relative', background: '#0A2D73', flexShrink: 0 }}>
+              <div style={{ height: 'clamp(200px, 35vh, 320px)', position: 'relative', background: '#0A2D73', flexShrink: 0 }}>
                 {imgList.length > 0 ? (
                   <img
                     src={imgList[currentImageIndex]}
@@ -242,16 +243,17 @@ export default function ProjectCard({ project, index = 0 }) {
                   <button
                     onClick={() => setCurrentImageIndex((prev) => (prev - 1 + imgList.length) % imgList.length)}
                     style={{
-                      position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)',
+                      position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)',
                       background: 'rgba(10,45,115,0.65)', color: '#fff', border: 'none', borderRadius: '50%',
-                      width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center',
                       cursor: 'pointer', zIndex: 10, transition: 'background 0.2s', fontSize: '16px',
                       backdropFilter: 'blur(4px)', outline: 'none'
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.background = '#D9041B')}
                     onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(10,45,115,0.65)')}
+                    aria-label="Previous image"
                   >
-                    <ChevronLeft size={20} />
+                    <ChevronLeft size={22} />
                   </button>
                 )}
 
@@ -260,23 +262,24 @@ export default function ProjectCard({ project, index = 0 }) {
                   <button
                     onClick={() => setCurrentImageIndex((prev) => (prev + 1) % imgList.length)}
                     style={{
-                      position: 'absolute', right: '16px', top: '50%', transform: 'translateY(-50%)',
+                      position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)',
                       background: 'rgba(10,45,115,0.65)', color: '#fff', border: 'none', borderRadius: '50%',
-                      width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center',
                       cursor: 'pointer', zIndex: 10, transition: 'background 0.2s', fontSize: '16px',
                       backdropFilter: 'blur(4px)', outline: 'none'
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.background = '#D9041B')}
                     onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(10,45,115,0.65)')}
+                    aria-label="Next image"
                   >
-                    <ChevronRight size={20} />
+                    <ChevronRight size={22} />
                   </button>
                 )}
 
                 {/* Indicators */}
                 {imgList.length > 1 && (
                   <div style={{
-                    position: 'absolute', bottom: '16px', left: '50%', transform: 'translateX(-50%)',
+                    position: 'absolute', bottom: '14px', left: '50%', transform: 'translateX(-50%)',
                     display: 'flex', gap: '8px', zIndex: 10
                   }}>
                     {imgList.map((_, idx) => (
@@ -296,7 +299,7 @@ export default function ProjectCard({ project, index = 0 }) {
               </div>
 
               {/* Scrollable details */}
-              <div style={{ padding: '32px', overflowY: 'auto' }}>
+              <div className="p-5 sm:p-8" style={{ overflowY: 'auto' }}>
                 <span style={{
                   display: 'inline-block',
                   padding: '4px 12px',
@@ -313,10 +316,10 @@ export default function ProjectCard({ project, index = 0 }) {
                 </span>
                 
                 <h2 style={{
-                  fontSize: '22px',
+                  fontSize: 'clamp(18px, 3.5vw, 22px)',
                   fontWeight: 800,
                   color: '#0A2D73',
-                  marginBottom: '16px',
+                  marginBottom: '14px',
                   fontFamily: "var(--font-heading, 'DM Sans', sans-serif)",
                   lineHeight: 1.25,
                 }}>
@@ -324,17 +327,17 @@ export default function ProjectCard({ project, index = 0 }) {
                 </h2>
 
                 <p style={{
-                  fontSize: '15px',
+                  fontSize: '14.5px',
                   color: '#4A5568',
-                  lineHeight: 1.75,
-                  marginBottom: '24px',
+                  lineHeight: 1.7,
+                  marginBottom: '20px',
                 }}>
                   {description}
                 </p>
 
                 {/* Tags */}
                 {tags.length > 0 && (
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '28px' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
                     {tags.map((tag) => (
                       <span key={tag} style={{
                         padding: '6px 14px', background: '#F5F7FA', color: '#0A2D73',
@@ -364,6 +367,7 @@ export default function ProjectCard({ project, index = 0 }) {
                     textDecoration: 'none',
                     transition: 'all 0.3s',
                     boxShadow: '0 4px 12px rgba(10,45,115,0.15)',
+                    minHeight: '48px',
                   }}
                   onMouseEnter={(e) => { e.currentTarget.style.background = '#D9041B'; e.currentTarget.style.boxShadow = '0 4px 16px rgba(217,4,27,0.3)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = '#0A2D73'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(10,45,115,0.15)'; }}

@@ -15,9 +15,9 @@ export default function ServicesPage() {
       {/* Hero Banner */}
       <section style={{
         backgroundColor: '#0A2D73',
-        marginTop: '-100px',
-        paddingTop: '180px',
-        paddingBottom: '80px',
+        marginTop: 'calc(-1 * var(--nav-height, 100px))',
+        paddingTop: 'calc(var(--nav-height, 100px) + 40px)',
+        paddingBottom: '60px',
         position: 'relative',
         overflow: 'hidden',
       }}>
@@ -26,7 +26,7 @@ export default function ServicesPage() {
           <div style={{ position: 'absolute', bottom: '25%', left: '33%', width: '192px', height: '192px', border: '1px solid white', borderRadius: '50%' }} />
         </div>
 
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 40px', position: 'relative', textAlign: 'center' }}>
+        <div className="px-4 sm:px-6 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', textAlign: 'center' }}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.15)', color: '#D9041B', fontSize: '14px', fontWeight: 600, padding: '8px 20px', borderRadius: '999px', marginBottom: '24px' }}>
               What We Do
@@ -43,7 +43,7 @@ export default function ServicesPage() {
 
       {/* Services Grid */}
       <section style={{ backgroundColor: '#FFFFFF' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 40px' }}>
+        <div className="px-4 sm:px-6 lg:px-12 py-12 md:py-20" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <ScrollReveal>
             <p style={{ fontSize: '16px', color: '#6B7A8D', lineHeight: 1.75, maxWidth: '760px', margin: '0 auto 64px', textAlign: 'center' }}>
               We offer customized service for most of Africa&apos;s largest wireless carriers to maintain their networks. As one of the fastest-growing independent telecoms service providers in Africa, we leverage our industry expertise across two primary operating divisions.
