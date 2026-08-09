@@ -74,7 +74,7 @@ export default function Hero() {
       </div>
 
       {/* Main two-column grid */}
-      <div 
+      <div
         className="px-5 sm:px-6 md:px-8 lg:px-12"
         style={{
           position: 'relative',
@@ -84,7 +84,7 @@ export default function Hero() {
           width: '100%',
         }}
       >
-        <div 
+        <div
           className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
         >
 
@@ -93,10 +93,12 @@ export default function Hero() {
             variants={leftColumnVariants}
             initial="hidden"
             animate="visible"
+            className="items-center text-center lg:items-start lg:text-left mx-auto lg:mx-0"
             style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', maxWidth: '520px' }}
           >
             {/* Pill badge */}
             <div
+              className="self-center lg:self-start"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -104,7 +106,6 @@ export default function Hero() {
                 borderRadius: '999px',
                 padding: '6px 16px',
                 marginBottom: '24px',
-                alignSelf: 'flex-start',
                 border: '1px solid rgba(217, 4, 27, 0.25)',
                 background: 'rgba(217, 4, 27, 0.06)',
               }}
@@ -116,7 +117,7 @@ export default function Hero() {
             </div>
 
             {/* Accent bar */}
-            <div style={{ width: '40px', height: '3px', background: '#D9041B', borderRadius: '2px', marginBottom: '20px' }} />
+            <div className="mx-auto lg:mx-0" style={{ width: '40px', height: '3px', background: '#D9041B', borderRadius: '2px', marginBottom: '20px' }} />
 
             {/* Headline */}
             <h1
@@ -137,7 +138,7 @@ export default function Hero() {
             </h1>
 
             {/* Subheadline */}
-            <p style={{
+            <p className="mx-auto lg:mx-0" style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: '15px',
               lineHeight: 1.7,
@@ -149,7 +150,7 @@ export default function Hero() {
             </p>
 
             {/* CTA Buttons */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '12px' }}>
+            <div className="justify-center lg:justify-start" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '12px' }}>
               <Link
                 href="/services"
                 style={{
