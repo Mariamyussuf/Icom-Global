@@ -16,7 +16,7 @@ export default function CTABanner({
         backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(217,4,27,0.08) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(13,58,138,0.06) 0%, transparent 50%)',
       }} />
 
-      <div style={{ maxWidth: '800px', margin: '0 auto', padding: '80px 40px', textAlign: 'center', position: 'relative', zIndex: 1 }}>
+      <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-12 md:py-20" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
         <ScrollReveal>
           <h2 style={{
             fontSize: 'clamp(26px, 3vw, 36px)',

@@ -75,7 +75,7 @@ export default function Hero() {
 
       {/* Main two-column grid */}
       <div 
-        className="px-4 sm:px-6 lg:px-12"
+        className="px-5 sm:px-6 md:px-8 lg:px-12"
         style={{
           position: 'relative',
           zIndex: 10,

@@ -109,7 +109,7 @@ function Section({ children, bg = 'white', className = '', ...props }) {
       {...props}
     >
       <div
-        className="px-4 sm:px-6 lg:px-12 py-12 md:py-20"
+        className="px-5 sm:px-6 md:px-8 lg:px-12 py-12 md:py-20"
         style={{
           maxWidth: '1200px',
           margin: '0 auto',
@@ -431,7 +431,7 @@ export default function HomePage() {
 
       {/* ═══════════════ 8. QUALITY & SAFETY ═══════════════ */}
       <section style={{ background: '#0A2D73' }}>
-        <div className="px-4 sm:px-6 lg:px-12 py-12 md:py-20" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-12 md:py-20" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <ScrollReveal>
             <div style={{ textAlign: 'center', marginBottom: '56px' }}>
               <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />

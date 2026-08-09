@@ -28,7 +28,7 @@ const iconMap = {
 function Section({ children, bg = 'var(--bg-primary, #FFFFFF)' }) {
   return (
     <section style={{ backgroundColor: bg }}>
-      <div className="px-4 sm:px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto', paddingTop: '56px', paddingBottom: '56px' }}>
+      <div className="px-5 sm:px-6 md:px-8 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto', paddingTop: '56px', paddingBottom: '56px' }}>
         {children}
       </div>
     </section>

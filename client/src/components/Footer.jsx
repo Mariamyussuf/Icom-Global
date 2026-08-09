@@ -65,7 +65,7 @@ export default function Footer() {
       </div>
 
       {/* ── Newsletter / CTA strip ── */}
-      <div className="px-4 sm:px-6 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', paddingTop: '48px', paddingBottom: '24px' }}>
+      <div className="px-5 sm:px-6 md:px-8 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', paddingTop: '48px', paddingBottom: '24px' }}>
         <div 
           className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between p-6 sm:p-8"
           style={{
@@ -99,7 +99,7 @@ export default function Footer() {
       </div>
 
       {/* ── Main 4-column grid ── */}
-      <div className="px-4 sm:px-6 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', paddingTop: '32px', paddingBottom: '48px' }}>
+      <div className="px-5 sm:px-6 md:px-8 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', paddingTop: '32px', paddingBottom: '48px' }}>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 lg:gap-16">
 
           {/* Col 1: Brand */}
@@ -227,12 +227,12 @@ export default function Footer() {
       </div>
 
       {/* ── Divider ── */}
-      <div className="px-4 sm:px-6 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <div className="px-5 sm:px-6 md:px-8 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div style={{ height: '1px', background: 'rgba(255,255,255,0.08)' }} />
       </div>
 
       {/* ── Bottom bar ── */}
-      <div className="px-4 sm:px-6 lg:px-12 py-6" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
+      <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-6" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-between text-center sm:text-left">
           <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.3)' }}>
             © {new Date().getFullYear()} ICOM Technical Service Support Limited. RC: 1043812
