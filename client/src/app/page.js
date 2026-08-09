@@ -98,9 +98,9 @@ const testimonialVariants = {
 /* ─── Reusable section wrapper with consistent padding ─── */
 function Section({ children, bg = 'white', className = '', ...props }) {
   const bgMap = {
-    white: '#FFFFFF',
-    gray: '#F5F7FA',
-    navy: '#0A2D73',
+    white: 'var(--bg-primary, #FFFFFF)',
+    gray: 'var(--bg-secondary, #F5F7FA)',
+    navy: 'var(--bg-navbar, #0A2D73)',
   };
   return (
     <section
@@ -145,10 +145,10 @@ export default function HomePage() {
         <ScrollReveal>
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
             <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
-            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#0A2D73', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               Our Core Services
             </h2>
-            <p style={{ fontSize: '16px', color: '#6B7A8D', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '16px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
               Comprehensive engineering and technology solutions tailored for modern infrastructure across Africa.
             </p>
           </div>
@@ -170,16 +170,16 @@ export default function HomePage() {
               alignItems: 'center',
               gap: '8px',
               padding: '14px 32px',
-              border: '2px solid #0A2D73',
+              border: '2px solid var(--text-heading, #0A2D73)',
               borderRadius: '8px',
-              color: '#0A2D73',
+              color: 'var(--text-heading, #0A2D73)',
               fontWeight: 600,
               fontSize: '15px',
               textDecoration: 'none',
               transition: 'all 0.3s',
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = '#0A2D73'; e.currentTarget.style.color = '#fff'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#0A2D73'; }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = '#D9041B'; e.currentTarget.style.borderColor = '#D9041B'; e.currentTarget.style.color = '#fff'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'var(--text-heading, #0A2D73)'; e.currentTarget.style.color = 'var(--text-heading, #0A2D73)'; }}
           >
             View All Services
             <ArrowRight style={{ width: '16px', height: '16px' }} />
@@ -194,10 +194,10 @@ export default function HomePage() {
           <div>
             <ScrollReveal>
               <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', marginBottom: '20px' }} />
-              <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#0A2D73', marginBottom: '12px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+              <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '12px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                 Why Choose ICOM?
               </h2>
-              <p style={{ fontSize: '15px', color: '#6B7A8D', maxWidth: '460px', lineHeight: 1.7, marginBottom: '36px' }}>
+              <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '460px', lineHeight: 1.7, marginBottom: '36px' }}>
                 We combine deep technical expertise with a commitment to quality that sets us apart in every project.
               </p>
             </ScrollReveal>
@@ -210,8 +210,8 @@ export default function HomePage() {
                       <CheckCircle style={{ width: '20px', height: '20px', color: '#D9041B' }} />
                     </div>
                     <div>
-                      <p style={{ fontWeight: 700, fontSize: '15px', color: '#0A2D73', marginBottom: '4px' }}>{v.title}</p>
-                      <p style={{ fontSize: '14px', color: '#6B7A8D', lineHeight: 1.6 }}>{v.desc}</p>
+                      <p style={{ fontWeight: 700, fontSize: '15px', color: 'var(--text-heading, #0A2D73)', marginBottom: '4px' }}>{v.title}</p>
+                      <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.6 }}>{v.desc}</p>
                     </div>
                   </div>
                 </ScrollReveal>
@@ -224,18 +224,19 @@ export default function HomePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { value: '15+', label: 'Years of Experience', accent: '#D9041B' },
-                { value: '8', label: 'Core Service Lines', accent: '#0D3A8A' },
-                { value: '10+', label: 'Major Clients Served', accent: '#0D3A8A' },
+                { value: '8', label: 'Core Service Lines', accent: '#FF3B50' },
+                { value: '10+', label: 'Major Clients Served', accent: '#FF3B50' },
                 { value: 'Pan-Africa', label: 'Coverage & Operations', accent: '#D9041B' },
               ].map((stat) => (
                 <div
                   key={stat.label}
                   style={{
-                    background: '#0A2D73',
+                    background: 'var(--bg-card, #0A2D73)',
                     borderRadius: '16px',
                     padding: '28px 24px',
                     textAlign: 'center',
-                    border: '1px solid rgba(255,255,255,0.08)',
+                    border: '1px solid var(--border-color, rgba(255,255,255,0.08))',
+                    boxShadow: 'var(--card-shadow, 0 4px 16px rgba(0,0,0,0.1))',
                     transition: 'transform 0.3s',
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateY(-4px)')}
@@ -244,7 +245,7 @@ export default function HomePage() {
                   <p style={{ fontSize: stat.value.length > 4 ? '24px' : '32px', fontWeight: 800, color: stat.accent, marginBottom: '6px', fontFamily: "var(--font-sora, 'DM Sans', sans-serif)" }}>
                     {stat.value}
                   </p>
-                  <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.55)', lineHeight: 1.4 }}>
+                  <p style={{ fontSize: '13px', color: 'var(--text-muted, rgba(255,255,255,0.55))', lineHeight: 1.4 }}>
                     {stat.label}
                   </p>
                 </div>
@@ -259,10 +260,10 @@ export default function HomePage() {
         <ScrollReveal>
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
             <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
-            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#0A2D73', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               Industries We Serve
             </h2>
-            <p style={{ fontSize: '16px', color: '#6B7A8D', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '16px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
               Delivering solutions across diverse sectors of the Nigerian and African economy.
             </p>
           </div>
@@ -274,22 +275,22 @@ export default function HomePage() {
             return (
               <ScrollReveal key={ind.name} delay={i * 0.06}>
                 <motion.div
-                  whileHover={{ y: -4, boxShadow: '0 12px 32px rgba(0,0,0,0.1)' }}
+                  whileHover={{ y: -4, boxShadow: 'var(--card-shadow, 0 12px 32px rgba(0,0,0,0.1))' }}
                   style={{
-                    background: '#FFFFFF',
+                    background: 'var(--bg-card, #FFFFFF)',
                     borderRadius: '14px',
                     padding: '32px 20px',
                     textAlign: 'center',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
-                    border: '1px solid #E2E8F0',
+                    boxShadow: 'var(--card-shadow, 0 2px 8px rgba(0,0,0,0.06))',
+                    border: '1px solid var(--border-color, #E2E8F0)',
                     cursor: 'pointer',
                     transition: 'all 0.3s',
                   }}
                 >
-                  <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: 'rgba(10,45,115,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 14px' }}>
-                    <Icon style={{ width: '24px', height: '24px', color: '#0A2D73' }} />
+                  <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: 'rgba(217,4,27,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 14px' }}>
+                    <Icon style={{ width: '24px', height: '24px', color: '#D9041B' }} />
                   </div>
-                  <p style={{ fontSize: '14px', fontWeight: 600, color: '#0A2D73' }}>{ind.name}</p>
+                  <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-heading, #0A2D73)' }}>{ind.name}</p>
                 </motion.div>
               </ScrollReveal>
             );
@@ -302,10 +303,10 @@ export default function HomePage() {
         <ScrollReveal>
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
             <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
-            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#0A2D73', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               Driving Purpose
             </h2>
-            <p style={{ fontSize: '16px', color: '#6B7A8D', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '16px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
               Our vision and mission guide every decision and project we undertake.
             </p>
           </div>
@@ -313,24 +314,24 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <ScrollReveal>
-            <div style={{ background: '#FFFFFF', borderRadius: '16px', padding: '36px 32px', boxShadow: '0 4px 20px rgba(0,0,0,0.06)', borderLeft: '4px solid #0D3A8A', height: '100%' }}>
+            <div style={{ background: 'var(--bg-card, #FFFFFF)', borderRadius: '16px', padding: '36px 32px', boxShadow: 'var(--card-shadow, 0 4px 20px rgba(0,0,0,0.06))', border: '1px solid var(--border-color, #E2E8F0)', borderLeft: '4px solid #0D3A8A', height: '100%' }}>
               <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: 'rgba(13,58,138,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
                 <Target style={{ width: '24px', height: '24px', color: '#0D3A8A' }} />
               </div>
-              <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#0A2D73', marginBottom: '12px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>Our Vision</h3>
-              <p style={{ fontSize: '15px', color: '#6B7A8D', lineHeight: 1.75, maxWidth: '480px' }}>
+              <h3 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '12px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>Our Vision</h3>
+              <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.75, maxWidth: '480px' }}>
                 To become the number one trusted technology, procurement, and supply partner for delivering solutions across Africa.
               </p>
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.15}>
-            <div style={{ background: '#FFFFFF', borderRadius: '16px', padding: '36px 32px', boxShadow: '0 4px 20px rgba(0,0,0,0.06)', borderLeft: '4px solid #D9041B', height: '100%' }}>
+            <div style={{ background: 'var(--bg-card, #FFFFFF)', borderRadius: '16px', padding: '36px 32px', boxShadow: 'var(--card-shadow, 0 4px 20px rgba(0,0,0,0.06))', border: '1px solid var(--border-color, #E2E8F0)', borderLeft: '4px solid #D9041B', height: '100%' }}>
               <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: 'rgba(217,4,27,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
                 <Lightbulb style={{ width: '24px', height: '24px', color: '#D9041B' }} />
               </div>
-              <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#0A2D73', marginBottom: '12px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>Our Mission</h3>
-              <p style={{ fontSize: '15px', color: '#6B7A8D', lineHeight: 1.75, maxWidth: '480px' }}>
+              <h3 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '12px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>Our Mission</h3>
+              <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.75, maxWidth: '480px' }}>
                 To provide strategic and technical value to our customers by designing, building, and maintaining cost-effective communication networks, power systems, and technology solutions.
               </p>
             </div>
@@ -343,10 +344,10 @@ export default function HomePage() {
         <ScrollReveal>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
-            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#0A2D73', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               Trusted Partners
             </h2>
-            <p style={{ fontSize: '16px', color: '#6B7A8D', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '16px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7 }}>
               Working with leading global technology companies.
             </p>
           </div>
@@ -357,18 +358,19 @@ export default function HomePage() {
             <ScrollReveal key={p.id} delay={i * 0.04}>
               <div
                 style={{
-                  background: '#0A2D73',
+                  background: 'var(--bg-card, #0A2D73)',
                   borderRadius: '10px',
                   padding: '16px 24px',
                   minWidth: '120px',
                   textAlign: 'center',
+                  border: '1px solid var(--border-color, rgba(255,255,255,0.1))',
                   transition: 'transform 0.3s, box-shadow 0.3s',
                   cursor: 'default',
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(10,45,115,0.3)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = 'none'; }}
               >
-                <span style={{ color: '#fff', fontSize: '14px', fontWeight: 600, whiteSpace: 'nowrap' }}>{p.name}</span>
+                <span style={{ color: 'var(--text-heading, #FFFFFF)', fontSize: '14px', fontWeight: 600, whiteSpace: 'nowrap' }}>{p.name}</span>
               </div>
             </ScrollReveal>
           ))}
@@ -380,7 +382,7 @@ export default function HomePage() {
         <ScrollReveal>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
-            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#0A2D73', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               What Our Clients Say
             </h2>
           </div>

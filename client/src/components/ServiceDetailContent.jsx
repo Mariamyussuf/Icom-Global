@@ -25,7 +25,7 @@ const iconMap = {
 };
 
 /* ─── Reusable wrapper ─── */
-function Section({ children, bg = '#FFFFFF' }) {
+function Section({ children, bg = 'var(--bg-primary, #FFFFFF)' }) {
   return (
     <section style={{ backgroundColor: bg }}>
       <div className="px-4 sm:px-6 md:px-12" style={{ maxWidth: '1200px', margin: '0 auto', paddingTop: '56px', paddingBottom: '56px' }}>
@@ -39,10 +39,10 @@ function Heading({ title, subtitle }) {
   return (
     <div style={{ textAlign: 'center', marginBottom: '40px' }}>
       <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
-      <h2 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 700, color: '#0A2D73', marginBottom: subtitle ? '12px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+      <h2 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: subtitle ? '12px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
         {title}
       </h2>
-      {subtitle && <p style={{ fontSize: '15px', color: '#6B7A8D', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>{subtitle}</p>}
+      {subtitle && <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>{subtitle}</p>}
     </div>
   );
 }
@@ -103,17 +103,17 @@ export default function ServiceDetailContent({ service }) {
       </section>
 
       {/* ═══════ OVERVIEW ═══════ */}
-      <Section bg="#FFFFFF">
+      <Section bg="var(--bg-primary, #FFFFFF)">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
           <div className="lg:col-span-3">
             <ScrollReveal>
-              <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#0A2D73', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+              <h2 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                 Overview
               </h2>
             </ScrollReveal>
             {overviewParagraphs.map((paragraph, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
-                <p style={{ fontSize: '15px', color: '#4A5568', lineHeight: 1.8, marginBottom: '16px', maxWidth: '680px' }}>
+                <p style={{ fontSize: '15px', color: 'var(--text-body, #4A5568)', lineHeight: 1.8, marginBottom: '16px', maxWidth: '680px' }}>
                   {paragraph}
                 </p>
               </ScrollReveal>
@@ -125,11 +125,11 @@ export default function ServiceDetailContent({ service }) {
             <div className="lg:col-span-2 w-full">
               <ScrollReveal>
                 <div style={{
-                  background: '#FFFFFF',
+                  background: 'var(--bg-card, #FFFFFF)',
                   borderRadius: '16px',
                   overflow: 'hidden',
-                  boxShadow: '0 12px 32px rgba(0,0,0,0.06)',
-                  border: '1px solid #E2E8F0',
+                  boxShadow: 'var(--card-shadow, 0 12px 32px rgba(0,0,0,0.06))',
+                  border: '1px solid var(--border-color, #E2E8F0)',
                   position: 'relative',
                   height: 'clamp(220px, 35vh, 320px)',
                   width: '100%',
@@ -207,7 +207,7 @@ export default function ServiceDetailContent({ service }) {
 
       {/* ═══════ SUB-SERVICES ═══════ */}
       {service.subServices && service.subServices.length > 0 && (
-        <Section bg="#F5F7FA">
+        <Section bg="var(--bg-secondary, #F5F7FA)">
           <Heading title="What We Offer" />
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
             {service.subServices.map((sub, i) => (
@@ -216,19 +216,19 @@ export default function ServiceDetailContent({ service }) {
                   display: 'flex',
                   alignItems: 'flex-start',
                   gap: '14px',
-                  background: '#FFFFFF',
+                  background: 'var(--bg-card, #FFFFFF)',
                   borderRadius: '12px',
                   padding: '20px',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
-                  border: '1px solid #E2E8F0',
+                  boxShadow: 'var(--card-shadow, 0 2px 8px rgba(0,0,0,0.04))',
+                  border: '1px solid var(--border-color, #E2E8F0)',
                   transition: 'box-shadow 0.3s, transform 0.3s',
                   height: '100%',
                 }}
-                  onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.08)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.04)'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.1)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'var(--card-shadow, 0 2px 8px rgba(0,0,0,0.04))'; e.currentTarget.style.transform = 'translateY(0)'; }}
                 >
                   <CheckCircle style={{ width: '20px', height: '20px', color: '#D9041B', marginTop: '2px', flexShrink: 0 }} />
-                  <span style={{ fontSize: '14px', fontWeight: 600, color: '#0A2D73', lineHeight: 1.5 }}>{sub}</span>
+                  <span style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-heading, #0A2D73)', lineHeight: 1.5 }}>{sub}</span>
                 </div>
               </ScrollReveal>
             ))}
@@ -238,7 +238,7 @@ export default function ServiceDetailContent({ service }) {
 
       {/* ═══════ BENEFITS ═══════ */}
       {service.benefits && service.benefits.length > 0 && (
-        <Section bg="#FFFFFF">
+        <Section bg="var(--bg-primary, #FFFFFF)">
           <Heading title="Key Benefits" />
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {service.benefits.map((benefit, i) => {
@@ -249,12 +249,13 @@ export default function ServiceDetailContent({ service }) {
                     textAlign: 'center',
                     padding: '24px 18px',
                     borderRadius: '16px',
-                    background: '#F5F7FA',
+                    background: 'var(--bg-secondary, #F5F7FA)',
+                    border: '1px solid var(--border-color, #E2E8F0)',
                     height: '100%',
                     transition: 'all 0.3s',
                   }}
-                    onMouseEnter={(e) => { e.currentTarget.style.background = '#FFFFFF'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(0,0,0,0.08)'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.background = '#F5F7FA'; e.currentTarget.style.boxShadow = 'none'; }}
+                    onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--bg-card, #FFFFFF)'; e.currentTarget.style.boxShadow = 'var(--card-shadow, 0 12px 32px rgba(0,0,0,0.08))'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--bg-secondary, #F5F7FA)'; e.currentTarget.style.boxShadow = 'none'; }}
                   >
                     <div style={{
                       width: '52px', height: '52px', background: 'rgba(217,4,27,0.1)', borderRadius: '14px',
@@ -262,10 +263,10 @@ export default function ServiceDetailContent({ service }) {
                     }}>
                       <BenefitIcon style={{ width: '26px', height: '26px', color: '#D9041B' }} />
                     </div>
-                    <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0A2D73', marginBottom: '8px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                    <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                       {benefit.title}
                     </h3>
-                    <p style={{ fontSize: '13px', color: '#6B7A8D', lineHeight: 1.6 }}>{benefit.description}</p>
+                    <p style={{ fontSize: '13px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.6 }}>{benefit.description}</p>
                   </div>
                 </ScrollReveal>
               );
@@ -276,7 +277,7 @@ export default function ServiceDetailContent({ service }) {
 
       {/* ═══════ PROCESS ═══════ */}
       {service.process && service.process.length > 0 && (
-        <Section bg="#F5F7FA">
+        <Section bg="var(--bg-secondary, #F5F7FA)">
           <Heading title="Our Process" />
           <div style={{ maxWidth: '700px', margin: '0 auto' }}>
             {service.process.map((step, i) => (
@@ -300,10 +301,10 @@ export default function ServiceDetailContent({ service }) {
                   </div>
                   {/* Content */}
                   <div style={{ paddingTop: '4px' }}>
-                    <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#0A2D73', marginBottom: '6px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                    <h3 style={{ fontSize: '17px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '6px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                       {step.title}
                     </h3>
-                    <p style={{ fontSize: '14px', color: '#6B7A8D', lineHeight: 1.7, maxWidth: '540px' }}>{step.description}</p>
+                    <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7, maxWidth: '540px' }}>{step.description}</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -313,7 +314,7 @@ export default function ServiceDetailContent({ service }) {
       )}
 
       {/* ═══════ RELATED SERVICES ═══════ */}
-      <Section bg="#FFFFFF">
+      <Section bg="var(--bg-primary, #FFFFFF)">
         <Heading title="Related Services" subtitle="Explore our other engineering and technology solutions." />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {relatedServices.map((relService, i) => (
@@ -323,10 +324,10 @@ export default function ServiceDetailContent({ service }) {
         <div style={{ textAlign: 'center', marginTop: '40px' }}>
           <Link href="/services" style={{
             display: 'inline-flex', alignItems: 'center', gap: '8px',
-            color: '#0D3A8A', fontWeight: 600, fontSize: '15px', textDecoration: 'none', transition: 'color 0.2s',
+            color: '#D9041B', fontWeight: 600, fontSize: '15px', textDecoration: 'none', transition: 'color 0.2s',
           }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = '#0D3A8A')}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#B50316')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = '#D9041B')}
           >
             <ArrowLeft style={{ width: '16px', height: '16px' }} />
             View All Services

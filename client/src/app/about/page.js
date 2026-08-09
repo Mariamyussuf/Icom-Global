@@ -48,7 +48,7 @@ const clientLogos = {
 };
 
 /* ─── Reusable section wrapper ─── */
-function Section({ children, bg = '#FFFFFF' }) {
+function Section({ children, bg = 'var(--bg-primary, #FFFFFF)' }) {
   return (
     <section style={{ backgroundColor: bg }}>
       <div className="px-4 sm:px-6 lg:px-12 py-12 md:py-20" style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -63,11 +63,11 @@ function Heading({ title, subtitle, light = false, centered = true }) {
   return (
     <div style={{ textAlign: centered ? 'center' : 'left', marginBottom: '40px' }}>
       <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: centered ? '0 auto 20px' : '0 0 20px', }} />
-      <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: light ? '#fff' : '#0A2D73', marginBottom: subtitle ? '14px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+      <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: light ? '#fff' : 'var(--text-heading, #0A2D73)', marginBottom: subtitle ? '14px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
         {title}
       </h2>
       {subtitle && (
-        <p style={{ fontSize: '16px', color: light ? 'rgba(255,255,255,0.6)' : '#6B7A8D', maxWidth: '560px', margin: centered ? '0 auto' : '0', lineHeight: 1.7 }}>
+        <p style={{ fontSize: '16px', color: light ? 'rgba(255,255,255,0.6)' : 'var(--text-muted, #6B7A8D)', maxWidth: '560px', margin: centered ? '0 auto' : '0', lineHeight: 1.7 }}>
           {subtitle}
         </p>
       )}
@@ -131,34 +131,35 @@ export default function AboutPage() {
       </section>
 
       {/* ═══════ WHO WE ARE ═══════ */}
-      <Section bg="#FFFFFF">
+      <Section bg="var(--bg-primary, #FFFFFF)">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left — 2x2 stat grid */}
           <ScrollReveal direction="left">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { value: 'Est. 2009', label: 'Year Founded', accent: '#D9041B' },
-                { value: 'RC 1043812', label: 'Registration', accent: '#0D3A8A' },
-                { value: 'Victoria Island', label: 'Lagos, Nigeria', accent: '#0D3A8A' },
+                { value: 'RC 1043812', label: 'Registration', accent: '#FF3B50' },
+                { value: 'Victoria Island', label: 'Lagos, Nigeria', accent: '#FF3B50' },
                 { value: '15+ Years', label: 'Experience', accent: '#D9041B' },
               ].map((stat) => (
                 <div key={stat.label} style={{
-                  background: '#0A2D73',
+                  background: 'var(--bg-card, #0A2D73)',
                   borderRadius: '14px',
                   padding: '28px 20px',
                   textAlign: 'center',
-                  border: '1px solid rgba(255,255,255,0.08)',
+                  border: '1px solid var(--border-color, rgba(255,255,255,0.08))',
+                  boxShadow: 'var(--card-shadow, 0 4px 16px rgba(0,0,0,0.1))',
                 }}>
                   <p style={{
                     fontSize: stat.value.length > 10 ? '18px' : '22px',
                     fontWeight: 800,
-                    color: '#FFFFFF',
+                    color: 'var(--text-heading, #FFFFFF)',
                     marginBottom: '4px',
                     fontFamily: "var(--font-heading, 'DM Sans', sans-serif)",
                   }}>
                     {stat.value}
                   </p>
-                  <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.45)' }}>{stat.label}</p>
+                  <p style={{ fontSize: '13px', color: 'var(--text-muted, rgba(255,255,255,0.45))' }}>{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -168,17 +169,17 @@ export default function AboutPage() {
           <div>
             <Heading title="Who We Are" centered={false} />
             <ScrollReveal delay={0.1}>
-              <p style={{ fontSize: '15px', color: '#4A5568', lineHeight: 1.8, marginBottom: '16px' }}>
+              <p style={{ fontSize: '15px', color: 'var(--text-body, #4A5568)', lineHeight: 1.8, marginBottom: '16px' }}>
                 ICOM Technical Service Support Limited is a wholly Nigerian-owned company that has been operating since June 2009, incorporated in June 2012 under RC 1043812. Headquartered in Victoria Island, Lagos, we have grown to become a trusted partner for telecommunications operators, government institutions, and corporate organizations across Nigeria.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <p style={{ fontSize: '15px', color: '#4A5568', lineHeight: 1.8, marginBottom: '16px' }}>
+              <p style={{ fontSize: '15px', color: 'var(--text-body, #4A5568)', lineHeight: 1.8, marginBottom: '16px' }}>
                 Our multidisciplinary team of engineers and technicians delivers end-to-end solutions spanning wireless networks, fiber optics, power infrastructure, repeaters, IT services, and project management. We combine deep technical expertise with a commitment to quality, safety, and customer satisfaction.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
-              <p style={{ fontSize: '15px', color: '#4A5568', lineHeight: 1.8 }}>
+              <p style={{ fontSize: '15px', color: 'var(--text-body, #4A5568)', lineHeight: 1.8 }}>
                 We are committed to providing strategic and technical value through innovative, cost-effective solutions that meet international quality standards while addressing the unique challenges of the African market.
               </p>
             </ScrollReveal>
@@ -187,17 +188,17 @@ export default function AboutPage() {
       </Section>
 
       {/* ═══════ MISSION & PHILOSOPHY ═══════ */}
-      <Section bg="#F5F7FA">
+      <Section bg="var(--bg-secondary, #F5F7FA)">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           {/* Mission Card */}
           <ScrollReveal direction="left">
             <div style={{
-              background: '#FFFFFF',
+              background: 'var(--bg-card, #FFFFFF)',
               borderRadius: '16px',
               padding: '40px',
               height: '100%',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
-              border: '1px solid #E2E8F0',
+              boxShadow: 'var(--card-shadow, 0 4px 20px rgba(0,0,0,0.04))',
+              border: '1px solid var(--border-color, #E2E8F0)',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between'
@@ -206,10 +207,10 @@ export default function AboutPage() {
                 <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.1)', color: '#D9041B', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginBottom: '20px', textTransform: 'uppercase' }}>
                   Mission Statement
                 </span>
-                <h3 style={{ fontSize: 'clamp(18px, 2.5vw, 22px)', fontWeight: 800, color: '#0A2D73', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.35 }}>
+                <h3 style={{ fontSize: 'clamp(18px, 2.5vw, 22px)', fontWeight: 800, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.35 }}>
                   &ldquo;Our mission is to provide high quality engineering solutions and consulting services, surpassing the requirements and expectations of our clients.&rdquo;
                 </h3>
-                <p style={{ fontSize: '14.5px', color: '#6B7A8D', lineHeight: 1.7, marginBottom: '24px' }}>
+                <p style={{ fontSize: '14.5px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7, marginBottom: '24px' }}>
                   To accomplish this mission, we strive to be the premier provider of groundbreaking network engineering, system integration, and technical services in our business areas.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
@@ -221,8 +222,8 @@ export default function AboutPage() {
                     <div key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                       <CheckCircle style={{ width: '18px', height: '18px', color: '#D9041B', flexShrink: 0, marginTop: '3px' }} />
                       <div style={{ fontSize: '14px', lineHeight: 1.5 }}>
-                        <strong style={{ color: '#0A2D73' }}>{item.title}: </strong>
-                        <span style={{ color: '#4A5568' }}>{item.desc}</span>
+                        <strong style={{ color: 'var(--text-heading, #0A2D73)' }}>{item.title}: </strong>
+                        <span style={{ color: 'var(--text-body, #4A5568)' }}>{item.desc}</span>
                       </div>
                     </div>
                   ))}
@@ -234,12 +235,12 @@ export default function AboutPage() {
           {/* Philosophy Card */}
           <ScrollReveal direction="right">
             <div style={{
-              background: '#FFFFFF',
+              background: 'var(--bg-card, #FFFFFF)',
               borderRadius: '16px',
               padding: '40px',
               height: '100%',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
-              border: '1px solid #E2E8F0',
+              boxShadow: 'var(--card-shadow, 0 4px 20px rgba(0,0,0,0.04))',
+              border: '1px solid var(--border-color, #E2E8F0)',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between'
@@ -248,10 +249,10 @@ export default function AboutPage() {
                 <span style={{ display: 'inline-block', background: 'rgba(13,58,138,0.1)', color: '#0D3A8A', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginBottom: '20px', textTransform: 'uppercase' }}>
                   Our Philosophy
                 </span>
-                <h3 style={{ fontSize: 'clamp(18px, 2.5vw, 22px)', fontWeight: 800, color: '#0A2D73', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                <h3 style={{ fontSize: 'clamp(18px, 2.5vw, 22px)', fontWeight: 800, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                   Our Basic Philosophy
                 </h3>
-                <p style={{ fontSize: '14.5px', color: '#6B7A8D', lineHeight: 1.7, marginBottom: '24px' }}>
+                <p style={{ fontSize: '14.5px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7, marginBottom: '24px' }}>
                   We are driven by three fundamental principles to maintain respectability, support operator infrastructure, and deliver top service.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -265,8 +266,8 @@ export default function AboutPage() {
                         {idx + 1}
                       </div>
                       <div>
-                        <h4 style={{ color: '#0A2D73', fontSize: '14.5px', fontWeight: 700, marginBottom: '2px' }}>{item.label}</h4>
-                        <p style={{ fontSize: '13.5px', color: '#4A5568', lineHeight: 1.5 }}>{item.desc}</p>
+                        <h4 style={{ color: 'var(--text-heading, #0A2D73)', fontSize: '14.5px', fontWeight: 700, marginBottom: '2px' }}>{item.label}</h4>
+                        <p style={{ fontSize: '13.5px', color: 'var(--text-body, #4A5568)', lineHeight: 1.5 }}>{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -278,7 +279,7 @@ export default function AboutPage() {
       </Section>
 
       {/* ═══════ TIMELINE ═══════ */}
-      <Section bg="#FFFFFF">
+      <Section bg="var(--bg-primary, #FFFFFF)">
         <Heading title="Our Journey" />
 
         <div style={{ maxWidth: '800px', margin: '0 auto', position: 'relative' }}>
@@ -304,21 +305,21 @@ export default function AboutPage() {
                   className={`w-full md:w-[calc(50%-32px)] pl-12 md:pl-0 ${i % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}
                 >
                   <div style={{
-                    background: '#FFFFFF',
+                    background: 'var(--bg-card, #FFFFFF)',
                     borderRadius: '14px',
                     padding: '24px',
-                    boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
-                    border: '1px solid #E2E8F0',
+                    boxShadow: 'var(--card-shadow, 0 2px 12px rgba(0,0,0,0.06))',
+                    border: '1px solid var(--border-color, #E2E8F0)',
                     textAlign: 'left'
                   }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                       <Calendar style={{ width: '18px', height: '18px', color: '#D9041B' }} />
                       <span style={{ color: '#D9041B', fontWeight: 700, fontSize: '16px' }}>{milestone.year}</span>
                     </div>
-                    <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#0A2D73', marginBottom: '8px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                    <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                       {milestone.title}
                     </h3>
-                    <p style={{ fontSize: '14px', color: '#6B7A8D', lineHeight: 1.65 }}>{milestone.description}</p>
+                    <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.65 }}>{milestone.description}</p>
                   </div>
                 </div>
 
@@ -353,7 +354,7 @@ export default function AboutPage() {
       </Section>
 
       {/* ═══════ LEADERSHIP TEAM ═══════ */}
-      <Section bg="#F5F7FA">
+      <Section bg="var(--bg-secondary, #F5F7FA)">
         <Heading title="Leadership Team" subtitle="Experienced professionals driving engineering excellence." />
 
         <div className="flex justify-center">
@@ -362,11 +363,11 @@ export default function AboutPage() {
               <ScrollReveal key={member.id} delay={i * 0.1}>
                 <motion.div whileHover={{ y: -6 }} style={{ cursor: 'pointer' }}>
                   <div style={{
-                    background: '#FFFFFF',
+                    background: 'var(--bg-card, #FFFFFF)',
                     borderRadius: '14px',
                     overflow: 'hidden',
-                    boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
-                    border: '1px solid #E2E8F0',
+                    boxShadow: 'var(--card-shadow, 0 2px 12px rgba(0,0,0,0.06))',
+                    border: '1px solid var(--border-color, #E2E8F0)',
                     transition: 'box-shadow 0.3s',
                   }}>
                     {/* Rounded avatar container */}
@@ -374,14 +375,14 @@ export default function AboutPage() {
                       display: 'flex',
                       justifyContent: 'center',
                       paddingTop: '32px',
-                      background: '#FFFFFF',
+                      background: 'transparent',
                     }}>
                       <div style={{
                         width: '180px',
                         height: '180px',
                         borderRadius: '50%',
                         overflow: 'hidden',
-                        border: '4px solid #F5F7FA',
+                        border: '4px solid var(--border-color, #F5F7FA)',
                         boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
                         background: '#0A2D73',
                         position: 'relative',
@@ -394,7 +395,7 @@ export default function AboutPage() {
                               width: '100%',
                               height: '100%',
                               objectFit: 'cover',
-                              objectPosition: 'top', // Ensures the top of the head is not cut off
+                              objectPosition: 'top',
                               display: 'block'
                             }}
                           />
@@ -415,11 +416,11 @@ export default function AboutPage() {
                     </div>
 
                     <div style={{ padding: '20px' }}>
-                      <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0A2D73', marginBottom: '4px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                      <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '4px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                         {member.name}
                       </h3>
                       <p style={{ color: '#D9041B', fontWeight: 500, fontSize: '13px', marginBottom: '10px' }}>{member.title}</p>
-                      <p style={{ fontSize: '13px', color: '#6B7A8D', lineHeight: 1.6 }}>{member.bio}</p>
+                      <p style={{ fontSize: '13px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.6 }}>{member.bio}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -430,7 +431,7 @@ export default function AboutPage() {
       </Section>
 
       {/* ═══════ CORE VALUES ═══════ */}
-      <Section bg="#FFFFFF">
+      <Section bg="var(--bg-primary, #FFFFFF)">
         <Heading title="Our Core Values" subtitle="The principles that guide everything we do." />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
@@ -439,14 +440,14 @@ export default function AboutPage() {
             return (
               <ScrollReveal key={i} delay={i * 0.06}>
                 <motion.div
-                  whileHover={{ y: -4, boxShadow: '0 12px 32px rgba(0,0,0,0.1)' }}
+                  whileHover={{ y: -4, boxShadow: 'var(--card-shadow, 0 12px 32px rgba(0,0,0,0.1))' }}
                   style={{
-                    background: '#FFFFFF',
+                    background: 'var(--bg-card, #FFFFFF)',
                     borderRadius: '14px',
                     padding: '28px 20px',
                     textAlign: 'center',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
-                    border: '1px solid #E2E8F0',
+                    boxShadow: 'var(--card-shadow, 0 2px 8px rgba(0,0,0,0.04))',
+                    border: '1px solid var(--border-color, #E2E8F0)',
                     height: '100%',
                     transition: 'all 0.3s',
                   }}
@@ -463,10 +464,10 @@ export default function AboutPage() {
                   }}>
                     <ValueIcon style={{ width: '24px', height: '24px', color: '#D9041B' }} />
                   </div>
-                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0A2D73', marginBottom: '6px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '6px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                     {value.title}
                   </h3>
-                  <p style={{ fontSize: '13px', color: '#6B7A8D', lineHeight: 1.6 }}>{value.description}</p>
+                  <p style={{ fontSize: '13px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.6 }}>{value.description}</p>
                 </motion.div>
               </ScrollReveal>
             );
@@ -475,7 +476,7 @@ export default function AboutPage() {
       </Section>
 
       {/* ═══════ CORPORATE PRINCIPLES & COMMITMENTS ═══════ */}
-      <Section bg="#F5F7FA">
+      <Section bg="var(--bg-secondary, #F5F7FA)">
         <Heading title="Corporate Commitments" subtitle="Our approach to quality, client success, and problem solving." />
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -527,25 +528,25 @@ export default function AboutPage() {
             return (
               <ScrollReveal key={idx} delay={idx * 0.08}>
                 <div style={{
-                  background: '#FFFFFF',
+                  background: 'var(--bg-card, #FFFFFF)',
                   borderRadius: '16px',
                   padding: '32px 28px',
                   height: '100%',
-                  border: '1px solid #E2E8F0',
+                  border: '1px solid var(--border-color, #E2E8F0)',
                   transition: 'all 0.3s'
                 }}
                   onMouseEnter={(e) => { e.currentTarget.style.background = '#0A2D73'; e.currentTarget.style.color = '#FFFFFF'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(10,45,115,0.12)'; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = '#FFFFFF'; e.currentTarget.style.color = 'inherit'; e.currentTarget.style.boxShadow = 'none'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--bg-card, #FFFFFF)'; e.currentTarget.style.color = 'inherit'; e.currentTarget.style.boxShadow = 'none'; }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '16px' }}>
                     <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: item.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <Icon style={{ width: '20px', height: '20px', color: item.iconColor }} />
                     </div>
-                    <h3 style={{ fontSize: '16.5px', fontWeight: 700, color: 'inherit', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                    <h3 style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                       {item.title}
                     </h3>
                   </div>
-                  <p style={{ fontSize: '13.5px', color: 'inherit', opacity: 0.8, lineHeight: 1.65 }}>
+                  <p style={{ fontSize: '13.5px', color: 'var(--text-muted, #6B7A8D)', opacity: 0.9, lineHeight: 1.65 }}>
                     {item.desc}
                   </p>
                 </div>
@@ -556,7 +557,7 @@ export default function AboutPage() {
       </Section>
 
       {/* ═══════ KEY CLIENTS ═══════ */}
-      <Section bg="#FFFFFF">
+      <Section bg="var(--bg-primary, #FFFFFF)">
         <Heading title="Clients We've Served" />
 
         <ScrollReveal>
@@ -564,11 +565,11 @@ export default function AboutPage() {
             {clients.map((client, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
                 <motion.div
-                  whileHover={{ y: -4, boxShadow: '0 12px 28px rgba(0,0,0,0.08)' }}
+                  whileHover={{ y: -4, boxShadow: 'var(--card-shadow, 0 12px 28px rgba(0,0,0,0.08))' }}
                   style={{
-                    background: '#FFFFFF',
+                    background: 'var(--bg-card, #FFFFFF)',
                     borderRadius: '12px',
-                    border: '1px solid #E2E8F0',
+                    border: '1px solid var(--border-color, #E2E8F0)',
                     height: '80px',
                     display: 'flex',
                     alignItems: 'center',
@@ -580,7 +581,7 @@ export default function AboutPage() {
                 >
                   <span style={{ 
                     fontWeight: 700, 
-                    color: '#0A2D73', 
+                    color: 'var(--text-heading, #0A2D73)', 
                     fontSize: '18px', 
                     fontFamily: "var(--font-heading, 'DM Sans', sans-serif)",
                     letterSpacing: '-0.3px'

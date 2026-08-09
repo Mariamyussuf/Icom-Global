@@ -24,6 +24,44 @@
 
 :root {
   --nav-height: 100px;
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5F7FA;
+  --bg-card: #FFFFFF;
+  --bg-navbar: #0A2D73;
+  --text-heading: #0A2D73;
+  --text-body: #4A5568;
+  --text-muted: #6B7A8D;
+  --border-color: #E2E8F0;
+  --border-subtle: #F1F5F9;
+  --accent-red: #D9041B;
+  --accent-red-hover: #B50316;
+  --accent-blue: #0D3A8A;
+  --input-bg: #FFFFFF;
+  --input-border: #D1D7E0;
+  --modal-bg: #FFFFFF;
+  --modal-overlay: rgba(10, 45, 115, 0.45);
+  --card-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+html[data-theme="dark"],
+html.dark {
+  --bg-primary: #06132B;
+  --bg-secondary: #0A1C3E;
+  --bg-card: #0E244F;
+  --bg-navbar: #040E20;
+  --text-heading: #F0F4FC;
+  --text-body: #CBD5E1;
+  --text-muted: #94A3B8;
+  --border-color: #1E3A75;
+  --border-subtle: #142B5B;
+  --accent-red: #FF3B50;
+  --accent-red-hover: #D9041B;
+  --accent-blue: #38BDF8;
+  --input-bg: #091735;
+  --input-border: #1E3A75;
+  --modal-bg: #0E244F;
+  --modal-overlay: rgba(3, 8, 18, 0.75);
+  --card-shadow: 0 4px 16px rgba(0,0,0,0.4);
 }
 
 @media (max-width: 1024px) {
@@ -54,8 +92,9 @@ body {
   font-family: var(--font-body);
   font-size: 15px;
   line-height: 1.75;
-  color: var(--color-gray-500);
-  background: var(--color-white);
+  color: var(--text-body);
+  background-color: var(--bg-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;

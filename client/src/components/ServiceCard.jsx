@@ -23,15 +23,15 @@ export default function ServiceCard({ service, index = 0 }) {
         href={`/services/${slug}`}
         style={{
           display: 'block',
-          background: '#FFFFFF',
+          background: 'var(--bg-card, #FFFFFF)',
           borderRadius: '14px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
-          border: '1px solid #E2E8F0',
+          boxShadow: 'var(--card-shadow, 0 2px 8px rgba(0,0,0,0.06))',
+          border: '1px solid var(--border-color, #E2E8F0)',
           borderLeft: '4px solid transparent',
           padding: '28px 24px',
           textDecoration: 'none',
           height: '100%',
-          transition: 'border-color 0.3s, box-shadow 0.3s',
+          transition: 'border-color 0.3s, box-shadow 0.3s, background-color 0.3s',
         }}
         onMouseEnter={(e) => (e.currentTarget.style.borderLeftColor = '#D9041B')}
         onMouseLeave={(e) => (e.currentTarget.style.borderLeftColor = 'transparent')}
@@ -41,20 +41,20 @@ export default function ServiceCard({ service, index = 0 }) {
           width: '52px',
           height: '52px',
           borderRadius: '50%',
-          background: 'linear-gradient(135deg, #EFF6FF, #FFF7ED)',
+          background: 'rgba(217, 4, 27, 0.1)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           marginBottom: '18px',
         }}>
-          <IconComponent size={24} style={{ color: '#0D3A8A' }} />
+          <IconComponent size={24} style={{ color: '#D9041B' }} />
         </div>
 
         {/* Title */}
         <h3 style={{
           fontSize: '16px',
           fontWeight: 700,
-          color: '#0A2D73',
+          color: 'var(--text-heading, #0A2D73)',
           marginBottom: '10px',
           fontFamily: "var(--font-heading, 'DM Sans', sans-serif)",
           lineHeight: 1.3,
@@ -63,7 +63,7 @@ export default function ServiceCard({ service, index = 0 }) {
         </h3>
 
         {/* Description */}
-        <p style={{ fontSize: '14px', color: '#6B7A8D', lineHeight: 1.65, marginBottom: '18px' }}>
+        <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.65, marginBottom: '18px' }}>
           {shortDesc}
         </p>
 

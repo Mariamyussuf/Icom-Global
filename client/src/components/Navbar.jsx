@@ -7,6 +7,8 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
+import ThemeToggle from './ThemeToggle';
+
 const serviceLinks = [
   { name: 'RF Drive Testing & Optimization', href: '/services/rf-drive-testing' },
   { name: 'Radio Network Design', href: '/services/radio-network-design-planning' },
@@ -72,7 +74,7 @@ export default function Navbar() {
           display: 'flex',
           alignItems: 'center',
           transition: 'background-color 0.3s, box-shadow 0.3s',
-          backgroundColor: isNavbarDark || mobileOpen ? '#0A2D73' : 'transparent',
+          backgroundColor: isNavbarDark || mobileOpen ? 'var(--bg-navbar, #0A2D73)' : 'transparent',
           boxShadow: isNavbarDark ? '0 4px 20px rgba(0,0,0,0.15)' : 'none',
         }}
         role="navigation"
@@ -102,7 +104,7 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* ── Desktop Nav Links ── */}
+          {/* ── Desktop Nav Links + ThemeToggle ── */}
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <div
@@ -151,10 +153,10 @@ export default function Navbar() {
                           left: 0,
                           marginTop: '4px',
                           width: '320px',
-                          background: '#FFFFFF',
+                          background: 'var(--bg-card, #FFFFFF)',
                           borderRadius: '12px',
-                          boxShadow: '0 16px 48px rgba(0,0,0,0.12)',
-                          border: '1px solid #E2E8F0',
+                          boxShadow: '0 16px 48px rgba(0,0,0,0.18)',
+                          border: '1px solid var(--border-color, #E2E8F0)',
                           padding: '8px 0',
                           overflow: 'hidden',
                         }}
@@ -167,15 +169,15 @@ export default function Navbar() {
                               display: 'block',
                               padding: '10px 16px',
                               fontSize: '14px',
-                              color: isActive(service.href) ? '#D9041B' : '#4A5568',
+                              color: isActive(service.href) ? '#D9041B' : 'var(--text-body, #4A5568)',
                               textDecoration: 'none',
-                              background: isActive(service.href) ? 'rgba(217,4,27,0.05)' : 'transparent',
+                              background: isActive(service.href) ? 'rgba(217,4,27,0.08)' : 'transparent',
                               transition: 'all 0.15s',
                             }}
-                            onMouseEnter={(e) => { e.currentTarget.style.background = '#F5F7FA'; e.currentTarget.style.color = '#D9041B'; }}
+                            onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--bg-secondary, #F5F7FA)'; e.currentTarget.style.color = '#D9041B'; }}
                             onMouseLeave={(e) => {
-                              e.currentTarget.style.background = isActive(service.href) ? 'rgba(217,4,27,0.05)' : 'transparent';
-                              e.currentTarget.style.color = isActive(service.href) ? '#D9041B' : '#4A5568';
+                              e.currentTarget.style.background = isActive(service.href) ? 'rgba(217,4,27,0.08)' : 'transparent';
+                              e.currentTarget.style.color = isActive(service.href) ? '#D9041B' : 'var(--text-body, #4A5568)';
                             }}
                           >
                             {service.name}
@@ -187,14 +189,16 @@ export default function Navbar() {
                 )}
               </div>
             ))}
+
+            <ThemeToggle style={{ marginLeft: '12px' }} />
           </div>
 
-          {/* ── Mobile Toggle ── */}
-          <div className="flex items-center gap-4">
-            {/* Mobile Hamburger Trigger */}
+          {/* ── Mobile Controls (ThemeToggle + Hamburger) ── */}
+          <div className="flex items-center gap-2 sm:gap-3 lg:hidden">
+            <ThemeToggle />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 transition-colors focus:outline-none cursor-pointer"
+              className="p-2 transition-colors focus:outline-none cursor-pointer"
               style={{
                 color: isNavbarDark || mobileOpen ? '#FFFFFF' : '#0A2D73',
                 minWidth: '44px',

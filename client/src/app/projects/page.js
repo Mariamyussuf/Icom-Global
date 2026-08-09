@@ -56,7 +56,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Filter + Grid */}
-      <section style={{ backgroundColor: '#FFFFFF' }}>
+      <section style={{ backgroundColor: 'var(--bg-primary, #FFFFFF)' }}>
         <div className="px-4 sm:px-6 lg:px-12 py-12 md:py-20" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           {/* Filter Tabs */}
           <ScrollReveal>
@@ -70,11 +70,11 @@ export default function ProjectsPage() {
                     borderRadius: '999px',
                     fontWeight: 500,
                     fontSize: '14px',
-                    border: 'none',
+                    border: '1px solid var(--border-color, #E2E8F0)',
                     cursor: 'pointer',
                     transition: 'all 0.3s',
-                    background: activeFilter === cat.key ? '#D9041B' : '#F5F7FA',
-                    color: activeFilter === cat.key ? '#FFFFFF' : '#0A2D73',
+                    background: activeFilter === cat.key ? '#D9041B' : 'var(--bg-card, #F5F7FA)',
+                    color: activeFilter === cat.key ? '#FFFFFF' : 'var(--text-heading, #0A2D73)',
                     boxShadow: activeFilter === cat.key ? '0 4px 12px rgba(217,4,27,0.3)' : 'none',
                   }}
                 >

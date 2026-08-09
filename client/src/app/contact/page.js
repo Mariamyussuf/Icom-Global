@@ -20,11 +20,12 @@ const inputStyle = {
   width: '100%',
   padding: '12px 16px',
   borderRadius: '8px',
-  border: '1px solid #D1D7E0',
+  border: '1px solid var(--input-border, #D1D7E0)',
+  background: 'var(--input-bg, #FFFFFF)',
   outline: 'none',
   fontSize: '14px',
-  color: '#0A2D73',
-  transition: 'border-color 0.3s',
+  color: 'var(--text-heading, #0A2D73)',
+  transition: 'border-color 0.3s, background-color 0.3s',
   fontFamily: 'inherit',
 };
 
@@ -114,13 +115,13 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form + Info */}
-      <section style={{ backgroundColor: '#FFFFFF' }}>
+      <section style={{ backgroundColor: 'var(--bg-primary, #FFFFFF)' }}>
         <div className="px-4 sm:px-6 lg:px-12 py-12 md:py-20" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Form */}
             <div className="lg:col-span-3">
               <ScrollReveal>
-                <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#0A2D73', marginBottom: '32px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                <h2 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '32px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                   Send Us a Message
                 </h2>
 
@@ -148,49 +149,49 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                     <div>
-                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0A2D73', marginBottom: '8px' }}>
+                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px' }}>
                         Full Name <span style={{ color: '#D9041B' }}>*</span>
                       </label>
                       <input type="text" name="name" required value={formData.name} onChange={handleChange} placeholder="John Doe" style={inputStyle}
-                        onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = '#D1D7E0')} />
+                        onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = 'var(--input-border, #D1D7E0)')} />
                     </div>
                     <div>
-                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0A2D73', marginBottom: '8px' }}>Company</label>
+                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px' }}>Company</label>
                       <input type="text" name="company" value={formData.company} onChange={handleChange} placeholder="Your Company" style={inputStyle}
-                        onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = '#D1D7E0')} />
+                        onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = 'var(--input-border, #D1D7E0)')} />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                     <div>
-                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0A2D73', marginBottom: '8px' }}>
+                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px' }}>
                         Email <span style={{ color: '#D9041B' }}>*</span>
                       </label>
                       <input type="email" name="email" required value={formData.email} onChange={handleChange} placeholder="john@example.com" style={inputStyle}
-                        onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = '#D1D7E0')} />
+                        onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = 'var(--input-border, #D1D7E0)')} />
                     </div>
                     <div>
-                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0A2D73', marginBottom: '8px' }}>Phone</label>
+                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px' }}>Phone</label>
                       <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+234 800 000 0000" style={inputStyle}
-                        onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = '#D1D7E0')} />
+                        onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = 'var(--input-border, #D1D7E0)')} />
                     </div>
                   </div>
 
                   <div style={{ marginBottom: '20px' }}>
-                    <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0A2D73', marginBottom: '8px' }}>
+                    <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px' }}>
                       Subject <span style={{ color: '#D9041B' }}>*</span>
                     </label>
                     <input type="text" name="subject" required value={formData.subject} onChange={handleChange} placeholder="How can we help?" style={inputStyle}
-                      onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = '#D1D7E0')} />
+                      onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = 'var(--input-border, #D1D7E0)')} />
                   </div>
 
                   <div style={{ marginBottom: '24px' }}>
-                    <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0A2D73', marginBottom: '8px' }}>
+                    <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px' }}>
                       Message <span style={{ color: '#D9041B' }}>*</span>
                     </label>
                     <textarea name="message" required rows={6} value={formData.message} onChange={handleChange} placeholder="Tell us about your project..."
                       style={{ ...inputStyle, resize: 'vertical' }}
-                      onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = '#D1D7E0')} />
+                      onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = 'var(--input-border, #D1D7E0)')} />
                   </div>
 
                   <motion.button type="submit" disabled={loading} whileHover={{ scale: loading ? 1 : 1.02 }} whileTap={{ scale: loading ? 1 : 0.98 }}
@@ -222,7 +223,7 @@ export default function ContactPage() {
             {/* Contact Info Cards */}
             <div className="lg:col-span-2">
               <ScrollReveal direction="right">
-                <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#0A2D73', marginBottom: '32px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                <h2 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '32px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                   Contact Information
                 </h2>
 
@@ -231,15 +232,15 @@ export default function ContactPage() {
                     const InfoIcon = info.icon;
                     return (
                       <div key={i} style={{
-                        background: '#FFFFFF',
+                        background: 'var(--bg-card, #FFFFFF)',
                         borderRadius: '12px',
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-                        border: '1px solid #E2E8F0',
+                        boxShadow: 'var(--card-shadow, 0 2px 8px rgba(0,0,0,0.05))',
+                        border: '1px solid var(--border-color, #E2E8F0)',
                         padding: '24px',
-                        transition: 'box-shadow 0.3s',
+                        transition: 'box-shadow 0.3s, background-color 0.3s',
                       }}
-                        onMouseEnter={(e) => (e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.08)')}
-                        onMouseLeave={(e) => (e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05)')}
+                        onMouseEnter={(e) => (e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.12)')}
+                        onMouseLeave={(e) => (e.currentTarget.style.boxShadow = 'var(--card-shadow, 0 2px 8px rgba(0,0,0,0.05))')}
                       >
                         <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
                           <div style={{
@@ -250,9 +251,9 @@ export default function ContactPage() {
                             <InfoIcon style={{ width: '20px', height: '20px', color: '#D9041B' }} />
                           </div>
                           <div>
-                            <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0A2D73', marginBottom: '4px' }}>{info.title}</h3>
+                            <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '4px' }}>{info.title}</h3>
                             {info.lines.map((line, j) => (
-                              <p key={j} style={{ fontSize: '14px', color: '#6B7A8D', lineHeight: 1.5 }}>{line}</p>
+                              <p key={j} style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.5 }}>{line}</p>
                             ))}
                           </div>
                         </div>

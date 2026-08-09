@@ -39,7 +39,7 @@ export default function Hero() {
   return (
     <section
       style={{
-        backgroundColor: '#FFFFFF',
+        backgroundColor: 'var(--bg-primary, #FFFFFF)',
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
@@ -129,11 +129,11 @@ export default function Hero() {
                 marginBottom: '20px',
               }}
             >
-              <span style={{ color: '#0A2D73' }}>Engineering Reliable</span>
+              <span style={{ color: 'var(--text-heading, #0A2D73)' }}>Engineering Reliable</span>
               <br />
               <span style={{ color: '#D9041B' }}>Power, Telecom</span>
               <br />
-              <span style={{ color: '#0A2D73' }}>&amp; IT Solutions</span>
+              <span style={{ color: 'var(--text-heading, #0A2D73)' }}>&amp; IT Solutions</span>
             </h1>
 
             {/* Subheadline */}
@@ -141,7 +141,7 @@ export default function Hero() {
               fontFamily: "'Inter', sans-serif",
               fontSize: '15px',
               lineHeight: 1.7,
-              color: '#6B7A8D',
+              color: 'var(--text-muted, #6B7A8D)',
               maxWidth: '440px',
               marginBottom: '32px',
             }}>

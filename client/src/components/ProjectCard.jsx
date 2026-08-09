@@ -24,13 +24,13 @@ export default function ProjectCard({ project, index = 0 }) {
         onClick={() => setModalOpen(true)}
       >
         <div style={{
-          background: '#FFFFFF',
+          background: 'var(--bg-card, #FFFFFF)',
           borderRadius: '14px',
           overflow: 'hidden',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
-          border: '1px solid #E2E8F0',
+          boxShadow: 'var(--card-shadow, 0 2px 8px rgba(0,0,0,0.06))',
+          border: '1px solid var(--border-color, #E2E8F0)',
           height: '100%',
-          transition: 'box-shadow 0.3s',
+          transition: 'box-shadow 0.3s, background-color 0.3s',
           cursor: 'pointer',
           position: 'relative',
         }}>
@@ -130,10 +130,10 @@ export default function ProjectCard({ project, index = 0 }) {
 
           {/* Content */}
           <div style={{ padding: '24px' }}>
-            <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0A2D73', marginBottom: '8px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               {title}
             </h3>
-            <p style={{ fontSize: '14px', color: '#6B7A8D', lineHeight: 1.6, marginBottom: '14px' }}>
+            <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.6, marginBottom: '14px' }}>
               {description}
             </p>
 
@@ -142,8 +142,8 @@ export default function ProjectCard({ project, index = 0 }) {
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '14px' }}>
                 {tags.map((tag) => (
                   <span key={tag} style={{
-                    padding: '4px 10px', background: '#F5F7FA', color: '#0A2D73',
-                    fontSize: '11px', fontWeight: 500, borderRadius: '999px',
+                    padding: '4px 10px', background: 'var(--bg-secondary, #F5F7FA)', color: 'var(--text-heading, #0A2D73)',
+                    fontSize: '11px', fontWeight: 500, borderRadius: '999px', border: '1px solid var(--border-color, #E2E8F0)',
                   }}>
                     {tag}
                   </span>
@@ -168,7 +168,7 @@ export default function ProjectCard({ project, index = 0 }) {
               position: 'fixed',
               inset: 0,
               zIndex: 100,
-              backgroundColor: 'rgba(10, 45, 115, 0.45)',
+              backgroundColor: 'var(--modal-overlay, rgba(10, 45, 115, 0.45))',
               backdropFilter: 'blur(6px)',
               display: 'flex',
               alignItems: 'center',
@@ -186,10 +186,11 @@ export default function ProjectCard({ project, index = 0 }) {
               style={{
                 width: '100%',
                 maxWidth: '680px',
-                background: '#FFFFFF',
+                background: 'var(--modal-bg, #FFFFFF)',
                 borderRadius: '16px',
                 overflow: 'hidden',
-                boxShadow: '0 24px 64px rgba(0, 0, 0, 0.15)',
+                boxShadow: '0 24px 64px rgba(0, 0, 0, 0.3)',
+                border: '1px solid var(--border-color, #E2E8F0)',
                 position: 'relative',
                 display: 'flex',
                 flexDirection: 'column',
@@ -318,7 +319,7 @@ export default function ProjectCard({ project, index = 0 }) {
                 <h2 style={{
                   fontSize: 'clamp(18px, 3.5vw, 22px)',
                   fontWeight: 800,
-                  color: '#0A2D73',
+                  color: 'var(--text-heading, #0A2D73)',
                   marginBottom: '14px',
                   fontFamily: "var(--font-heading, 'DM Sans', sans-serif)",
                   lineHeight: 1.25,
@@ -328,7 +329,7 @@ export default function ProjectCard({ project, index = 0 }) {
 
                 <p style={{
                   fontSize: '14.5px',
-                  color: '#4A5568',
+                  color: 'var(--text-body, #4A5568)',
                   lineHeight: 1.7,
                   marginBottom: '20px',
                 }}>
@@ -340,8 +341,8 @@ export default function ProjectCard({ project, index = 0 }) {
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
                     {tags.map((tag) => (
                       <span key={tag} style={{
-                        padding: '6px 14px', background: '#F5F7FA', color: '#0A2D73',
-                        fontSize: '12px', fontWeight: 600, borderRadius: '999px',
+                        padding: '6px 14px', background: 'var(--bg-secondary, #F5F7FA)', color: 'var(--text-heading, #0A2D73)',
+                        fontSize: '12px', fontWeight: 600, borderRadius: '999px', border: '1px solid var(--border-color, #E2E8F0)',
                       }}>
                         {tag}
                       </span>

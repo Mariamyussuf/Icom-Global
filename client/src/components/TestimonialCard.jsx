@@ -3,17 +3,18 @@ import { Quote } from 'lucide-react';
 export default function TestimonialCard({ name, role, company, quote, avatar }) {
   return (
     <div style={{
-      background: '#FFFFFF',
+      background: 'var(--bg-card, #FFFFFF)',
       borderRadius: '16px',
-      boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
+      boxShadow: 'var(--card-shadow, 0 4px 20px rgba(0,0,0,0.06))',
       padding: '32px',
-      border: '1px solid #E2E8F0',
+      border: '1px solid var(--border-color, #E2E8F0)',
       textAlign: 'center',
+      transition: 'background-color 0.3s, border-color 0.3s',
     }}>
       {/* Quote Text */}
       <blockquote style={{
         fontSize: '16px',
-        color: '#4A5568',
+        color: 'var(--text-body, #4A5568)',
         fontStyle: 'italic',
         lineHeight: 1.8,
         marginBottom: '24px',
@@ -24,7 +25,7 @@ export default function TestimonialCard({ name, role, company, quote, avatar }) 
       </blockquote>
 
       {/* Author */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', paddingTop: '20px', borderTop: '1px solid #E2E8F0' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', paddingTop: '20px', borderTop: '1px solid var(--border-color, #E2E8F0)' }}>
         {avatar ? (
           <img
             src={avatar}
@@ -49,8 +50,8 @@ export default function TestimonialCard({ name, role, company, quote, avatar }) 
           </div>
         )}
         <div style={{ textAlign: 'left' }}>
-          <p style={{ fontWeight: 700, fontSize: '15px', color: '#0A2D73', marginBottom: '2px' }}>{name}</p>
-          <p style={{ fontSize: '13px', color: '#6B7A8D' }}>
+          <p style={{ fontWeight: 700, fontSize: '15px', color: 'var(--text-heading, #0A2D73)', marginBottom: '2px' }}>{name}</p>
+          <p style={{ fontSize: '13px', color: 'var(--text-muted, #6B7A8D)' }}>
             {role}{company ? `, ${company}` : ''}
           </p>
         </div>

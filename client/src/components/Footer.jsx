@@ -54,7 +54,7 @@ const linkStyle = {
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#0A2D73', position: 'relative', overflow: 'hidden', marginTop: '24px' }} role="contentinfo">
+    <footer style={{ backgroundColor: 'var(--bg-footer, #0A2D73)', position: 'relative', overflow: 'hidden', marginTop: '24px' }} role="contentinfo">
       {/* Decorative top red bar */}
       <div style={{ height: '3px', background: '#D9041B' }} />
 
