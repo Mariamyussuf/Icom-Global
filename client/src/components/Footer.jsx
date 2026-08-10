@@ -38,10 +38,10 @@ export default function Footer() {
       {/* Top red accent line */}
       <div style={{ height: '3px', background: '#D9041B' }} />
 
-      <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-8 md:py-10" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-12 md:py-16" style={{ maxWidth: '1200px', margin: '0 auto' }}>
         
         {/* Row 1: Brand Logo + Nav Links + Social Icons */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-6" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
           {/* Logo */}
           <Link href="/" aria-label="ICOM - Home" style={{ textDecoration: 'none' }}>
             <Image
@@ -101,14 +101,14 @@ export default function Footer() {
         </div>
 
         {/* Row 2: Compact Essential Contact Info */}
-        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center sm:justify-between gap-4 py-5 text-xs" style={{ color: 'rgba(255,255,255,0.5)' }}>
-          <div style={{ display: 'flex', items: 'center', gap: '6px' }}>
+        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center sm:justify-between gap-6 py-8 text-xs" style={{ color: 'rgba(255,255,255,0.5)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', textAlign: 'center' }}>
             <MapPin style={{ width: '14px', height: '14px', color: '#D9041B', flexShrink: 0 }} />
             <span>164, Prince Ademola St, Oniru Estate, Victoria Island, Lagos, Nigeria</span>
           </div>
 
-          <div className="flex items-center gap-6">
-            <div style={{ display: 'flex', items: 'center', gap: '6px' }}>
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Phone style={{ width: '14px', height: '14px', color: '#D9041B', flexShrink: 0 }} />
               <a href="tel:+2348035669513" style={{ color: 'inherit', textDecoration: 'none' }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
@@ -117,7 +117,7 @@ export default function Footer() {
               </a>
             </div>
 
-            <div style={{ display: 'flex', items: 'center', gap: '6px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Mail style={{ width: '14px', height: '14px', color: '#D9041B', flexShrink: 0 }} />
               <a href="mailto:info@icomtsl.com" style={{ color: 'inherit', textDecoration: 'none' }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
@@ -129,7 +129,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div style={{ textAlign: 'center', paddingTop: '12px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div style={{ textAlign: 'center', paddingTop: '20px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
           <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.35)' }}>
             © {new Date().getFullYear()} ICOM Technical Service Support Limited. RC: 1043812. All rights reserved.
           </p>
