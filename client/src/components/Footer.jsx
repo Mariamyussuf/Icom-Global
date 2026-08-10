@@ -38,99 +38,102 @@ export default function Footer() {
       {/* Top red accent line */}
       <div style={{ height: '3px', background: '#D9041B' }} />
 
-      <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-12 md:py-16" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-8 md:py-10" style={{ maxWidth: '1200px', margin: '0 auto' }}>
         
-        {/* Row 1: Brand Logo + Nav Links + Social Icons */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-          {/* Logo */}
-          <Link href="/" aria-label="ICOM - Home" style={{ textDecoration: 'none' }}>
-            <Image
-              src="/images/Icom-logo.png"
-              alt="ICOM Technical Support Limited"
-              width={140}
-              height={45}
-              className="h-9 lg:h-10 w-auto"
-              style={{ objectFit: 'contain', filter: 'drop-shadow(0 0 1px rgba(255,255,255,0.4))' }}
-            />
-          </Link>
+        {/* Main Footer Content */}
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 pb-6 md:pb-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+          
+          {/* Left Column: Brand Logo, Descriptor, Socials */}
+          <div className="flex flex-col items-center md:items-start gap-4">
+            <div className="flex flex-col items-center md:items-start gap-1">
+              <Link href="/" aria-label="ICOM - Home" style={{ textDecoration: 'none' }}>
+                <Image
+                  src="/images/Icom-logo.png"
+                  alt="ICOM Technical Support Limited"
+                  width={150}
+                  height={48}
+                  className="h-10 lg:h-11 w-auto"
+                  style={{ objectFit: 'contain', filter: 'drop-shadow(0 0 1px rgba(255,255,255,0.4))' }}
+                />
+              </Link>
+              <p className="text-[11px] font-medium tracking-wide mt-1.5 text-center md:text-left text-white/50 uppercase">
+                Technical Service Support Limited
+              </p>
+            </div>
 
-          {/* Quick Nav Links */}
-          <nav aria-label="Footer navigation">
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }} className="flex flex-wrap items-center justify-center gap-6 text-sm font-medium">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', transition: 'color 0.2s' }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}
+            {/* Social Icons */}
+            <div className="flex items-center gap-2 mt-1">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    aria-label={social.name}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-[34px] h-[34px] rounded-full flex items-center justify-center text-white/60 bg-white/6 hover:bg-[#D9041B] hover:text-white hover:scale-105 transition-all duration-200"
                   >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Social Icons */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            {socialLinks.map((social) => {
-              const Icon = social.icon;
-              return (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  aria-label={social.name}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    width: '34px', height: '34px', borderRadius: '50%',
-                    background: 'rgba(255,255,255,0.06)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    color: 'rgba(255,255,255,0.6)',
-                    transition: 'all 0.25s',
-                  }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = '#D9041B'; e.currentTarget.style.color = '#fff'; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; e.currentTarget.style.color = 'rgba(255,255,255,0.6)'; }}
-                >
-                  <Icon size={14} />
-                </a>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Row 2: Compact Essential Contact Info */}
-        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center sm:justify-between gap-6 py-8 text-xs" style={{ color: 'rgba(255,255,255,0.5)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', textAlign: 'center' }}>
-            <MapPin style={{ width: '14px', height: '14px', color: '#D9041B', flexShrink: 0 }} />
-            <span>164, Prince Ademola St, Oniru Estate, Victoria Island, Lagos, Nigeria</span>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Phone style={{ width: '14px', height: '14px', color: '#D9041B', flexShrink: 0 }} />
-              <a href="tel:+2348035669513" style={{ color: 'inherit', textDecoration: 'none' }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = 'inherit')}>
-                +234 803 566 9513
-              </a>
-            </div>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Mail style={{ width: '14px', height: '14px', color: '#D9041B', flexShrink: 0 }} />
-              <a href="mailto:info@icomtsl.com" style={{ color: 'inherit', textDecoration: 'none' }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = 'inherit')}>
-                info@icomtsl.com
-              </a>
+                    <Icon size={14} />
+                  </a>
+                );
+              })}
             </div>
           </div>
+
+          {/* Right Column: Navigation and Contact Details */}
+          <div className="flex flex-col items-center md:items-end gap-6 md:gap-8 w-full md:w-auto">
+            {/* Quick Nav Links */}
+            <nav aria-label="Footer navigation">
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }} className="flex flex-wrap items-center justify-center md:justify-end gap-x-4 gap-y-2 text-sm font-medium">
+                {navLinks.map((link, idx) => (
+                  <li key={link.href} className="flex items-center">
+                    {idx > 0 && <span className="mx-2 md:mx-3 text-white/20 select-none">•</span>}
+                    <Link
+                      href={link.href}
+                      className="text-white/70 hover:text-[#D9041B] transition-colors duration-200"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            {/* Contact Details */}
+            <div className="flex flex-col items-center md:items-end gap-3 text-xs w-full text-white/50">
+              
+              {/* Address */}
+              <div className="flex items-center justify-center md:justify-end gap-2 text-center md:text-right max-w-[340px] sm:max-w-none">
+                <MapPin size={14} className="text-[#D9041B] shrink-0" />
+                <span>164, Prince Ademola St, Oniru Estate, Victoria Island, Lagos, Nigeria</span>
+              </div>
+
+              {/* Phone & Email Container */}
+              <div className="flex flex-row flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-2 mt-0.5">
+                <div className="flex items-center gap-2">
+                  <Phone size={14} className="text-[#D9041B] shrink-0" />
+                  <a href="tel:+2348035669513" className="hover:text-[#D9041B] transition-colors duration-200">
+                    +234 803 566 9513
+                  </a>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <Mail size={14} className="text-[#D9041B] shrink-0" />
+                  <a href="mailto:info@icomtsl.com" className="hover:text-[#D9041B] transition-colors duration-200">
+                    info@icomtsl.com
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
 
         {/* Bottom bar */}
-        <div style={{ textAlign: 'center', paddingTop: '20px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-          <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.35)' }}>
+        <div style={{ textAlign: 'center', paddingTop: '16px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+          <p className="text-[11px] text-white/35 tracking-normal">
             © {new Date().getFullYear()} ICOM Technical Service Support Limited. RC: 1043812. All rights reserved.
           </p>
         </div>
