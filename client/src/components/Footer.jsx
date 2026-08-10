@@ -67,7 +67,7 @@ export default function Footer() {
       {/* ── Newsletter / CTA strip ── */}
       <div className="px-5 sm:px-6 md:px-8 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', paddingTop: '48px', paddingBottom: '24px' }}>
         <div 
-          className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between p-6 sm:p-8"
+          className="flex flex-col md:flex-row gap-6 items-center md:items-center justify-between text-center md:text-left p-6 sm:p-8"
           style={{
             background: 'rgba(217,4,27,0.08)',
             borderRadius: '14px',
@@ -82,7 +82,7 @@ export default function Footer() {
               Get in touch with our engineering team for a free consultation.
             </p>
           </div>
-          <Link href="/contact" style={{
+          <Link href="/contact" className="self-center md:self-auto" style={{
             display: 'inline-flex', alignItems: 'center', gap: '8px',
             padding: '12px 28px', background: '#D9041B', color: '#fff',
             fontWeight: 600, fontSize: '14px', borderRadius: '8px',

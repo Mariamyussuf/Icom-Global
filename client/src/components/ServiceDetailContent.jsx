@@ -85,7 +85,7 @@ export default function ServiceDetailContent({ service }) {
           </nav>
 
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-5 items-start sm:items-center">
+            className="flex flex-col sm:flex-row gap-5 items-center sm:items-center text-center sm:text-left">
             <div style={{
               width: '64px', height: '64px', background: 'rgba(217,4,27,0.15)', borderRadius: '16px',
               display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,

@@ -61,13 +61,13 @@ function Section({ children, bg = 'var(--bg-primary, #FFFFFF)' }) {
 /* ─── Section heading ─── */
 function Heading({ title, subtitle, light = false, centered = true }) {
   return (
-    <div style={{ textAlign: centered ? 'center' : 'left', marginBottom: '40px' }}>
-      <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: centered ? '0 auto 20px' : '0 0 20px', }} />
+    <div className={`mb-10 ${centered ? 'text-center' : 'text-center lg:text-left'}`}>
+      <div className={`mb-5 ${centered ? 'mx-auto' : 'mx-auto lg:mx-0'}`} style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px' }} />
       <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: light ? '#fff' : 'var(--text-heading, #0A2D73)', marginBottom: subtitle ? '14px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
         {title}
       </h2>
       {subtitle && (
-        <p style={{ fontSize: '16px', color: light ? 'rgba(255,255,255,0.6)' : 'var(--text-muted, #6B7A8D)', maxWidth: '560px', margin: centered ? '0 auto' : '0', lineHeight: 1.7 }}>
+        <p className={`line-height-1-7 ${centered ? 'mx-auto' : 'mx-auto lg:mx-0'}`} style={{ fontSize: '16px', color: light ? 'rgba(255,255,255,0.6)' : 'var(--text-muted, #6B7A8D)', maxWidth: '560px', lineHeight: 1.7 }}>
           {subtitle}
         </p>
       )}

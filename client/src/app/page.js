@@ -191,13 +191,13 @@ export default function HomePage() {
       <Section bg="white" aria-label="Why choose ICOM">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: content */}
-          <div>
+          <div className="text-center md:text-left">
             <ScrollReveal>
-              <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', marginBottom: '20px' }} />
+              <div className="mx-auto md:mx-0" style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', marginBottom: '20px' }} />
               <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '12px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                 Why Choose ICOM?
               </h2>
-              <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '460px', lineHeight: 1.7, marginBottom: '36px' }}>
+              <p className="mx-auto md:mx-0" style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '460px', lineHeight: 1.7, marginBottom: '36px' }}>
                 We combine deep technical expertise with a commitment to quality that sets us apart in every project.
               </p>
             </ScrollReveal>
