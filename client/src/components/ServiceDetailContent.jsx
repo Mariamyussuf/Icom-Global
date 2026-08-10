@@ -39,7 +39,7 @@ function Heading({ title, subtitle }) {
   return (
     <div style={{ textAlign: 'center', marginBottom: '40px' }}>
       <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
-      <h2 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: subtitle ? '12px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+      <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: subtitle ? '12px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
         {title}
       </h2>
       {subtitle && <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>{subtitle}</p>}
@@ -93,7 +93,7 @@ export default function ServiceDetailContent({ service }) {
               <ServiceIcon style={{ width: '32px', height: '32px', color: '#D9041B' }} />
             </div>
             <div>
-              <h1 style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', fontWeight: 700, color: '#FFFFFF', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", marginBottom: '6px' }}>
+              <h1 style={{ fontSize: 'var(--text-h1)', fontWeight: 700, color: '#FFFFFF', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", marginBottom: '6px' }}>
                 {service.title}
               </h1>
               <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.6 }}>{service.shortDesc}</p>

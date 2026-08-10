@@ -31,7 +31,7 @@ export default function ServicesPage() {
             <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.15)', color: '#D9041B', fontSize: '14px', fontWeight: 600, padding: '8px 20px', borderRadius: '999px', marginBottom: '24px' }}>
               What We Do
             </span>
-            <h1 style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, color: '#FFFFFF', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.15 }}>
+            <h1 style={{ fontSize: 'var(--text-h1)', fontWeight: 700, color: '#FFFFFF', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.15 }}>
               Services &amp; Core Expertise
             </h1>
             <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.6)', maxWidth: '640px', margin: '0 auto', lineHeight: 1.7 }}>
@@ -54,7 +54,7 @@ export default function ServicesPage() {
           <div style={{ marginBottom: '80px' }}>
             <ScrollReveal>
               <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '36px' }}>
-                <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 26px)', fontWeight: 800, color: '#0A2D73', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                <h2 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, color: '#0A2D73', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                   1. Wireless Network Services (WNS)
                 </h2>
                 <div style={{ flex: 1, height: '2px', background: '#D9041B', opacity: 0.15 }} />
@@ -72,7 +72,7 @@ export default function ServicesPage() {
           <div>
             <ScrollReveal>
               <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '36px' }}>
-                <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 26px)', fontWeight: 800, color: '#0A2D73', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                <h2 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, color: '#0A2D73', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                   2. Enterprise Network Solutions (ENS)
                 </h2>
                 <div style={{ flex: 1, height: '2px', background: '#D9041B', opacity: 0.15 }} />

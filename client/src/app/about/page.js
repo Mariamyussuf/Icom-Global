@@ -63,7 +63,7 @@ function Heading({ title, subtitle, light = false, centered = true }) {
   return (
     <div className={`mb-10 ${centered ? 'text-center' : 'text-center lg:text-left'}`}>
       <div className={`mb-5 ${centered ? 'mx-auto' : 'mx-auto lg:mx-0'}`} style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px' }} />
-      <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: light ? '#fff' : 'var(--text-heading, #0A2D73)', marginBottom: subtitle ? '14px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+      <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: light ? '#fff' : 'var(--text-heading, #0A2D73)', marginBottom: subtitle ? '14px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
         {title}
       </h2>
       {subtitle && (
@@ -108,7 +108,7 @@ export default function AboutPage() {
               About Us
             </span>
             <h1 style={{
-              fontSize: 'clamp(32px, 4vw, 52px)',
+              fontSize: 'var(--text-h1)',
               fontWeight: 700,
               color: '#FFFFFF',
               marginBottom: '20px',
@@ -207,7 +207,7 @@ export default function AboutPage() {
                 <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.1)', color: '#D9041B', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginBottom: '20px', textTransform: 'uppercase' }}>
                   Mission Statement
                 </span>
-                <h3 style={{ fontSize: 'clamp(18px, 2.5vw, 22px)', fontWeight: 800, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.35 }}>
+                <h3 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.35 }}>
                   &ldquo;Our mission is to provide high quality engineering solutions and consulting services, surpassing the requirements and expectations of our clients.&rdquo;
                 </h3>
                 <p style={{ fontSize: '14.5px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7, marginBottom: '24px' }}>
@@ -249,7 +249,7 @@ export default function AboutPage() {
                 <span style={{ display: 'inline-block', background: 'rgba(13,58,138,0.1)', color: '#0D3A8A', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginBottom: '20px', textTransform: 'uppercase' }}>
                   Our Philosophy
                 </span>
-                <h3 style={{ fontSize: 'clamp(18px, 2.5vw, 22px)', fontWeight: 800, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                <h3 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                   Our Basic Philosophy
                 </h3>
                 <p style={{ fontSize: '14.5px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7, marginBottom: '24px' }}>

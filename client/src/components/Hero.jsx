@@ -123,7 +123,7 @@ export default function Hero() {
             <h1
               style={{
                 fontFamily: "var(--font-sora, 'DM Sans', sans-serif)",
-                fontSize: 'clamp(28px, 4vw, 44px)',
+                fontSize: 'var(--text-hero)',
                 fontWeight: 800,
                 letterSpacing: '-0.5px',
                 lineHeight: 1.15,

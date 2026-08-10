@@ -17,8 +17,8 @@ export default function CTABanner({
           <div
             style={{
               background: 'var(--bg-card, #FFFFFF)',
-              borderRadius: '20px',
-              padding: '48px 24px',
+              borderRadius: 'clamp(14px, 3vw, 20px)',
+              padding: 'clamp(28px, 7vw, 48px) clamp(20px, 5vw, 24px)',
               textAlign: 'center',
               border: '1px solid var(--border-color, #E2E8F0)',
               boxShadow: 'var(--card-shadow, 0 8px 30px rgba(0,0,0,0.06))',
@@ -30,7 +30,7 @@ export default function CTABanner({
               Let&apos;s Build Together
             </span>
             <h2 style={{
-              fontSize: 'clamp(24px, 3vw, 34px)',
+              fontSize: 'var(--text-banner-title)',
               fontWeight: 700,
               color: 'var(--text-heading, #0A2D73)',
               marginBottom: '14px',

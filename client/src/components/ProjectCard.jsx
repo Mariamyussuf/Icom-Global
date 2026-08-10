@@ -317,7 +317,7 @@ export default function ProjectCard({ project, index = 0 }) {
                 </span>
                 
                 <h2 style={{
-                  fontSize: 'clamp(18px, 3.5vw, 22px)',
+                  fontSize: 'var(--text-h3)',
                   fontWeight: 800,
                   color: 'var(--text-heading, #0A2D73)',
                   marginBottom: '14px',

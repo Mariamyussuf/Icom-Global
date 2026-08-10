@@ -119,7 +119,7 @@ export default function ServiceImageMarquee() {
         />
         <h2
           style={{
-            fontSize: 'clamp(26px, 3vw, 36px)',
+            fontSize: 'var(--text-h2)',
             fontWeight: 700,
             color: '#0A2D73',
             marginBottom: '14px',
