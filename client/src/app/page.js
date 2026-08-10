@@ -23,7 +23,6 @@ import {
 import ScrollReveal from '@/components/ScrollReveal';
 import ServiceCard from '@/components/ServiceCard';
 import TestimonialCard from '@/components/TestimonialCard';
-import CTABanner from '@/components/CTABanner';
 import Hero from '@/components/Hero';
 import ServiceImageMarquee from '@/components/ServiceImageMarquee';
 
@@ -361,9 +360,6 @@ export default function HomePage() {
           </div>
         </div>
       </Section>
-
-      {/* ═══════════════ 7. FINAL CTA ═══════════════ */}
-      <CTABanner />
     </>
   );
 }
