@@ -42,12 +42,24 @@
   --modal-overlay: rgba(10, 45, 115, 0.45);
   --card-shadow: 0 2px 8px rgba(0,0,0,0.06);
 
-  /* ─── Shared Fluid Type Scale ─── */
-  --text-hero: clamp(26px, 7vw, 44px);
-  --text-h1: clamp(28px, 7.5vw, 52px);
-  --text-h2: clamp(22px, 6vw, 36px);
-  --text-h3: clamp(17px, 4.5vw, 22px);
-  --text-banner-title: clamp(20px, 5.5vw, 34px);
+  /* ─── Semantic Typography Tokens ─── */
+  --text-hero: clamp(26px, 7vw, 44px);            /* Multi-line homepage hero headline */
+  --text-page-title: clamp(28px, 7.5vw, 52px);      /* Static single-line page titles (About, Projects, Contact) */
+  --text-service-title: clamp(22px, 5.5vw, 36px);   /* Dynamic multi-word titles tuned for wrapping (Services) */
+  --text-section-heading: clamp(22px, 6vw, 36px);  /* Primary section headings across all pages */
+  --text-card-title: clamp(17px, 4.5vw, 22px);      /* Subheadings & card titles */
+  --text-banner-title: clamp(20px, 5.5vw, 34px);    /* CTA banner & strip titles */
+
+  /* Legacy aliases for backward compatibility */
+  --text-h1: var(--text-page-title);
+  --text-h2: var(--text-section-heading);
+  --text-h3: var(--text-card-title);
+
+  /* ─── Semantic Spacing & Radius Tokens ─── */
+  --space-card-padding: clamp(20px, 5.5vw, 32px);
+  --radius-card: clamp(12px, 3vw, 16px);
+  --space-banner-padding: clamp(28px, 7vw, 48px) clamp(20px, 5vw, 24px);
+  --radius-banner: clamp(14px, 3vw, 20px);
 }
 
 html[data-theme="dark"],

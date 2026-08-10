@@ -93,7 +93,7 @@ export default function ServiceDetailContent({ service }) {
               <ServiceIcon style={{ width: '32px', height: '32px', color: '#D9041B' }} />
             </div>
             <div>
-              <h1 style={{ fontSize: 'var(--text-h1)', fontWeight: 700, color: '#FFFFFF', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", marginBottom: '6px' }}>
+              <h1 style={{ fontSize: 'var(--text-service-title)', fontWeight: 700, color: '#FFFFFF', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", marginBottom: '6px' }}>
                 {service.title}
               </h1>
               <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.6 }}>{service.shortDesc}</p>

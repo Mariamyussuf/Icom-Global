@@ -108,7 +108,7 @@ export default function AboutPage() {
               About Us
             </span>
             <h1 style={{
-              fontSize: 'var(--text-h1)',
+              fontSize: 'var(--text-page-title)',
               fontWeight: 700,
               color: '#FFFFFF',
               marginBottom: '20px',

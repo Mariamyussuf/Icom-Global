@@ -17,8 +17,8 @@ export default function CTABanner({
           <div
             style={{
               background: 'var(--bg-card, #FFFFFF)',
-              borderRadius: 'clamp(14px, 3vw, 20px)',
-              padding: 'clamp(28px, 7vw, 48px) clamp(20px, 5vw, 24px)',
+              borderRadius: 'var(--radius-banner)',
+              padding: 'var(--space-banner-padding)',
               textAlign: 'center',
               border: '1px solid var(--border-color, #E2E8F0)',
               boxShadow: 'var(--card-shadow, 0 8px 30px rgba(0,0,0,0.06))',

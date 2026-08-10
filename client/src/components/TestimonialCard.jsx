@@ -4,9 +4,9 @@ export default function TestimonialCard({ name, role, company, quote, avatar }) 
   return (
     <div style={{
       background: 'var(--bg-card, #FFFFFF)',
-      borderRadius: 'clamp(12px, 3vw, 16px)',
+      borderRadius: 'var(--radius-card)',
       boxShadow: 'var(--card-shadow, 0 4px 20px rgba(0,0,0,0.06))',
-      padding: 'clamp(20px, 5.5vw, 32px)',
+      padding: 'var(--space-card-padding)',
       border: '1px solid var(--border-color, #E2E8F0)',
       textAlign: 'center',
       transition: 'background-color 0.3s, border-color 0.3s',
