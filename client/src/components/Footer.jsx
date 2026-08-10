@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
 
 const FacebookIcon = ({ size = 15 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
@@ -42,12 +42,51 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: 'var(--bg-footer, #0A2D73)', position: 'relative', overflow: 'hidden', marginTop: '16px' }} role="contentinfo">
+    <footer style={{ backgroundColor: 'var(--bg-footer, #0A2D73)', position: 'relative', overflow: 'hidden', marginTop: '24px' }} role="contentinfo">
       {/* Decorative top red accent bar */}
       <div style={{ height: '3px', background: '#D9041B' }} />
 
+      {/* ── Sleek, On-Theme Pre-Footer Contact Banner Strip ── */}
+      <div className="px-5 sm:px-6 md:px-8 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', paddingTop: '36px', paddingBottom: '12px' }}>
+        <div 
+          className="flex flex-col md:flex-row gap-5 items-center justify-between text-center md:text-left p-6 sm:p-7"
+          style={{
+            background: 'var(--bg-card, #0E244F)',
+            borderRadius: '16px',
+            border: '1px solid var(--border-color, rgba(255,255,255,0.12))',
+            boxShadow: 'var(--card-shadow, 0 8px 24px rgba(0,0,0,0.15))',
+          }}
+        >
+          <div>
+            <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.15)', color: '#FF3B50', fontSize: '11px', fontWeight: 700, padding: '4px 12px', borderRadius: '999px', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              Connect With Us
+            </span>
+            <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--text-heading, #FFFFFF)', marginBottom: '4px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+              Ready to start your next engineering project?
+            </h3>
+            <p style={{ fontSize: '13.5px', color: 'var(--text-muted, rgba(255,255,255,0.6))', lineHeight: 1.5 }}>
+              Reach out to our specialist team for technical inquiries &amp; project consultations.
+            </p>
+          </div>
+
+          <Link href="/contact" className="self-center md:self-auto" style={{
+            display: 'inline-flex', alignItems: 'center', gap: '8px',
+            padding: '12px 26px', background: '#D9041B', color: '#FFFFFF',
+            fontWeight: 600, fontSize: '14px', borderRadius: '8px',
+            textDecoration: 'none', transition: 'all 0.3s', flexShrink: 0,
+            boxShadow: '0 4px 14px rgba(217,4,27,0.35)',
+            minHeight: '44px',
+          }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = '#B50316'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = '#D9041B'; e.currentTarget.style.transform = 'translateY(0)'; }}
+          >
+            Contact Us <ArrowRight style={{ width: '16px', height: '16px' }} />
+          </Link>
+        </div>
+      </div>
+
       {/* Main compact grid */}
-      <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-10 md:py-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
+      <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-8 md:py-10" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 items-start">
           
           {/* Col 1: Brand & Social */}
@@ -62,7 +101,7 @@ export default function Footer() {
                 style={{ objectFit: 'contain', display: 'block', filter: 'drop-shadow(0 0 1px rgba(255,255,255,0.4))' }}
               />
             </Link>
-            <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.45)', lineHeight: 1.6, marginBottom: '16px', maxWidth: '260px' }}>
+            <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, marginBottom: '16px', maxWidth: '260px' }}>
               Integrated engineering solutions spanning telecom, power infrastructure, and IT services across West Africa.
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -100,9 +139,9 @@ export default function Footer() {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} style={{ fontSize: '13.5px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
+                  <Link href={link.href} style={{ fontSize: '13.5px', color: 'rgba(255,255,255,0.55)', textDecoration: 'none', transition: 'color 0.2s' }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}>
+                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}>
                     {link.name}
                   </Link>
                 </li>
@@ -118,9 +157,9 @@ export default function Footer() {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {serviceLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} style={{ fontSize: '13.5px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
+                  <Link href={link.href} style={{ fontSize: '13.5px', color: 'rgba(255,255,255,0.55)', textDecoration: 'none', transition: 'color 0.2s' }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}>
+                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}>
                     {link.name}
                   </Link>
                 </li>
@@ -128,31 +167,31 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Compact Contact */}
+          {/* Col 4: On-Theme Contact Info */}
           <div>
             <h3 style={{ fontSize: '13px', fontWeight: 700, color: '#FFFFFF', marginBottom: '14px', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-              Contact
+              Contact Details
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                 <MapPin style={{ width: '15px', height: '15px', color: '#D9041B', flexShrink: 0, marginTop: '2px' }} />
-                <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.5 }}>
+                <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.55)', lineHeight: 1.5 }}>
                   164, Prince Ademola St, Oniru Estate, Victoria Island, Lagos
                 </span>
               </div>
               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                 <Phone style={{ width: '15px', height: '15px', color: '#D9041B', flexShrink: 0 }} />
-                <a href="tel:+2348035669513" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
+                <a href="tel:+2348035669513" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.55)', textDecoration: 'none', transition: 'color 0.2s' }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}>
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}>
                   +234 803 566 9513
                 </a>
               </div>
               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                 <Mail style={{ width: '15px', height: '15px', color: '#D9041B', flexShrink: 0 }} />
-                <a href="mailto:info@icomtsl.com" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
+                <a href="mailto:info@icomtsl.com" style={{ fontSize: '13px', color: 'rgba(255,255,255,0.55)', textDecoration: 'none', transition: 'color 0.2s' }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.5)')}>
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}>
                   info@icomtsl.com
                 </a>
               </div>
