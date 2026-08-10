@@ -5,9 +5,6 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Shield,
-  Target,
-  Lightbulb,
-  Users,
   Award,
   Zap,
   Building2,
@@ -24,7 +21,6 @@ import {
 } from 'lucide-react';
 
 import ScrollReveal from '@/components/ScrollReveal';
-import SectionHeading from '@/components/SectionHeading';
 import ServiceCard from '@/components/ServiceCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import CTABanner from '@/components/CTABanner';
@@ -35,28 +31,24 @@ import { services } from '@/data/services';
 import { testimonials } from '@/data/testimonials';
 import { partners } from '@/data/partners';
 
-/* ─── Static data ─── */
+/* ─── Static Data ─── */
 
 const coreValues = [
   {
-    title: 'Quality & Standards',
-    desc: 'NIS ISO9001:2000 compliant processes and procedures across all operations.',
+    title: 'ISO-Aligned Quality & Standards',
+    desc: 'NIS ISO9001:2000 compliant procedures across all network & power deployments.',
   },
   {
-    title: 'Customer Focus',
-    desc: 'Dedicated to exceeding client expectations on every project we deliver.',
+    title: 'Zero-Accident Safety Culture',
+    desc: 'Unwavering HSE protocols and continuous site monitoring across all projects.',
   },
   {
-    title: 'Innovation',
-    desc: 'Creative problem-solving with cutting-edge technology and methodologies.',
+    title: 'Customer-Centric Execution',
+    desc: 'Dedicated to exceeding client SLAs and expectations on every single milestone.',
   },
   {
-    title: 'Accountability',
-    desc: 'Transparent delivery with clear communication at every milestone.',
-  },
-  {
-    title: 'Zero-Accident Safety',
-    desc: 'Unwavering commitment to workplace safety on all project sites.',
+    title: 'Pan-African Technical Reach',
+    desc: 'Deep local engineering experience supporting top tier-1 operators in Africa.',
   },
 ];
 
@@ -71,31 +63,13 @@ const industries = [
   { name: 'Real Estate', icon: Building2 },
 ];
 
-const qualityCards = [
-  {
-    icon: Shield,
-    title: 'ISO-Aligned Quality',
-    desc: 'Processes aligned with NIS ISO9001:2000 standards, ensuring consistent quality across every project.',
-  },
-  {
-    icon: Award,
-    title: 'Zero-Accident Culture',
-    desc: 'Rigorous safety protocols, training, and continuous monitoring across all operations.',
-  },
-  {
-    icon: Zap,
-    title: 'Continuous Improvement',
-    desc: 'Constantly adopting new technologies and best practices for ever-better outcomes.',
-  },
-];
-
 const testimonialVariants = {
   enter: { opacity: 0, x: 40 },
   center: { opacity: 1, x: 0, transition: { duration: 0.5 } },
   exit: { opacity: 0, x: -40, transition: { duration: 0.35 } },
 };
 
-/* ─── Reusable section wrapper with consistent padding ─── */
+/* ─── Reusable section wrapper ─── */
 function Section({ children, bg = 'white', className = '', ...props }) {
   const bgMap = {
     white: 'var(--bg-primary, #FFFFFF)',
@@ -121,7 +95,7 @@ function Section({ children, bg = 'white', className = '', ...props }) {
   );
 }
 
-/* ─── Page component ─── */
+/* ─── Streamlined Homepage Component ─── */
 export default function HomePage() {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -137,7 +111,7 @@ export default function HomePage() {
       {/* ═══════════════ 1. HERO ═══════════════ */}
       <Hero />
 
-      {/* ═══════════════ 1b. SERVICE IMAGE SHOWCASE ═══════════════ */}
+      {/* ═══════════════ 1b. SERVICE SHOWCASE MARQUEE ═══════════════ */}
       <ServiceImageMarquee />
 
       {/* ═══════════════ 2. CORE SERVICES ═══════════════ */}
@@ -187,25 +161,25 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* ═══════════════ 3. WHY CHOOSE ICOM ═══════════════ */}
+      {/* ═══════════════ 3. WHY CHOOSE ICOM (CONSOLIDATED) ═══════════════ */}
       <Section bg="white" aria-label="Why choose ICOM">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: content */}
+          {/* Left: Content */}
           <div className="text-center md:text-left">
             <ScrollReveal>
               <div className="mx-auto md:mx-0" style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', marginBottom: '20px' }} />
               <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '12px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                 Why Choose ICOM?
               </h2>
-              <p className="mx-auto md:mx-0" style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '460px', lineHeight: 1.7, marginBottom: '36px' }}>
-                We combine deep technical expertise with a commitment to quality that sets us apart in every project.
+              <p className="mx-auto md:mx-0" style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '460px', lineHeight: 1.7, marginBottom: '32px' }}>
+                We combine 15+ years of multidisciplinary technical expertise with a zero-compromise commitment to quality, safety, and operational excellence.
               </p>
             </ScrollReveal>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               {coreValues.map((v, i) => (
                 <ScrollReveal key={v.title} delay={i * 0.08}>
-                  <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                  <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }} className="text-left">
                     <div style={{ flexShrink: 0, width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(217,4,27,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <CheckCircle style={{ width: '20px', height: '20px', color: '#D9041B' }} />
                     </div>
@@ -219,14 +193,14 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right: stats grid */}
+          {/* Right: Consolidated Stat Highlights */}
           <ScrollReveal delay={0.15}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { value: '15+', label: 'Years of Experience', accent: '#D9041B' },
-                { value: '8', label: 'Core Service Lines', accent: '#FF3B50' },
-                { value: '10+', label: 'Major Clients Served', accent: '#FF3B50' },
-                { value: 'Pan-Africa', label: 'Coverage & Operations', accent: '#D9041B' },
+                { value: '15+', label: 'Years of Engineering Excellence', accent: '#D9041B' },
+                { value: '8', label: 'Specialized Service Divisions', accent: '#FF3B50' },
+                { value: '100%', label: 'ISO-Aligned Quality Compliance', accent: '#FF3B50' },
+                { value: 'Pan-Africa', label: 'Operational Coverage', accent: '#D9041B' },
               ].map((stat) => (
                 <div
                   key={stat.label}
@@ -255,7 +229,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* ═══════════════ 4. INDUSTRIES ═══════════════ */}
+      {/* ═══════════════ 4. INDUSTRIES WE SERVE ═══════════════ */}
       <Section bg="gray" aria-label="Industries we serve">
         <ScrollReveal>
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
@@ -264,7 +238,7 @@ export default function HomePage() {
               Industries We Serve
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
-              Delivering solutions across diverse sectors of the Nigerian and African economy.
+              Delivering customized engineering solutions across key sectors of the African economy.
             </p>
           </div>
         </ScrollReveal>
@@ -298,49 +272,8 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* ═══════════════ 5. MISSION & VISION ═══════════════ */}
-      <Section bg="white" aria-label="Mission and vision">
-        <ScrollReveal>
-          <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-            <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
-            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-              Driving Purpose
-            </h2>
-            <p style={{ fontSize: '16px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
-              Our vision and mission guide every decision and project we undertake.
-            </p>
-          </div>
-        </ScrollReveal>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <ScrollReveal>
-            <div style={{ background: 'var(--bg-card, #FFFFFF)', borderRadius: '16px', padding: '36px 32px', boxShadow: 'var(--card-shadow, 0 4px 20px rgba(0,0,0,0.06))', border: '1px solid var(--border-color, #E2E8F0)', borderLeft: '4px solid #0D3A8A', height: '100%' }}>
-              <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: 'rgba(13,58,138,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
-                <Target style={{ width: '24px', height: '24px', color: '#0D3A8A' }} />
-              </div>
-              <h3 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '12px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>Our Vision</h3>
-              <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.75, maxWidth: '480px' }}>
-                To become the number one trusted technology, procurement, and supply partner for delivering solutions across Africa.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.15}>
-            <div style={{ background: 'var(--bg-card, #FFFFFF)', borderRadius: '16px', padding: '36px 32px', boxShadow: 'var(--card-shadow, 0 4px 20px rgba(0,0,0,0.06))', border: '1px solid var(--border-color, #E2E8F0)', borderLeft: '4px solid #D9041B', height: '100%' }}>
-              <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: 'rgba(217,4,27,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
-                <Lightbulb style={{ width: '24px', height: '24px', color: '#D9041B' }} />
-              </div>
-              <h3 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '12px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>Our Mission</h3>
-              <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.75, maxWidth: '480px' }}>
-                To provide strategic and technical value to our customers by designing, building, and maintaining cost-effective communication networks, power systems, and technology solutions.
-              </p>
-            </div>
-          </ScrollReveal>
-        </div>
-      </Section>
-
-      {/* ═══════════════ 6. PARTNERS ═══════════════ */}
-      <Section bg="gray" aria-label="Partners">
+      {/* ═══════════════ 5. TRUSTED PARTNERS ═══════════════ */}
+      <Section bg="white" aria-label="Partners">
         <ScrollReveal>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
@@ -348,7 +281,7 @@ export default function HomePage() {
               Trusted Partners
             </h2>
             <p style={{ fontSize: '16px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7 }}>
-              Working with leading global technology companies.
+              Collaborating with global technology leaders to power mission-critical infrastructure.
             </p>
           </div>
         </ScrollReveal>
@@ -377,8 +310,8 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* ═══════════════ 7. TESTIMONIALS ═══════════════ */}
-      <Section bg="white" aria-label="Testimonials">
+      {/* ═══════════════ 6. TESTIMONIALS ═══════════════ */}
+      <Section bg="gray" aria-label="Testimonials">
         <ScrollReveal>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
@@ -429,52 +362,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* ═══════════════ 8. QUALITY & SAFETY ═══════════════ */}
-      <section style={{ background: '#0A2D73' }}>
-        <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-12 md:py-20" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <ScrollReveal>
-            <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-              <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
-              <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: '#FFFFFF', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-                Quality & Safety Commitment
-              </h2>
-              <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.55)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
-                Our commitment to excellence and safety is unwavering across every project.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {qualityCards.map((card, i) => {
-              const Icon = card.icon;
-              return (
-                <ScrollReveal key={card.title} delay={i * 0.1}>
-                  <div style={{
-                    background: 'rgba(255,255,255,0.06)',
-                    border: '1px solid rgba(255,255,255,0.1)',
-                    borderRadius: '16px',
-                    padding: '32px 28px',
-                    height: '100%',
-                    backdropFilter: 'blur(8px)',
-                  }}>
-                    <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: 'rgba(217,4,27,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
-                      <Icon style={{ width: '24px', height: '24px', color: '#D9041B' }} />
-                    </div>
-                    <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#FFFFFF', marginBottom: '10px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-                      {card.title}
-                    </h3>
-                    <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.55)', lineHeight: 1.7 }}>
-                      {card.desc}
-                    </p>
-                  </div>
-                </ScrollReveal>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════ 9. CTA ═══════════════ */}
+      {/* ═══════════════ 7. FINAL CTA ═══════════════ */}
       <CTABanner />
     </>
   );
