@@ -38,9 +38,9 @@ const statCardVariants = {
 export default function Hero() {
   return (
     <section
+      className="min-h-0 lg:min-h-screen"
       style={{
         backgroundColor: 'var(--bg-primary, #FFFFFF)',
-        minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
         marginTop: 'calc(-1 * var(--nav-height, 100px))',
@@ -202,7 +202,7 @@ export default function Hero() {
           </motion.div>
 
           {/* ── RIGHT COLUMN — Stat Cards ── */}
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '12px' }}>
+          <div className="grid grid-cols-2 lg:flex lg:flex-col gap-3">
             {statCards.map((card, i) => {
               const Icon = card.icon;
               return (
@@ -216,7 +216,7 @@ export default function Hero() {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '16px',
-                    padding: '18px 22px',
+                    padding: '14px 16px',
                     background: '#0A2D73',
                     border: '1px solid rgba(10,45,115,0.15)',
                     borderRadius: '10px',
