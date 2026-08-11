@@ -15,7 +15,13 @@ import {
   Plug,
   ArrowRight,
   Radio,
+  Cable,
+  Sun,
   Fuel as FuelIcon,
+  Monitor,
+  Package,
+  ClipboardList,
+  ChevronRight,
   Quote,
   CheckCircle,
 } from 'lucide-react';
@@ -29,6 +35,9 @@ import ServiceImageMarquee from '@/components/ServiceImageMarquee';
 import { services } from '@/data/services';
 import { testimonials } from '@/data/testimonials';
 import { partners } from '@/data/partners';
+
+/* ─── Icon map for mobile spec rows (mirrors ServiceCard) ─── */
+const iconMap = { Radio, Cable, Sun, Fuel: FuelIcon, Plug, Monitor, Package, ClipboardList, Zap };
 
 /* ─── Static Data ─── */
 
@@ -127,7 +136,26 @@ export default function HomePage() {
           </div>
         </ScrollReveal>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '28px' }}>
+        {/* Mobile/Tablet: spec-sheet list */}
+        <div className="lg:hidden spec-list">
+          {services.slice(0, 8).map((service, i) => {
+            const Icon = iconMap[service.icon] || Radio;
+            return (
+              <Link key={service.slug} href={`/services/${service.slug}`} className="spec-row">
+                <span className="spec-row-index">{String(i + 1).padStart(2, '0')}</span>
+                <span className="spec-row-icon"><Icon size={20} color="#D9041B" /></span>
+                <span className="spec-row-body">
+                  <span className="spec-row-title">{service.title}</span>
+                  <span className="spec-row-desc">{service.shortDesc}</span>
+                </span>
+                <span className="spec-row-chevron"><ChevronRight size={16} /></span>
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Desktop: original ServiceCard grid */}
+        <div className="hidden lg:grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '28px' }}>
           {services.slice(0, 8).map((service, i) => (
             <ScrollReveal key={service.slug} delay={i * 0.06}>
               <ServiceCard service={service} index={i} />
@@ -249,10 +277,10 @@ export default function HomePage() {
               <ScrollReveal key={ind.name} delay={i * 0.06}>
                 <motion.div
                   whileHover={{ y: -4, boxShadow: 'var(--card-shadow, 0 12px 32px rgba(0,0,0,0.1))' }}
+                  className="p-5 lg:p-8"
                   style={{
                     background: 'var(--bg-card, #FFFFFF)',
                     borderRadius: '14px',
-                    padding: '32px 20px',
                     textAlign: 'center',
                     boxShadow: 'var(--card-shadow, 0 2px 8px rgba(0,0,0,0.06))',
                     border: '1px solid var(--border-color, #E2E8F0)',

@@ -383,3 +383,91 @@ main {
     -webkit-line-clamp: 2;
   }
 }
+
+/* ─── Spec-sheet list rows — mobile signature motif ─── */
+.spec-list {
+  border-top: 1px solid var(--border-color);
+}
+.spec-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 4px 14px 20px;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  text-decoration: none;
+}
+.spec-row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border-color);
+  transition: background 0.2s;
+}
+.spec-row:hover::before {
+  background: #D9041B;
+}
+.spec-row-index {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  color: var(--text-muted);
+  min-width: 22px;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+.spec-row-icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.spec-row-body {
+  flex: 1;
+  min-width: 0;
+}
+.spec-row-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 2px;
+  line-height: 1.35;
+}
+.spec-row-desc {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.spec-row-chevron {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--text-muted);
+}
+
+/* ─── Stat strip — replaces stacked stat cards on mobile ─── */
+.stat-strip {
+  display: flex;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.stat-strip-item {
+  flex: 1;
+  padding: 14px 6px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+.stat-strip-item:last-child {
+  border-right: none;
+}
+.stat-strip-value {
+  font-family: var(--font-sora, 'DM Sans', sans-serif);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.1;
+}
+.stat-strip-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 4px;
+  line-height: 1.3;
+}

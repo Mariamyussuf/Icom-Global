@@ -202,7 +202,23 @@ export default function Hero() {
           </motion.div>
 
           {/* ── RIGHT COLUMN — Stat Cards ── */}
-          <div className="grid grid-cols-2 lg:flex lg:flex-col gap-3">
+
+          {/* Mobile/Tablet: horizontal stat strip */}
+          <div className="lg:hidden" style={{ background: '#0A2D73', borderRadius: '10px', overflow: 'hidden' }}>
+            <div className="stat-strip">
+              {statCards.map((card) => (
+                <div key={card.label} className="stat-strip-item">
+                  <p className="stat-strip-value" style={{ fontSize: card.value.length > 4 ? '15px' : '20px' }}>
+                    {card.value}
+                  </p>
+                  <p className="stat-strip-label">{card.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop: original stacked stat cards */}
+          <div className="hidden lg:flex lg:flex-col" style={{ gap: '12px' }}>
             {statCards.map((card, i) => {
               const Icon = card.icon;
               return (
@@ -216,7 +232,7 @@ export default function Hero() {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '16px',
-                    padding: '14px 16px',
+                    padding: '18px 22px',
                     background: '#0A2D73',
                     border: '1px solid rgba(10,45,115,0.15)',
                     borderRadius: '10px',
