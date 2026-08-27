@@ -78,7 +78,11 @@ const testimonialVariants = {
   exit: { opacity: 0, x: -40, transition: { duration: 0.35 } },
 };
 
-/* ─── Reusable section wrapper ─── */
+/* ─── Reusable section wrapper ───
+   Padding moved to inline styles (was Tailwind-only py-24/lg:py-28,
+   which was being purged in production and left mobile sections with
+   no vertical spacing — see About page fix). Inline styles can't be
+   purged, so this is guaranteed regardless of the Tailwind pipeline. */
 function Section({ children, bg = 'white', className = '', ...props }) {
   const bgMap = {
     white: 'var(--bg-primary, #FFFFFF)',
@@ -87,12 +91,12 @@ function Section({ children, bg = 'white', className = '', ...props }) {
   };
   return (
     <section
-      style={{ backgroundColor: bgMap[bg] || bg }}
-      className={className}
+      style={{ backgroundColor: bgMap[bg] || bg, paddingTop: '64px', paddingBottom: '64px' }}
+      className={`lg:!py-28 ${className}`}
       {...props}
     >
       <div
-        className="px-5 sm:px-6 md:px-8 lg:px-12 py-24 lg:py-28"
+        className="px-5 sm:px-6 md:px-8 lg:px-12"
         style={{
           maxWidth: '1200px',
           margin: '0 auto',
