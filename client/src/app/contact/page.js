@@ -121,13 +121,27 @@ export default function ContactPage() {
           Inline styles can't be purged, so this is guaranteed on every build. */}
       <section style={{ backgroundColor: 'var(--bg-primary, #FFFFFF)', paddingTop: '64px', paddingBottom: '64px' }} className="lg:!py-28">
         <div className="px-5 sm:px-6 md:px-8 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          {/* Centered Section Header */}
+          <div style={{ textAlign: 'center', marginBottom: '52px' }}>
+            <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
+            <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+              Let&apos;s Start a Conversation
+            </h2>
+            <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '580px', margin: '0 auto', lineHeight: 1.7 }}>
+              Have a project in mind or need technical support? Send us a message or reach out through any of our channels below.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Form */}
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-3 max-w-xl mx-auto lg:max-w-none w-full">
               <ScrollReveal>
-                <h2 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '32px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-                  Send Us a Message
-                </h2>
+                <div className="text-center lg:text-left mb-8">
+                  <div className="mx-auto lg:mx-0 mb-3" style={{ width: '36px', height: '3px', background: '#D9041B', borderRadius: '2px' }} />
+                  <h3 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                    Send Us a Message
+                  </h3>
+                </div>
 
                 {success && (
                   <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
@@ -225,11 +239,14 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Info Cards */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 max-w-xl mx-auto lg:max-w-none w-full">
               <ScrollReveal direction="right">
-                <h2 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '32px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-                  Contact Information
-                </h2>
+                <div className="text-center lg:text-left mb-8">
+                  <div className="mx-auto lg:mx-0 mb-3" style={{ width: '36px', height: '3px', background: '#D9041B', borderRadius: '2px' }} />
+                  <h3 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                    Contact Information
+                  </h3>
+                </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {contactInfo.map((info, i) => {

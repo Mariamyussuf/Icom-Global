@@ -342,21 +342,18 @@ export default function AboutPage() {
         <Heading title="Our Journey" subtitle="A track record of engineering innovation and milestone achievements since 2009." />
 
         <div className="timeline-wrapper">
+          {/* Desktop central vertical line */}
+          <div className="timeline-desktop-line" />
+
           {milestones.map((milestone, i) => {
             const isLast = i === milestones.length - 1;
             return (
-              <ScrollReveal key={i} delay={i * 0.15}>
+              <ScrollReveal key={i} delay={i * 0.12}>
                 <div className={`timeline-item ${i % 2 === 0 ? 'even' : 'odd'} ${isLast ? 'last' : ''}`}>
-                  {/* Connecting track line between milestone nodes */}
-                  {!isLast && <div className="timeline-track-line" />}
-
-                  {/* Circular milestone node */}
+                  {/* Desktop center node */}
                   <div className="timeline-node">
                     <div className="timeline-node-inner" />
                   </div>
-
-                  {/* Mobile-only connector bridge from node to card */}
-                  <div className="timeline-card-connector" />
 
                   {/* Content card column */}
                   <div className="timeline-card-col">
@@ -373,10 +370,15 @@ export default function AboutPage() {
                       </p>
                     </div>
                   </div>
-
-                  {/* Desktop alternating spacer */}
-                  <div className="timeline-card-spacer" />
                 </div>
+
+                {/* Mobile-only center connecting indicator */}
+                {!isLast && (
+                  <div className="timeline-connector-mobile">
+                    <div className="timeline-connector-line" />
+                    <div className="timeline-connector-dot" />
+                  </div>
+                )}
               </ScrollReveal>
             );
           })}
