@@ -1,233 +1,243 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ShieldCheck } from 'lucide-react';
+import LegalModal from './footer/LegalModal';
 
 const FacebookIcon = ({ size = 15 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
-);
-const TwitterIcon = ({ size = 15 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
-);
-const LinkedinIcon = ({ size = 15 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" /></svg>
-);
-const InstagramIcon = ({ size = 15 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+  </svg>
 );
 
-const navLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Services', href: '/services' },
-  { name: 'Projects', href: '/projects' },
-  { name: 'Contact', href: '/contact' },
-];
+const TwitterIcon = ({ size = 15 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
+
+const LinkedinIcon = ({ size = 15 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" />
+  </svg>
+);
+
+const InstagramIcon = ({ size = 15 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+  </svg>
+);
 
 const socialLinks = [
-  { name: 'Facebook', icon: FacebookIcon, href: '#' },
-  { name: 'Twitter', icon: TwitterIcon, href: '#' },
-  { name: 'LinkedIn', icon: LinkedinIcon, href: '#' },
-  { name: 'Instagram', icon: InstagramIcon, href: '#' },
+  { name: 'LinkedIn', icon: LinkedinIcon, href: 'https://linkedin.com', label: 'Follow ICOM on LinkedIn' },
+  { name: 'X / Twitter', icon: TwitterIcon, href: 'https://x.com', label: 'Follow ICOM on X' },
+  { name: 'Facebook', icon: FacebookIcon, href: 'https://facebook.com', label: 'Follow ICOM on Facebook' },
+  { name: 'Instagram', icon: InstagramIcon, href: 'https://instagram.com', label: 'Follow ICOM on Instagram' },
 ];
 
-const contactRows = [
-  {
-    icon: MapPin,
-    label: '164, Prince Ademola St, Oniru Estate, Victoria Island, Lagos, Nigeria',
-    href: null,
-  },
-  {
-    icon: Phone,
-    label: '+234 803 566 9513',
-    href: 'tel:+2348035669513',
-  },
-  {
-    icon: Mail,
-    label: 'info@icomtsl.com',
-    href: 'mailto:info@icomtsl.com',
-  },
+const companyLinks = [
+  { title: 'About Us', href: '/about' },
+  { title: 'Our Projects', href: '/projects' },
+  { title: 'Services', href: '/services' },
+  { title: 'Contact', href: '/contact' },
+  { title: 'Careers', href: '/contact?subject=Career%20Inquiry' },
+];
+
+const serviceLinks = [
+  { title: 'RF Drive Testing', href: '/services/rf-drive-testing' },
+  { title: 'Radio Network Design', href: '/services/radio-network-design-planning' },
+  { title: 'Fiber Optics', href: '/services/fiber-optic-transmission' },
+  { title: 'Power & Solar', href: '/services/power-solutions' },
+  { title: 'BSS Installation', href: '/services/bss-equipment-installation' },
+  { title: 'Network O&M', href: '/services/network-operations-maintenance' },
 ];
 
 export default function Footer() {
+  const [activeLegalModal, setActiveLegalModal] = useState(null);
+
   return (
-    <footer style={{ backgroundColor: 'var(--bg-footer, #0A2D73)', position: 'relative', marginTop: '24px' }} role="contentinfo">
-      {/* Top red accent line */}
-      <div style={{ height: '3px', background: '#D9041B' }} />
-
-      <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-8 md:py-10" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-
-        {/* ═══ MOBILE LAYOUT (below lg) ═══ */}
-        <div className="lg:hidden">
-          {/* Brand */}
-          <div className="mb-6">
-            <Link href="/" aria-label="ICOM - Home" style={{ textDecoration: 'none' }}>
-              <Image
-                src="/images/Icom-logo.png"
-                alt="ICOM Technical Support Limited"
-                width={150}
-                height={48}
-                className="h-10 w-auto"
-                style={{ objectFit: 'contain', filter: 'drop-shadow(0 0 1px rgba(255,255,255,0.4))' }}
-              />
-            </Link>
-            <p className="text-[11px] font-medium tracking-wide mt-1.5 text-white/50 uppercase">
-              Technical Service Support Limited
-            </p>
-          </div>
-
-          {/* Contact rows — hairline-divided, tappable */}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-            {contactRows.map((row) => {
-              const Icon = row.icon;
-              const inner = (
-                <>
-                  <Icon size={15} className="text-[#D9041B] shrink-0" style={{ marginTop: '1px' }} />
-                  <span className="text-[13px] text-white/60 leading-snug">{row.label}</span>
-                </>
-              );
-              const cls = "flex items-start gap-3 py-3.5 transition-colors duration-200";
-              return (
-                <div key={row.label} style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-                  {row.href ? (
-                    <a href={row.href} className={`${cls} hover:text-white/80`} style={{ textDecoration: 'none' }}>
-                      {inner}
-                    </a>
-                  ) : (
-                    <div className={cls}>{inner}</div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Social icons — small, de-emphasized, left-aligned */}
-          <div className="flex items-center gap-2 mt-5 mb-5">
-            {socialLinks.map((social) => {
-              const Icon = social.icon;
-              return (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  aria-label={social.name}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-7 h-7 rounded-full flex items-center justify-center text-white/35 bg-white/[0.04] hover:bg-[#D9041B] hover:text-white transition-all duration-200"
-                >
-                  <Icon size={12} />
-                </a>
-              );
-            })}
-          </div>
-
-          {/* Copyright */}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '14px' }}>
-            <p className="text-[11px] text-white/35 tracking-normal">
-              © {new Date().getFullYear()} ICOM Technical Service Support Limited. RC: 1043812. All rights reserved.
-            </p>
-          </div>
-        </div>
-
-        {/* ═══ DESKTOP LAYOUT (lg and above) — preserved pixel-identical ═══ */}
-        <div className="hidden lg:block">
-          <div className="flex flex-row justify-between items-start gap-8 pb-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-
-            {/* Left Column: Brand Logo, Descriptor, Socials */}
-            <div className="flex flex-col items-start gap-4">
-              <div className="flex flex-col items-start gap-1">
-                <Link href="/" aria-label="ICOM - Home" style={{ textDecoration: 'none' }}>
-                  <Image
-                    src="/images/Icom-logo.png"
-                    alt="ICOM Technical Support Limited"
-                    width={150}
-                    height={48}
-                    className="h-11 w-auto"
-                    style={{ objectFit: 'contain', filter: 'drop-shadow(0 0 1px rgba(255,255,255,0.4))' }}
-                  />
-                </Link>
-                <p className="text-[11px] font-medium tracking-wide mt-1.5 text-left text-white/50 uppercase">
-                  Technical Service Support Limited
+    <>
+      <footer
+        className="w-full bg-[#06132B] text-white rounded-t-[24px] sm:rounded-t-[32px] border-t border-white/10 shadow-[0_-8px_30px_rgba(0,0,0,0.15)] mt-10 relative"
+        role="contentinfo"
+        aria-label="Site Footer"
+      >
+        <div
+          className="px-5 sm:px-8 md:px-12"
+          style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+            paddingTop: '48px',
+            paddingBottom: '32px',
+          }}
+        >
+          {/* Main columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-10">
+            
+            {/* Column 1: Brand & Profile (Full on mobile, 4 cols on desktop) */}
+            <div className="md:col-span-2 lg:col-span-4 flex flex-col items-start gap-3.5 text-left">
+              <Link href="/" aria-label="ICOM - Home" style={{ textDecoration: 'none' }}>
+                <Image
+                  src="/images/Icom-logo-white.png"
+                  alt="ICOM Engineering Solutions Limited"
+                  width={150}
+                  height={50}
+                  style={{ height: '38px', width: 'auto', objectFit: 'contain' }}
+                />
+              </Link>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <p style={{ fontSize: '11px', fontWeight: 700, color: '#D9041B', letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: 'monospace' }}>
+                  RC: 1043812 &bull; Est. 2009
+                </p>
+                <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.65)', lineHeight: 1.6, maxWidth: '360px' }}>
+                  Integrated engineering solutions delivering telecommunications, fiber optics, solar power, and infrastructure services across Africa.
                 </p>
               </div>
 
-              {/* Social Icons */}
-              <div className="flex items-center gap-2 mt-1">
-                {socialLinks.map((social) => {
-                  const Icon = social.icon;
-                  return (
-                    <a
-                      key={social.name}
-                      href={social.href}
-                      aria-label={social.name}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-[34px] h-[34px] rounded-full flex items-center justify-center text-white/60 bg-white/6 hover:bg-[#D9041B] hover:text-white hover:scale-105 transition-all duration-200"
-                    >
-                      <Icon size={14} />
-                    </a>
-                  );
-                })}
+              {/* Social links */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', paddingTop: '2px' }}>
+                {socialLinks.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={item.label}
+                    style={{
+                      width: '34px',
+                      height: '34px',
+                      borderRadius: '50%',
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      color: 'rgba(255, 255, 255, 0.75)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      transition: 'all 0.2s',
+                      textDecoration: 'none',
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.background = '#D9041B'; e.currentTarget.style.color = '#fff'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)'; e.currentTarget.style.color = 'rgba(255, 255, 255, 0.75)'; }}
+                  >
+                    <item.icon size={15} />
+                  </a>
+                ))}
               </div>
             </div>
 
-            {/* Right Column: Navigation and Contact Details */}
-            <div className="flex flex-col items-end gap-8 w-auto">
-              {/* Quick Nav Links */}
-              <nav aria-label="Footer navigation">
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }} className="flex flex-wrap items-center justify-end gap-x-4 gap-y-2 text-sm font-medium">
-                  {navLinks.map((link, idx) => (
-                    <li key={link.href} className="flex items-center">
-                      {idx > 0 && <span className="mx-3 text-white/20 select-none">•</span>}
+            {/* Columns 2 & 3: Company & Solutions (side-by-side on mobile, separate on desktop) */}
+            <div className="grid grid-cols-2 gap-6 md:col-span-2 lg:col-span-5">
+              {/* Column 2: Company */}
+              <div className="text-left">
+                <h3 style={{ fontSize: '13px', fontWeight: 700, color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '14px' }}>
+                  Company
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '9px' }}>
+                  {companyLinks.map((item) => (
+                    <li key={item.title}>
                       <Link
-                        href={link.href}
-                        className="text-white/70 hover:text-[#D9041B] transition-colors duration-200"
+                        href={item.href}
+                        style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', transition: 'color 0.2s' }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.7)')}
                       >
-                        {link.name}
+                        {item.title}
                       </Link>
                     </li>
                   ))}
                 </ul>
-              </nav>
+              </div>
 
-              {/* Contact Details */}
-              <div className="flex flex-col items-end gap-3 text-xs w-auto text-white/50">
-                {/* Address */}
-                <div className="flex items-center justify-end gap-2 text-right">
-                  <MapPin size={14} className="text-[#D9041B] shrink-0" />
-                  <span>164, Prince Ademola St, Oniru Estate, Victoria Island, Lagos, Nigeria</span>
+              {/* Column 3: Solutions */}
+              <div className="text-left">
+                <h3 style={{ fontSize: '13px', fontWeight: 700, color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '14px' }}>
+                  Solutions
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '9px' }}>
+                  {serviceLinks.map((item) => (
+                    <li key={item.title}>
+                      <Link
+                        href={item.href}
+                        style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', transition: 'color 0.2s' }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.7)')}
+                      >
+                        {item.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Column 4: Contact & Dispatch */}
+            <div className="md:col-span-2 lg:col-span-3 text-left">
+              <h3 style={{ fontSize: '13px', fontWeight: 700, color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '14px' }}>
+                Contact
+              </h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '11px', fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                  <MapPin size={15} color="#D9041B" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <span style={{ lineHeight: 1.5 }}>164, Prince Ademola St, Oniru Estate, Victoria Island, Lagos</span>
                 </div>
-
-                {/* Phone & Email Container */}
-                <div className="flex flex-row flex-wrap items-center justify-end gap-x-6 gap-y-2 mt-0.5">
-                  <div className="flex items-center gap-2">
-                    <Phone size={14} className="text-[#D9041B] shrink-0" />
-                    <a href="tel:+2348035669513" className="hover:text-[#D9041B] transition-colors duration-200">
-                      +234 803 566 9513
-                    </a>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                  <Phone size={15} color="#D9041B" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                    <a href="tel:+2348035669513" style={{ color: 'inherit', textDecoration: 'none' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.7)')}>+234 803 566 9513</a>
+                    <a href="tel:+2348023411618" style={{ color: 'inherit', textDecoration: 'none' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.7)')}>+234 802 341 1618</a>
                   </div>
-
-                  <div className="flex items-center gap-2">
-                    <Mail size={14} className="text-[#D9041B] shrink-0" />
-                    <a href="mailto:info@icomtsl.com" className="hover:text-[#D9041B] transition-colors duration-200">
-                      info@icomtsl.com
-                    </a>
-                  </div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
+                  <Mail size={15} color="#D9041B" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <a href="mailto:info@icomtsl.com" style={{ color: 'inherit', textDecoration: 'none' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.7)')}>info@icomtsl.com</a>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingTop: '2px', color: 'rgba(255, 255, 255, 0.5)', fontSize: '12px' }}>
+                  <Clock size={13} color="#D9041B" />
+                  <span>24&ndash;48 hr nationwide field dispatch</span>
                 </div>
               </div>
             </div>
 
           </div>
 
-          {/* Bottom bar */}
-          <div style={{ textAlign: 'center', paddingTop: '16px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-            <p className="text-[11px] text-white/35 tracking-normal">
-              © {new Date().getFullYear()} ICOM Technical Service Support Limited. RC: 1043812. All rights reserved.
-            </p>
+          {/* Bottom copyright bar */}
+          <div
+            className="border-t border-white/[0.08] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3.5 text-[12px] text-white/50 text-center sm:text-left"
+          >
+            <p>&copy; {new Date().getFullYear()} ICOM Engineering Solutions Limited. All rights reserved.</p>
+            <div className="flex flex-wrap items-center justify-center sm:justify-end gap-5">
+              <button
+                type="button"
+                onClick={() => setActiveLegalModal('privacy')}
+                className="text-white/50 hover:text-white transition-colors underline underline-offset-2 cursor-pointer bg-transparent border-0 p-0 text-[12px]"
+              >
+                Privacy Policy
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveLegalModal('terms')}
+                className="text-white/50 hover:text-white transition-colors underline underline-offset-2 cursor-pointer bg-transparent border-0 p-0 text-[12px]"
+              >
+                Terms of Service
+              </button>
+              <span className="inline-flex items-center gap-1.5 text-white/40">
+                <ShieldCheck size={13} color="#D9041B" />
+                ISO 9001:2000
+              </span>
+            </div>
           </div>
-        </div>
 
-      </div>
-    </footer>
+        </div>
+      </footer>
+
+      {/* Accessible Policy & Terms Modal */}
+      <LegalModal
+        activeModal={activeLegalModal}
+        onClose={() => setActiveLegalModal(null)}
+      />
+    </>
   );
 }

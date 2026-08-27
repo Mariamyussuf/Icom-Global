@@ -31,7 +31,7 @@ export async function generateMetadata({ params }) {
   const service = services.find((s) => s.slug === targetSlug);
   if (!service) return { title: 'Service Not Found' };
   return {
-    title: `${service.title} | ICOM Technical Service Support`,
+    title: `${service.title} | ICOM Engineering Solutions`,
     description: service.shortDesc,
   };
 }

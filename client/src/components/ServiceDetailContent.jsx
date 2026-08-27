@@ -39,7 +39,7 @@ function Heading({ title, subtitle }) {
   return (
     <div style={{ textAlign: 'center', marginBottom: '40px' }}>
       <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
-      <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: subtitle ? '12px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+      <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: subtitle ? '16px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
         {title}
       </h2>
       {subtitle && <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>{subtitle}</p>}
@@ -263,10 +263,10 @@ export default function ServiceDetailContent({ service }) {
                     }}>
                       <BenefitIcon style={{ width: '26px', height: '26px', color: '#D9041B' }} />
                     </div>
-                    <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                    <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '10px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                       {benefit.title}
                     </h3>
-                    <p style={{ fontSize: '13px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.6 }}>{benefit.description}</p>
+                    <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.6 }}>{benefit.description}</p>
                   </div>
                 </ScrollReveal>
               );
@@ -301,7 +301,7 @@ export default function ServiceDetailContent({ service }) {
                   </div>
                   {/* Content */}
                   <div style={{ paddingTop: '4px' }}>
-                    <h3 style={{ fontSize: '17px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '6px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                    <h3 style={{ fontSize: '17px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '10px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                       {step.title}
                     </h3>
                     <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7, maxWidth: '540px' }}>{step.description}</p>

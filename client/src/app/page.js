@@ -127,10 +127,10 @@ export default function HomePage() {
         <ScrollReveal>
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
             <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
-            <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '16px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               Our Core Services
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
               Comprehensive engineering and technology solutions tailored for modern infrastructure across Africa.
             </p>
           </div>
@@ -195,7 +195,7 @@ export default function HomePage() {
           <div className="text-center md:text-left">
             <ScrollReveal>
               <div className="mx-auto md:mx-0" style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', marginBottom: '20px' }} />
-              <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '12px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+              <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '16px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                 Why Choose ICOM?
               </h2>
               <p className="mx-auto md:mx-0" style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '460px', lineHeight: 1.7, marginBottom: '32px' }}>
@@ -211,7 +211,7 @@ export default function HomePage() {
                       <CheckCircle style={{ width: '20px', height: '20px', color: '#D9041B' }} />
                     </div>
                     <div>
-                      <p style={{ fontWeight: 700, fontSize: '15px', color: 'var(--text-heading, #0A2D73)', marginBottom: '4px' }}>{v.title}</p>
+                      <p style={{ fontWeight: 700, fontSize: '15px', color: 'var(--text-heading, #0A2D73)', marginBottom: '10px' }}>{v.title}</p>
                       <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.6 }}>{v.desc}</p>
                     </div>
                   </div>
@@ -261,10 +261,10 @@ export default function HomePage() {
         <ScrollReveal>
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
             <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
-            <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '16px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               Industries We Serve
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
               Delivering customized engineering solutions across key sectors of the African economy.
             </p>
           </div>
@@ -304,10 +304,10 @@ export default function HomePage() {
         <ScrollReveal>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
-            <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '16px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               Trusted Partners
             </h2>
-            <p style={{ fontSize: '16px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7 }}>
               Collaborating with global technology leaders to power mission-critical infrastructure.
             </p>
           </div>

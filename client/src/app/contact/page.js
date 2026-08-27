@@ -11,8 +11,8 @@ import ScrollReveal from '@/components/ScrollReveal';
 const contactInfo = [
   { icon: User, title: 'Contact Person', lines: ['Engr. Adebayo L. Olajide'] },
   { icon: MapPin, title: 'Visit Us', lines: ['164, Prince Ademola Street, Oniru Estate, Victoria Island, Lagos, Nigeria'] },
-  { icon: Phone, title: 'Call Us', lines: ['+234 803 566 9513', '+234 812 588 0579'] },
-  { icon: Mail, title: 'Email Us', lines: ['info@icomtsl.com', 'service@icomtsl.com'] },
+  { icon: Phone, title: 'Call Us', lines: ['+234 803 566 9513', '+234 802 341 1618'] },
+  { icon: Mail, title: 'Email Us', lines: ['icomengineeringsolutions@gmail.com', 'info@icomtsl.com'] },
   { icon: Globe, title: 'Website', lines: ['www.icomtsl.com'] },
 ];
 
@@ -251,7 +251,7 @@ export default function ContactPage() {
                             <InfoIcon style={{ width: '20px', height: '20px', color: '#D9041B' }} />
                           </div>
                           <div>
-                            <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '4px' }}>{info.title}</h3>
+                            <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px' }}>{info.title}</h3>
                             {info.lines.map((line, j) => (
                               <p key={j} style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.5 }}>{line}</p>
                             ))}

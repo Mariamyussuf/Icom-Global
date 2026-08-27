@@ -62,26 +62,6 @@
   --radius-banner: clamp(14px, 3vw, 20px);
 }
 
-html[data-theme="dark"],
-html.dark {
-  --bg-primary: #06132B;
-  --bg-secondary: #0A1C3E;
-  --bg-card: #0E244F;
-  --bg-navbar: #040E20;
-  --text-heading: #F0F4FC;
-  --text-body: #CBD5E1;
-  --text-muted: #94A3B8;
-  --border-color: #1E3A75;
-  --border-subtle: #142B5B;
-  --accent-red: #FF3B50;
-  --accent-red-hover: #D9041B;
-  --accent-blue: #38BDF8;
-  --input-bg: #091735;
-  --input-border: #1E3A75;
-  --modal-bg: #0E244F;
-  --modal-overlay: rgba(3, 8, 18, 0.75);
-  --card-shadow: 0 4px 16px rgba(0,0,0,0.4);
-}
 
 @media (max-width: 1024px) {
   :root {
@@ -392,7 +372,7 @@ main {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  padding: 14px 4px 14px 20px;
+  padding: 18px 4px 18px 20px;
   border-bottom: 1px solid var(--border-color);
   position: relative;
   text-decoration: none;
@@ -427,16 +407,18 @@ main {
   min-width: 0;
 }
 .spec-row-title {
+  display: block;
   font-size: 14px;
   font-weight: 700;
   color: var(--text-heading);
-  margin-bottom: 2px;
-  line-height: 1.35;
+  margin-bottom: 3px;
+  line-height: 1.45;
 }
 .spec-row-desc {
-  font-size: 12.5px;
+  display: block;
+  font-size: 13px;
   color: var(--text-muted);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 .spec-row-chevron {
   flex-shrink: 0;

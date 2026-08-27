@@ -130,7 +130,7 @@ export default function ProjectCard({ project, index = 0 }) {
 
           {/* Content */}
           <div style={{ padding: '24px' }}>
-            <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '10px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               {title}
             </h3>
             <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.6, marginBottom: '14px' }}>
@@ -320,7 +320,7 @@ export default function ProjectCard({ project, index = 0 }) {
                   fontSize: 'var(--text-h3)',
                   fontWeight: 800,
                   color: 'var(--text-heading, #0A2D73)',
-                  marginBottom: '14px',
+                  marginBottom: '16px',
                   fontFamily: "var(--font-heading, 'DM Sans', sans-serif)",
                   lineHeight: 1.25,
                 }}>
@@ -328,7 +328,7 @@ export default function ProjectCard({ project, index = 0 }) {
                 </h2>
 
                 <p style={{
-                  fontSize: '14.5px',
+                  fontSize: '14px',
                   color: 'var(--text-body, #4A5568)',
                   lineHeight: 1.7,
                   marginBottom: '20px',

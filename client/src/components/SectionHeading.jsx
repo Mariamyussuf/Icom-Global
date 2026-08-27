@@ -10,7 +10,7 @@ export default function SectionHeading({ title, subtitle, centered = true, light
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-base leading-relaxed max-w-2xl ${centered ? 'mx-auto' : ''} ${
+        <p className={`text-[15px] leading-relaxed max-w-2xl ${centered ? 'mx-auto' : ''} ${
           light ? 'text-gray-300' : 'text-[var(--text-muted)]'
         }`}>
           {subtitle}

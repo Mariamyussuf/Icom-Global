@@ -146,7 +146,7 @@ export default function Hero() {
               maxWidth: '440px',
               marginBottom: '32px',
             }}>
-              ICOM Technical Service Support Limited delivers integrated engineering solutions — from telecommunications and fiber optics to solar energy, power infrastructure, and IT services across Nigeria and West Africa.
+              ICOM Engineering Solutions Limited delivers integrated engineering solutions — from telecommunications and fiber optics to solar energy, power infrastructure, and IT services across Nigeria and West Africa.
             </p>
 
             {/* CTA Buttons */}

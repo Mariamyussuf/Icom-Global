@@ -7,8 +7,6 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
-import ThemeToggle from './ThemeToggle';
-
 const serviceLinks = [
   { name: 'RF Drive Testing & Optimization', href: '/services/rf-drive-testing' },
   { name: 'Radio Network Design', href: '/services/radio-network-design-planning' },
@@ -94,17 +92,17 @@ export default function Navbar() {
           {/* ── Logo ── */}
           <Link href="/" aria-label="ICOM - Home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
             <Image
-              src="/images/Icom-logo.png"
-              alt="ICOM Technical Support Limited"
+              src={isNavbarDark || mobileOpen ? "/images/Icom-logo-white.png" : "/images/Icom-logo.png"}
+              alt="ICOM Engineering Solutions Limited"
               width={160}
               height={104}
               className="h-12 sm:h-16 lg:h-20 w-auto"
-              style={{ objectFit: 'contain', display: 'block', filter: isNavbarDark || mobileOpen ? 'drop-shadow(0 0 1px rgba(255,255,255,0.4))' : 'none' }}
+              style={{ objectFit: 'contain', display: 'block' }}
               priority
             />
           </Link>
 
-          {/* ── Desktop Nav Links + ThemeToggle ── */}
+          {/* ── Desktop Nav Links ── */}
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <div
@@ -189,13 +187,10 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-
-            <ThemeToggle style={{ marginLeft: '12px' }} />
           </div>
 
-          {/* ── Mobile Controls (ThemeToggle + Hamburger) ── */}
-          <div className="flex items-center gap-2 sm:gap-3 lg:hidden">
-            <ThemeToggle />
+          {/* ── Mobile Controls (Hamburger) ── */}
+          <div className="flex items-center lg:hidden">
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="p-2 transition-colors focus:outline-none cursor-pointer"

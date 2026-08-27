@@ -102,7 +102,7 @@ export default function ProjectsPage() {
 
           {filteredProjects.length === 0 && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ textAlign: 'center', padding: '64px 0' }}>
-              <p style={{ color: '#6B7A8D', fontSize: '16px' }}>No projects found in this category.</p>
+              <p style={{ color: '#6B7A8D', fontSize: '15px' }}>No projects found in this category.</p>
             </motion.div>
           )}
         </div>

@@ -45,7 +45,7 @@ export default function ServicesPage() {
       <section style={{ backgroundColor: 'var(--bg-primary, #FFFFFF)' }}>
         <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-12 md:py-20" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <ScrollReveal>
-            <p style={{ fontSize: '16px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.75, maxWidth: '760px', margin: '0 auto 64px', textAlign: 'center' }}>
+            <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.75, maxWidth: '760px', margin: '0 auto 64px', textAlign: 'center' }}>
               We offer customized service for most of Africa&apos;s largest wireless carriers to maintain their networks. As one of the fastest-growing independent telecoms service providers in Africa, we leverage our industry expertise across two primary operating divisions.
             </p>
           </ScrollReveal>

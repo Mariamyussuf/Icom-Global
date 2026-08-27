@@ -13,7 +13,7 @@ export default function TestimonialCard({ name, role, company, quote, avatar }) 
     }}>
       {/* Quote Text */}
       <blockquote style={{
-        fontSize: '16px',
+        fontSize: '15px',
         color: 'var(--text-body, #4A5568)',
         fontStyle: 'italic',
         lineHeight: 1.8,
@@ -51,7 +51,7 @@ export default function TestimonialCard({ name, role, company, quote, avatar }) 
         )}
         <div style={{ textAlign: 'left' }}>
           <p style={{ fontWeight: 700, fontSize: '15px', color: 'var(--text-heading, #0A2D73)', marginBottom: '2px' }}>{name}</p>
-          <p style={{ fontSize: '13px', color: 'var(--text-muted, #6B7A8D)' }}>
+          <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)' }}>
             {role}{company ? `, ${company}` : ''}
           </p>
         </div>

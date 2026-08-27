@@ -1,7 +1,7 @@
 {
   "name": "icom-server",
   "version": "1.0.0",
-  "description": "ICOM Technical Service Support Limited - Backend API",
+  "description": "ICOM Engineering Solutions Limited - Backend API",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

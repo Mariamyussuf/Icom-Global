@@ -106,7 +106,7 @@ router.post(
 
       // Auto-reply to sender
       const mailToSender = {
-        from: `"ICOM Technical Service Support" <${process.env.EMAIL_USER}>`,
+        from: `"ICOM Engineering Solutions" <${process.env.EMAIL_USER}>`,
         to: email,
         subject: `Thank you for contacting ICOM - ${safeSubject}`,
         html: `
@@ -126,16 +126,16 @@ router.post(
               <li>Email: <a href="mailto:icomtssl@gmail.com">icomtssl@gmail.com</a></li>
             </ul>
             <p style="line-height: 1.6; color: #333;">
-              We appreciate your interest in ICOM Technical Service Support Limited.
+              We appreciate your interest in ICOM Engineering Solutions Limited.
             </p>
             <p style="margin-top: 24px; color: #666; font-style: italic;">
               &mdash; The ICOM Team<br/>
-              <em>&hellip;Putting Quality First</em>
+              <em>&hellip;better services is our motto</em>
             </p>
           </div>
           <div style="background: #0B1F3A; padding: 16px; text-align: center;">
             <p style="color: #8899AA; font-size: 12px; margin: 0;">
-              &copy; ${new Date().getFullYear()} ICOM Technical Service Support Limited. RC: 1043812
+              &copy; ${new Date().getFullYear()} ICOM Engineering Solutions Limited. RC: 1043812
             </p>
           </div>
         </div>

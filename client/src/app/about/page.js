@@ -63,11 +63,11 @@ function Heading({ title, subtitle, light = false, centered = true }) {
   return (
     <div className={`mb-10 ${centered ? 'text-center' : 'text-center lg:text-left'}`}>
       <div className={`mb-5 ${centered ? 'mx-auto' : 'mx-auto lg:mx-0'}`} style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px' }} />
-      <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: light ? '#fff' : 'var(--text-heading, #0A2D73)', marginBottom: subtitle ? '14px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+      <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: light ? '#fff' : 'var(--text-heading, #0A2D73)', marginBottom: subtitle ? '16px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
         {title}
       </h2>
       {subtitle && (
-        <p className={`line-height-1-7 ${centered ? 'mx-auto' : 'mx-auto lg:mx-0'}`} style={{ fontSize: '16px', color: light ? 'rgba(255,255,255,0.6)' : 'var(--text-muted, #6B7A8D)', maxWidth: '560px', lineHeight: 1.7 }}>
+        <p className={`line-height-1-7 ${centered ? 'mx-auto' : 'mx-auto lg:mx-0'}`} style={{ fontSize: '15px', color: light ? 'rgba(255,255,255,0.6)' : 'var(--text-muted, #6B7A8D)', maxWidth: '560px', lineHeight: 1.7 }}>
           {subtitle}
         </p>
       )}
@@ -124,7 +124,7 @@ export default function AboutPage() {
               margin: '0 auto',
               lineHeight: 1.7,
             }}>
-              Since 2009, ICOM Technical Service Support Limited has been at the forefront of integrated engineering solutions across Nigeria.
+              Since 2009, ICOM Engineering Solutions Limited has been at the forefront of integrated engineering solutions across Nigeria.
             </p>
           </motion.div>
         </div>
@@ -170,7 +170,7 @@ export default function AboutPage() {
             <Heading title="Who We Are" centered={false} />
             <ScrollReveal delay={0.1}>
               <p style={{ fontSize: '15px', color: 'var(--text-body, #4A5568)', lineHeight: 1.8, marginBottom: '16px' }}>
-                ICOM Technical Service Support Limited is a wholly Nigerian-owned company that has been operating since June 2009, incorporated in June 2012 under RC 1043812. Headquartered in Victoria Island, Lagos, we have grown to become a trusted partner for telecommunications operators, government institutions, and corporate organizations across Nigeria.
+                ICOM Engineering Solutions Limited is a wholly Nigerian-owned company that has been operating since June 2009, incorporated in June 2012 under RC 1043812. Headquartered in Victoria Island, Lagos, we have grown to become a trusted partner for telecommunications operators, government institutions, and corporate organizations across Nigeria.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
@@ -205,19 +205,20 @@ export default function AboutPage() {
             }}>
               <div>
                 <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.1)', color: '#D9041B', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginBottom: '20px', textTransform: 'uppercase' }}>
-                  Mission Statement
+                  Mission &amp; Objectives
                 </span>
                 <h3 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.35 }}>
-                  &ldquo;Our mission is to provide high quality engineering solutions and consulting services, surpassing the requirements and expectations of our clients.&rdquo;
+                  &ldquo;Our mission is to be the preferred Infrastructure Service Provider to leading Telecom Companies in the Country. To be the first choice in the region we operate in, by focusing on partnering and integrating with a commitment to provide customized services of the highest quality and value.&rdquo;
                 </h3>
-                <p style={{ fontSize: '14.5px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7, marginBottom: '24px' }}>
-                  To accomplish this mission, we strive to be the premier provider of groundbreaking network engineering, system integration, and technical services in our business areas.
+                <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7, marginBottom: '24px' }}>
+                  Strategic objectives driving our engineering delivery and fiber network deployment across Africa:
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                   {[
-                    { title: 'Engineering Solutions', desc: 'Our services within the Nigeria telecoms industry will continually be targeted at deploying quality engineering solutions.' },
-                    { title: 'Consulting Services', desc: 'We will provide effective and customized consulting services to our different clients within the Nigerian telecoms industry.' },
-                    { title: 'Requirements and Expectations', desc: 'We will continually strive to provide services to our clients in such a manner that it exceeds their expectations and requirements.' }
+                    { title: 'Privately Owned Fiber Network', desc: 'Implement Nigeria’s largest and most reliable privately owned fiber network.' },
+                    { title: 'Maximum Reliability & Uptime', desc: 'Guarantee mission-critical network uptime with 24/7 proactive maintenance and monitoring.' },
+                    { title: 'Dark Fiber Management', desc: 'Lease and manage dark fiber infrastructure for multiple telecom operators and service providers.' },
+                    { title: 'Green Management', desc: 'Implement eco-friendly deployment processes and sustainable environmental practices.' }
                   ].map((item, idx) => (
                     <div key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                       <CheckCircle style={{ width: '18px', height: '18px', color: '#D9041B', flexShrink: 0, marginTop: '3px' }} />
@@ -252,7 +253,7 @@ export default function AboutPage() {
                 <h3 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                   Our Basic Philosophy
                 </h3>
-                <p style={{ fontSize: '14.5px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7, marginBottom: '24px' }}>
+                <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7, marginBottom: '24px' }}>
                   We are driven by three fundamental principles to maintain respectability, support operator infrastructure, and deliver top service.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -266,8 +267,8 @@ export default function AboutPage() {
                         {idx + 1}
                       </div>
                       <div>
-                        <h4 style={{ color: 'var(--text-heading, #0A2D73)', fontSize: '14.5px', fontWeight: 700, marginBottom: '2px' }}>{item.label}</h4>
-                        <p style={{ fontSize: '13.5px', color: 'var(--text-body, #4A5568)', lineHeight: 1.5 }}>{item.desc}</p>
+                        <h4 style={{ color: 'var(--text-heading, #0A2D73)', fontSize: '14px', fontWeight: 700, marginBottom: '10px' }}>{item.label}</h4>
+                        <p style={{ fontSize: '14px', color: 'var(--text-body, #4A5568)', lineHeight: 1.5 }}>{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -316,7 +317,7 @@ export default function AboutPage() {
                       <Calendar style={{ width: '18px', height: '18px', color: '#D9041B' }} />
                       <span style={{ color: '#D9041B', fontWeight: 700, fontSize: '16px' }}>{milestone.year}</span>
                     </div>
-                    <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                    <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '10px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                       {milestone.title}
                     </h3>
                     <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.65 }}>{milestone.description}</p>
@@ -464,10 +465,10 @@ export default function AboutPage() {
                   }}>
                     <ValueIcon style={{ width: '24px', height: '24px', color: '#D9041B' }} />
                   </div>
-                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '6px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '10px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                     {value.title}
                   </h3>
-                  <p style={{ fontSize: '13px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.6 }}>{value.description}</p>
+                  <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.6 }}>{value.description}</p>
                 </motion.div>
               </ScrollReveal>
             );
@@ -546,7 +547,7 @@ export default function AboutPage() {
                       {item.title}
                     </h3>
                   </div>
-                  <p style={{ fontSize: '13.5px', color: 'var(--text-muted, #6B7A8D)', opacity: 0.9, lineHeight: 1.65 }}>
+                  <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', opacity: 0.9, lineHeight: 1.65 }}>
                     {item.desc}
                   </p>
                 </div>

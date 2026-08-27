@@ -33,7 +33,7 @@ export default function CTABanner({
               fontSize: 'var(--text-banner-title)',
               fontWeight: 700,
               color: 'var(--text-heading, #0A2D73)',
-              marginBottom: '14px',
+              marginBottom: '16px',
               fontFamily: "var(--font-heading, 'DM Sans', sans-serif)",
             }}>
               {title}
