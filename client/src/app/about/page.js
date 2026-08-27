@@ -299,7 +299,7 @@ export default function AboutPage() {
           {milestones.map((milestone, i) => (
             <ScrollReveal key={i} delay={i * 0.2}>
               <div 
-                className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start md:items-center justify-start relative mb-12`}
+                className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start md:items-center justify-start relative mb-20 md:mb-12`}
               >
                 {/* Content card */}
                 <div 
