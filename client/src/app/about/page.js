@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Award, Users, Heart, Target, Shield, Lightbulb, Star,
@@ -28,6 +29,10 @@ const milestones = [
   { year: 'Present', title: 'Industry Leader', description: 'Today, ICOM serves leading operators and institutions across multiple sectors with a comprehensive suite of engineering and technology solutions.' },
 ];
 
+// NOTE: mixes currently active operators (MTN, Zain) with discontinued/absorbed
+// ones (Starcomms, Mtel, Visafone, Reltel). Confirm with content owner whether
+// this should be relabeled "Clients We've Worked With" or split into
+// current / past to avoid implying ongoing relationships that no longer exist.
 const clients = [
   'Andrews', 'Ericsson', 'Zain', 'MTN', 'RTcom',
   'Starcomms', 'Reltel', 'Mtel', 'Visafone', 'ZTE', 'Huawei',
@@ -75,6 +80,59 @@ function Heading({ title, subtitle, light = false, centered = true }) {
   );
 }
 
+/* ─── Client logo tile with graceful fallback to text if the image 404s ─── */
+function ClientTile({ name }) {
+  const [imgFailed, setImgFailed] = useState(false);
+  const logoSrc = clientLogos[name];
+
+  return (
+    <motion.div
+      whileHover={{ y: -4, boxShadow: 'var(--card-shadow, 0 12px 28px rgba(0,0,0,0.08))' }}
+      style={{
+        background: 'var(--bg-card, #FFFFFF)',
+        borderRadius: '12px',
+        border: '1px solid var(--border-color, #E2E8F0)',
+        height: '80px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '16px',
+        transition: 'all 0.3s',
+        cursor: 'default',
+      }}
+    >
+      {logoSrc && !imgFailed ? (
+        <img
+          src={logoSrc}
+          alt={`${name} logo`}
+          onError={() => setImgFailed(true)}
+          style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+        />
+      ) : (
+        <span style={{
+          fontWeight: 700,
+          color: 'var(--text-heading, #0A2D73)',
+          fontSize: '18px',
+          fontFamily: "var(--font-heading, 'DM Sans', sans-serif)",
+          letterSpacing: '-0.3px'
+        }}>
+          {name}
+        </span>
+      )}
+    </motion.div>
+  );
+}
+
+/* ─── Team member initials: first letter of each name part, first-name-inclusive ─── */
+function getInitials(fullName) {
+  return fullName
+    .split(' ')
+    .filter(Boolean)
+    .map((part) => part[0])
+    .join('')
+    .toUpperCase();
+}
+
 export default function AboutPage() {
   return (
     <>
@@ -88,7 +146,7 @@ export default function AboutPage() {
         overflow: 'hidden',
       }}>
         {/* Decorative circles */}
-        <div style={{ position: 'absolute', inset: 0, opacity: 0.05 }}>
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, opacity: 0.05 }}>
           <div style={{ position: 'absolute', top: '33%', right: '25%', width: '288px', height: '288px', border: '1px solid white', borderRadius: '50%' }} />
           <div style={{ position: 'absolute', bottom: '25%', left: '33%', width: '192px', height: '192px', border: '1px solid white', borderRadius: '50%' }} />
         </div>
@@ -285,7 +343,7 @@ export default function AboutPage() {
 
         <div style={{ maxWidth: '800px', margin: '0 auto', position: 'relative' }}>
           {/* Vertical line */}
-          <div 
+          <div
             className="left-4 md:left-1/2 transform -translate-x-1/2"
             style={{
               position: 'absolute',
@@ -293,16 +351,19 @@ export default function AboutPage() {
               bottom: 0,
               width: '2px',
               background: '#D9041B',
-            }} 
+            }}
           />
 
           {milestones.map((milestone, i) => (
             <ScrollReveal key={i} delay={i * 0.2}>
-              <div 
-                className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start md:items-center justify-start relative mb-20 md:mb-12`}
+              {/* min-height ensures the node's fixed top:24px stays visually
+                  aligned with the line even when card content length varies */}
+              <div
+                className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start md:items-center justify-start relative mb-12`}
+                style={{ minHeight: '80px' }}
               >
                 {/* Content card */}
-                <div 
+                <div
                   className={`w-full md:w-[calc(50%-32px)] pl-12 md:pl-0 ${i % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}
                 >
                   <div style={{
@@ -325,7 +386,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* Center node */}
-                <div 
+                <div
                   className="absolute left-4 md:left-1/2 transform -translate-x-1/2"
                   style={{
                     top: '24px',
@@ -358,76 +419,76 @@ export default function AboutPage() {
       <Section bg="var(--bg-secondary, #F5F7FA)">
         <Heading title="Leadership Team" subtitle="Experienced professionals driving engineering excellence." />
 
-        <div className="flex justify-center">
-          <div className="max-w-sm w-full">
-            {team.map((member, i) => (
-              <ScrollReveal key={member.id} delay={i * 0.1}>
-                <motion.div whileHover={{ y: -6 }} style={{ cursor: 'pointer' }}>
+        {/* Responsive grid that works whether `team` has 1 member or many:
+            centers a single card, wraps naturally into columns for more. */}
+        <div className={`grid grid-cols-1 ${team.length > 1 ? 'sm:grid-cols-2 lg:grid-cols-3' : ''} gap-6 justify-items-center`}>
+          {team.map((member, i) => (
+            <ScrollReveal key={member.id} delay={i * 0.1}>
+              <motion.div whileHover={{ y: -6 }} style={{ cursor: 'pointer', maxWidth: '380px' }}>
+                <div style={{
+                  background: 'var(--bg-card, #FFFFFF)',
+                  borderRadius: '14px',
+                  overflow: 'hidden',
+                  boxShadow: 'var(--card-shadow, 0 2px 12px rgba(0,0,0,0.06))',
+                  border: '1px solid var(--border-color, #E2E8F0)',
+                  transition: 'box-shadow 0.3s',
+                }}>
+                  {/* Rounded avatar container */}
                   <div style={{
-                    background: 'var(--bg-card, #FFFFFF)',
-                    borderRadius: '14px',
-                    overflow: 'hidden',
-                    boxShadow: 'var(--card-shadow, 0 2px 12px rgba(0,0,0,0.06))',
-                    border: '1px solid var(--border-color, #E2E8F0)',
-                    transition: 'box-shadow 0.3s',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    paddingTop: '32px',
+                    background: 'transparent',
                   }}>
-                    {/* Rounded avatar container */}
                     <div style={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      paddingTop: '32px',
-                      background: 'transparent',
+                      width: '180px',
+                      height: '180px',
+                      borderRadius: '50%',
+                      overflow: 'hidden',
+                      border: '4px solid var(--border-color, #F5F7FA)',
+                      boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
+                      background: '#0A2D73',
+                      position: 'relative',
                     }}>
-                      <div style={{
-                        width: '180px',
-                        height: '180px',
-                        borderRadius: '50%',
-                        overflow: 'hidden',
-                        border: '4px solid var(--border-color, #F5F7FA)',
-                        boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
-                        background: '#0A2D73',
-                        position: 'relative',
-                      }}>
-                        {member.image ? (
-                          <img
-                            src={member.image}
-                            alt={member.name}
-                            style={{
-                              width: '100%',
-                              height: '100%',
-                              objectFit: 'cover',
-                              objectPosition: 'top',
-                              display: 'block'
-                            }}
-                          />
-                        ) : (
-                          <div style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
+                      {member.image ? (
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          style={{
                             width: '100%',
                             height: '100%',
-                          }}>
-                            <span style={{ fontSize: '40px', fontWeight: 700, color: 'rgba(255,255,255,0.2)' }}>
-                              {member.name.split(' ').filter((_, idx) => idx > 0).map(n => n[0]).join('')}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    <div style={{ padding: '20px' }}>
-                      <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '4px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-                        {member.name}
-                      </h3>
-                      <p style={{ color: '#D9041B', fontWeight: 500, fontSize: '13px', marginBottom: '10px' }}>{member.title}</p>
-                      <p style={{ fontSize: '13px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.6 }}>{member.bio}</p>
+                            objectFit: 'cover',
+                            objectPosition: 'top',
+                            display: 'block'
+                          }}
+                        />
+                      ) : (
+                        <div style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          width: '100%',
+                          height: '100%',
+                        }}>
+                          <span style={{ fontSize: '40px', fontWeight: 700, color: 'rgba(255,255,255,0.2)' }}>
+                            {getInitials(member.name)}
+                          </span>
+                        </div>
+                      )}
                     </div>
                   </div>
-                </motion.div>
-              </ScrollReveal>
-            ))}
-          </div>
+
+                  <div style={{ padding: '20px' }}>
+                    <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '4px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                      {member.name}
+                    </h3>
+                    <p style={{ color: '#D9041B', fontWeight: 500, fontSize: '13px', marginBottom: '10px' }}>{member.title}</p>
+                    <p style={{ fontSize: '13px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.6 }}>{member.bio}</p>
+                  </div>
+                </div>
+              </motion.div>
+            </ScrollReveal>
+          ))}
         </div>
       </Section>
 
@@ -479,7 +540,7 @@ export default function AboutPage() {
       {/* ═══════ CORPORATE PRINCIPLES & COMMITMENTS ═══════ */}
       <Section bg="var(--bg-secondary, #F5F7FA)">
         <Heading title="Corporate Commitments" subtitle="Our approach to quality, client success, and problem solving." />
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
@@ -528,26 +589,30 @@ export default function AboutPage() {
             const Icon = item.icon;
             return (
               <ScrollReveal key={idx} delay={idx * 0.08}>
-                <div style={{
-                  background: 'var(--bg-card, #FFFFFF)',
-                  borderRadius: '16px',
-                  padding: '32px 28px',
-                  height: '100%',
-                  border: '1px solid var(--border-color, #E2E8F0)',
-                  transition: 'all 0.3s'
-                }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = '#0A2D73'; e.currentTarget.style.color = '#FFFFFF'; e.currentTarget.style.boxShadow = '0 12px 32px rgba(10,45,115,0.12)'; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--bg-card, #FFFFFF)'; e.currentTarget.style.color = 'inherit'; e.currentTarget.style.boxShadow = 'none'; }}
+                {/* Hover styling moved to a React-controlled className + CSS
+                    variables so ALL text swaps to white with the background,
+                    instead of only the background flipping (previous version
+                    left navy/gray text unreadable on the navy hover state). */}
+                <div
+                  className="icom-commitment-card"
+                  style={{
+                    background: 'var(--bg-card, #FFFFFF)',
+                    borderRadius: '16px',
+                    padding: '32px 28px',
+                    height: '100%',
+                    border: '1px solid var(--border-color, #E2E8F0)',
+                    transition: 'all 0.3s',
+                  }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '16px' }}>
                     <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: item.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <Icon style={{ width: '20px', height: '20px', color: item.iconColor }} />
                     </div>
-                    <h3 style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                    <h3 className="icom-commitment-title" style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
                       {item.title}
                     </h3>
                   </div>
-                  <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', opacity: 0.9, lineHeight: 1.65 }}>
+                  <p className="icom-commitment-desc" style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', opacity: 0.9, lineHeight: 1.65 }}>
                     {item.desc}
                   </p>
                 </div>
@@ -555,6 +620,24 @@ export default function AboutPage() {
             )
           })}
         </div>
+
+        {/* Scoped hover styles: background AND text flip together, and are
+            skipped entirely for users who prefer reduced motion. */}
+        <style jsx>{`
+          .icom-commitment-card:hover {
+            background: #0A2D73 !important;
+            box-shadow: 0 12px 32px rgba(10, 45, 115, 0.12);
+          }
+          .icom-commitment-card:hover .icom-commitment-title,
+          .icom-commitment-card:hover .icom-commitment-desc {
+            color: #FFFFFF !important;
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .icom-commitment-card {
+              transition: none !important;
+            }
+          }
+        `}</style>
       </Section>
 
       {/* ═══════ KEY CLIENTS ═══════ */}
@@ -565,31 +648,7 @@ export default function AboutPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: '20px', justifyContent: 'center' }}>
             {clients.map((client, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
-                <motion.div
-                  whileHover={{ y: -4, boxShadow: 'var(--card-shadow, 0 12px 28px rgba(0,0,0,0.08))' }}
-                  style={{
-                    background: 'var(--bg-card, #FFFFFF)',
-                    borderRadius: '12px',
-                    border: '1px solid var(--border-color, #E2E8F0)',
-                    height: '80px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '16px',
-                    transition: 'all 0.3s',
-                    cursor: 'default',
-                  }}
-                >
-                  <span style={{ 
-                    fontWeight: 700, 
-                    color: 'var(--text-heading, #0A2D73)', 
-                    fontSize: '18px', 
-                    fontFamily: "var(--font-heading, 'DM Sans', sans-serif)",
-                    letterSpacing: '-0.3px'
-                  }}>
-                    {client}
-                  </span>
-                </motion.div>
+                <ClientTile name={client} />
               </ScrollReveal>
             ))}
           </div>
