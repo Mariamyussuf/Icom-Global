@@ -62,17 +62,21 @@ export default function Footer() {
   return (
     <>
       <footer
-        className="w-full bg-[#06132B] text-white rounded-t-[24px] sm:rounded-t-[32px] border-t border-white/10 shadow-[0_-8px_30px_rgba(0,0,0,0.15)] mt-10 relative"
+        style={{ backgroundColor: 'var(--bg-navbar, #0A2D73)', position: 'relative' }}
+        className="w-full text-white"
         role="contentinfo"
         aria-label="Site Footer"
       >
+        {/* Top accent line */}
+        <div style={{ height: '3px', background: 'var(--accent-red, #D9041B)' }} />
+
         <div
           className="px-5 sm:px-8 md:px-12"
           style={{
             maxWidth: '1200px',
             margin: '0 auto',
-            paddingTop: '48px',
-            paddingBottom: '32px',
+            paddingTop: '56px',
+            paddingBottom: '36px',
           }}
         >
           {/* Main columns */}

@@ -367,7 +367,7 @@ export default function HomePage() {
             </AnimatePresence>
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '32px' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '32px', marginBottom: '24px' }}>
             {testimonials.map((_, i) => (
               <button
                 key={i}
