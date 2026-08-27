@@ -21,6 +21,7 @@ import {
   Monitor,
   Package,
   ClipboardList,
+  ChevronLeft,
   ChevronRight,
   Quote,
   CheckCircle,
@@ -91,7 +92,7 @@ function Section({ children, bg = 'white', className = '', ...props }) {
       {...props}
     >
       <div
-        className="px-5 sm:px-6 md:px-8 lg:px-12 py-12 md:py-20"
+        className="px-5 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 lg:py-28"
         style={{
           maxWidth: '1200px',
           margin: '0 auto',
@@ -106,13 +107,23 @@ function Section({ children, bg = 'white', className = '', ...props }) {
 /* ─── Streamlined Homepage Component ─── */
 export default function HomePage() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const prevTestimonial = () => {
+    setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const nextTestimonial = () => {
+    setActiveIndex((prev) => (prev + 1) % testimonials.length);
+  };
 
   useEffect(() => {
+    if (isPaused) return;
     const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+      nextTestimonial();
+    }, 6000);
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]);
 
   return (
     <>
@@ -340,48 +351,77 @@ export default function HomePage() {
       {/* ═══════════════ 6. TESTIMONIALS ═══════════════ */}
       <Section bg="gray" aria-label="Testimonials">
         <ScrollReveal>
-          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '52px' }}>
             <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
-            <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+            <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '16px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
               What Our Clients Say
             </h2>
+            <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
+              Trusted feedback from telecom operators, enterprise clients, and infrastructure directors across the continent.
+            </p>
           </div>
         </ScrollReveal>
 
-        <div style={{ maxWidth: '640px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '24px' }}>
-            <Quote style={{ width: '40px', height: '40px', color: 'rgba(217,4,27,0.2)' }} />
+        <div
+          style={{ maxWidth: '840px', margin: '0 auto', position: 'relative' }}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {/* Slider with Prev / Card / Next */}
+          <div className="flex items-center gap-3 sm:gap-6">
+            {/* Prev Button */}
+            <button
+              type="button"
+              onClick={prevTestimonial}
+              aria-label="Previous testimonial"
+              className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white border border-slate-200 shadow-sm text-slate-600 hover:text-white hover:bg-[#D9041B] hover:border-[#D9041B] flex items-center justify-center transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A2D73]"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            {/* Testimonial Card */}
+            <div className="flex-1 min-w-0 min-h-[220px] flex items-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeIndex}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.28, ease: 'easeInOut' }}
+                  className="w-full"
+                >
+                  <TestimonialCard {...testimonials[activeIndex]} />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Next Button */}
+            <button
+              type="button"
+              onClick={nextTestimonial}
+              aria-label="Next testimonial"
+              className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white border border-slate-200 shadow-sm text-slate-600 hover:text-white hover:bg-[#D9041B] hover:border-[#D9041B] flex items-center justify-center transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A2D73]"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
           </div>
 
-          <div style={{ position: 'relative', minHeight: '200px' }}>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeIndex}
-                variants={testimonialVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-              >
-                <TestimonialCard {...testimonials[activeIndex]} />
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '32px', marginBottom: '24px' }}>
+          {/* Dots Indicator */}
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', marginTop: '36px' }}>
             {testimonials.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setActiveIndex(i)}
                 aria-label={`Go to testimonial ${i + 1}`}
                 style={{
-                  width: '12px',
-                  height: '12px',
-                  borderRadius: '50%',
+                  height: '8px',
+                  width: i === activeIndex ? '28px' : '8px',
+                  borderRadius: '999px',
                   border: 'none',
                   cursor: 'pointer',
-                  background: i === activeIndex ? '#D9041B' : '#D1D7E0',
-                  transform: i === activeIndex ? 'scale(1.15)' : 'scale(1)',
-                  transition: 'all 0.3s',
+                  background: i === activeIndex ? '#D9041B' : '#CBD5E1',
+                  transition: 'all 0.3s ease',
+                  padding: 0,
                 }}
               />
             ))}
