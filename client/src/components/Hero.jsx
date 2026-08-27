@@ -117,7 +117,7 @@ export default function Hero() {
             </div>
 
             {/* Accent bar */}
-            <div className="mx-auto lg:mx-0" style={{ width: '40px', height: '3px', background: '#D9041B', borderRadius: '2px', marginBottom: '20px' }} />
+            <div style={{ width: '40px', height: '3px', background: '#D9041B', borderRadius: '2px', marginBottom: '20px', margin: '0 auto 20px' }} />
 
             {/* Headline */}
             <h1

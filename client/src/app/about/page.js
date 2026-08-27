@@ -67,7 +67,7 @@ function Section({ children, bg = 'var(--bg-primary, #FFFFFF)' }) {
 function Heading({ title, subtitle, light = false, centered = true }) {
   return (
     <div className={`mb-12 md:mb-16 ${centered ? 'text-center' : 'text-center lg:text-left'}`}>
-      <div className={`mb-5 ${centered ? 'mx-auto' : 'mx-auto lg:mx-0'}`} style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px' }} />
+      <div className="mb-5" style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: centered ? '0 auto 20px' : '0 auto 20px' }} />
       <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: light ? '#fff' : 'var(--text-heading, #0A2D73)', marginBottom: subtitle ? '16px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
         {title}
       </h2>
