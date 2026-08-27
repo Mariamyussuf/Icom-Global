@@ -51,7 +51,7 @@ const clientLogos = {
 function Section({ children, bg = 'var(--bg-primary, #FFFFFF)' }) {
   return (
     <section style={{ backgroundColor: bg }}>
-      <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-12 md:py-20" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 lg:py-28" style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {children}
       </div>
     </section>
@@ -61,7 +61,7 @@ function Section({ children, bg = 'var(--bg-primary, #FFFFFF)' }) {
 /* ─── Section heading ─── */
 function Heading({ title, subtitle, light = false, centered = true }) {
   return (
-    <div className={`mb-10 ${centered ? 'text-center' : 'text-center lg:text-left'}`}>
+    <div className={`mb-12 md:mb-16 ${centered ? 'text-center' : 'text-center lg:text-left'}`}>
       <div className={`mb-5 ${centered ? 'mx-auto' : 'mx-auto lg:mx-0'}`} style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px' }} />
       <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: light ? '#fff' : 'var(--text-heading, #0A2D73)', marginBottom: subtitle ? '16px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
         {title}
@@ -83,7 +83,7 @@ export default function AboutPage() {
         backgroundColor: '#0A2D73',
         marginTop: 'calc(-1 * var(--nav-height, 100px))',
         paddingTop: 'calc(var(--nav-height, 100px) + 40px)',
-        paddingBottom: '60px',
+        paddingBottom: '88px',
         position: 'relative',
         overflow: 'hidden',
       }}>

@@ -57,7 +57,7 @@ export default function ProjectsPage() {
 
       {/* Filter + Grid */}
       <section style={{ backgroundColor: 'var(--bg-primary, #FFFFFF)' }}>
-        <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-12 md:py-20" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 lg:py-28" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           {/* Filter Tabs */}
           <ScrollReveal>
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px', marginBottom: '48px' }}>
