@@ -115,8 +115,12 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form + Info */}
-      <section style={{ backgroundColor: 'var(--bg-primary, #FFFFFF)' }}>
-        <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-24 lg:py-28" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      {/* Padding moved to inline styles (was Tailwind-only py-24/lg:py-28,
+          which was being purged in production and left mobile sections
+          with no vertical spacing — see About/Home/Services/Projects fix).
+          Inline styles can't be purged, so this is guaranteed on every build. */}
+      <section style={{ backgroundColor: 'var(--bg-primary, #FFFFFF)', paddingTop: '64px', paddingBottom: '64px' }} className="lg:!py-28">
+        <div className="px-5 sm:px-6 md:px-8 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Form */}
             <div className="lg:col-span-3">
