@@ -339,79 +339,47 @@ export default function AboutPage() {
 
       {/* ═══════ TIMELINE ═══════ */}
       <Section bg="var(--bg-primary, #FFFFFF)">
-        <Heading title="Our Journey" />
+        <Heading title="Our Journey" subtitle="A track record of engineering innovation and milestone achievements since 2009." />
 
-        <div style={{ maxWidth: '800px', margin: '0 auto', position: 'relative' }}>
-          {/* Vertical line */}
-          <div
-            className="left-4 md:left-1/2 transform -translate-x-1/2"
-            style={{
-              position: 'absolute',
-              top: 0,
-              bottom: 0,
-              width: '2px',
-              background: '#D9041B',
-            }}
-          />
+        <div className="timeline-wrapper">
+          {milestones.map((milestone, i) => {
+            const isLast = i === milestones.length - 1;
+            return (
+              <ScrollReveal key={i} delay={i * 0.15}>
+                <div className={`timeline-item ${i % 2 === 0 ? 'even' : 'odd'} ${isLast ? 'last' : ''}`}>
+                  {/* Connecting track line between milestone nodes */}
+                  {!isLast && <div className="timeline-track-line" />}
 
-          {milestones.map((milestone, i) => (
-            <ScrollReveal key={i} delay={i * 0.2}>
-              {/* min-height ensures the node's fixed top:24px stays visually
-                  aligned with the line even when card content length varies */}
-              <div
-                className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start md:items-center justify-start relative mb-12`}
-                style={{ minHeight: '80px' }}
-              >
-                {/* Content card */}
-                <div
-                  className={`w-full md:w-[calc(50%-32px)] pl-12 md:pl-0 ${i % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}
-                >
-                  <div style={{
-                    background: 'var(--bg-card, #FFFFFF)',
-                    borderRadius: '14px',
-                    padding: '24px',
-                    boxShadow: 'var(--card-shadow, 0 2px 12px rgba(0,0,0,0.06))',
-                    border: '1px solid var(--border-color, #E2E8F0)',
-                    textAlign: 'left'
-                  }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <Calendar style={{ width: '18px', height: '18px', color: '#D9041B' }} />
-                      <span style={{ color: '#D9041B', fontWeight: 700, fontSize: '16px' }}>{milestone.year}</span>
+                  {/* Circular milestone node */}
+                  <div className="timeline-node">
+                    <div className="timeline-node-inner" />
+                  </div>
+
+                  {/* Mobile-only connector bridge from node to card */}
+                  <div className="timeline-card-connector" />
+
+                  {/* Content card column */}
+                  <div className="timeline-card-col">
+                    <div className="timeline-card-box">
+                      <div className="timeline-year-badge">
+                        <Calendar style={{ width: '13px', height: '13px', color: '#D9041B', flexShrink: 0 }} />
+                        <span>{milestone.year}</span>
+                      </div>
+                      <h3 className="timeline-card-title">
+                        {milestone.title}
+                      </h3>
+                      <p className="timeline-card-desc">
+                        {milestone.description}
+                      </p>
                     </div>
-                    <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '10px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-                      {milestone.title}
-                    </h3>
-                    <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.65 }}>{milestone.description}</p>
                   </div>
-                </div>
 
-                {/* Center node */}
-                <div
-                  className="absolute left-4 md:left-1/2 transform -translate-x-1/2"
-                  style={{
-                    top: '24px',
-                    zIndex: 2,
-                  }}
-                >
-                  <div style={{
-                    width: '32px',
-                    height: '32px',
-                    background: '#D9041B',
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    boxShadow: '0 4px 12px rgba(217,4,27,0.3)',
-                  }}>
-                    <div style={{ width: '10px', height: '10px', background: '#fff', borderRadius: '50%' }} />
-                  </div>
+                  {/* Desktop alternating spacer */}
+                  <div className="timeline-card-spacer" />
                 </div>
-
-                {/* Empty space */}
-                <div className="hidden md:block w-[calc(50%-32px)]" />
-              </div>
-            </ScrollReveal>
-          ))}
+              </ScrollReveal>
+            );
+          })}
         </div>
       </Section>
 
