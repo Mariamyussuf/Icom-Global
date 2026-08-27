@@ -42,8 +42,12 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section style={{ backgroundColor: 'var(--bg-primary, #FFFFFF)' }}>
-        <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-24 lg:py-28" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      {/* Padding moved to inline styles (was Tailwind-only py-24/lg:py-28,
+          which was being purged in production and left mobile sections
+          with no vertical spacing — see About/Home page fix). Inline
+          styles can't be purged, so this is guaranteed on every build. */}
+      <section style={{ backgroundColor: 'var(--bg-primary, #FFFFFF)', paddingTop: '64px', paddingBottom: '64px' }} className="lg:!py-28">
+        <div className="px-5 sm:px-6 md:px-8 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <ScrollReveal>
             <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.75, maxWidth: '760px', margin: '0 auto 64px', textAlign: 'center' }}>
               We offer customized service for most of Africa&apos;s largest wireless carriers to maintain their networks. As one of the fastest-growing independent telecoms service providers in Africa, we leverage our industry expertise across two primary operating divisions.
