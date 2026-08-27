@@ -31,6 +31,7 @@ export default function ServiceCard({ service, index = 0 }) {
           padding: '28px 24px',
           textDecoration: 'none',
           height: '100%',
+          overflow: 'hidden',
           transition: 'border-color 0.3s, box-shadow 0.3s, background-color 0.3s',
         }}
         onMouseEnter={(e) => (e.currentTarget.style.borderLeftColor = '#D9041B')}

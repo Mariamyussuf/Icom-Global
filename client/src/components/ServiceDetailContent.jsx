@@ -24,11 +24,15 @@ const iconMap = {
   PieChart, MessageSquare, TrendingDown, Award,
 };
 
-/* ─── Reusable wrapper ─── */
+/* ─── Reusable wrapper ───
+   Padding moved to inline styles (was Tailwind-only py-24/lg:py-28,
+   which was being purged in production and left mobile sections with
+   no vertical spacing — see About/Home/Services page fix). Inline
+   styles can't be purged, so this is guaranteed on every build. */
 function Section({ children, bg = 'var(--bg-primary, #FFFFFF)' }) {
   return (
-    <section style={{ backgroundColor: bg }}>
-      <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-24 lg:py-28" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+    <section style={{ backgroundColor: bg, paddingTop: '64px', paddingBottom: '64px' }} className="lg:!py-28">
+      <div className="px-5 sm:px-6 md:px-8 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {children}
       </div>
     </section>
@@ -134,15 +138,15 @@ export default function ServiceDetailContent({ service }) {
                   height: 'clamp(220px, 35vh, 320px)',
                   width: '100%',
                 }}>
-                  <img 
-                    src={imgList[currentImageIndex]} 
+                  <img
+                    src={imgList[currentImageIndex]}
                     alt={`${service.title} - image ${currentImageIndex + 1}`}
                     style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'all 0.3s' }}
                   />
 
                   {/* Left chevron button */}
                   {imgList.length > 1 && (
-                    <button 
+                    <button
                       onClick={() => setCurrentImageIndex((prev) => (prev - 1 + imgList.length) % imgList.length)}
                       style={{
                         position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)',
@@ -161,7 +165,7 @@ export default function ServiceDetailContent({ service }) {
 
                   {/* Right chevron button */}
                   {imgList.length > 1 && (
-                    <button 
+                    <button
                       onClick={() => setCurrentImageIndex((prev) => (prev + 1) % imgList.length)}
                       style={{
                         position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)',
@@ -185,7 +189,7 @@ export default function ServiceDetailContent({ service }) {
                       display: 'flex', gap: '8px', zIndex: 10
                     }}>
                       {imgList.map((_, idx) => (
-                        <div 
+                        <div
                           key={idx}
                           onClick={() => setCurrentImageIndex(idx)}
                           style={{
