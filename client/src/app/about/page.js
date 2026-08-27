@@ -51,7 +51,7 @@ const clientLogos = {
 function Section({ children, bg = 'var(--bg-primary, #FFFFFF)' }) {
   return (
     <section style={{ backgroundColor: bg }}>
-      <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 lg:py-28" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-24 lg:py-28" style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {children}
       </div>
     </section>

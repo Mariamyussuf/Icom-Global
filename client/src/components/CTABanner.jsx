@@ -12,7 +12,7 @@ export default function CTABanner({
 }) {
   return (
     <section style={{ backgroundColor: 'var(--bg-secondary, #F5F7FA)', position: 'relative', overflow: 'hidden' }}>
-      <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 lg:py-28" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+      <div className="px-5 sm:px-6 md:px-8 lg:px-12 py-24 lg:py-28" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
         <ScrollReveal>
           <div
             style={{
