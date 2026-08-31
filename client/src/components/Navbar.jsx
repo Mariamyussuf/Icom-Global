@@ -101,9 +101,9 @@ export default function Navbar() {
             <Image
               src={isDarkHeader ? "/images/Icom-logo-white.png" : "/images/Icom-logo.png"}
               alt="ICOM Engineering Solutions Limited"
-              width={160}
-              height={160}
-              className="h-[72px] sm:h-20 lg:h-20 w-auto"
+              width={240}
+              height={240}
+              className="h-[70px] sm:h-[76px] lg:h-[92px] w-auto"
               style={{ objectFit: 'contain', display: 'block' }}
               priority
             />
