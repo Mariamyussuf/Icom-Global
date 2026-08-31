@@ -64,15 +64,6 @@ export default function Hero() {
           width: '400px', height: '400px', borderRadius: '50%',
           background: 'radial-gradient(circle, rgba(217,4,27,0.03) 0%, transparent 70%)',
         }} />
-        {/* Engineering tools background pattern texture */}
-        <div style={{
-          position: 'absolute', inset: 0,
-          backgroundImage: 'url(/images/tools-background-pattern.png)',
-          backgroundRepeat: 'repeat',
-          backgroundSize: '480px 480px',
-          opacity: 0.07,
-          pointerEvents: 'none',
-        }} />
         {/* Subtle grid dots */}
         <div style={{
           position: 'absolute', inset: 0, opacity: 0.25,
