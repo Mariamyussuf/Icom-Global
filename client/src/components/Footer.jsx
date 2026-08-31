@@ -88,9 +88,9 @@ export default function Footer() {
                 <Image
                   src="/images/Icom-logo-white.png"
                   alt="ICOM Engineering Solutions Limited"
-                  width={150}
-                  height={50}
-                  style={{ height: '38px', width: 'auto', objectFit: 'contain' }}
+                  width={120}
+                  height={120}
+                  style={{ height: '64px', width: 'auto', objectFit: 'contain' }}
                 />
               </Link>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>

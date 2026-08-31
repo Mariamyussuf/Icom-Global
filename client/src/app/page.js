@@ -4,36 +4,30 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Shield,
-  Award,
-  Zap,
-  Building2,
-  Landmark,
-  Banknote,
-  Factory,
-  GraduationCap,
-  Plug,
   ArrowRight,
   Radio,
   Cable,
   Sun,
   Fuel as FuelIcon,
+  Plug,
   Monitor,
   Package,
   ClipboardList,
+  Zap,
   ChevronLeft,
   ChevronRight,
-  Quote,
   CheckCircle,
 } from 'lucide-react';
 
 import ScrollReveal from '@/components/ScrollReveal';
 import ServiceCard from '@/components/ServiceCard';
+import ProjectCard from '@/components/ProjectCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import Hero from '@/components/Hero';
 import ServiceImageMarquee from '@/components/ServiceImageMarquee';
 
 import { services } from '@/data/services';
+import { projects } from '@/data/projects';
 import { testimonials } from '@/data/testimonials';
 import { partners } from '@/data/partners';
 
@@ -61,16 +55,6 @@ const coreValues = [
   },
 ];
 
-const industries = [
-  { name: 'Telecommunications', icon: Radio },
-  { name: 'Government & Public Sector', icon: Landmark },
-  { name: 'Financial Services', icon: Banknote },
-  { name: 'Oil & Gas', icon: FuelIcon },
-  { name: 'Manufacturing', icon: Factory },
-  { name: 'Education', icon: GraduationCap },
-  { name: 'Utilities', icon: Plug },
-  { name: 'Real Estate', icon: Building2 },
-];
 
 const testimonialVariants = {
   enter: { opacity: 0, x: 40 },
@@ -112,6 +96,7 @@ function Section({ children, bg = 'white', className = '', ...props }) {
 export default function HomePage() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const ongoingProjects = projects.filter((p) => p.status === 'Ongoing');
 
   const prevTestimonial = () => {
     setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
@@ -271,46 +256,94 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* ═══════════════ 4. INDUSTRIES WE SERVE ═══════════════ */}
-      <Section bg="gray" aria-label="Industries we serve">
+      {/* ═══════════════ 4. PROJECTS IN PROGRESS ═══════════════ */}
+      <Section bg="gray" aria-label="Projects in progress">
         <ScrollReveal>
-          <div style={{ textAlign: 'center', marginBottom: '56px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            {/* Live activity indicator badge */}
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '6px 16px',
+                borderRadius: '999px',
+                background: 'rgba(16, 185, 129, 0.1)',
+                border: '1px solid rgba(16, 185, 129, 0.25)',
+                marginBottom: '18px',
+              }}
+            >
+              <span style={{ position: 'relative', display: 'flex', height: '8px', width: '8px' }}>
+                <span
+                  style={{
+                    position: 'absolute',
+                    display: 'inline-flex',
+                    height: '100%',
+                    width: '100%',
+                    borderRadius: '50%',
+                    background: '#10B981',
+                    opacity: 0.75,
+                    animation: 'ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite',
+                  }}
+                />
+                <span
+                  style={{
+                    position: 'relative',
+                    display: 'inline-flex',
+                    borderRadius: '50%',
+                    height: '8px',
+                    width: '8px',
+                    background: '#10B981',
+                  }}
+                />
+              </span>
+              <span style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.06em', color: '#059669', textTransform: 'uppercase' }}>
+                Live Deployments &amp; Site Progress
+              </span>
+            </div>
+
             <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
             <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '16px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-              Industries We Serve
+              Projects in Progress
             </h2>
-            <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
-              Delivering customized engineering solutions across key sectors of the African economy.
+            <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '640px', margin: '0 auto', lineHeight: 1.7 }}>
+              Turnkey telecommunications engineering, fiber optic rollouts, and mission-critical power operations currently underway across Africa.
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-          {industries.map((ind, i) => {
-            const Icon = ind.icon;
-            return (
-              <ScrollReveal key={ind.name} delay={i * 0.06}>
-                <motion.div
-                  whileHover={{ y: -4, boxShadow: 'var(--card-shadow, 0 12px 32px rgba(0,0,0,0.1))' }}
-                  className="p-5 lg:p-8"
-                  style={{
-                    background: 'var(--bg-card, #FFFFFF)',
-                    borderRadius: '14px',
-                    textAlign: 'center',
-                    boxShadow: 'var(--card-shadow, 0 2px 8px rgba(0,0,0,0.06))',
-                    border: '1px solid var(--border-color, #E2E8F0)',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s',
-                  }}
-                >
-                  <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: 'rgba(217,4,27,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 14px' }}>
-                    <Icon style={{ width: '24px', height: '24px', color: '#D9041B' }} />
-                  </div>
-                  <p style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-heading, #0A2D73)' }}>{ind.name}</p>
-                </motion.div>
-              </ScrollReveal>
-            );
-          })}
+        {/* 4 In-Progress Project Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {ongoingProjects.map((project, i) => (
+            <ScrollReveal key={project.id} delay={i * 0.08} className="h-full">
+              <ProjectCard project={project} index={i} />
+            </ScrollReveal>
+          ))}
+        </div>
+
+        {/* View All Projects Button */}
+        <div style={{ textAlign: 'center', marginTop: '48px' }}>
+          <Link
+            href="/projects"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '14px 32px',
+              border: '2px solid var(--text-heading, #0A2D73)',
+              borderRadius: '8px',
+              color: 'var(--text-heading, #0A2D73)',
+              fontWeight: 600,
+              fontSize: '15px',
+              textDecoration: 'none',
+              transition: 'all 0.3s',
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = '#D9041B'; e.currentTarget.style.borderColor = '#D9041B'; e.currentTarget.style.color = '#fff'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'var(--text-heading, #0A2D73)'; e.currentTarget.style.color = 'var(--text-heading, #0A2D73)'; }}
+          >
+            Explore Complete Portfolio
+            <ArrowRight style={{ width: '16px', height: '16px' }} />
+          </Link>
         </div>
       </Section>
 

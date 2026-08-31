@@ -94,9 +94,9 @@ export default function Navbar() {
             <Image
               src={isNavbarDark || mobileOpen ? "/images/Icom-logo-white.png" : "/images/Icom-logo.png"}
               alt="ICOM Engineering Solutions Limited"
-              width={160}
-              height={104}
-              className="h-12 sm:h-16 lg:h-20 w-auto"
+              width={120}
+              height={120}
+              className="h-14 sm:h-16 lg:h-20 w-auto"
               style={{ objectFit: 'contain', display: 'block' }}
               priority
             />

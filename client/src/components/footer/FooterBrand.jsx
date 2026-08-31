@@ -52,9 +52,9 @@ export default function FooterBrand() {
           <Image
             src="/images/Icom-logo-white.png"
             alt="ICOM Engineering Solutions Limited"
-            width={165}
-            height={56}
-            className="h-12 w-auto object-contain transition-opacity hover:opacity-90"
+            width={120}
+            height={120}
+            className="h-16 w-auto object-contain transition-opacity hover:opacity-90"
             priority={false}
           />
         </Link>
