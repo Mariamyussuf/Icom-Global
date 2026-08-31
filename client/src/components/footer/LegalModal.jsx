@@ -43,7 +43,7 @@ const legalContent = {
       },
       {
         heading: 'Intellectual Property',
-        body: 'All brand assets, documentation, engineering designs, software tools, and website content are the proprietary property of ICOM Engineering Solutions Limited (RC: 1043812).',
+        body: 'All brand assets, documentation, engineering designs, software tools, and website content are the proprietary property of ICOM Engineering Solutions Limited (RC: 9766449).',
       },
       {
         heading: 'Governing Law',
@@ -155,7 +155,7 @@ export default function LegalModal({ activeModal, onClose }) {
 
           {/* Footer */}
           <div className="flex items-center justify-between px-6 py-4 border-t border-white/10 bg-white/[0.02] text-xs text-white/50">
-            <span>RC: 1043812 · Lagos, Nigeria</span>
+            <span>RC: 9766449 · Lagos, Nigeria</span>
             <button
               onClick={onClose}
               className="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/15 text-white font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D9041B] cursor-pointer"

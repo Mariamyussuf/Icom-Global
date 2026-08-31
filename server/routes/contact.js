@@ -123,7 +123,7 @@ router.post(
             </p>
             <ul style="line-height: 1.8; color: #333;">
               <li>Phone: +234 803 566 9513 / +234 802 341 1618</li>
-              <li>Email: <a href="mailto:icomtssl@gmail.com">icomtssl@gmail.com</a></li>
+              <li>Email: <a href="mailto:icomengineeringsolutions@gmail.com">icomengineeringsolutions@gmail.com</a></li>
             </ul>
             <p style="line-height: 1.6; color: #333;">
               We appreciate your interest in ICOM Engineering Solutions Limited.
@@ -135,7 +135,7 @@ router.post(
           </div>
           <div style="background: #0B1F3A; padding: 16px; text-align: center;">
             <p style="color: #8899AA; font-size: 12px; margin: 0;">
-              &copy; ${new Date().getFullYear()} ICOM Engineering Solutions Limited. RC: 1043812
+              &copy; ${new Date().getFullYear()} ICOM Engineering Solutions Limited. RC: 9766449
             </p>
           </div>
         </div>

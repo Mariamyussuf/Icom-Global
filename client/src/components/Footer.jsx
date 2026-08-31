@@ -95,7 +95,7 @@ export default function Footer() {
               </Link>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                 <p style={{ fontSize: '11px', fontWeight: 700, color: '#D9041B', letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: 'monospace' }}>
-                  RC: 1043812 &bull; Est. 2009
+                  RC: 9766449 &bull; Est. 2009
                 </p>
                 <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.65)', lineHeight: 1.6, maxWidth: '360px' }}>
                   Integrated engineering solutions delivering telecommunications, fiber optics, solar power, and infrastructure services across Africa.
@@ -196,7 +196,10 @@ export default function Footer() {
                 </div>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                   <Mail size={15} color="#D9041B" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <a href="mailto:info@icomtsl.com" style={{ color: 'inherit', textDecoration: 'none' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.7)')}>info@icomtsl.com</a>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                    <a href="mailto:icomengineeringsolutions@gmail.com" style={{ color: 'inherit', textDecoration: 'none', wordBreak: 'break-all' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.7)')}>icomengineeringsolutions@gmail.com</a>
+                    <a href="mailto:info@icomtsl.com" style={{ color: 'rgba(255, 255, 255, 0.6)', textDecoration: 'none' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.6)')}>info@icomtsl.com</a>
+                  </div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingTop: '2px', color: 'rgba(255, 255, 255, 0.5)', fontSize: '12px' }}>
                   <Clock size={13} color="#D9041B" />

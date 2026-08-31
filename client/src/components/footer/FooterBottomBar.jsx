@@ -14,7 +14,7 @@ export default function FooterBottomBar({ onOpenLegal }) {
         {/* Left: Copyright & Legal Entity */}
         <div className="text-center md:text-left space-y-1">
           <p className="text-white/60">
-            &copy; {new Date().getFullYear()} ICOM Engineering Solutions Limited. RC: 1043812. All rights reserved.
+            &copy; {new Date().getFullYear()} ICOM Engineering Solutions Limited. RC: 9766449. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 text-[11px] text-white/40">
             <span className="flex items-center gap-1">

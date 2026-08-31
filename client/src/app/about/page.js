@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Award, Users, Heart, Target, Shield, Lightbulb, Star,
-  CheckCircle, Calendar, Smile, TrendingUp, Hand, Gem
+  CheckCircle, Calendar, Smile, TrendingUp, Hand, Gem,
+  Cable, Zap, Layers, RefreshCw, Radio, Building2, Home, Activity, ArrowRight
 } from 'lucide-react';
 import ScrollReveal from '@/components/ScrollReveal';
 import CTABanner from '@/components/CTABanner';
@@ -25,8 +26,8 @@ const coreValues = [
 
 const milestones = [
   { year: '2009', title: 'Company Founded', description: 'ICOM began operations as an engineering and technology services company, serving the growing Nigerian telecom sector.' },
-  { year: '2012', title: 'Officially Incorporated', description: 'Incorporated as a limited liability company under RC 1043812, establishing formal corporate governance and expanding service capabilities.' },
-  { year: 'Present', title: 'Industry Leader', description: 'Today, ICOM serves leading operators and institutions across multiple sectors with a comprehensive suite of engineering and technology solutions.' },
+  { year: '2012', title: 'Officially Incorporated', description: 'Incorporated as a limited liability company under COMPANY REGISTRATION NO: 9766449, establishing formal corporate governance and expanding fiber & infrastructure capabilities.' },
+  { year: 'Present', title: 'Industry Leader', description: 'Today, ICOM serves leading telecom operators and institutions across Africa with turnkey OFC networks, telecom rollouts, and mission-critical power solutions.' },
 ];
 
 // NOTE: mixes currently active operators (MTN, Zain) with discontinued/absorbed
@@ -205,7 +206,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { value: 'Est. 2009', label: 'Year Founded', accent: '#D9041B' },
-                { value: 'RC 1043812', label: 'Registration', accent: '#FF3B50' },
+                { value: 'RC 9766449', label: 'Company Reg. No.', accent: '#FF3B50' },
                 { value: 'Victoria Island', label: 'Lagos, Nigeria', accent: '#FF3B50' },
                 { value: '15+ Years', label: 'Experience', accent: '#D9041B' },
               ].map((stat) => (
@@ -237,24 +238,24 @@ export default function AboutPage() {
             <Heading title="Who We Are" centered={false} />
             <ScrollReveal delay={0.1}>
               <p style={{ fontSize: '15px', color: 'var(--text-body, #4A5568)', lineHeight: 1.8, marginBottom: '16px' }}>
-                ICOM Engineering Solutions Limited is a wholly Nigerian-owned company that has been operating since June 2009, incorporated in June 2012 under RC 1043812. Headquartered in Victoria Island, Lagos, we have grown to become a trusted partner for telecommunications operators, government institutions, and corporate organizations across Nigeria.
+                ICOM Engineering Solutions Limited is a wholly Nigerian-owned company that has been operating since June 2009, incorporated under <strong>COMPANY REGISTRATION NO: 9766449</strong>. Headquartered in Victoria Island, Lagos, we have grown to become a trusted infrastructure partner for telecommunications operators, government institutions, and corporate organizations across Nigeria.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p style={{ fontSize: '15px', color: 'var(--text-body, #4A5568)', lineHeight: 1.8, marginBottom: '16px' }}>
-                Our multidisciplinary team of engineers and technicians delivers end-to-end solutions spanning wireless networks, fiber optics, power infrastructure, repeaters, IT services, and project management. We combine deep technical expertise with a commitment to quality, safety, and customer satisfaction.
+                We specialize in the installation and deployment of Optical Fiber Cable (OFC) networks, turnkey telecommunications engineering, solar energy systems, and mission-critical power solutions. Our team of experienced Field Technicians and Project Managers has the technical expertise to plan, design, deploy, test, commission, maintain, troubleshoot, and upgrade infrastructure across diverse terrains.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
               <p style={{ fontSize: '15px', color: 'var(--text-body, #4A5568)', lineHeight: 1.8 }}>
-                We are committed to providing strategic and technical value through innovative, cost-effective solutions that meet international quality standards while addressing the unique challenges of the African market.
+                Supported by modern machinery, specialized tools, and industry-standard testing equipment, we are capable of executing deployment projects efficiently while maintaining the highest standards of quality, safety, reliability, and workmanship.
               </p>
             </ScrollReveal>
           </div>
         </div>
       </Section>
 
-      {/* ═══════ MISSION & PHILOSOPHY ═══════ */}
+      {/* ═══════ MISSION & OBJECTIVES ═══════ */}
       <Section bg="var(--bg-secondary, #F5F7FA)">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           {/* Mission Card */}
@@ -272,20 +273,19 @@ export default function AboutPage() {
             }}>
               <div>
                 <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.1)', color: '#D9041B', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginBottom: '20px', textTransform: 'uppercase' }}>
-                  Mission &amp; Objectives
+                  Our Mission &amp; Objectives
                 </span>
                 <h3 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.35 }}>
                   &ldquo;Our mission is to be the preferred Infrastructure Service Provider to leading Telecom Companies in the Country. To be the first choice in the region we operate in, by focusing on partnering and integrating with a commitment to provide customized services of the highest quality and value.&rdquo;
                 </h3>
                 <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7, marginBottom: '24px' }}>
-                  Strategic objectives driving our engineering delivery and fiber network deployment across Africa:
+                  Our core corporate objectives driving engineering excellence and nationwide fiber deployment:
                 </p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {[
-                    { title: 'Privately Owned Fiber Network', desc: 'Implement Nigeria’s largest and most reliable privately owned fiber network.' },
-                    { title: 'Maximum Reliability & Uptime', desc: 'Guarantee mission-critical network uptime with 24/7 proactive maintenance and monitoring.' },
-                    { title: 'Dark Fiber Management', desc: 'Lease and manage dark fiber infrastructure for multiple telecom operators and service providers.' },
-                    { title: 'Green Management', desc: 'Implement eco-friendly deployment processes and sustainable environmental practices.' }
+                    { title: 'Nigeria’s Largest Privately Owned Fiber Network', desc: 'To implement Nigeria’s Largest Privately Owned Fiber Network.' },
+                    { title: 'Maximum Reliability & Uptime', desc: 'To ensure maximum reliability and uptime across all deployed networks.' },
+                    { title: 'Dark Fiber Leasing & Management', desc: 'To Lease and Manage Dark Fiber networks for multiple service providers.' }
                   ].map((item, idx) => (
                     <div key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
                       <CheckCircle style={{ width: '18px', height: '18px', color: '#D9041B', flexShrink: 0, marginTop: '3px' }} />
@@ -321,7 +321,7 @@ export default function AboutPage() {
                   Our Basic Philosophy
                 </h3>
                 <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7, marginBottom: '24px' }}>
-                  We are driven by three fundamental principles to maintain respectability, support operator infrastructure, and deliver top service.
+                  We are driven by three fundamental principles to maintain respectability, support operator infrastructure, and deliver top service:
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                   {[
@@ -334,7 +334,7 @@ export default function AboutPage() {
                         {idx + 1}
                       </div>
                       <div>
-                        <h4 style={{ color: 'var(--text-heading, #0A2D73)', fontSize: '14px', fontWeight: 700, marginBottom: '10px' }}>{item.label}</h4>
+                        <h4 style={{ color: 'var(--text-heading, #0A2D73)', fontSize: '14px', fontWeight: 700, marginBottom: '6px' }}>{item.label}</h4>
                         <p style={{ fontSize: '14px', color: 'var(--text-body, #4A5568)', lineHeight: 1.5 }}>{item.desc}</p>
                       </div>
                     </div>
@@ -344,6 +344,168 @@ export default function AboutPage() {
             </div>
           </ScrollReveal>
         </div>
+      </Section>
+
+      {/* ═══════ OFC CAPABILITIES & INFRASTRUCTURE ═══════ */}
+      <Section bg="var(--bg-primary, #FFFFFF)">
+        <Heading
+          title="Optical Fiber Cable (OFC) Capabilities"
+          subtitle="Specialized end-to-end fiber optic planning, civil works, deployment, testing, and lifecycle maintenance."
+        />
+
+        {/* Lead capability description */}
+        <ScrollReveal>
+          <div
+            style={{
+              background: 'linear-gradient(135deg, rgba(10,45,115,0.03) 0%, rgba(217,4,27,0.03) 100%)',
+              borderRadius: '16px',
+              padding: '32px 28px',
+              border: '1px solid var(--border-color, #E2E8F0)',
+              maxWidth: '960px',
+              margin: '0 auto 48px',
+              textAlign: 'center',
+            }}
+          >
+            <p style={{ fontSize: '15px', color: 'var(--text-body, #4A5568)', lineHeight: 1.8, marginBottom: '14px' }}>
+              ICOM Engineering Solutions specializes in the installation and deployment of <strong>Optical Fiber Cable (OFC) networks</strong>. Our team of experienced Field Technicians and Project Managers has the technical expertise to plan, design, deploy, test, commission, maintain, troubleshoot, and upgrade fiber optic networks across diverse terrains and project environments.
+            </p>
+            <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7 }}>
+              Supported by modern machinery, specialized tools, and industry-standard testing equipment, we execute fiber optic deployment projects efficiently while maintaining the highest standards of quality, safety, reliability, and workmanship.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        {/* 10 Core Capabilities Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
+          {[
+            {
+              title: 'Fiber Optic Cable Installation',
+              desc: 'Underground and aerial OFC cable installation across different terrains and rights-of-way.',
+              icon: Cable,
+            },
+            {
+              title: 'Fiber Network Planning and Design',
+              desc: 'Planning and designing fiber networks based on project requirements, terrain profiling, and network objectives.',
+              icon: Activity,
+            },
+            {
+              title: 'Duct Calibration and Installation',
+              desc: 'Duct preparation, calibration, installation, and high-velocity cable blowing/pulling activities.',
+              icon: Zap,
+            },
+            {
+              title: 'Trenching and Civil Works',
+              desc: 'Civil works, road-crossing, and trench excavation required for underground fiber optic deployment.',
+              icon: Layers,
+            },
+            {
+              title: 'Last-Mile Fiber Deployment',
+              desc: 'Reliable fiber connectivity from distribution points to end users and customer premises.',
+              icon: Radio,
+            },
+            {
+              title: 'FTTH (Fiber to the Home)',
+              desc: 'End-to-end residential fiber deployment solutions, customer drop cables, and subscriber terminations.',
+              icon: Home,
+            },
+            {
+              title: 'FTTB (Fiber to the Building)',
+              desc: 'Fiber deployment for commercial buildings, corporate offices, residential estates, and multi-tenant facilities.',
+              icon: Building2,
+            },
+            {
+              title: 'Fiber Testing and Commissioning',
+              desc: 'OTDR testing, power measurement, link verification, fault identification, documentation, and commissioning.',
+              icon: CheckCircle,
+            },
+            {
+              title: 'Fiber Maintenance and Restoration',
+              desc: 'Preventive and corrective maintenance, troubleshooting, fault localization, emergency restoration, and network recovery.',
+              icon: RefreshCw,
+            },
+            {
+              title: 'Fiber Network Upgrade and Expansion',
+              desc: 'Modification, expansion, and capacity upgrade of existing fiber infrastructure to accommodate network growth.',
+              icon: TrendingUp,
+            },
+          ].map((cap, i) => {
+            const Icon = cap.icon;
+            return (
+              <ScrollReveal key={cap.title} delay={i * 0.04} className="h-full">
+                <div
+                  style={{
+                    background: 'var(--bg-card, #FFFFFF)',
+                    borderRadius: '14px',
+                    padding: '24px',
+                    border: '1px solid var(--border-color, #E2E8F0)',
+                    boxShadow: 'var(--card-shadow, 0 2px 8px rgba(0,0,0,0.04))',
+                    height: '100%',
+                    display: 'flex',
+                    gap: '16px',
+                    alignItems: 'flex-start',
+                    transition: 'transform 0.3s, box-shadow 0.3s',
+                  }}
+                  className="hover:shadow-md hover:-translate-y-0.5"
+                >
+                  <div
+                    style={{
+                      width: '44px',
+                      height: '44px',
+                      borderRadius: '12px',
+                      background: 'rgba(217,4,27,0.08)',
+                      color: '#D9041B',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Icon size={20} />
+                  </div>
+                  <div>
+                    <h4
+                      style={{
+                        fontSize: '15px',
+                        fontWeight: 700,
+                        color: 'var(--text-heading, #0A2D73)',
+                        marginBottom: '6px',
+                        fontFamily: "var(--font-heading, 'DM Sans', sans-serif)",
+                      }}
+                    >
+                      {cap.title}
+                    </h4>
+                    <p style={{ fontSize: '13.5px', color: 'var(--text-body, #4A5568)', lineHeight: 1.6 }}>
+                      {cap.desc}
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            );
+          })}
+        </div>
+
+        {/* Closing capability statement */}
+        <ScrollReveal delay={0.2}>
+          <div
+            style={{
+              marginTop: '40px',
+              padding: '24px 28px',
+              background: 'var(--bg-secondary, #F5F7FA)',
+              borderRadius: '14px',
+              borderLeft: '4px solid #D9041B',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '10px',
+            }}
+          >
+            <p style={{ fontSize: '14px', color: 'var(--text-body, #4A5568)', lineHeight: 1.7 }}>
+              Following installation and commissioning, our field teams remain equipped to provide ongoing maintenance, troubleshooting, fault restoration, and infrastructure upgrades, whether the requirement involves a short local deployment or fiber routes extending several miles.
+            </p>
+            <p style={{ fontSize: '13.5px', color: 'var(--text-heading, #0A2D73)', fontWeight: 600 }}>
+              With the combination of experienced personnel, project management expertise, specialized equipment, and field deployment capability, ICOM Engineering Solutions is positioned to deliver complete end-to-end fiber optic solutions from planning and deployment through to maintenance and network expansion.
+            </p>
+          </div>
+        </ScrollReveal>
       </Section>
 
       {/* ═══════ TIMELINE ═══════ */}
