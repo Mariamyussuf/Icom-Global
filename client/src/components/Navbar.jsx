@@ -32,8 +32,6 @@ export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const pathname = usePathname();
-  const isHome = pathname === '/';
-  const isDarkHeader = (!isHome && !scrolled) || mobileOpen;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -74,13 +72,13 @@ export default function Navbar() {
           transition: 'background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease',
           backgroundColor: mobileOpen
             ? 'var(--bg-navbar, #0A2D73)'
-            : scrolled
-            ? 'rgba(255, 255, 255, 0.98)'
-            : 'transparent',
-          backdropFilter: scrolled && !mobileOpen ? 'blur(10px)' : 'none',
-          WebkitBackdropFilter: scrolled && !mobileOpen ? 'blur(10px)' : 'none',
-          boxShadow: scrolled && !mobileOpen ? '0 4px 20px rgba(0, 0, 0, 0.08)' : 'none',
-          borderBottom: scrolled && !mobileOpen ? '1px solid var(--border-color, #E2E8F0)' : 'none',
+            : 'rgba(255, 255, 255, 0.98)',
+          backdropFilter: !mobileOpen ? 'blur(10px)' : 'none',
+          WebkitBackdropFilter: !mobileOpen ? 'blur(10px)' : 'none',
+          boxShadow: !mobileOpen
+            ? (scrolled ? '0 4px 20px rgba(0, 0, 0, 0.08)' : '0 2px 10px rgba(0, 0, 0, 0.04)')
+            : 'none',
+          borderBottom: !mobileOpen ? '1px solid var(--border-color, #E2E8F0)' : 'none',
         }}
         role="navigation"
         aria-label="Main navigation"
@@ -99,11 +97,11 @@ export default function Navbar() {
           {/* ── Logo ── */}
           <Link href="/" aria-label="ICOM - Home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
             <Image
-              src={isDarkHeader ? "/images/Icom-logo-white.png" : "/images/Icom-logo.png"}
+              src={mobileOpen ? "/images/Icom-logo-white.png" : "/images/Icom-logo.png"}
               alt="ICOM Engineering Solutions Limited"
-              width={240}
-              height={240}
-              className="h-[70px] sm:h-[76px] lg:h-[92px] w-auto"
+              width={220}
+              height={76}
+              className="h-[48px] sm:h-[56px] md:h-[64px] lg:h-[72px] w-auto max-h-[calc(var(--nav-height)-16px)]"
               style={{ objectFit: 'contain', display: 'block' }}
               priority
             />
@@ -128,20 +126,18 @@ export default function Navbar() {
                     borderRadius: '8px',
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: isActive(link.href)
-                      ? '#D9041B'
-                      : (isDarkHeader ? 'rgba(255,255,255,0.85)' : '#0A2D73'),
+                    color: isActive(link.href) ? '#D9041B' : '#0A2D73',
                     textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
                   onMouseEnter={(e) => {
                     if (!isActive(link.href)) {
-                      e.currentTarget.style.color = isDarkHeader ? '#FFFFFF' : '#D9041B';
+                      e.currentTarget.style.color = '#D9041B';
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (!isActive(link.href)) {
-                      e.currentTarget.style.color = isDarkHeader ? 'rgba(255,255,255,0.85)' : '#0A2D73';
+                      e.currentTarget.style.color = '#0A2D73';
                     }
                   }}
                 >
@@ -212,7 +208,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(!mobileOpen)}
               className="p-2 transition-colors focus:outline-none cursor-pointer"
               style={{
-                color: isDarkHeader ? '#FFFFFF' : '#0A2D73',
+                color: mobileOpen ? '#FFFFFF' : '#0A2D73',
                 minWidth: '44px',
                 minHeight: '44px',
                 display: 'inline-flex',

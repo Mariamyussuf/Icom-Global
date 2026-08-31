@@ -29,9 +29,8 @@ export default function ProjectsPage() {
       {/* Hero Banner */}
       <section style={{
         backgroundColor: '#0A2D73',
-        marginTop: 'calc(-1 * var(--nav-height, 100px))',
-        paddingTop: 'calc(var(--nav-height, 100px) + 40px)',
-        paddingBottom: '60px',
+        paddingTop: 'clamp(48px, 6vw, 64px)',
+        paddingBottom: 'clamp(48px, 6vw, 64px)',
         position: 'relative',
         overflow: 'hidden',
       }}>

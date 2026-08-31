@@ -63,9 +63,8 @@ export default function ServiceDetailContent({ service }) {
       {/* ═══════ HERO ═══════ */}
       <section style={{
         backgroundColor: '#0A2D73',
-        marginTop: 'calc(-1 * var(--nav-height, 100px))',
-        paddingTop: 'calc(var(--nav-height, 100px) + 32px)',
-        paddingBottom: '56px',
+        paddingTop: 'clamp(40px, 5vw, 56px)',
+        paddingBottom: 'clamp(44px, 5vw, 60px)',
         position: 'relative',
         overflow: 'hidden',
       }}>

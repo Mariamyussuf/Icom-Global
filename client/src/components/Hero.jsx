@@ -38,14 +38,13 @@ const statCardVariants = {
 export default function Hero() {
   return (
     <section
-      className="min-h-0 lg:min-h-screen"
+      className="min-h-0 lg:min-h-[calc(100vh-var(--nav-height))]"
       style={{
         backgroundColor: 'var(--bg-primary, #FFFFFF)',
         display: 'flex',
         alignItems: 'center',
-        marginTop: 'calc(-1 * var(--nav-height, 100px))',
-        paddingTop: 'calc(var(--nav-height, 100px) + 32px)',
-        paddingBottom: '48px',
+        paddingTop: 'clamp(28px, 4vw, 48px)',
+        paddingBottom: 'clamp(36px, 5vw, 56px)',
         position: 'relative',
         overflow: 'hidden',
       }}
