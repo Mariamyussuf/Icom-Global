@@ -23,7 +23,7 @@
 }
 
 :root {
-  --nav-height: 96px;
+  --nav-height: 100px;
   --bg-primary: #FFFFFF;
   --bg-secondary: #F5F7FA;
   --bg-card: #FFFFFF;
@@ -65,13 +65,13 @@
 
 @media (max-width: 1024px) {
   :root {
-    --nav-height: 84px;
+    --nav-height: 92px;
   }
 }
 
 @media (max-width: 640px) {
   :root {
-    --nav-height: 76px;
+    --nav-height: 86px;
   }
 }
 
