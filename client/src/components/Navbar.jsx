@@ -33,7 +33,7 @@ export default function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === '/';
-  const isNavbarDark = !isHome || scrolled;
+  const isDarkHeader = (!isHome && !scrolled) || mobileOpen;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -71,9 +71,16 @@ export default function Navbar() {
           height: 'var(--nav-height)',
           display: 'flex',
           alignItems: 'center',
-          transition: 'background-color 0.3s, box-shadow 0.3s',
-          backgroundColor: isNavbarDark || mobileOpen ? 'var(--bg-navbar, #0A2D73)' : 'transparent',
-          boxShadow: isNavbarDark ? '0 4px 20px rgba(0,0,0,0.15)' : 'none',
+          transition: 'background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease',
+          backgroundColor: mobileOpen
+            ? 'var(--bg-navbar, #0A2D73)'
+            : scrolled
+            ? 'rgba(255, 255, 255, 0.98)'
+            : 'transparent',
+          backdropFilter: scrolled && !mobileOpen ? 'blur(10px)' : 'none',
+          WebkitBackdropFilter: scrolled && !mobileOpen ? 'blur(10px)' : 'none',
+          boxShadow: scrolled && !mobileOpen ? '0 4px 20px rgba(0, 0, 0, 0.08)' : 'none',
+          borderBottom: scrolled && !mobileOpen ? '1px solid var(--border-color, #E2E8F0)' : 'none',
         }}
         role="navigation"
         aria-label="Main navigation"
@@ -92,7 +99,7 @@ export default function Navbar() {
           {/* ── Logo ── */}
           <Link href="/" aria-label="ICOM - Home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
             <Image
-              src={isNavbarDark || mobileOpen ? "/images/Icom-logo-white.png" : "/images/Icom-logo.png"}
+              src={isDarkHeader ? "/images/Icom-logo-white.png" : "/images/Icom-logo.png"}
               alt="ICOM Engineering Solutions Limited"
               width={120}
               height={120}
@@ -121,12 +128,22 @@ export default function Navbar() {
                     borderRadius: '8px',
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: isActive(link.href) ? '#D9041B' : (isNavbarDark ? 'rgba(255,255,255,0.75)' : '#0A2D73'),
+                    color: isActive(link.href)
+                      ? '#D9041B'
+                      : (isDarkHeader ? 'rgba(255,255,255,0.85)' : '#0A2D73'),
                     textDecoration: 'none',
                     transition: 'color 0.2s',
                   }}
-                  onMouseEnter={(e) => { if (!isActive(link.href)) e.currentTarget.style.color = isNavbarDark ? '#FFFFFF' : '#D9041B'; }}
-                  onMouseLeave={(e) => { if (!isActive(link.href)) e.currentTarget.style.color = isNavbarDark ? 'rgba(255,255,255,0.75)' : '#0A2D73'; }}
+                  onMouseEnter={(e) => {
+                    if (!isActive(link.href)) {
+                      e.currentTarget.style.color = isDarkHeader ? '#FFFFFF' : '#D9041B';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive(link.href)) {
+                      e.currentTarget.style.color = isDarkHeader ? 'rgba(255,255,255,0.85)' : '#0A2D73';
+                    }
+                  }}
                 >
                   {link.name}
                   {link.hasDropdown && (
@@ -195,7 +212,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(!mobileOpen)}
               className="p-2 transition-colors focus:outline-none cursor-pointer"
               style={{
-                color: isNavbarDark || mobileOpen ? '#FFFFFF' : '#0A2D73',
+                color: isDarkHeader ? '#FFFFFF' : '#0A2D73',
                 minWidth: '44px',
                 minHeight: '44px',
                 display: 'inline-flex',
