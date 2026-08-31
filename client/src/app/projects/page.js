@@ -34,15 +34,6 @@ export default function ProjectsPage() {
         position: 'relative',
         overflow: 'hidden',
       }}>
-        {/* Engineering tools background pattern texture */}
-        <div aria-hidden="true" style={{
-          position: 'absolute', inset: 0,
-          backgroundImage: 'url(/images/tools-background-pattern-white.png)',
-          backgroundRepeat: 'repeat',
-          backgroundSize: '480px 480px',
-          opacity: 0.08,
-          pointerEvents: 'none',
-        }} />
         <div style={{ position: 'absolute', inset: 0, opacity: 0.05 }}>
           <div style={{ position: 'absolute', top: '33%', right: '25%', width: '288px', height: '288px', border: '1px solid white', borderRadius: '50%' }} />
           <div style={{ position: 'absolute', bottom: '25%', left: '33%', width: '192px', height: '192px', border: '1px solid white', borderRadius: '50%' }} />
