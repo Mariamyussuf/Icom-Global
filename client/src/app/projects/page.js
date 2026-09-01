@@ -9,6 +9,7 @@ import { projects } from '@/data/projects';
 
 const categories = [
   { key: 'all', label: 'All' },
+  { key: 'equipment', label: 'Equipment' },
   { key: 'telecom', label: 'Telecom' },
   { key: 'solar', label: 'Solar' },
   { key: 'power', label: 'Power' },

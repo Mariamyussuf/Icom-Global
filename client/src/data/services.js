@@ -11,16 +11,6 @@ export const services = [
       '/images/services/fiber_site_4.jpeg',
       '/images/services/fiber_site_5.jpeg',
       '/images/services/fiber_site_6.png',
-      '/images/services/fiber_site_7.jpeg',
-      '/images/services/fiber_site_8.jpeg',
-      '/images/services/fiber_site_9.jpeg',
-      '/images/services/fiber_site_10.jpeg',
-      '/images/services/fiber_site_11.jpeg',
-      '/images/services/fiber_site_12.jpeg',
-      '/images/services/fiber_site_13.jpeg',
-      '/images/services/fiber_site_14.jpeg',
-      '/images/services/fiber_site_15.jpeg',
-      '/images/services/fiber_site_16.jpeg',
       '/images/services/fiber-optic_1.jpg',
       '/images/services/fiber-optic_2.jpg'
     ],
@@ -124,6 +114,9 @@ export const services = [
     slug: 'bss-equipment-installation',
     division: 'WNS',
     images: [
+      '/images/services/fiber_site_16.jpeg',
+      '/images/services/fiber_site_15.jpeg',
+      '/images/services/fiber_site_13.jpeg',
       '/images/services/it-solutions_1.jpg',
       '/images/services/it-solutions_2.jpg'
     ],
@@ -222,6 +215,7 @@ export const services = [
     slug: 'vsat-transmission',
     division: 'WNS',
     images: [
+      '/images/services/fiber_site_9.jpeg',
       '/images/services/procurement_1.jpg',
       '/images/services/procurement_2.jpg'
     ],
@@ -309,6 +303,12 @@ export const services = [
     slug: 'specialized-infrastructure-solutions',
     division: 'WNS',
     images: [
+      '/images/services/fiber_site_11.jpeg',
+      '/images/services/fiber_site_10.jpeg',
+      '/images/services/fiber_site_12.jpeg',
+      '/images/services/fiber_site_14.jpeg',
+      '/images/services/fiber_site_15.jpeg',
+      '/images/services/fiber_site_16.jpeg',
       '/images/services/solar-power_1.jpg',
       '/images/services/solar-power_2.jpg'
     ],
@@ -379,6 +379,8 @@ export const services = [
     slug: 'repeater-systems-solutions',
     division: 'ENS',
     images: [
+      '/images/services/fiber_site_7.jpeg',
+      '/images/services/fiber_site_8.jpeg',
       '/images/services/procurement_2.jpg',
       '/images/services/procurement_1.jpg'
     ],
