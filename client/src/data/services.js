@@ -169,6 +169,14 @@ export const services = [
     slug: 'fiber-optic-transmission',
     division: 'WNS',
     images: [
+      '/images/services/fiber_site_1.jpeg',
+      '/images/services/fiber_site_2.jpeg',
+      '/images/services/fiber_site_3.jpeg',
+      '/images/services/fiber_site_4.jpeg',
+      '/images/services/fiber_site_5.jpeg',
+      '/images/services/fiber_site_9.jpeg',
+      '/images/services/fiber_site_13.jpeg',
+      '/images/services/fiber_site_16.jpeg',
       '/images/services/fiber-optic_1.jpg',
       '/images/services/fiber-optic_2.jpg'
     ],

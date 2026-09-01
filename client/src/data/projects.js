@@ -8,8 +8,12 @@ export const projects = [
     status: 'Ongoing',
     description:
       'FTTH Redesign & PCC Migration across Johnson, Andoyi, Araromi, Anthony Ajayi Str. & Akintunde Cl & Andoyi Str. Involves network topology optimization, splitter relocation, OLT reconfiguration, and seamless subscriber migration.',
-    image: '/images/projects/ftth_redesign.jpg',
+    image: '/images/projects/fiber_site_1.jpeg',
     images: [
+      '/images/projects/fiber_site_1.jpeg',
+      '/images/projects/fiber_site_2.jpeg',
+      '/images/projects/fiber_site_3.jpeg',
+      '/images/projects/fiber_site_4.jpeg',
       '/images/projects/ftth_redesign.jpg',
       '/images/projects/ftth_redesign_2.jpg',
       '/images/projects/ftth_redesign_3.jpg',
@@ -25,8 +29,13 @@ export const projects = [
     status: 'Ongoing',
     description:
       'Last mile fiber optic cable running, overhead/underground routing, and network clean-up at Magodo Brooks to deliver high-speed, reliable fiber connectivity directly to residential and commercial subscribers.',
-    image: '/images/projects/fiber_cable_laying.jpg',
+    image: '/images/projects/fiber_site_5.jpeg',
     images: [
+      '/images/projects/fiber_site_5.jpeg',
+      '/images/projects/fiber_site_6.png',
+      '/images/projects/fiber_site_7.jpeg',
+      '/images/projects/fiber_site_8.jpeg',
+      '/images/projects/fiber_site_9.jpeg',
       '/images/projects/fiber_cable_laying.jpg',
       '/images/projects/fiber_cable_laying_2.jpg',
       '/images/projects/fiber_cable_laying_3.jpg',
@@ -61,8 +70,15 @@ export const projects = [
     status: 'Completed',
     description:
       'High-capacity fiber optic backbone deployment spanning over 120km, including trenching, duct calibration, Sirocco blowing, 96F dome joint splicing, EXFO OTDR testing, and complete commissioning documentation.',
-    image: '/images/projects/fiber.jpg',
+    image: '/images/projects/fiber_site_10.jpeg',
     images: [
+      '/images/projects/fiber_site_10.jpeg',
+      '/images/projects/fiber_site_11.jpeg',
+      '/images/projects/fiber_site_12.jpeg',
+      '/images/projects/fiber_site_13.jpeg',
+      '/images/projects/fiber_site_14.jpeg',
+      '/images/projects/fiber_site_15.jpeg',
+      '/images/projects/fiber_site_16.jpeg',
       '/images/projects/fiber.jpg',
       '/images/projects/fiber_2.jpg',
       '/images/projects/fiber_3.jpg',
