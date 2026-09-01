@@ -1,5 +1,58 @@
 export const services = [
-  // ════════════ Wireless Network Services (WNS) ════════════
+  // ════════════ Optical Fiber & Wireless Network Services ════════════
+  {
+    slug: 'fiber-optic-transmission',
+    division: 'WNS',
+    featuredBadge: 'Flagship Service',
+    images: [
+      '/images/services/fiber_site_1.jpeg',
+      '/images/services/fiber_site_2.jpeg',
+      '/images/services/fiber_site_3.jpeg',
+      '/images/services/fiber_site_4.jpeg',
+      '/images/services/fiber_site_5.jpeg',
+      '/images/services/fiber_site_6.png',
+      '/images/services/fiber_site_7.jpeg',
+      '/images/services/fiber_site_8.jpeg',
+      '/images/services/fiber_site_9.jpeg',
+      '/images/services/fiber_site_10.jpeg',
+      '/images/services/fiber_site_11.jpeg',
+      '/images/services/fiber_site_12.jpeg',
+      '/images/services/fiber_site_13.jpeg',
+      '/images/services/fiber_site_14.jpeg',
+      '/images/services/fiber_site_15.jpeg',
+      '/images/services/fiber_site_16.jpeg',
+      '/images/services/fiber-optic_1.jpg',
+      '/images/services/fiber-optic_2.jpg'
+    ],
+    title: 'Optical Fiber Cable (OFC) Networks & Transmission',
+    icon: 'Cable',
+    shortDesc: 'Turnkey OFC network planning, duct calibration, civil works, FTTH/FTTB deployment, OTDR testing, and emergency restoration.',
+    overview: 'ICOM Engineering Solutions specializes in the installation and deployment of Optical Fiber Cable (OFC) networks. Our team of experienced Field Technicians and Project Managers has the technical expertise to plan, design, deploy, test, commission, maintain, troubleshoot, and upgrade fiber optic networks across diverse terrains and project environments.\n\nSupported by modern machinery, specialized tools, and industry-standard testing equipment, we execute fiber optic deployment projects efficiently while maintaining the highest standards of quality, safety, reliability, and workmanship.',
+    subServices: [
+      'Fiber Optic Cable Installation: Underground and aerial OFC cable installation across diverse terrains',
+      'Fiber Network Planning & Design: Planning and designing fiber networks based on project requirements and network objectives',
+      'Duct Calibration & Installation: Duct preparation, calibration, installation, and cable blowing/pulling activities',
+      'Trenching & Civil Works: Civil works, road cuts, and excavation required for underground fiber optic deployment',
+      'Last-Mile Fiber Deployment: Reliable fiber connectivity from distribution points to end users and customer premises',
+      'FTTH (Fiber to the Home): End-to-end residential fiber deployment solutions and subscriber terminations',
+      'FTTB (Fiber to the Building): Fiber deployment for commercial buildings, corporate offices, estates, and multi-tenant facilities',
+      'Fiber Testing & Commissioning: OTDR testing, power measurement, link verification, fault identification, documentation, and commissioning',
+      'Fiber Maintenance & Restoration: Preventive and corrective maintenance, troubleshooting, fault localization, emergency restoration, and network recovery',
+      'Fiber Network Upgrade & Expansion: Modification, expansion, and capacity upgrade of existing fiber infrastructure across local and multi-mile routes'
+    ],
+    benefits: [
+      { icon: 'CheckCircle', title: 'End-to-End OFC Delivery', description: 'Complete lifecycle capability from initial route planning to testing and dark fiber leasing.' },
+      { icon: 'Zap', title: 'Advanced Cable Blowing', description: 'Pirelli Sirocco and high-velocity cable blowing for rapid network rollouts.' },
+      { icon: 'Clock', title: '24/7 Fault Restoration', description: 'Dedicated emergency crews stationed for rapid fiber cut repair and network recovery.' },
+      { icon: 'Shield', title: 'Terrain Versatility', description: 'Certified execution across urban metros, highways, rail corridors, and rural routes.' }
+    ],
+    process: [
+      { step: 1, title: 'Route Survey & Network Design', description: 'Engineering fiber pathways, duct calibration, elevation mapping, and civil works planning.' },
+      { step: 2, title: 'Trenching, Ducting & Blowing', description: 'Civil excavation, duct installation, and high-precision cable blowing/pulling.' },
+      { step: 3, title: 'Fusion Splicing & Terminations', description: 'Precision ribbon and single-mode splicing at dome joints, patch panels, and FTTX hubs.' },
+      { step: 4, title: 'OTDR Testing & Commissioning', description: 'Comprehensive OTDR trace analysis, dB power measurement, and formal commissioning.' }
+    ]
+  },
   {
     slug: 'rf-drive-testing',
     division: 'WNS',
@@ -163,58 +216,6 @@ export const services = [
       { step: 2, title: 'Link Design', description: 'Performing link budget analysis, frequency planning, and interference checks.' },
       { step: 3, title: 'Installation & Alignment', description: 'Deploying microwave dishes and aligning paths for maximum signal level.' },
       { step: 4, title: 'Commissioning & BERT', description: 'Testing data transmission quality and monitoring bit error rates.' }
-    ]
-  },
-  {
-    slug: 'fiber-optic-transmission',
-    division: 'WNS',
-    images: [
-      '/images/services/fiber_site_1.jpeg',
-      '/images/services/fiber_site_2.jpeg',
-      '/images/services/fiber_site_3.jpeg',
-      '/images/services/fiber_site_4.jpeg',
-      '/images/services/fiber_site_5.jpeg',
-      '/images/services/fiber_site_6.png',
-      '/images/services/fiber_site_7.jpeg',
-      '/images/services/fiber_site_8.jpeg',
-      '/images/services/fiber_site_9.jpeg',
-      '/images/services/fiber_site_10.jpeg',
-      '/images/services/fiber_site_11.jpeg',
-      '/images/services/fiber_site_12.jpeg',
-      '/images/services/fiber_site_13.jpeg',
-      '/images/services/fiber_site_14.jpeg',
-      '/images/services/fiber_site_15.jpeg',
-      '/images/services/fiber_site_16.jpeg',
-      '/images/services/fiber-optic_1.jpg',
-      '/images/services/fiber-optic_2.jpg'
-    ],
-    title: 'Optical Fiber Cable (OFC) Networks & Transmission',
-    icon: 'Cable',
-    shortDesc: 'Turnkey OFC network planning, duct calibration, civil works, FTTH/FTTB deployment, OTDR testing, and emergency restoration.',
-    overview: 'ICOM Engineering Solutions specializes in the installation and deployment of Optical Fiber Cable (OFC) networks. Our team of experienced Field Technicians and Project Managers has the technical expertise to plan, design, deploy, test, commission, maintain, troubleshoot, and upgrade fiber optic networks across diverse terrains and project environments.\n\nSupported by modern machinery, specialized tools, and industry-standard testing equipment, we execute fiber optic deployment projects efficiently while maintaining the highest standards of quality, safety, reliability, and workmanship.',
-    subServices: [
-      'Fiber Optic Cable Installation: Underground and aerial OFC cable installation across diverse terrains',
-      'Fiber Network Planning & Design: Planning and designing fiber networks based on project requirements and network objectives',
-      'Duct Calibration & Installation: Duct preparation, calibration, installation, and cable blowing/pulling activities',
-      'Trenching & Civil Works: Civil works, road cuts, and excavation required for underground fiber optic deployment',
-      'Last-Mile Fiber Deployment: Reliable fiber connectivity from distribution points to end users and customer premises',
-      'FTTH (Fiber to the Home): End-to-end residential fiber deployment solutions and subscriber terminations',
-      'FTTB (Fiber to the Building): Fiber deployment for commercial buildings, corporate offices, estates, and multi-tenant facilities',
-      'Fiber Testing & Commissioning: OTDR testing, power measurement, link verification, fault identification, documentation, and commissioning',
-      'Fiber Maintenance & Restoration: Preventive and corrective maintenance, troubleshooting, fault localization, emergency restoration, and network recovery',
-      'Fiber Network Upgrade & Expansion: Modification, expansion, and capacity upgrade of existing fiber infrastructure across local and multi-mile routes'
-    ],
-    benefits: [
-      { icon: 'CheckCircle', title: 'End-to-End OFC Delivery', description: 'Complete lifecycle capability from initial route planning to testing and dark fiber leasing.' },
-      { icon: 'Zap', title: 'Advanced Cable Blowing', description: 'Pirelli Sirocco and high-velocity cable blowing for rapid network rollouts.' },
-      { icon: 'Clock', title: '24/7 Fault Restoration', description: 'Dedicated emergency crews stationed for rapid fiber cut repair and network recovery.' },
-      { icon: 'Shield', title: 'Terrain Versatility', description: 'Certified execution across urban metros, highways, rail corridors, and rural routes.' }
-    ],
-    process: [
-      { step: 1, title: 'Route Survey & Network Design', description: 'Engineering fiber pathways, duct calibration, elevation mapping, and civil works planning.' },
-      { step: 2, title: 'Trenching, Ducting & Blowing', description: 'Civil excavation, duct installation, and high-precision cable blowing/pulling.' },
-      { step: 3, title: 'Fusion Splicing & Terminations', description: 'Precision ribbon and single-mode splicing at dome joints, patch panels, and FTTX hubs.' },
-      { step: 4, title: 'OTDR Testing & Commissioning', description: 'Comprehensive OTDR trace analysis, dB power measurement, and formal commissioning.' }
     ]
   },
   {

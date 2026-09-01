@@ -2,14 +2,14 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown, Calendar, Radio, Users, MapPin } from 'lucide-react';
+import { ArrowRight, ChevronDown, Calendar, Radio, Users, MapPin, Cable } from 'lucide-react';
 
 /* ─── Stat card data ─── */
 const statCards = [
-  { icon: Calendar, value: '15+', label: 'Years of engineering experience' },
-  { icon: Radio, value: '8', label: 'Core service divisions' },
-  { icon: Users, value: '10+', label: 'Major telecom clients served' },
-  { icon: MapPin, value: 'Pan-African', label: 'Nigeria & West Africa coverage' },
+  { icon: Cable, value: '120km+', label: 'Turnkey OFC backbone & FTTH deployed' },
+  { icon: Calendar, value: '15+', label: 'Years of engineering excellence' },
+  { icon: Radio, value: '8', label: 'Core specialized divisions' },
+  { icon: Users, value: '10+', label: 'Tier-1 telecom operators served' },
 ];
 
 /* ─── Animation variants ─── */
@@ -111,7 +111,7 @@ export default function Hero() {
             >
               <span style={{ height: '6px', width: '6px', borderRadius: '50%', backgroundColor: '#D9041B' }} />
               <span style={{ fontSize: '12px', fontWeight: 500, letterSpacing: '0.04em', color: '#D9041B' }}>
-                Engineering excellence since 2009
+                Turnkey Optical Fiber &amp; Telecom Engineering
               </span>
             </div>
 
@@ -129,11 +129,11 @@ export default function Hero() {
                 marginBottom: '20px',
               }}
             >
-              <span style={{ color: 'var(--text-heading, #0A2D73)' }}>Engineering Reliable</span>
+              <span style={{ color: 'var(--text-heading, #0A2D73)' }}>Turnkey Optical Fiber &amp;</span>
               <br />
-              <span style={{ color: '#D9041B' }}>Power, Telecom</span>
+              <span style={{ color: '#D9041B' }}>Telecom Infrastructure</span>
               <br />
-              <span style={{ color: 'var(--text-heading, #0A2D73)' }}>&amp; IT Solutions</span>
+              <span style={{ color: 'var(--text-heading, #0A2D73)' }}>Solutions</span>
             </h1>
 
             {/* Subheadline */}
@@ -145,7 +145,7 @@ export default function Hero() {
               maxWidth: '440px',
               marginBottom: '32px',
             }}>
-              ICOM Engineering Solutions Limited delivers integrated engineering solutions — from telecommunications and fiber optics to solar energy, power infrastructure, and IT services across Nigeria and West Africa.
+              ICOM Engineering Solutions delivers turnkey optical fiber cable (OFC) rollouts, FTTH/FTTB deployments, wireless network engineering, solar power, and mission-critical infrastructure across Nigeria and West Africa.
             </p>
 
             {/* CTA Buttons */}

@@ -48,9 +48,9 @@ const companyLinks = [
 ];
 
 const serviceLinks = [
+  { title: 'Optical Fiber Cable (OFC)', href: '/services/fiber-optic-transmission' },
   { title: 'RF Drive Testing', href: '/services/rf-drive-testing' },
   { title: 'Radio Network Design', href: '/services/radio-network-design-planning' },
-  { title: 'Fiber Optics', href: '/services/fiber-optic-transmission' },
   { title: 'Power & Solar', href: '/services/power-solutions' },
   { title: 'BSS Installation', href: '/services/bss-equipment-installation' },
   { title: 'Network O&M', href: '/services/network-operations-maintenance' },

@@ -8,10 +8,10 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
 const serviceLinks = [
+  { name: 'Optical Fiber Cable (OFC) Networks', href: '/services/fiber-optic-transmission' },
   { name: 'RF Drive Testing & Optimization', href: '/services/rf-drive-testing' },
   { name: 'Radio Network Design', href: '/services/radio-network-design-planning' },
   { name: 'BSS Equipment Installation', href: '/services/bss-equipment-installation' },
-  { name: 'Fiber Optic Transmission', href: '/services/fiber-optic-transmission' },
   { name: 'Network Operations (O&M)', href: '/services/network-operations-maintenance' },
   { name: 'Power Solutions', href: '/services/power-solutions' },
   { name: 'Repeater Systems Solutions', href: '/services/repeater-systems-solutions' },
