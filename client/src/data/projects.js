@@ -69,7 +69,7 @@ export const projects = [
     location: 'Lagos - Ibadan Corridor',
     status: 'Completed',
     description:
-      'High-capacity fiber optic backbone deployment spanning over 120km, including trenching, duct calibration, Sirocco blowing, 96F dome joint splicing, EXFO OTDR testing, and complete commissioning documentation.',
+      'High-capacity fiber optic backbone deployment along major inter-state corridors, including trenching, duct calibration, Sirocco blowing, 96F dome joint splicing, EXFO OTDR testing, and complete commissioning documentation.',
     image: '/images/projects/fiber_site_10.jpeg',
     images: [
       '/images/projects/fiber_site_10.jpeg',

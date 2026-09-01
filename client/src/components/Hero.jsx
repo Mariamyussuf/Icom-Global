@@ -6,7 +6,7 @@ import { ArrowRight, ChevronDown, Calendar, Radio, Users, MapPin, Cable } from '
 
 /* ─── Stat card data ─── */
 const statCards = [
-  { icon: Cable, value: '120km+', label: 'Turnkey OFC backbone & FTTH deployed' },
+  { icon: Cable, value: 'Turnkey', label: 'End-to-end OFC & FTTH deployment' },
   { icon: Calendar, value: '15+', label: 'Years of engineering excellence' },
   { icon: Radio, value: '8', label: 'Core specialized divisions' },
   { icon: Users, value: '10+', label: 'Tier-1 telecom operators served' },
