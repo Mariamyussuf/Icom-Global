@@ -1,15 +1,6 @@
 export const testimonials = [
   {
     id: 1,
-    name: 'Engr Adebayo Olajide',
-    role: 'Head of Network Operations',
-    company: 'Globacom',
-    quote:
-      'ICOM has consistently delivered quality work on our network expansion projects. Their RF engineering team is thorough, professional, and committed to meeting our timelines.',
-    avatar: 'https://placehold.co/80x80/0B1F3A/FFFFFF?text=AO',
-  },
-  {
-    id: 2,
     name: 'Mrs Adebayo Omoladun',
     role: 'Facilities Director',
     company: 'FiberOne Broadband Limited',
@@ -18,7 +9,7 @@ export const testimonials = [
     avatar: 'https://placehold.co/80x80/0057B8/FFFFFF?text=CN',
   },
   {
-    id: 3,
+    id: 2,
     name: 'Mrs Adebayo Funmilayo',
     role: 'IT Director',
     company: 'Emmavic',
@@ -27,7 +18,7 @@ export const testimonials = [
     avatar: 'https://placehold.co/80x80/E86A1A/FFFFFF?text=IM',
   },
   {
-    id: 4,
+    id: 3,
     name: 'Engr Adebayo Olajide',
     role: 'Manager',
     company: 'Huawei',
