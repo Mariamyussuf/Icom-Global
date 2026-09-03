@@ -26,8 +26,8 @@ const coreValues = [
 
 const milestones = [
   { year: '2009', title: 'Company Founded', description: 'ICOM began operations as an engineering and technology services company, serving the growing Nigerian telecom sector.' },
-  { year: '2012', title: 'Officially Incorporated', description: 'Incorporated as a limited liability company under COMPANY REGISTRATION NO: 9766449, establishing formal corporate governance and expanding fiber & infrastructure capabilities.' },
-  { year: 'Present', title: 'Industry Leader', description: 'Today, ICOM serves leading telecom operators and institutions across Africa with turnkey OFC networks, telecom rollouts, and mission-critical power solutions.' },
+  { year: '2012', title: 'Officially Incorporated', description: 'Incorporated as a limited liability company under COMPANY REGISTRATION NO: 9766449, establishing formal corporate governance and e[...]
+  { year: 'Present', title: 'Industry Leader', description: 'Today, ICOM serves leading telecom operators and institutions across Africa with turnkey OFC networks, telecom rollouts, and mission-cr[...]
 ];
 
 // NOTE: mixes currently active operators (MTN, Zain) with discontinued/absorbed
@@ -35,8 +35,8 @@ const milestones = [
 // this should be relabeled "Clients We've Worked With" or split into
 // current / past to avoid implying ongoing relationships that no longer exist.
 const clients = [
-  'Andrews', 'Ericsson', 'Zain', 'MTN', 'RTcom',
-  'Starcomms', 'Reltel', 'Mtel', 'Visafone', 'ZTE', 'Huawei',
+  'Andrews', 'Ericsson', 'Zain', 'MTN', 'WIOCC',
+  'Globacom', 'FiberOne Broadband Limited', 'Mtel', 'Emmavic', 'ZTE', 'Huawei',
 ];
 
 const clientLogos = {
@@ -44,11 +44,11 @@ const clientLogos = {
   Ericsson: '/images/clients/ericsson.svg',
   Zain: '/images/clients/zain.svg',
   MTN: '/images/clients/mtn.svg',
-  RTcom: '/images/clients/rtcom.svg',
-  Starcomms: '/images/clients/starcomms.svg',
-  Reltel: '/images/clients/reltel.svg',
+  WIOCC: '/images/clients/wiocc.svg',
+  Globacom: '/images/clients/globacom.svg',
+  'FiberOne Broadband Limited': '/images/clients/fiberone.svg',
   Mtel: '/images/clients/mtel.svg',
-  Visafone: '/images/clients/visafone.svg',
+  Emmavic: '/images/clients/emmavic.svg',
   ZTE: '/images/clients/zte.svg',
   Huawei: '/images/clients/huawei.svg',
 };
@@ -69,11 +69,11 @@ function Heading({ title, subtitle, light = false, centered = true }) {
   return (
     <div className={`mb-12 md:mb-16 ${centered ? 'text-center' : 'text-center lg:text-left'}`}>
       <div className="mb-5" style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: centered ? '0 auto 20px' : '0 auto 20px' }} />
-      <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: light ? '#fff' : 'var(--text-heading, #0A2D73)', marginBottom: subtitle ? '16px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+      <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: light ? '#fff' : 'var(--text-heading, #0A2D73)', marginBottom: subtitle ? '16px' : 0, fontFamily: "var(--font-heading, 'DM Sa[...]
         {title}
       </h2>
       {subtitle && (
-        <p className={`line-height-1-7 ${centered ? 'mx-auto' : 'mx-auto lg:mx-0'}`} style={{ fontSize: '15px', color: light ? 'rgba(255,255,255,0.6)' : 'var(--text-muted, #6B7A8D)', maxWidth: '560px', lineHeight: 1.7 }}>
+        <p className={`line-height-1-7 ${centered ? 'mx-auto' : 'mx-auto lg:mx-0'}`} style={{ fontSize: '15px', color: light ? 'rgba(255,255,255,0.6)' : 'var(--text-muted, #6B7A8D)', maxWidth: '56[...]
           {subtitle}
         </p>
       )}
@@ -228,17 +228,17 @@ export default function AboutPage() {
             <Heading title="Who We Are" centered={false} />
             <ScrollReveal delay={0.1}>
               <p style={{ fontSize: '15px', color: 'var(--text-body, #4A5568)', lineHeight: 1.8, marginBottom: '16px' }}>
-                ICOM Engineering Solutions Limited is a wholly Nigerian-owned company that has been operating since June 2009, incorporated under <strong>COMPANY REGISTRATION NO: 9766449</strong>. Headquartered in Victoria Island, Lagos, we have grown to become a trusted infrastructure partner for telecommunications operators, government institutions, and corporate organizations across Nigeria.
+                ICOM Engineering Solutions Limited is a wholly Nigerian-owned company that has been operating since June 2009, incorporated under <strong>COMPANY REGISTRATION NO: 9766449</strong>[...]
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p style={{ fontSize: '15px', color: 'var(--text-body, #4A5568)', lineHeight: 1.8, marginBottom: '16px' }}>
-                We specialize in the installation and deployment of Optical Fiber Cable (OFC) networks, turnkey telecommunications engineering, solar energy systems, and mission-critical power solutions. Our team of experienced Field Technicians and Project Managers has the technical expertise to plan, design, deploy, test, commission, maintain, troubleshoot, and upgrade infrastructure across diverse terrains.
+                We specialize in the installation and deployment of Optical Fiber Cable (OFC) networks, turnkey telecommunications engineering, solar energy systems, and mission-critical power so[...]
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
               <p style={{ fontSize: '15px', color: 'var(--text-body, #4A5568)', lineHeight: 1.8 }}>
-                Supported by modern machinery, specialized tools, and industry-standard testing equipment, we are capable of executing deployment projects efficiently while maintaining the highest standards of quality, safety, reliability, and workmanship.
+                Supported by modern machinery, specialized tools, and industry-standard testing equipment, we are capable of executing deployment projects efficiently while maintaining the highes[...]
               </p>
             </ScrollReveal>
           </div>
@@ -262,18 +262,18 @@ export default function AboutPage() {
               justifyContent: 'space-between'
             }}>
               <div>
-                <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.1)', color: '#D9041B', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginBottom: '20px', textTransform: 'uppercase' }}>
+                <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.1)', color: '#D9041B', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginBo[...]
                   Our Mission &amp; Objectives
                 </span>
-                <h3 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.35 }}>
-                  &ldquo;Our mission is to be the preferred Infrastructure Service Provider to leading Telecom Companies in the Country. To be the first choice in the region we operate in, by focusing on partnering and integrating with a commitment to provide customized services of the highest quality and value.&rdquo;
+                <h3 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", li[...]
+                  &ldquo;Our mission is to be the preferred Infrastructure Service Provider to leading Telecom Companies in the Country. To be the first choice in the region we operate in, by foc[...]
                 </h3>
                 <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7, marginBottom: '24px' }}>
                   Our core corporate objectives driving engineering excellence and nationwide fiber deployment:
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {[
-                    { title: 'Nigeria’s Largest Privately Owned Fiber Network', desc: 'To implement Nigeria’s Largest Privately Owned Fiber Network.' },
+                    { title: 'Nigeria's Largest Privately Owned Fiber Network', desc: 'To implement Nigeria's Largest Privately Owned Fiber Network.' },
                     { title: 'Maximum Reliability & Uptime', desc: 'To ensure maximum reliability and uptime across all deployed networks.' },
                     { title: 'Dark Fiber Leasing & Management', desc: 'To Lease and Manage Dark Fiber networks for multiple service providers.' }
                   ].map((item, idx) => (
@@ -304,7 +304,7 @@ export default function AboutPage() {
               justifyContent: 'space-between'
             }}>
               <div>
-                <span style={{ display: 'inline-block', background: 'rgba(13,58,138,0.1)', color: '#0D3A8A', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginBottom: '20px', textTransform: 'uppercase' }}>
+                <span style={{ display: 'inline-block', background: 'rgba(13,58,138,0.1)', color: '#0D3A8A', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginB[...]
                   Our Philosophy
                 </span>
                 <h3 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
@@ -316,11 +316,11 @@ export default function AboutPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                   {[
                     { label: 'Respectability & Credibility', desc: 'To attain and maintain a position of unquestionable respectability and credibility in our field.' },
-                    { label: 'Infrastructure Access', desc: 'To facilitate the desire of equipment manufacturers and operators to build infrastructures that will serve each and every community to the fullest.' },
+                    { label: 'Infrastructure Access', desc: 'To facilitate the desire of equipment manufacturers and operators to build infrastructures that will serve each and every community to[...]
                     { label: 'Best Service, Reasonable Price', desc: 'To provide our clients with the best service available, at a reasonable price.' }
                   ].map((item, idx) => (
                     <div key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                      <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(13,58,138,0.1)', color: '#0D3A8A', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '13px', flexShrink: 0 }}>
+                      <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(13,58,138,0.1)', color: '#0D3A8A', display: 'flex', alignItems: 'center', justifyContent:[...]
                         {idx + 1}
                       </div>
                       <div>
@@ -357,10 +357,10 @@ export default function AboutPage() {
             }}
           >
             <p style={{ fontSize: '15px', color: 'var(--text-body, #4A5568)', lineHeight: 1.8, marginBottom: '14px' }}>
-              ICOM Engineering Solutions specializes in the installation and deployment of <strong>Optical Fiber Cable (OFC) networks</strong>. Our team of experienced Field Technicians and Project Managers has the technical expertise to plan, design, deploy, test, commission, maintain, troubleshoot, and upgrade fiber optic networks across diverse terrains and project environments.
+              ICOM Engineering Solutions specializes in the installation and deployment of <strong>Optical Fiber Cable (OFC) networks</strong>. Our team of experienced Field Technicians and Proje[...]
             </p>
             <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7 }}>
-              Supported by modern machinery, specialized tools, and industry-standard testing equipment, we execute fiber optic deployment projects efficiently while maintaining the highest standards of quality, safety, reliability, and workmanship.
+              Supported by modern machinery, specialized tools, and industry-standard testing equipment, we execute fiber optic deployment projects efficiently while maintaining the highest stand[...]
             </p>
           </div>
         </ScrollReveal>
@@ -489,10 +489,10 @@ export default function AboutPage() {
             }}
           >
             <p style={{ fontSize: '14px', color: 'var(--text-body, #4A5568)', lineHeight: 1.7 }}>
-              Following installation and commissioning, our field teams remain equipped to provide ongoing maintenance, troubleshooting, fault restoration, and infrastructure upgrades, whether the requirement involves a short local deployment or fiber routes extending several miles.
+              Following installation and commissioning, our field teams remain equipped to provide ongoing maintenance, troubleshooting, fault restoration, and infrastructure upgrades, whether th[...]
             </p>
             <p style={{ fontSize: '13.5px', color: 'var(--text-heading, #0A2D73)', fontWeight: 600 }}>
-              With the combination of experienced personnel, project management expertise, specialized equipment, and field deployment capability, ICOM Engineering Solutions is positioned to deliver complete end-to-end fiber optic solutions from planning and deployment through to maintenance and network expansion.
+              With the combination of experienced personnel, project management expertise, specialized equipment, and field deployment capability, ICOM Engineering Solutions is positioned to deli[...]
             </p>
           </div>
         </ScrollReveal>
@@ -683,7 +683,7 @@ export default function AboutPage() {
             },
             {
               title: "Exceed Customers' Expectations",
-              desc: 'Honoring the customer as our most important asset is our priority. We work hard to understand our customers\' needs, how their network infrastructures work, and how we can provide value to help them realize their potential.',
+              desc: 'Honoring the customer as our most important asset is our priority. We work hard to understand our customers\' needs, how their network infrastructures work, and how we can pr[...]
               icon: Users,
               color: 'rgba(217,4,27,0.1)',
               iconColor: '#D9041B'
@@ -739,7 +739,7 @@ export default function AboutPage() {
                     <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: item.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <Icon style={{ width: '20px', height: '20px', color: item.iconColor }} />
                     </div>
-                    <h3 className="icom-commitment-title" style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
+                    <h3 className="icom-commitment-title" style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', fontFamily: "var(--font-heading, 'DM Sans', sans-ser[...]
                       {item.title}
                     </h3>
                   </div>
