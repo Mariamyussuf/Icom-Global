@@ -26,14 +26,10 @@ const coreValues = [
 
 const milestones = [
   { year: '2009', title: 'Company Founded', description: 'ICOM began operations as an engineering and technology services company, serving the growing Nigerian telecom sector.' },
-  { year: '2012', title: 'Officially Incorporated', description: 'Incorporated as a limited liability company under COMPANY REGISTRATION NO: 9766449, establishing formal corporate governance and e[...]
-  { year: 'Present', title: 'Industry Leader', description: 'Today, ICOM serves leading telecom operators and institutions across Africa with turnkey OFC networks, telecom rollouts, and mission-cr[...]
+  { year: '2012', title: 'Officially Incorporated', description: 'Incorporated as a limited liability company under COMPANY REGISTRATION NO: 9766449, establishing formal corporate governance and strategic infrastructure.' },
+  { year: 'Present', title: 'Industry Leader', description: 'Today, ICOM serves leading telecom operators and institutions across Africa with turnkey OFC networks, telecom rollouts, and mission-critical infrastructure solutions.' },
 ];
 
-// NOTE: mixes currently active operators (MTN, Zain) with discontinued/absorbed
-// ones (Starcomms, Mtel, Visafone, Reltel). Confirm with content owner whether
-// this should be relabeled "Clients We've Worked With" or split into
-// current / past to avoid implying ongoing relationships that no longer exist.
 const clients = [
   'Andrews', 'Ericsson', 'Zain', 'MTN', 'WIOCC',
   'Globacom', 'FiberOne Broadband Limited', 'Mtel', 'Emmavic', 'ZTE', 'Huawei',
@@ -69,11 +65,11 @@ function Heading({ title, subtitle, light = false, centered = true }) {
   return (
     <div className={`mb-12 md:mb-16 ${centered ? 'text-center' : 'text-center lg:text-left'}`}>
       <div className="mb-5" style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: centered ? '0 auto 20px' : '0 auto 20px' }} />
-      <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: light ? '#fff' : 'var(--text-heading, #0A2D73)', marginBottom: subtitle ? '16px' : 0, fontFamily: "var(--font-heading, 'DM Sa[...]
+      <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: light ? '#fff' : 'var(--text-heading, #0A2D73)', marginBottom: subtitle ? '16px' : 0, fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.2 }}>
         {title}
       </h2>
       {subtitle && (
-        <p className={`line-height-1-7 ${centered ? 'mx-auto' : 'mx-auto lg:mx-0'}`} style={{ fontSize: '15px', color: light ? 'rgba(255,255,255,0.6)' : 'var(--text-muted, #6B7A8D)', maxWidth: '56[...]
+        <p className={`line-height-1-7 ${centered ? 'mx-auto' : 'mx-auto lg:mx-0'}`} style={{ fontSize: '15px', color: light ? 'rgba(255,255,255,0.6)' : 'var(--text-muted, #6B7A8D)', maxWidth: '560px', lineHeight: 1.7 }}>
           {subtitle}
         </p>
       )}
@@ -228,17 +224,17 @@ export default function AboutPage() {
             <Heading title="Who We Are" centered={false} />
             <ScrollReveal delay={0.1}>
               <p style={{ fontSize: '15px', color: 'var(--text-body, #4A5568)', lineHeight: 1.8, marginBottom: '16px' }}>
-                ICOM Engineering Solutions Limited is a wholly Nigerian-owned company that has been operating since June 2009, incorporated under <strong>COMPANY REGISTRATION NO: 9766449</strong>[...]
+                ICOM Engineering Solutions Limited is a wholly Nigerian-owned company that has been operating since June 2009, incorporated under <strong>COMPANY REGISTRATION NO: 9766449</strong>.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p style={{ fontSize: '15px', color: 'var(--text-body, #4A5568)', lineHeight: 1.8, marginBottom: '16px' }}>
-                We specialize in the installation and deployment of Optical Fiber Cable (OFC) networks, turnkey telecommunications engineering, solar energy systems, and mission-critical power so[...]
+                We specialize in the installation and deployment of Optical Fiber Cable (OFC) networks, turnkey telecommunications engineering, solar energy systems, and mission-critical power solutions.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
               <p style={{ fontSize: '15px', color: 'var(--text-body, #4A5568)', lineHeight: 1.8 }}>
-                Supported by modern machinery, specialized tools, and industry-standard testing equipment, we are capable of executing deployment projects efficiently while maintaining the highes[...]
+                Supported by modern machinery, specialized tools, and industry-standard testing equipment, we are capable of executing deployment projects efficiently while maintaining the highest standards.
               </p>
             </ScrollReveal>
           </div>
@@ -262,18 +258,18 @@ export default function AboutPage() {
               justifyContent: 'space-between'
             }}>
               <div>
-                <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.1)', color: '#D9041B', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginBo[...]
+                <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.1)', color: '#D9041B', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginBottom: '12px' }}>
                   Our Mission &amp; Objectives
                 </span>
-                <h3 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", li[...]
-                  &ldquo;Our mission is to be the preferred Infrastructure Service Provider to leading Telecom Companies in the Country. To be the first choice in the region we operate in, by foc[...]
+                <h3 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.3 }}>
+                  &ldquo;Our mission is to be the preferred Infrastructure Service Provider to leading Telecom Companies in the Country.&rdquo;
                 </h3>
                 <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7, marginBottom: '24px' }}>
                   Our core corporate objectives driving engineering excellence and nationwide fiber deployment:
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {[
-                    { title: 'Nigeria's Largest Privately Owned Fiber Network', desc: 'To implement Nigeria's Largest Privately Owned Fiber Network.' },
+                    { title: 'Nigeria\'s Largest Privately Owned Fiber Network', desc: 'To implement Nigeria\'s Largest Privately Owned Fiber Network.' },
                     { title: 'Maximum Reliability & Uptime', desc: 'To ensure maximum reliability and uptime across all deployed networks.' },
                     { title: 'Dark Fiber Leasing & Management', desc: 'To Lease and Manage Dark Fiber networks for multiple service providers.' }
                   ].map((item, idx) => (
@@ -304,7 +300,7 @@ export default function AboutPage() {
               justifyContent: 'space-between'
             }}>
               <div>
-                <span style={{ display: 'inline-block', background: 'rgba(13,58,138,0.1)', color: '#0D3A8A', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginB[...]
+                <span style={{ display: 'inline-block', background: 'rgba(13,58,138,0.1)', color: '#0D3A8A', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginBottom: '12px' }}>
                   Our Philosophy
                 </span>
                 <h3 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
@@ -316,11 +312,11 @@ export default function AboutPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                   {[
                     { label: 'Respectability & Credibility', desc: 'To attain and maintain a position of unquestionable respectability and credibility in our field.' },
-                    { label: 'Infrastructure Access', desc: 'To facilitate the desire of equipment manufacturers and operators to build infrastructures that will serve each and every community to[...]
+                    { label: 'Infrastructure Access', desc: 'To facilitate the desire of equipment manufacturers and operators to build infrastructures that will serve communities.' },
                     { label: 'Best Service, Reasonable Price', desc: 'To provide our clients with the best service available, at a reasonable price.' }
                   ].map((item, idx) => (
                     <div key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                      <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(13,58,138,0.1)', color: '#0D3A8A', display: 'flex', alignItems: 'center', justifyContent:[...]
+                      <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(13,58,138,0.1)', color: '#0D3A8A', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '14px' }}>
                         {idx + 1}
                       </div>
                       <div>
@@ -357,10 +353,10 @@ export default function AboutPage() {
             }}
           >
             <p style={{ fontSize: '15px', color: 'var(--text-body, #4A5568)', lineHeight: 1.8, marginBottom: '14px' }}>
-              ICOM Engineering Solutions specializes in the installation and deployment of <strong>Optical Fiber Cable (OFC) networks</strong>. Our team of experienced Field Technicians and Proje[...]
+              ICOM Engineering Solutions specializes in the installation and deployment of <strong>Optical Fiber Cable (OFC) networks</strong>. Our team of experienced Field Technicians and Project Managers deliver comprehensive fiber solutions.
             </p>
             <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7 }}>
-              Supported by modern machinery, specialized tools, and industry-standard testing equipment, we execute fiber optic deployment projects efficiently while maintaining the highest stand[...]
+              Supported by modern machinery, specialized tools, and industry-standard testing equipment, we execute fiber optic deployment projects efficiently while maintaining the highest standards of quality and safety.
             </p>
           </div>
         </ScrollReveal>
@@ -489,10 +485,10 @@ export default function AboutPage() {
             }}
           >
             <p style={{ fontSize: '14px', color: 'var(--text-body, #4A5568)', lineHeight: 1.7 }}>
-              Following installation and commissioning, our field teams remain equipped to provide ongoing maintenance, troubleshooting, fault restoration, and infrastructure upgrades, whether th[...]
+              Following installation and commissioning, our field teams remain equipped to provide ongoing maintenance, troubleshooting, fault restoration, and infrastructure upgrades.
             </p>
             <p style={{ fontSize: '13.5px', color: 'var(--text-heading, #0A2D73)', fontWeight: 600 }}>
-              With the combination of experienced personnel, project management expertise, specialized equipment, and field deployment capability, ICOM Engineering Solutions is positioned to deli[...]
+              With the combination of experienced personnel, project management expertise, specialized equipment, and field deployment capability, ICOM Engineering Solutions is positioned to deliver comprehensive fiber infrastructure solutions.
             </p>
           </div>
         </ScrollReveal>
@@ -683,7 +679,7 @@ export default function AboutPage() {
             },
             {
               title: "Exceed Customers' Expectations",
-              desc: 'Honoring the customer as our most important asset is our priority. We work hard to understand our customers\' needs, how their network infrastructures work, and how we can pr[...]
+              desc: 'Honoring the customer as our most important asset is our priority. We work hard to understand our customers\' needs and how we can provide excellent solutions.',
               icon: Users,
               color: 'rgba(217,4,27,0.1)',
               iconColor: '#D9041B'
@@ -720,10 +716,6 @@ export default function AboutPage() {
             const Icon = item.icon;
             return (
               <ScrollReveal key={idx} delay={idx * 0.08}>
-                {/* Hover styling moved to a React-controlled className + CSS
-                    variables so ALL text swaps to white with the background,
-                    instead of only the background flipping (previous version
-                    left navy/gray text unreadable on the navy hover state). */}
                 <div
                   className="icom-commitment-card"
                   style={{
@@ -739,11 +731,11 @@ export default function AboutPage() {
                     <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: item.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <Icon style={{ width: '20px', height: '20px', color: item.iconColor }} />
                     </div>
-                    <h3 className="icom-commitment-title" style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', fontFamily: "var(--font-heading, 'DM Sans', sans-ser[...]
+                    <h3 className="icom-commitment-title" style={{ fontSize: '16.5px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", margin: 0 }}>
                       {item.title}
                     </h3>
                   </div>
-                  <p className="icom-commitment-desc" style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', opacity: 0.9, lineHeight: 1.65 }}>
+                  <p className="icom-commitment-desc" style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', opacity: 0.9, lineHeight: 1.65, margin: 0 }}>
                     {item.desc}
                   </p>
                 </div>
@@ -752,8 +744,7 @@ export default function AboutPage() {
           })}
         </div>
 
-        {/* Scoped hover styles: background AND text flip together, and are
-            skipped entirely for users who prefer reduced motion. */}
+        {/* Scoped hover styles: background AND text flip together */}
         <style jsx>{`
           .icom-commitment-card:hover {
             background: #0A2D73 !important;
