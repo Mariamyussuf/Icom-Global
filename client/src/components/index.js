@@ -6,3 +6,4 @@ export { default as ProjectCard } from './ProjectCard';
 export { default as ServiceDetailContent } from './ServiceDetailContent';
 export { default as Container } from './layout/Container';
 export { default as LanguageSwitcher } from './LanguageSwitcher';
+export { default as GoogleTranslate, triggerGoogleTranslate } from './GoogleTranslate';

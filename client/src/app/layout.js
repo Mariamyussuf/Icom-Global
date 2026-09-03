@@ -2,6 +2,7 @@ import { DM_Sans, Inter, Sora } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import GoogleTranslate from '@/components/GoogleTranslate';
 import { LanguageProvider } from '@/context/LanguageContext';
 
 const dmSans = DM_Sans({
@@ -45,6 +46,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${dmSans.variable} ${inter.variable} ${sora.variable}`} data-scroll-behavior="smooth">
       <body className="min-h-screen flex flex-col antialiased">
         <LanguageProvider>
+          <GoogleTranslate />
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />

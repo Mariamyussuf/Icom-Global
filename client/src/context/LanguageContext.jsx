@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { translations, languages, defaultLanguage } from '@/translations';
 import { getLocalizedService } from '@/translations/servicesData';
+import { triggerGoogleTranslate } from '@/components/GoogleTranslate';
 
 const LanguageContext = createContext({
   language: defaultLanguage,
@@ -26,18 +27,16 @@ export function LanguageProvider({ children }) {
     setMounted(true);
     try {
       const savedLang = localStorage.getItem('icom_language');
-      if (savedLang && translations[savedLang]) {
+      if (savedLang && languages.some((l) => l.code === savedLang)) {
         setLanguageState(savedLang);
         document.documentElement.lang = savedLang;
       } else {
         // Auto-detect browser language if preferred
         const browserLang = navigator.language?.toLowerCase() || '';
-        if (browserLang.startsWith('fr') && translations.fr) {
-          setLanguageState('fr');
-          document.documentElement.lang = 'fr';
-        } else if (browserLang.startsWith('zh') && translations.zh) {
-          setLanguageState('zh');
-          document.documentElement.lang = 'zh';
+        const match = languages.find((l) => browserLang.startsWith(l.code));
+        if (match && match.code !== 'en') {
+          setLanguageState(match.code);
+          document.documentElement.lang = match.code;
         }
       }
     } catch (e) {
@@ -46,7 +45,7 @@ export function LanguageProvider({ children }) {
   }, []);
 
   const setLanguage = (lang) => {
-    if (!translations[lang]) return;
+    if (!languages.some((l) => l.code === lang)) return;
     setLanguageState(lang);
     try {
       localStorage.setItem('icom_language', lang);
@@ -54,6 +53,7 @@ export function LanguageProvider({ children }) {
     } catch (e) {
       console.warn('Failed to save language to localStorage:', e);
     }
+    triggerGoogleTranslate(lang);
   };
 
   const t = (path, fallback) => {

@@ -52,17 +52,19 @@ export default function LanguageSwitcher({ variant = 'dropdown', className = '' 
           }}
         >
           <Globe size={14} />
-          <span>Language / Langue / 语言</span>
+          <span>Language / Google Translate</span>
         </div>
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(90px, 1fr))',
             gap: '8px',
             background: 'rgba(255, 255, 255, 0.08)',
-            padding: '6px',
+            padding: '8px',
             borderRadius: '10px',
             border: '1px solid rgba(255, 255, 255, 0.15)',
+            maxHeight: '260px',
+            overflowY: 'auto',
           }}
         >
           {languages.map((lang) => {
@@ -77,20 +79,21 @@ export default function LanguageSwitcher({ variant = 'dropdown', className = '' 
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '6px',
-                  padding: '10px 8px',
+                  padding: '8px 6px',
                   borderRadius: '8px',
                   border: 'none',
                   background: isSelected ? '#D9041B' : 'transparent',
                   color: '#FFFFFF',
                   fontWeight: isSelected ? 700 : 500,
-                  fontSize: '13px',
+                  fontSize: '12px',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
                   boxShadow: isSelected ? '0 2px 8px rgba(217, 4, 27, 0.4)' : 'none',
+                  whiteSpace: 'nowrap',
                 }}
                 aria-pressed={isSelected}
               >
-                <span style={{ fontSize: '15px' }}>{lang.flag}</span>
+                <span style={{ fontSize: '14px' }}>{lang.flag}</span>
                 <span>{lang.short}</span>
               </button>
             );
@@ -103,9 +106,9 @@ export default function LanguageSwitcher({ variant = 'dropdown', className = '' 
   // Variant: Footer style
   if (variant === 'footer') {
     return (
-      <div className={`flex items-center gap-2 ${className}`}>
-        <Globe size={16} style={{ color: 'rgba(255, 255, 255, 0.6)' }} />
-        <div className="flex items-center gap-1.5">
+      <div className={`flex flex-wrap items-center gap-2 ${className}`}>
+        <Globe size={15} style={{ color: 'rgba(255, 255, 255, 0.6)' }} />
+        <div className="flex flex-wrap items-center gap-1.5">
           {languages.map((lang, idx) => {
             const isSelected = language === lang.code;
             return (
@@ -116,8 +119,8 @@ export default function LanguageSwitcher({ variant = 'dropdown', className = '' 
                   style={{
                     background: 'transparent',
                     border: 'none',
-                    padding: '4px 6px',
-                    fontSize: '13px',
+                    padding: '3px 6px',
+                    fontSize: '12px',
                     color: isSelected ? '#FFFFFF' : 'rgba(255, 255, 255, 0.55)',
                     fontWeight: isSelected ? 700 : 400,
                     cursor: 'pointer',
@@ -137,7 +140,7 @@ export default function LanguageSwitcher({ variant = 'dropdown', className = '' 
                   {lang.nativeName}
                 </button>
                 {idx < languages.length - 1 && (
-                  <span style={{ color: 'rgba(255, 255, 255, 0.25)', fontSize: '12px' }}>|</span>
+                  <span style={{ color: 'rgba(255, 255, 255, 0.2)', fontSize: '11px' }}>&bull;</span>
                 )}
               </span>
             );
@@ -179,7 +182,7 @@ export default function LanguageSwitcher({ variant = 'dropdown', className = '' 
             e.currentTarget.style.borderColor = 'rgba(10, 45, 115, 0.15)';
           }
         }}
-        title="Change language / Changer de langue / 切换语言"
+        title="Change language with Google Translate"
       >
         <Globe size={15} style={{ color: '#D9041B' }} />
         <span style={{ fontSize: '14px' }}>{currentLanguage.flag}</span>
@@ -206,7 +209,9 @@ export default function LanguageSwitcher({ variant = 'dropdown', className = '' 
               position: 'absolute',
               top: 'calc(100% + 6px)',
               right: 0,
-              width: '180px',
+              width: '220px',
+              maxHeight: '340px',
+              overflowY: 'auto',
               backgroundColor: '#FFFFFF',
               borderRadius: '10px',
               boxShadow: '0 12px 32px rgba(0, 0, 0, 0.14), 0 2px 6px rgba(0, 0, 0, 0.04)',
@@ -227,9 +232,13 @@ export default function LanguageSwitcher({ variant = 'dropdown', className = '' 
                 color: '#6B7A8D',
                 borderBottom: '1px solid #F1F5F9',
                 marginBottom: '4px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
               }}
             >
-              Select Language
+              <span>Translate Page</span>
+              <span style={{ fontSize: '10px', color: '#94A3B8', textTransform: 'none', fontWeight: 500 }}>Google</span>
             </div>
 
             {languages.map((lang) => {
@@ -274,9 +283,11 @@ export default function LanguageSwitcher({ variant = 'dropdown', className = '' 
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <span style={{ fontSize: '15px' }}>{lang.flag}</span>
-                    <span>{lang.nativeName}</span>
+                    <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                      {lang.nativeName}
+                    </span>
                   </div>
-                  {isSelected && <Check size={14} style={{ color: '#D9041B' }} />}
+                  {isSelected && <Check size={14} style={{ color: '#D9041B', flexShrink: 0 }} />}
                 </button>
               );
             })}
