@@ -6,20 +6,22 @@ import ScrollReveal from '@/components/ScrollReveal';
 import ProjectCard from '@/components/ProjectCard';
 import CTABanner from '@/components/CTABanner';
 import { projects } from '@/data/projects';
-
-const categories = [
-  { key: 'all', label: 'All' },
-  { key: 'equipment', label: 'Equipment' },
-  { key: 'telecom', label: 'Telecom' },
-  { key: 'solar', label: 'Solar' },
-  { key: 'power', label: 'Power' },
-  { key: 'electrical', label: 'Electrical' },
-  { key: 'it', label: 'IT' },
-  { key: 'infrastructure', label: 'Infrastructure' },
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ProjectsPage() {
+  const { t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState('all');
+
+  const categories = [
+    { key: 'all', label: t('projectsPage.filterAll', 'All') },
+    { key: 'equipment', label: t('projectsPage.filterEquipment', 'Equipment') },
+    { key: 'telecom', label: t('projectsPage.filterTelecom', 'Telecom') },
+    { key: 'solar', label: t('projectsPage.filterSolar', 'Solar') },
+    { key: 'power', label: t('projectsPage.filterPower', 'Power') },
+    { key: 'electrical', label: t('projectsPage.filterElectrical', 'Electrical') },
+    { key: 'it', label: t('projectsPage.filterIT', 'IT') },
+    { key: 'infrastructure', label: t('projectsPage.filterInfrastructure', 'Infrastructure') },
+  ];
 
   const filteredProjects = activeFilter === 'all'
     ? projects
@@ -43,13 +45,13 @@ export default function ProjectsPage() {
         <div className="px-5 sm:px-6 md:px-8 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', textAlign: 'center' }}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.15)', color: '#D9041B', fontSize: '14px', fontWeight: 600, padding: '8px 20px', borderRadius: '999px', marginBottom: '24px' }}>
-              Our Work
+              {t('projectsPage.heroBadge', 'Our Work')}
             </span>
             <h1 style={{ fontSize: 'var(--text-page-title)', fontWeight: 700, color: '#FFFFFF', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.15 }}>
-              Projects Portfolio
+              {t('projectsPage.heroTitle', 'Projects Portfolio')}
             </h1>
             <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.6)', maxWidth: '640px', margin: '0 auto', lineHeight: 1.7 }}>
-              Explore our track record of successful project delivery across multiple sectors.
+              {t('projectsPage.heroSubtitle', 'Explore our track record of successful project delivery across multiple sectors.')}
             </p>
           </motion.div>
         </div>

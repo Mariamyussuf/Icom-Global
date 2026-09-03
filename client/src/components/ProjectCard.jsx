@@ -4,8 +4,10 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ProjectCard({ project, index = 0 }) {
+  const { t } = useLanguage();
   const { title, category, description, image, images = [], tags = [] } = project || {};
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
@@ -151,7 +153,7 @@ export default function ProjectCard({ project, index = 0 }) {
               </div>
             )}
 
-            <span style={{ fontSize: '13px', fontWeight: 600, color: '#D9041B' }}>View Details</span>
+            <span style={{ fontSize: '13px', fontWeight: 600, color: '#D9041B' }}>{t('common.viewDetails', 'View Details')}</span>
           </div>
         </div>
       </motion.div>
@@ -373,7 +375,7 @@ export default function ProjectCard({ project, index = 0 }) {
                   onMouseEnter={(e) => { e.currentTarget.style.background = '#D9041B'; e.currentTarget.style.boxShadow = '0 4px 16px rgba(217,4,27,0.3)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = '#0A2D73'; e.currentTarget.style.boxShadow = '0 4px 12px rgba(10,45,115,0.15)'; }}
                 >
-                  Inquire About This Project <ArrowRight size={16} />
+                  {t('projectsPage.inquireBtn', 'Inquire About This Project')} <ArrowRight size={16} />
                 </Link>
               </div>
             </motion.div>

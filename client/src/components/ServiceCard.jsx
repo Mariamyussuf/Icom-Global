@@ -3,10 +3,13 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Radio, Cable, Sun, Fuel, Plug, Monitor, Package, ClipboardList, ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 const iconMap = { Radio, Cable, Sun, Fuel, Plug, Monitor, Package, ClipboardList };
 
-export default function ServiceCard({ service, index = 0 }) {
+export default function ServiceCard({ service: rawService, index = 0 }) {
+  const { t, localizeService } = useLanguage();
+  const service = localizeService(rawService);
   const { slug, title, icon, shortDesc, featuredBadge } = service || {};
   const IconComponent = iconMap[icon] || Radio;
 
@@ -98,7 +101,7 @@ export default function ServiceCard({ service, index = 0 }) {
           fontWeight: 600,
           color: '#D9041B',
         }}>
-          Learn More
+          {t('common.learnMore', 'Learn More')}
           <ArrowRight size={14} />
         </span>
       </Link>

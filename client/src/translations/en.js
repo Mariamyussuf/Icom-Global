@@ -101,6 +101,15 @@ export const en = {
     heroTitle: 'Engineering Nigeria & Africa’s Digital Backbone',
     heroSubtitle:
       'With over 15 years of industry excellence, ICOM Engineering Solutions Limited is a premier provider of turnkey telecommunications, optical fiber, and infrastructure engineering.',
+    whoWeAreTitle: 'Who We Are',
+    missionBadge: 'Our Mission & Objectives',
+    missionQuote: '“Our mission is to be the preferred Infrastructure Service Provider to leading Telecom Companies in the Country.”',
+    philosophyBadge: 'Our Philosophy',
+    philosophyTitle: 'Our Basic Philosophy',
+    journeyTitle: 'Our Journey',
+    journeySubtitle: 'A track record of engineering innovation and milestone achievements since 2009.',
+    commitmentsTitle: 'Corporate Commitments',
+    commitmentsSubtitle: 'Our approach to quality, client success, and problem solving.',
     ourStoryTitle: 'Our Corporate Profile',
     ourStorySubtitle: 'Dedicated to setting the benchmark in telecom engineering since 2009',
     ourStoryP1:
@@ -111,7 +120,7 @@ export const en = {
     milestonesSubtitle: 'A legacy of continuous engineering growth and trusted field partnerships',
     coreValuesTitle: 'Our 10 Core Values',
     coreValuesSubtitle: 'The foundational principles guiding every deployment, inspection, and partnership',
-    clientsTitle: 'Our Esteemed Clients & Partners',
+    clientsTitle: 'Clients We’ve Served',
   },
 
   // Contact Page
@@ -158,6 +167,47 @@ export const en = {
     privacyPolicy: 'Privacy Policy',
     termsOfService: 'Terms of Service',
     safetyPolicy: 'HSE & Safety Policy',
+  },
+
+  // Services Page & Detail
+  servicesPage: {
+    heroBadge: 'What We Do',
+    heroTitle: 'Services & Core Expertise',
+    heroSubtitle: 'High-quality engineering solutions and consulting services tailored to the requirements of the African telecoms industry.',
+    introText: 'We offer customized service for most of Africa\'s largest wireless carriers to maintain their networks. As one of the fastest-growing independent telecoms service providers in Africa, we leverage our industry expertise across two primary operating divisions.',
+    divisionWNS: '1. Wireless Network Services (WNS)',
+    divisionENS: '2. Enterprise Network Solutions (ENS)',
+    requestServiceBtn: 'Request a Service',
+    exploreService: 'Explore Service',
+    overviewTitle: 'Overview',
+    whatWeOfferTitle: 'What We Offer',
+    keyBenefitsTitle: 'Key Benefits',
+    ourProcessTitle: 'Our Process',
+    relatedTitle: 'Related Services',
+    relatedSubtitle: 'Explore our other engineering and technology solutions.',
+    viewAll: 'View All Services',
+    needServiceTitle: 'Need {service}?',
+    needServiceSubtitle: 'Contact our team of experts to discuss your project requirements and get a tailored solution.',
+    requestThisBtn: 'Request This Service',
+  },
+
+  // Projects Page
+  projectsPage: {
+    heroBadge: 'Our Work',
+    heroTitle: 'Projects Portfolio',
+    heroSubtitle: 'Explore our track record of successful project delivery across multiple sectors.',
+    filterAll: 'All',
+    filterEquipment: 'Equipment',
+    filterTelecom: 'Telecom',
+    filterSolar: 'Solar',
+    filterPower: 'Power',
+    filterElectrical: 'Electrical',
+    filterIT: 'IT',
+    filterInfrastructure: 'Infrastructure',
+    ongoingStatus: 'Ongoing',
+    completedStatus: 'Completed',
+    clientLabel: 'Client',
+    inquireBtn: 'Inquire About This Project',
   },
 
   // Common UI

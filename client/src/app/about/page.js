@@ -224,7 +224,7 @@ export default function AboutPage() {
 
           {/* Right — Content */}
           <div>
-            <Heading title="Who We Are" centered={false} />
+            <Heading title={t('about.whoWeAreTitle', 'Who We Are')} centered={false} />
             <ScrollReveal delay={0.1}>
               <p style={{ fontSize: '15px', color: 'var(--text-body, #4A5568)', lineHeight: 1.8, marginBottom: '16px' }}>
                 ICOM Engineering Solutions Limited is a wholly Nigerian-owned company that has been operating since June 2009, incorporated under <strong>COMPANY REGISTRATION NO: 9766449</strong>.
@@ -262,10 +262,10 @@ export default function AboutPage() {
             }}>
               <div>
                 <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.1)', color: '#D9041B', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginBottom: '12px' }}>
-                  Our Mission &amp; Objectives
+                  {t('about.missionBadge', 'Our Mission & Objectives')}
                 </span>
                 <h3 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.3 }}>
-                  &ldquo;Our mission is to be the preferred Infrastructure Service Provider to leading Telecom Companies in the Country.&rdquo;
+                  {t('about.missionQuote', '“Our mission is to be the preferred Infrastructure Service Provider to leading Telecom Companies in the Country.”')}
                 </h3>
                 <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7, marginBottom: '24px' }}>
                   Our core corporate objectives driving engineering excellence and nationwide fiber deployment:
@@ -304,10 +304,10 @@ export default function AboutPage() {
             }}>
               <div>
                 <span style={{ display: 'inline-block', background: 'rgba(13,58,138,0.1)', color: '#0D3A8A', fontSize: '12px', fontWeight: 700, padding: '6px 16px', borderRadius: '999px', marginBottom: '12px' }}>
-                  Our Philosophy
+                  {t('about.philosophyBadge', 'Our Philosophy')}
                 </span>
                 <h3 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-                  Our Basic Philosophy
+                  {t('about.philosophyTitle', 'Our Basic Philosophy')}
                 </h3>
                 <p style={{ fontSize: '14px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7, marginBottom: '24px' }}>
                   We are driven by three fundamental principles to maintain respectability, support operator infrastructure, and deliver top service:
@@ -499,7 +499,10 @@ export default function AboutPage() {
 
       {/* ═══════ TIMELINE ═══════ */}
       <Section bg="var(--bg-primary, #FFFFFF)">
-        <Heading title="Our Journey" subtitle="A track record of engineering innovation and milestone achievements since 2009." />
+        <Heading
+          title={t('about.journeyTitle', 'Our Journey')}
+          subtitle={t('about.journeySubtitle', 'A track record of engineering innovation and milestone achievements since 2009.')}
+        />
 
         <div className="timeline-wrapper">
           {/* Desktop central vertical line */}
@@ -624,7 +627,10 @@ export default function AboutPage() {
 
       {/* ═══════ CORE VALUES ═══════ */}
       <Section bg="var(--bg-primary, #FFFFFF)">
-        <Heading title="Our Core Values" subtitle="The principles that guide everything we do." />
+        <Heading
+          title={t('about.coreValuesTitle', 'Our Core Values')}
+          subtitle={t('about.coreValuesSubtitle', 'The principles that guide everything we do.')}
+        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
           {coreValues.map((value, i) => {
@@ -669,7 +675,10 @@ export default function AboutPage() {
 
       {/* ═══════ CORPORATE PRINCIPLES & COMMITMENTS ═══════ */}
       <Section bg="var(--bg-secondary, #F5F7FA)">
-        <Heading title="Corporate Commitments" subtitle="Our approach to quality, client success, and problem solving." />
+        <Heading
+          title={t('about.commitmentsTitle', 'Corporate Commitments')}
+          subtitle={t('about.commitmentsSubtitle', 'Our approach to quality, client success, and problem solving.')}
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
@@ -767,7 +776,7 @@ export default function AboutPage() {
 
       {/* ═══════ KEY CLIENTS ═══════ */}
       <Section bg="var(--bg-primary, #FFFFFF)">
-        <Heading title="Clients We've Served" />
+        <Heading title={t('about.clientsTitle', "Clients We've Served")} />
 
         <ScrollReveal>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: '20px', justifyContent: 'center' }}>

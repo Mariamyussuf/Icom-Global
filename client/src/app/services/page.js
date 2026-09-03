@@ -5,8 +5,10 @@ import ScrollReveal from '@/components/ScrollReveal';
 import ServiceCard from '@/components/ServiceCard';
 import CTABanner from '@/components/CTABanner';
 import { services } from '@/data/services';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ServicesPage() {
+  const { t } = useLanguage();
   const wnsServices = services.filter((s) => s.division === 'WNS');
   const ensServices = services.filter((s) => s.division === 'ENS');
 
@@ -28,28 +30,24 @@ export default function ServicesPage() {
         <div className="px-5 sm:px-6 md:px-8 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', textAlign: 'center' }}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.15)', color: '#D9041B', fontSize: '14px', fontWeight: 600, padding: '8px 20px', borderRadius: '999px', marginBottom: '24px' }}>
-              What We Do
+              {t('servicesPage.heroBadge', 'What We Do')}
             </span>
             <h1 style={{ fontSize: 'var(--text-page-title)', fontWeight: 700, color: '#FFFFFF', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.15 }}>
-              Services &amp; Core Expertise
+              {t('servicesPage.heroTitle', 'Services & Core Expertise')}
             </h1>
             <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.6)', maxWidth: '640px', margin: '0 auto', lineHeight: 1.7 }}>
-              High-quality engineering solutions and consulting services tailored to the requirements of the African telecoms industry.
+              {t('servicesPage.heroSubtitle', 'High-quality engineering solutions and consulting services tailored to the requirements of the African telecoms industry.')}
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Services Grid */}
-      {/* Padding moved to inline styles (was Tailwind-only py-24/lg:py-28,
-          which was being purged in production and left mobile sections
-          with no vertical spacing — see About/Home page fix). Inline
-          styles can't be purged, so this is guaranteed on every build. */}
       <section style={{ backgroundColor: 'var(--bg-primary, #FFFFFF)', paddingTop: '64px', paddingBottom: '64px' }} className="lg:!py-28">
         <div className="px-5 sm:px-6 md:px-8 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <ScrollReveal>
             <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.75, maxWidth: '760px', margin: '0 auto 64px', textAlign: 'center' }}>
-              We offer customized service for most of Africa&apos;s largest wireless carriers to maintain their networks. As one of the fastest-growing independent telecoms service providers in Africa, we leverage our industry expertise across two primary operating divisions.
+              {t('servicesPage.introText', "We offer customized service for most of Africa's largest wireless carriers to maintain their networks. As one of the fastest-growing independent telecoms service providers in Africa, we leverage our industry expertise across two primary operating divisions.")}
             </p>
           </ScrollReveal>
 
@@ -58,7 +56,7 @@ export default function ServicesPage() {
             <ScrollReveal>
               <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '36px' }}>
                 <h2 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, color: '#0A2D73', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-                  1. Wireless Network Services (WNS)
+                  {t('servicesPage.divisionWNS', '1. Wireless Network Services (WNS)')}
                 </h2>
                 <div style={{ flex: 1, height: '2px', background: '#D9041B', opacity: 0.15 }} />
               </div>
@@ -76,7 +74,7 @@ export default function ServicesPage() {
             <ScrollReveal>
               <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '36px' }}>
                 <h2 style={{ fontSize: 'var(--text-h3)', fontWeight: 800, color: '#0A2D73', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-                  2. Enterprise Network Solutions (ENS)
+                  {t('servicesPage.divisionENS', '2. Enterprise Network Solutions (ENS)')}
                 </h2>
                 <div style={{ flex: 1, height: '2px', background: '#D9041B', opacity: 0.15 }} />
               </div>
@@ -91,7 +89,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <CTABanner buttonText="Request a Service" />
+      <CTABanner buttonText={t('servicesPage.requestServiceBtn', 'Request a Service')} />
     </>
   );
 }

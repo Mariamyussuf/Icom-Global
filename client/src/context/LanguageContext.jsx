@@ -2,11 +2,13 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { translations, languages, defaultLanguage } from '@/translations';
+import { getLocalizedService } from '@/translations/servicesData';
 
 const LanguageContext = createContext({
   language: defaultLanguage,
   setLanguage: () => {},
   t: (key, fallback) => fallback || key,
+  localizeService: (service) => service,
   languages: [],
   currentLanguage: languages[0],
 });
@@ -72,12 +74,15 @@ export function LanguageProvider({ children }) {
 
   const currentLanguage = languages.find((l) => l.code === language) || languages[0];
 
+  const localizeService = (service) => getLocalizedService(service, language);
+
   return (
     <LanguageContext.Provider
       value={{
         language,
         setLanguage,
         t,
+        localizeService,
         languages,
         currentLanguage,
         mounted,

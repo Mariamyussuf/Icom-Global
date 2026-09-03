@@ -101,6 +101,15 @@ export const fr = {
     heroTitle: 'L’Ingénierie de la Dorsale Numérique du Nigeria et de l’Afrique',
     heroSubtitle:
       'Fort de plus de 15 ans d’excellence industrielle, ICOM Engineering Solutions Limited est un leader de premier plan dans l’ingénierie des télécommunications, de la fibre optique et de l’énergie.',
+    whoWeAreTitle: 'Qui Sommes-Nous',
+    missionBadge: 'Notre Mission & Objectifs',
+    missionQuote: '« Notre mission est d’être le prestataire d’infrastructures de référence pour les plus grands opérateurs de télécommunications du pays. »',
+    philosophyBadge: 'Notre Philosophie',
+    philosophyTitle: 'Notre Philosophie Fondamentale',
+    journeyTitle: 'Notre Parcours',
+    journeySubtitle: 'Un historique d’innovations d’ingénierie et d’étapes majeures franchies depuis 2009.',
+    commitmentsTitle: 'Engagements de l’Entreprise',
+    commitmentsSubtitle: 'Notre approche de la qualité, du succès client et de la résolution de problèmes.',
     ourStoryTitle: 'Profil de l’Entreprise',
     ourStorySubtitle: 'Établir la référence de l’ingénierie télécoms depuis 2009',
     ourStoryP1:
@@ -111,7 +120,7 @@ export const fr = {
     milestonesSubtitle: 'Un héritage de croissance continue et de partenariats de confiance sur le terrain',
     coreValuesTitle: 'Nos 10 Valeurs Fondamentales',
     coreValuesSubtitle: 'Les principes directeurs guidant chaque déploiement, audit et partenariat technique',
-    clientsTitle: 'Nos Clients et Partenaires Estimés',
+    clientsTitle: 'Clients Qui Nous Font Confiance',
   },
 
   // Contact Page
@@ -158,6 +167,47 @@ export const fr = {
     privacyPolicy: 'Politique de Confidentialité',
     termsOfService: 'Conditions d’Utilisation',
     safetyPolicy: 'Politique HSE & Sécurité',
+  },
+
+  // Services Page & Detail
+  servicesPage: {
+    heroBadge: 'Nos Métiers',
+    heroTitle: 'Services & Expertises Clés',
+    heroSubtitle: 'Solutions d’ingénierie de haute précision et services de conseil adaptés aux exigences strictes de l’industrie des télécommunications en Afrique.',
+    introText: 'Nous proposons des services sur mesure aux plus grands opérateurs sans fil d’Afrique pour la maintenance et l’extension de leurs réseaux. En tant que prestataire indépendant à plus forte croissance, nous articulons nos expertises autour de deux pôles d’activité majeurs.',
+    divisionWNS: '1. Services de Réseaux Sans Fil (WNS)',
+    divisionENS: '2. Solutions Réseaux d’Entreprise (ENS)',
+    requestServiceBtn: 'Demander un Service',
+    exploreService: 'Découvrir le Service',
+    overviewTitle: 'Vue d’Ensemble',
+    whatWeOfferTitle: 'Nos Prestations Détaillées',
+    keyBenefitsTitle: 'Avantages Clés',
+    ourProcessTitle: 'Méthodologie d’Exécution',
+    relatedTitle: 'Services Connexes',
+    relatedSubtitle: 'Explorez nos autres solutions d’ingénierie et d’infrastructures technologiques.',
+    viewAll: 'Voir Tous les Services',
+    needServiceTitle: 'Besoin de notre expertise en {service} ?',
+    needServiceSubtitle: 'Contactez notre équipe d’ingénieurs pour échanger sur les exigences de votre projet et obtenir une solution sur mesure.',
+    requestThisBtn: 'Demander Cette Prestation',
+  },
+
+  // Projects Page
+  projectsPage: {
+    heroBadge: 'Nos Réalisations',
+    heroTitle: 'Portefeuille de Projets',
+    heroSubtitle: 'Découvrez nos réalisations majeures et nos réussites de déploiement à travers de multiples secteurs.',
+    filterAll: 'Tous',
+    filterEquipment: 'Équipements',
+    filterTelecom: 'Télécoms',
+    filterSolar: 'Solaire',
+    filterPower: 'Énergie',
+    filterElectrical: 'Électricité',
+    filterIT: 'Informatique',
+    filterInfrastructure: 'Infrastructures',
+    ongoingStatus: 'En cours',
+    completedStatus: 'Livré',
+    clientLabel: 'Client',
+    inquireBtn: 'Se renseigner sur ce projet',
   },
 
   // Common UI

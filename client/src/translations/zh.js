@@ -101,6 +101,15 @@ export const zh = {
     heroTitle: '构筑尼日利亚与非洲数字新基建的坚实脊梁',
     heroSubtitle:
       '深耕行业逾 15 年，ICOM Engineering Solutions Limited 是领先的一站式通信工程、光纤管网与电力基础设施工程承包商。',
+    whoWeAreTitle: '企业简介',
+    missionBadge: '企业使命与战略目标',
+    missionQuote: '“我们的使命是成为全国各大电信运营商首选的通信基础设施综合服务商。”',
+    philosophyBadge: '经营哲学',
+    philosophyTitle: '核心经营哲学',
+    journeyTitle: '发展历程与足迹',
+    journeySubtitle: '自 2009 年创立以来的工程技术创新与发展里程碑。',
+    commitmentsTitle: '企业服务承诺',
+    commitmentsSubtitle: '我们对严苛品质、客户成功与创新解决问题的坚定承诺。',
     ourStoryTitle: '企业概况与发展历程',
     ourStorySubtitle: '自 2009 年起树立通信工程领域的质量新标杆',
     ourStoryP1:
@@ -111,7 +120,7 @@ export const zh = {
     milestonesSubtitle: '见证持续的工程技术沉淀与牢固的行业信任合作',
     coreValuesTitle: '我们的十大核心价值观',
     coreValuesSubtitle: '指导我们在每一个工程现场、巡检任务及合作共赢中的核心准则',
-    clientsTitle: '我们尊贵的客户与战略合作伙伴',
+    clientsTitle: '服务过的核心客户',
   },
 
   // Contact Page
@@ -158,6 +167,47 @@ export const zh = {
     privacyPolicy: '隐私权政策',
     termsOfService: '服务条款',
     safetyPolicy: 'HSE 安全与健康政策',
+  },
+
+  // Services Page & Detail
+  servicesPage: {
+    heroBadge: '专业能力',
+    heroTitle: '核心工程与专业服务',
+    heroSubtitle: '量身定制的高标准电信工程与技术咨询方案，全面契合非洲电信市场严苛的运营需求。',
+    introText: '我们为绝大多数非洲头部无线运营商提供全方位定制化网络运维与工程建设服务。作为非洲发展最快的独立电信工程服务商之一，我们依托深厚的行业积淀，纵深推进两大业务版块。',
+    divisionWNS: '1. 无线蜂窝网络工程服务 (WNS)',
+    divisionENS: '2. 企业级通信与综合网络解决方案 (ENS)',
+    requestServiceBtn: '咨询工程服务',
+    exploreService: '查看服务详情',
+    overviewTitle: '服务概述',
+    whatWeOfferTitle: '具体交付范围',
+    keyBenefitsTitle: '核心优势与价值',
+    ourProcessTitle: '标准化工程交付流程',
+    relatedTitle: '相关工程服务',
+    relatedSubtitle: '探索我们更多维度的工程与通信技术解决方案。',
+    viewAll: '查看全部专业服务',
+    needServiceTitle: '需要 {service} 相关工程服务？',
+    needServiceSubtitle: '请立即联系我们的工程专家团队，探讨您的项目指标并获取专属工程定制方案。',
+    requestThisBtn: '立即咨询此项服务',
+  },
+
+  // Projects Page
+  projectsPage: {
+    heroBadge: '工程业绩',
+    heroTitle: '经典项目与交付案例',
+    heroSubtitle: '了解我们在多个行业与领域成功交付的高质量电信与基础设施项目。',
+    filterAll: '全部工程',
+    filterEquipment: '设备安装',
+    filterTelecom: '通信工程',
+    filterSolar: '光伏新能源',
+    filterPower: '电力保障',
+    filterElectrical: '电气工程',
+    filterIT: 'IT 信息化',
+    filterInfrastructure: '基建土建',
+    ongoingStatus: '施工中',
+    completedStatus: '已竣工',
+    clientLabel: '客户',
+    inquireBtn: '咨询此项目详情',
   },
 
   // Common UI

@@ -15,6 +15,7 @@ import ScrollReveal from './ScrollReveal';
 import CTABanner from './CTABanner';
 import ServiceCard from './ServiceCard';
 import { services } from '@/data/services';
+import { useLanguage } from '@/context/LanguageContext';
 
 const serviceIconMap = { Radio, Cable, Sun, Fuel, Plug, Monitor, Package, ClipboardList };
 const iconMap = {
@@ -24,11 +25,7 @@ const iconMap = {
   PieChart, MessageSquare, TrendingDown, Award,
 };
 
-/* ─── Reusable wrapper ───
-   Padding moved to inline styles (was Tailwind-only py-24/lg:py-28,
-   which was being purged in production and left mobile sections with
-   no vertical spacing — see About/Home/Services page fix). Inline
-   styles can't be purged, so this is guaranteed on every build. */
+/* ─── Reusable wrapper ─── */
 function Section({ children, bg = 'var(--bg-primary, #FFFFFF)' }) {
   return (
     <section style={{ backgroundColor: bg, paddingTop: '64px', paddingBottom: '64px' }} className="lg:!py-28">
@@ -51,9 +48,11 @@ function Heading({ title, subtitle }) {
   );
 }
 
-export default function ServiceDetailContent({ service }) {
+export default function ServiceDetailContent({ service: rawService }) {
+  const { t, localizeService } = useLanguage();
+  const service = localizeService(rawService);
   const ServiceIcon = serviceIconMap[service.icon] || Radio;
-  const overviewParagraphs = service.overview.split('\n\n');
+  const overviewParagraphs = (service.overview || '').split('\n\n');
   const relatedServices = services.filter((s) => s.slug !== service.slug).slice(0, 3);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const imgList = service.images || [];
@@ -78,11 +77,11 @@ export default function ServiceDetailContent({ service }) {
           <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm mb-6" style={{ color: 'rgba(255,255,255,0.45)' }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none', transition: 'color 0.2s' }}
               onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}>Home</Link>
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}>{t('nav.home', 'Home')}</Link>
             <ChevronRight style={{ width: '14px', height: '14px', flexShrink: 0 }} />
             <Link href="/services" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none', transition: 'color 0.2s' }}
               onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}>Services</Link>
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}>{t('nav.services', 'Services')}</Link>
             <ChevronRight style={{ width: '14px', height: '14px', flexShrink: 0 }} />
             <span style={{ color: '#D9041B', fontWeight: 500 }}>{service.title}</span>
           </nav>
@@ -111,7 +110,7 @@ export default function ServiceDetailContent({ service }) {
           <div className="lg:col-span-3">
             <ScrollReveal>
               <h2 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-                Overview
+                {t('servicesPage.overviewTitle', 'Overview')}
               </h2>
             </ScrollReveal>
             {overviewParagraphs.map((paragraph, i) => (
@@ -211,7 +210,7 @@ export default function ServiceDetailContent({ service }) {
       {/* ═══════ SUB-SERVICES ═══════ */}
       {service.subServices && service.subServices.length > 0 && (
         <Section bg="var(--bg-secondary, #F5F7FA)">
-          <Heading title="What We Offer" />
+          <Heading title={t('servicesPage.whatWeOfferTitle', 'What We Offer')} />
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
             {service.subServices.map((sub, i) => (
               <ScrollReveal key={i} delay={i * 0.05}>
@@ -242,7 +241,7 @@ export default function ServiceDetailContent({ service }) {
       {/* ═══════ BENEFITS ═══════ */}
       {service.benefits && service.benefits.length > 0 && (
         <Section bg="var(--bg-primary, #FFFFFF)">
-          <Heading title="Key Benefits" />
+          <Heading title={t('servicesPage.keyBenefitsTitle', 'Key Benefits')} />
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {service.benefits.map((benefit, i) => {
               const BenefitIcon = iconMap[benefit.icon] || CheckCircle;
@@ -281,7 +280,7 @@ export default function ServiceDetailContent({ service }) {
       {/* ═══════ PROCESS ═══════ */}
       {service.process && service.process.length > 0 && (
         <Section bg="var(--bg-secondary, #F5F7FA)">
-          <Heading title="Our Process" />
+          <Heading title={t('servicesPage.ourProcessTitle', 'Our Process')} />
           <div style={{ maxWidth: '700px', margin: '0 auto' }}>
             {service.process.map((step, i) => (
               <ScrollReveal key={i} delay={i * 0.15}>
@@ -318,7 +317,10 @@ export default function ServiceDetailContent({ service }) {
 
       {/* ═══════ RELATED SERVICES ═══════ */}
       <Section bg="var(--bg-primary, #FFFFFF)">
-        <Heading title="Related Services" subtitle="Explore our other engineering and technology solutions." />
+        <Heading
+          title={t('servicesPage.relatedTitle', 'Related Services')}
+          subtitle={t('servicesPage.relatedSubtitle', 'Explore our other engineering and technology solutions.')}
+        />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {relatedServices.map((relService, i) => (
             <ServiceCard key={relService.slug} service={relService} index={i} />
@@ -333,16 +335,16 @@ export default function ServiceDetailContent({ service }) {
             onMouseLeave={(e) => (e.currentTarget.style.color = '#D9041B')}
           >
             <ArrowLeft style={{ width: '16px', height: '16px' }} />
-            View All Services
+            {t('servicesPage.viewAll', 'View All Services')}
           </Link>
         </div>
       </Section>
 
       {/* CTA */}
       <CTABanner
-        title={`Need ${service.title}?`}
-        subtitle="Contact our team of experts to discuss your project requirements and get a tailored solution."
-        buttonText="Request This Service"
+        title={t('servicesPage.needServiceTitle', `Need ${service.title}?`).replace('{service}', service.title)}
+        subtitle={t('servicesPage.needServiceSubtitle', 'Contact our team of experts to discuss your project requirements and get a tailored solution.')}
+        buttonText={t('servicesPage.requestThisBtn', 'Request This Service')}
         buttonLink={`/contact?service=${encodeURIComponent(service.title)}`}
       />
     </>
