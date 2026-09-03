@@ -33,7 +33,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_NG',
-    url: 'https://www.icomtsl.com',
+    url: 'https://www.icomengsolutions.com',
     siteName: 'ICOM Engineering Solutions Limited',
     title: 'ICOM Engineering Solutions Limited — better services is our motto',
     description: 'Integrated engineering solutions — telecommunications, fiber optics, solar energy, power infrastructure, and IT services across Nigeria and Africa.',

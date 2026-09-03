@@ -16,10 +16,10 @@ export default function FooterContact() {
           <MapPin size={16} className="text-[#D9041B] shrink-0 mt-0.5" />
           <div>
             <p className="text-white/80 leading-snug">
-              164, Prince Ademola Street, Oniru Estate, Victoria Island, Lagos, Nigeria
+              Town Hall Street, Ijora Badia, Lagos, Nigeria
             </p>
             <a
-              href="https://maps.google.com/?q=164+Prince+Ademola+Street+Oniru+Victoria+Island+Lagos"
+              href="https://maps.google.com/?q=Town+Hall+Street+Ijora+Badia+Lagos+Nigeria"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[11.5px] text-[#FF4D61] hover:text-white transition-colors inline-block mt-0.5"
@@ -57,12 +57,6 @@ export default function FooterContact() {
               className="text-white/80 hover:text-white transition-colors block break-all text-[12px]"
             >
               icomengineeringsolutions@gmail.com
-            </a>
-            <a
-              href="mailto:info@icomtsl.com"
-              className="text-white/60 hover:text-white transition-colors block text-[12px]"
-            >
-              info@icomtsl.com
             </a>
           </div>
         </div>

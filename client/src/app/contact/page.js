@@ -26,11 +26,11 @@ export default function ContactPage() {
   const { t } = useLanguage();
 
   const contactInfo = [
-    { icon: User, title: t('contact.personTitle', 'Contact Person'), lines: ['Engr. Adebayo L. Olajide'] },
-    { icon: MapPin, title: t('contact.visitTitle', 'Visit Us'), lines: ['164, Prince Ademola Street, Oniru Estate, Victoria Island, Lagos, Nigeria'] },
+    { icon: User, title: t('contact.personTitle', 'Contact Person'), lines: ['Adebayo Lateef Olajide'] },
+    { icon: MapPin, title: t('contact.visitTitle', 'Visit Us'), lines: ['Town Hall Street, Ijora Badia, Lagos, Nigeria'] },
     { icon: Phone, title: t('contact.phoneTitle', 'Call Us'), lines: ['+234 803 566 9513', '+234 802 341 1618'] },
-    { icon: Mail, title: t('contact.emailTitle', 'Email Us'), lines: ['icomengineeringsolutions@gmail.com', 'info@icomtsl.com'] },
-    { icon: Globe, title: t('contact.websiteTitle', 'Website'), lines: ['www.icomtsl.com'] },
+    { icon: Mail, title: t('contact.emailTitle', 'Email Us'), lines: ['icomengineeringsolutions@gmail.com'] },
+    { icon: Globe, title: t('contact.websiteTitle', 'Website'), lines: ['www.icomengsolutions.com'] },
   ];
   const [formData, setFormData] = useState({
     name: '', company: '', email: '', phone: '', subject: '', message: '', website: '',
@@ -292,13 +292,13 @@ export default function ContactPage() {
       {/* Google Map */}
       <section style={{ backgroundColor: '#F5F7FA' }}>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7272648753387!2d3.4206!3d6.4281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf53280e7648d%3A0x4d01e5de6b847fe8!2sVictoria%20Island%2C%20Lagos!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.4447604586393!2d3.3550!3d6.4650!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8bfd32155555%3A0x1!2sIjora+Badia%2C+Lagos!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng"
           className="w-full h-[320px] sm:h-[400px] md:h-[450px]"
           style={{ border: 0, display: 'block' }}
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="ICOM Office Location - Victoria Island, Lagos"
+          title="ICOM Office Location - Ijora Badia, Lagos"
         />
       </section>
     </>

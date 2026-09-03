@@ -187,7 +187,7 @@ export default function Footer() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '11px', fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)' }}>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                   <MapPin size={15} color="#D9041B" style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <span style={{ lineHeight: 1.5 }}>164, Prince Ademola St, Oniru Estate, Victoria Island, Lagos</span>
+                  <span style={{ lineHeight: 1.5 }}>Town Hall Street, Ijora Badia, Lagos, Nigeria</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                   <Phone size={15} color="#D9041B" style={{ flexShrink: 0, marginTop: '2px' }} />
@@ -200,7 +200,6 @@ export default function Footer() {
                   <Mail size={15} color="#D9041B" style={{ flexShrink: 0, marginTop: '2px' }} />
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
                     <a href="mailto:icomengineeringsolutions@gmail.com" style={{ color: 'inherit', textDecoration: 'none', wordBreak: 'break-all' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.7)')}>icomengineeringsolutions@gmail.com</a>
-                    <a href="mailto:info@icomtsl.com" style={{ color: 'rgba(255, 255, 255, 0.6)', textDecoration: 'none' }} onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')} onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.6)')}>info@icomtsl.com</a>
                   </div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingTop: '2px', color: 'rgba(255, 255, 255, 0.5)', fontSize: '12px' }}>
