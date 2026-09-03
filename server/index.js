@@ -52,6 +52,8 @@ app.use(
 
 // ── CORS — Strict Origin Control ──────────────────────────────────────
 const allowedOrigins = [
+  'https://icomengsolutions.com',
+  'https://www.icomengsolutions.com',
   'https://icomtsl.com',
   'https://www.icomtsl.com',
   process.env.ALLOWED_ORIGIN,
