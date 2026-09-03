@@ -194,10 +194,10 @@ export default function AboutPage() {
           <ScrollReveal direction="left">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { value: 'Est. 2009', label: 'Year Founded', accent: '#D9041B' },
-                { value: 'RC 9766449', label: 'Company Reg. No.', accent: '#FF3B50' },
-                { value: 'Victoria Island', label: 'Lagos, Nigeria', accent: '#FF3B50' },
-                { value: '15+ Years', label: 'Experience', accent: '#D9041B' },
+                { value: t('about.stats.foundedVal', 'Est. 2009'), label: t('about.stats.foundedLabel', 'Year Founded'), accent: '#D9041B' },
+                { value: t('about.stats.rcVal', 'RC 9766449'), label: t('about.stats.rcLabel', 'Company Reg. No.'), accent: '#FF3B50' },
+                { value: t('about.stats.locationVal', 'Ijora Badia'), label: t('about.stats.locationLabel', 'Lagos, Nigeria'), accent: '#FF3B50' },
+                { value: t('about.stats.experienceVal', '15+ Years'), label: t('about.stats.experienceLabel', 'Experience'), accent: '#D9041B' },
               ].map((stat) => (
                 <div key={stat.label} style={{
                   background: 'var(--bg-card, #0A2D73)',

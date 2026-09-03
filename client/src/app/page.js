@@ -223,10 +223,10 @@ export default function HomePage() {
           <ScrollReveal delay={0.15}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { value: '15+', label: 'Years of Engineering Excellence', accent: '#D9041B' },
-                { value: '8', label: 'Specialized Service Divisions', accent: '#FF3B50' },
-                { value: '100%', label: 'ISO-Aligned Quality Compliance', accent: '#FF3B50' },
-                { value: 'Pan-Africa', label: 'Operational Coverage', accent: '#D9041B' },
+                { value: t('home.stats.yearsVal', '15+'), label: t('home.stats.yearsLabel', 'Years of Engineering Excellence'), accent: '#D9041B' },
+                { value: t('home.stats.divisionsVal', '8'), label: t('home.stats.divisionsLabel', 'Specialized Service Divisions'), accent: '#FF3B50' },
+                { value: t('home.stats.isoVal', '100%'), label: t('home.stats.isoLabel', 'ISO-Aligned Quality Compliance'), accent: '#FF3B50' },
+                { value: t('home.stats.reachVal', 'Pan-Africa'), label: t('home.stats.reachLabel', 'Operational Coverage'), accent: '#D9041B' },
               ].map((stat) => (
                 <div
                   key={stat.label}

@@ -78,6 +78,17 @@ export const en = {
     viewAllProjects: 'Explore All Projects',
     ongoingStatus: 'Ongoing Deployment',
     
+    stats: {
+      yearsVal: '15+',
+      yearsLabel: 'Years of Engineering Excellence',
+      divisionsVal: '8',
+      divisionsLabel: 'Specialized Service Divisions',
+      isoVal: '100%',
+      isoLabel: 'ISO-Aligned Quality Compliance',
+      reachVal: 'Pan-Africa',
+      reachLabel: 'Operational Coverage',
+    },
+
     partnersTitle: 'Trusted by Industry Leaders',
     partnersSubtitle:
       'Long-standing engineering partnerships with national operators, multinational vendors, and critical infrastructure providers.',
@@ -121,6 +132,16 @@ export const en = {
     coreValuesTitle: 'Our 10 Core Values',
     coreValuesSubtitle: 'The foundational principles guiding every deployment, inspection, and partnership',
     clientsTitle: 'Clients We’ve Served',
+    stats: {
+      foundedVal: 'Est. 2009',
+      foundedLabel: 'Year Founded',
+      rcVal: 'RC 9766449',
+      rcLabel: 'Company Reg. No.',
+      locationVal: 'Ijora Badia',
+      locationLabel: 'Lagos, Nigeria',
+      experienceVal: '15+ Years',
+      experienceLabel: 'Experience',
+    },
   },
 
   // Contact Page

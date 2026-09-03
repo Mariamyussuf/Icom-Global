@@ -78,6 +78,17 @@ export const fr = {
     viewAllProjects: 'Explorer Tous les Projets',
     ongoingStatus: 'Déploiement en Cours',
 
+    stats: {
+      yearsVal: '15+',
+      yearsLabel: 'Années d’Excellence en Ingénierie',
+      divisionsVal: '8',
+      divisionsLabel: 'Divisions de Services Spécialisées',
+      isoVal: '100%',
+      isoLabel: 'Conformité Qualité Conforme ISO',
+      reachVal: 'Pan-Afrique',
+      reachLabel: 'Couverture Opérationnelle',
+    },
+
     partnersTitle: 'La Confiance des Leaders de l’Industrie',
     partnersSubtitle:
       'Partenariats durables d’ingénierie avec les opérateurs nationaux, équipementiers mondiaux et fournisseurs d’infrastructures critiques.',
@@ -121,6 +132,16 @@ export const fr = {
     coreValuesTitle: 'Nos 10 Valeurs Fondamentales',
     coreValuesSubtitle: 'Les principes directeurs guidant chaque déploiement, audit et partenariat technique',
     clientsTitle: 'Clients Qui Nous Font Confiance',
+    stats: {
+      foundedVal: 'Fondée en 2009',
+      foundedLabel: 'Année de Création',
+      rcVal: 'RC 9766449',
+      rcLabel: 'N° d’Enregistrement',
+      locationVal: 'Ijora Badia',
+      locationLabel: 'Lagos, Nigeria',
+      experienceVal: '15+ Ans',
+      experienceLabel: 'Expérience Métier',
+    },
   },
 
   // Contact Page

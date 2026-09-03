@@ -78,6 +78,17 @@ export const zh = {
     viewAllProjects: '浏览全部工程项目',
     ongoingStatus: '正在施工推进中',
 
+    stats: {
+      yearsVal: '15+',
+      yearsLabel: '卓越工程服务经验',
+      divisionsVal: '8',
+      divisionsLabel: '专业工程业务部门',
+      isoVal: '100%',
+      isoLabel: '全面符合 ISO 质量标准',
+      reachVal: '泛非洲',
+      reachLabel: '综合业务覆盖范围',
+    },
+
     partnersTitle: '顶级运营商与合作伙伴的共同选择',
     partnersSubtitle:
       '与国家级电信运营商、国际顶级通信设备制造商及重要基础设施机构建立长期战略合作关系。',
@@ -121,6 +132,16 @@ export const zh = {
     coreValuesTitle: '我们的十大核心价值观',
     coreValuesSubtitle: '指导我们在每一个工程现场、巡检任务及合作共赢中的核心准则',
     clientsTitle: '服务过的核心客户',
+    stats: {
+      foundedVal: '创立于 2009 年',
+      foundedLabel: '成立年份',
+      rcVal: 'RC 9766449',
+      rcLabel: '企业注册编号',
+      locationVal: '伊乔拉巴迪亚 (Ijora Badia)',
+      locationLabel: '拉各斯，尼日利亚',
+      experienceVal: '15+ 年',
+      experienceLabel: '行业工程经验',
+    },
   },
 
   // Contact Page
