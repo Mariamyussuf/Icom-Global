@@ -10,6 +10,7 @@ import {
 import ScrollReveal from '@/components/ScrollReveal';
 import CTABanner from '@/components/CTABanner';
 import { team } from '@/data/team';
+import { useLanguage } from '@/context/LanguageContext';
 
 const coreValues = [
   { icon: Heart, title: 'Honesty', description: 'Transparent, ethical, and authentic dealings with all stakeholders.' },
@@ -131,6 +132,8 @@ function getInitials(fullName) {
 }
 
 export default function AboutPage() {
+  const { t } = useLanguage();
+
   return (
     <>
       {/* ═══════ HERO ═══════ */}
@@ -159,7 +162,7 @@ export default function AboutPage() {
               borderRadius: '999px',
               marginBottom: '24px',
             }}>
-              About Us
+              {t('nav.about', 'About Us')}
             </span>
             <h1 style={{
               fontSize: 'var(--text-page-title)',
@@ -169,7 +172,7 @@ export default function AboutPage() {
               fontFamily: "var(--font-heading, 'DM Sans', sans-serif)",
               lineHeight: 1.15,
             }}>
-              Building Africa&apos;s Engineering Future
+              {t('about.heroTitle', "Building Africa's Engineering Future")}
             </h1>
             <p style={{
               fontSize: '17px',
@@ -178,7 +181,7 @@ export default function AboutPage() {
               margin: '0 auto',
               lineHeight: 1.7,
             }}>
-              Since 2009, ICOM Engineering Solutions Limited has been at the forefront of integrated engineering solutions across Nigeria.
+              {t('about.heroSubtitle', "Since 2009, ICOM Engineering Solutions Limited has been at the forefront of integrated engineering solutions across Nigeria.")}
             </p>
           </motion.div>
         </div>

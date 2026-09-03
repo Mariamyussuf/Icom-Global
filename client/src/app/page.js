@@ -25,6 +25,7 @@ import ProjectCard from '@/components/ProjectCard';
 import TestimonialCard from '@/components/TestimonialCard';
 import Hero from '@/components/Hero';
 import ServiceImageMarquee from '@/components/ServiceImageMarquee';
+import { useLanguage } from '@/context/LanguageContext';
 
 import { services } from '@/data/services';
 import { projects } from '@/data/projects';
@@ -33,28 +34,6 @@ import { partners } from '@/data/partners';
 
 /* ─── Icon map for mobile spec rows (mirrors ServiceCard) ─── */
 const iconMap = { Radio, Cable, Sun, Fuel: FuelIcon, Plug, Monitor, Package, ClipboardList, Zap };
-
-/* ─── Static Data ─── */
-
-const coreValues = [
-  {
-    title: 'ISO-Aligned Quality & Standards',
-    desc: 'NIS ISO9001:2000 compliant procedures across all network & power deployments.',
-  },
-  {
-    title: 'Zero-Accident Safety Culture',
-    desc: 'Unwavering HSE protocols and continuous site monitoring across all projects.',
-  },
-  {
-    title: 'Customer-Centric Execution',
-    desc: 'Dedicated to exceeding client SLAs and expectations on every single milestone.',
-  },
-  {
-    title: 'Pan-African Technical Reach',
-    desc: 'Deep local engineering experience supporting top tier-1 operators in Africa.',
-  },
-];
-
 
 const testimonialVariants = {
   enter: { opacity: 0, x: 40 },
@@ -94,9 +73,29 @@ function Section({ children, bg = 'white', className = '', ...props }) {
 
 /* ─── Streamlined Homepage Component ─── */
 export default function HomePage() {
+  const { t } = useLanguage();
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const ongoingProjects = projects.filter((p) => p.status === 'Ongoing');
+
+  const coreValues = [
+    {
+      title: t('home.values.iso.title', 'ISO-Aligned Quality & Standards'),
+      desc: t('home.values.iso.desc', 'NIS ISO9001:2000 compliant procedures across all network & power deployments.'),
+    },
+    {
+      title: t('home.values.safety.title', 'Zero-Accident Safety Culture'),
+      desc: t('home.values.safety.desc', 'Unwavering HSE protocols and continuous site monitoring across all projects.'),
+    },
+    {
+      title: t('home.values.customer.title', 'Customer-Centric Execution'),
+      desc: t('home.values.customer.desc', 'Dedicated to exceeding client SLAs and expectations on every single milestone.'),
+    },
+    {
+      title: t('home.values.reach.title', 'Pan-African Technical Reach'),
+      desc: t('home.values.reach.desc', 'Deep local engineering experience supporting top tier-1 operators in Africa.'),
+    },
+  ];
 
   const prevTestimonial = () => {
     setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
@@ -128,10 +127,10 @@ export default function HomePage() {
           <div style={{ textAlign: 'center', marginBottom: '56px' }}>
             <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
             <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '16px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-              Our Core Services
+              {t('home.servicesSectionTitle', 'Our Core Services')}
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
-              Comprehensive engineering and technology solutions tailored for modern infrastructure across Africa.
+              {t('home.servicesSectionSubtitle', 'Comprehensive engineering and technology solutions tailored for modern infrastructure across Africa.')}
             </p>
           </div>
         </ScrollReveal>
@@ -182,7 +181,7 @@ export default function HomePage() {
             onMouseEnter={(e) => { e.currentTarget.style.background = '#D9041B'; e.currentTarget.style.borderColor = '#D9041B'; e.currentTarget.style.color = '#fff'; }}
             onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'var(--text-heading, #0A2D73)'; e.currentTarget.style.color = 'var(--text-heading, #0A2D73)'; }}
           >
-            View All Services
+            {t('home.viewAllServices', 'View All Services')}
             <ArrowRight style={{ width: '16px', height: '16px' }} />
           </Link>
         </div>
@@ -196,10 +195,10 @@ export default function HomePage() {
             <ScrollReveal>
               <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
               <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '16px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-                Why Choose ICOM?
+                {t('home.valuesSectionTitle', 'Why Choose ICOM?')}
               </h2>
               <p className="mx-auto md:mx-0" style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '460px', lineHeight: 1.7, marginBottom: '32px' }}>
-                We combine 15+ years of multidisciplinary technical expertise with a zero-compromise commitment to quality, safety, and operational excellence.
+                {t('home.valuesSectionSubtitle', 'We combine 15+ years of multidisciplinary technical expertise with a zero-compromise commitment to quality, safety, and operational excellence.')}
               </p>
             </ScrollReveal>
 
@@ -304,10 +303,10 @@ export default function HomePage() {
 
             <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
             <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '16px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-              Projects in Progress
+              {t('home.projectsSectionTitle', 'Projects in Progress')}
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '640px', margin: '0 auto', lineHeight: 1.7 }}>
-              Turnkey telecommunications engineering, fiber optic rollouts, and mission-critical power operations currently underway across Africa.
+              {t('home.projectsSectionSubtitle', 'Turnkey telecommunications engineering, fiber optic rollouts, and mission-critical power operations currently underway across Africa.')}
             </p>
           </div>
         </ScrollReveal>
@@ -341,7 +340,7 @@ export default function HomePage() {
             onMouseEnter={(e) => { e.currentTarget.style.background = '#D9041B'; e.currentTarget.style.borderColor = '#D9041B'; e.currentTarget.style.color = '#fff'; }}
             onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'var(--text-heading, #0A2D73)'; e.currentTarget.style.color = 'var(--text-heading, #0A2D73)'; }}
           >
-            Explore Complete Portfolio
+            {t('home.viewAllProjects', 'Explore Complete Portfolio')}
             <ArrowRight style={{ width: '16px', height: '16px' }} />
           </Link>
         </div>
@@ -353,10 +352,10 @@ export default function HomePage() {
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
             <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '16px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-              Trusted Partners
+              {t('home.partnersTitle', 'Trusted Partners')}
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', lineHeight: 1.7 }}>
-              Collaborating with global technology leaders to power mission-critical infrastructure.
+              {t('home.partnersSubtitle', 'Collaborating with global technology leaders to power mission-critical infrastructure.')}
             </p>
           </div>
         </ScrollReveal>
@@ -391,10 +390,10 @@ export default function HomePage() {
           <div style={{ textAlign: 'center', marginBottom: '52px' }}>
             <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
             <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '16px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-              What Our Clients Say
+              {t('home.testimonialsTitle', 'What Our Clients Say')}
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
-              Trusted feedback from telecom operators, enterprise clients, and infrastructure directors across the continent.
+              {t('home.testimonialsSubtitle', 'Trusted feedback from telecom operators, enterprise clients, and infrastructure directors across the continent.')}
             </p>
           </div>
         </ScrollReveal>

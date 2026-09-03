@@ -3,14 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronDown, Calendar, Radio, Users, MapPin, Cable } from 'lucide-react';
-
-/* ─── Stat card data ─── */
-const statCards = [
-  { icon: Cable, value: 'Turnkey', label: 'End-to-end OFC & FTTH deployment' },
-  { icon: Calendar, value: '15+', label: 'Years of engineering excellence' },
-  { icon: Radio, value: '8', label: 'Core specialized divisions' },
-  { icon: Users, value: '10+', label: 'Tier-1 telecom operators served' },
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 /* ─── Animation variants ─── */
 const leftColumnVariants = {
@@ -36,6 +29,14 @@ const statCardVariants = {
 };
 
 export default function Hero() {
+  const { t } = useLanguage();
+
+  const statCards = [
+    { icon: Cable, value: t('hero.stats.turnkeyVal', 'Turnkey'), label: t('hero.stats.turnkeyLabel', 'End-to-end OFC & FTTH deployment') },
+    { icon: Calendar, value: t('hero.stats.experienceVal', '15+'), label: t('hero.stats.experienceLabel', 'Years of engineering excellence') },
+    { icon: Radio, value: t('hero.stats.divisionsVal', '8'), label: t('hero.stats.divisionsLabel', 'Core specialized divisions') },
+    { icon: Users, value: t('hero.stats.clientsVal', '10+'), label: t('hero.stats.clientsLabel', 'Tier-1 telecom operators served') },
+  ];
   return (
     <section
       className="min-h-0 lg:min-h-[calc(100vh-var(--nav-height))]"
@@ -111,7 +112,7 @@ export default function Hero() {
             >
               <span style={{ height: '6px', width: '6px', borderRadius: '50%', backgroundColor: '#D9041B' }} />
               <span style={{ fontSize: '12px', fontWeight: 500, letterSpacing: '0.04em', color: '#D9041B' }}>
-                Turnkey Optical Fiber &amp; Telecom Engineering
+                {t('hero.badge', 'Turnkey Optical Fiber & Telecom Engineering')}
               </span>
             </div>
 
@@ -129,11 +130,11 @@ export default function Hero() {
                 marginBottom: '20px',
               }}
             >
-              <span style={{ color: 'var(--text-heading, #0A2D73)' }}>Turnkey Optical Fiber &amp;</span>
+              <span style={{ color: 'var(--text-heading, #0A2D73)' }}>{t('hero.titleLine1', 'Turnkey Optical Fiber &')}</span>
               <br />
-              <span style={{ color: '#D9041B' }}>Telecom Infrastructure</span>
+              <span style={{ color: '#D9041B' }}>{t('hero.titleLine2', 'Telecom Infrastructure')}</span>
               <br />
-              <span style={{ color: 'var(--text-heading, #0A2D73)' }}>Solutions</span>
+              <span style={{ color: 'var(--text-heading, #0A2D73)' }}>{t('hero.titleLine3', 'Solutions')}</span>
             </h1>
 
             {/* Subheadline */}
@@ -145,7 +146,7 @@ export default function Hero() {
               maxWidth: '440px',
               marginBottom: '32px',
             }}>
-              ICOM Engineering Solutions delivers turnkey optical fiber cable (OFC) rollouts, FTTH/FTTB deployments, wireless network engineering, solar power, and mission-critical infrastructure across Nigeria and West Africa.
+              {t('hero.subheadline', 'ICOM Engineering Solutions delivers turnkey optical fiber cable (OFC) rollouts, FTTH/FTTB deployments, wireless network engineering, solar power, and mission-critical infrastructure across Nigeria and West Africa.')}
             </p>
 
             {/* CTA Buttons */}
@@ -171,7 +172,7 @@ export default function Hero() {
                 onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#B50316'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#D9041B'; e.currentTarget.style.transform = 'translateY(0)'; }}
               >
-                Explore Services
+                {t('hero.exploreServices', 'Explore Services')}
                 <ArrowRight style={{ width: '16px', height: '16px' }} />
               </Link>
               <Link
@@ -195,7 +196,7 @@ export default function Hero() {
                 onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(10,45,115,0.06)'; e.currentTarget.style.borderColor = '#0A2D73'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(10,45,115,0.25)'; }}
               >
-                Contact Us
+                {t('hero.contactUs', 'Contact Us')}
               </Link>
             </div>
           </motion.div>

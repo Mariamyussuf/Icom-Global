@@ -5,6 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { MapPin, Phone, Mail, Clock, ShieldCheck } from 'lucide-react';
 import LegalModal from './footer/LegalModal';
+import { useLanguage } from '@/context/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const FacebookIcon = ({ size = 15 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -40,23 +42,23 @@ const socialLinks = [
 ];
 
 const companyLinks = [
-  { title: 'About Us', href: '/about' },
-  { title: 'Our Projects', href: '/projects' },
-  { title: 'Services', href: '/services' },
-  { title: 'Contact', href: '/contact' },
-  { title: 'Careers', href: '/contact?subject=Career%20Inquiry' },
+  { key: 'about', title: 'About Us', href: '/about' },
+  { key: 'projects', title: 'Our Projects', href: '/projects' },
+  { key: 'services', title: 'Services', href: '/services' },
+  { key: 'contact', title: 'Contact', href: '/contact' },
 ];
 
 const serviceLinks = [
-  { title: 'Optical Fiber Cable (OFC)', href: '/services/fiber-optic-transmission' },
-  { title: 'RF Drive Testing', href: '/services/rf-drive-testing' },
-  { title: 'Radio Network Design', href: '/services/radio-network-design-planning' },
-  { title: 'Power & Solar', href: '/services/power-solutions' },
-  { title: 'BSS Installation', href: '/services/bss-equipment-installation' },
-  { title: 'Network O&M', href: '/services/network-operations-maintenance' },
+  { key: 'ofc', title: 'Optical Fiber Cable (OFC)', href: '/services/fiber-optic-transmission' },
+  { key: 'rf', title: 'RF Drive Testing', href: '/services/rf-drive-testing' },
+  { key: 'radioDesign', title: 'Radio Network Design', href: '/services/radio-network-design-planning' },
+  { key: 'power', title: 'Power & Solar', href: '/services/power-solutions' },
+  { key: 'bss', title: 'BSS Installation', href: '/services/bss-equipment-installation' },
+  { key: 'om', title: 'Network O&M', href: '/services/network-operations-maintenance' },
 ];
 
 export default function Footer() {
+  const { t } = useLanguage();
   const [activeLegalModal, setActiveLegalModal] = useState(null);
 
   return (
@@ -98,7 +100,7 @@ export default function Footer() {
                   RC: 9766449 &bull; Est. 2009
                 </p>
                 <p style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.65)', lineHeight: 1.6, maxWidth: '360px' }}>
-                  Integrated engineering solutions delivering telecommunications, fiber optics, solar power, and infrastructure services across Africa.
+                  {t('footer.companyDesc', 'Integrated engineering solutions delivering telecommunications, fiber optics, solar power, and infrastructure services across Africa.')}
                 </p>
               </div>
 
@@ -137,18 +139,18 @@ export default function Footer() {
               {/* Column 2: Company */}
               <div className="text-left">
                 <h3 style={{ fontSize: '13px', fontWeight: 700, color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '14px' }}>
-                  Company
+                  {t('footer.quickLinks', 'Quick Links')}
                 </h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '9px' }}>
                   {companyLinks.map((item) => (
-                    <li key={item.title}>
+                    <li key={item.key}>
                       <Link
                         href={item.href}
                         style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', transition: 'color 0.2s' }}
                         onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
                         onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.7)')}
                       >
-                        {item.title}
+                        {t(`nav.${item.key}`, item.title)}
                       </Link>
                     </li>
                   ))}
@@ -158,18 +160,18 @@ export default function Footer() {
               {/* Column 3: Solutions */}
               <div className="text-left">
                 <h3 style={{ fontSize: '13px', fontWeight: 700, color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '14px' }}>
-                  Solutions
+                  {t('footer.servicesHeading', 'Solutions')}
                 </h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '9px' }}>
                   {serviceLinks.map((item) => (
-                    <li key={item.title}>
+                    <li key={item.key}>
                       <Link
                         href={item.href}
                         style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)', textDecoration: 'none', transition: 'color 0.2s' }}
                         onMouseEnter={(e) => (e.currentTarget.style.color = '#D9041B')}
                         onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.7)')}
                       >
-                        {item.title}
+                        {t(`nav.servicesList.${item.key}`, item.title)}
                       </Link>
                     </li>
                   ))}
@@ -180,7 +182,7 @@ export default function Footer() {
             {/* Column 4: Contact & Dispatch */}
             <div className="md:col-span-2 lg:col-span-3 text-left">
               <h3 style={{ fontSize: '13px', fontWeight: 700, color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '14px' }}>
-                Contact
+                {t('footer.contactHeading', 'Contact')}
               </h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '11px', fontSize: '13px', color: 'rgba(255, 255, 255, 0.7)' }}>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
@@ -212,23 +214,27 @@ export default function Footer() {
 
           {/* Bottom copyright bar */}
           <div
-            className="border-t border-white/[0.08] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3.5 text-[12px] text-white/50 text-center sm:text-left"
+            className="border-t border-white/[0.08] pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-[12px] text-white/50 text-center sm:text-left"
           >
-            <p>&copy; {new Date().getFullYear()} ICOM Engineering Solutions Limited. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} ICOM Engineering Solutions Limited. {t('footer.rights', 'All rights reserved.')}</p>
+
+            {/* Language Switcher in Footer */}
+            <LanguageSwitcher variant="footer" />
+
             <div className="flex flex-wrap items-center justify-center sm:justify-end gap-5">
               <button
                 type="button"
                 onClick={() => setActiveLegalModal('privacy')}
                 className="text-white/50 hover:text-white transition-colors underline underline-offset-2 cursor-pointer bg-transparent border-0 p-0 text-[12px]"
               >
-                Privacy Policy
+                {t('footer.privacyPolicy', 'Privacy Policy')}
               </button>
               <button
                 type="button"
                 onClick={() => setActiveLegalModal('terms')}
                 className="text-white/50 hover:text-white transition-colors underline underline-offset-2 cursor-pointer bg-transparent border-0 p-0 text-[12px]"
               >
-                Terms of Service
+                {t('footer.termsOfService', 'Terms of Service')}
               </button>
               <span className="inline-flex items-center gap-1.5 text-white/40">
                 <ShieldCheck size={13} color="#D9041B" />

@@ -7,14 +7,7 @@ import {
   AlertCircle, Clock, Loader2, User,
 } from 'lucide-react';
 import ScrollReveal from '@/components/ScrollReveal';
-
-const contactInfo = [
-  { icon: User, title: 'Contact Person', lines: ['Engr. Adebayo L. Olajide'] },
-  { icon: MapPin, title: 'Visit Us', lines: ['164, Prince Ademola Street, Oniru Estate, Victoria Island, Lagos, Nigeria'] },
-  { icon: Phone, title: 'Call Us', lines: ['+234 803 566 9513', '+234 802 341 1618'] },
-  { icon: Mail, title: 'Email Us', lines: ['icomengineeringsolutions@gmail.com', 'info@icomtsl.com'] },
-  { icon: Globe, title: 'Website', lines: ['www.icomtsl.com'] },
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 const inputStyle = {
   width: '100%',
@@ -30,6 +23,15 @@ const inputStyle = {
 };
 
 export default function ContactPage() {
+  const { t } = useLanguage();
+
+  const contactInfo = [
+    { icon: User, title: t('contact.personTitle', 'Contact Person'), lines: ['Engr. Adebayo L. Olajide'] },
+    { icon: MapPin, title: t('contact.visitTitle', 'Visit Us'), lines: ['164, Prince Ademola Street, Oniru Estate, Victoria Island, Lagos, Nigeria'] },
+    { icon: Phone, title: t('contact.phoneTitle', 'Call Us'), lines: ['+234 803 566 9513', '+234 802 341 1618'] },
+    { icon: Mail, title: t('contact.emailTitle', 'Email Us'), lines: ['icomengineeringsolutions@gmail.com', 'info@icomtsl.com'] },
+    { icon: Globe, title: t('contact.websiteTitle', 'Website'), lines: ['www.icomtsl.com'] },
+  ];
   const [formData, setFormData] = useState({
     name: '', company: '', email: '', phone: '', subject: '', message: '', website: '',
   });
@@ -101,33 +103,29 @@ export default function ContactPage() {
         <div className="px-5 sm:px-6 md:px-8 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', textAlign: 'center' }}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span style={{ display: 'inline-block', background: 'rgba(217,4,27,0.15)', color: '#D9041B', fontSize: '14px', fontWeight: 600, padding: '8px 20px', borderRadius: '999px', marginBottom: '24px' }}>
-              Contact Us
+              {t('nav.contact', 'Contact Us')}
             </span>
             <h1 style={{ fontSize: 'var(--text-page-title)', fontWeight: 700, color: '#FFFFFF', marginBottom: '20px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)", lineHeight: 1.15 }}>
-              Get in Touch
+              {t('contact.heroTitle', 'Get in Touch')}
             </h1>
             <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.6)', maxWidth: '640px', margin: '0 auto', lineHeight: 1.7 }}>
-              Have a project in mind? We&apos;d love to hear from you. Reach out to discuss your engineering needs.
+              {t('contact.heroSubtitle', 'Have a project in mind? We\'d love to hear from you. Reach out to discuss your engineering needs.')}
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Contact Form + Info */}
-      {/* Padding moved to inline styles (was Tailwind-only py-24/lg:py-28,
-          which was being purged in production and left mobile sections
-          with no vertical spacing — see About/Home/Services/Projects fix).
-          Inline styles can't be purged, so this is guaranteed on every build. */}
       <section style={{ backgroundColor: 'var(--bg-primary, #FFFFFF)', paddingTop: '64px', paddingBottom: '64px' }} className="lg:!py-28">
         <div className="px-5 sm:px-6 md:px-8 lg:px-12" style={{ maxWidth: '1200px', margin: '0 auto' }}>
           {/* Centered Section Header */}
           <div style={{ textAlign: 'center', marginBottom: '52px' }}>
             <div style={{ width: '48px', height: '3px', background: '#D9041B', borderRadius: '2px', margin: '0 auto 20px' }} />
             <h2 style={{ fontSize: 'var(--text-h2)', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', marginBottom: '14px', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-              Let&apos;s Start a Conversation
+              {t('contact.formTitle', 'Send an Inquiry')}
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--text-muted, #6B7A8D)', maxWidth: '580px', margin: '0 auto', lineHeight: 1.7 }}>
-              Have a project in mind or need technical support? Send us a message or reach out through any of our channels below.
+              {t('contact.formSubtitle', 'Fill out the form below and our technical director will respond within 24 business hours.')}
             </p>
           </div>
 
@@ -138,7 +136,7 @@ export default function ContactPage() {
                 <div className="text-center lg:text-left mb-8">
                   <div className="mx-auto lg:mx-0 mb-3" style={{ width: '36px', height: '3px', background: '#D9041B', borderRadius: '2px' }} />
                   <h3 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-                    Send Us a Message
+                    {t('contact.formTitle', 'Send Us a Message')}
                   </h3>
                 </div>
 
@@ -146,7 +144,7 @@ export default function ContactPage() {
                   <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
                     style={{ display: 'flex', alignItems: 'center', gap: '12px', background: '#ECFDF5', border: '1px solid #A7F3D0', color: '#065F46', borderRadius: '10px', padding: '16px', marginBottom: '24px' }}>
                     <CheckCircle style={{ width: '20px', height: '20px', flexShrink: 0 }} />
-                    <p style={{ fontWeight: 500, fontSize: '14px' }}>Message sent successfully! We&apos;ll get back to you shortly.</p>
+                    <p style={{ fontWeight: 500, fontSize: '14px' }}>{t('contact.successMsg', 'Message sent successfully! We\'ll get back to you shortly.')}</p>
                   </motion.div>
                 )}
 
@@ -167,14 +165,16 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                     <div>
                       <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px' }}>
-                        Full Name <span style={{ color: '#D9041B' }}>*</span>
+                        {t('contact.nameLabel', 'Full Name *')}
                       </label>
-                      <input type="text" name="name" required value={formData.name} onChange={handleChange} placeholder="John Doe" style={inputStyle}
+                      <input type="text" name="name" required value={formData.name} onChange={handleChange} placeholder={t('contact.namePlaceholder', 'John Doe')} style={inputStyle}
                         onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = 'var(--input-border, #D1D7E0)')} />
                     </div>
                     <div>
-                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px' }}>Company</label>
-                      <input type="text" name="company" value={formData.company} onChange={handleChange} placeholder="Your Company" style={inputStyle}
+                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px' }}>
+                        {t('contact.companyLabel', 'Company')}
+                      </label>
+                      <input type="text" name="company" value={formData.company} onChange={handleChange} placeholder={t('contact.companyPlaceholder', 'Your Company')} style={inputStyle}
                         onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = 'var(--input-border, #D1D7E0)')} />
                     </div>
                   </div>
@@ -182,31 +182,33 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                     <div>
                       <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px' }}>
-                        Email <span style={{ color: '#D9041B' }}>*</span>
+                        {t('contact.emailLabel', 'Email *')}
                       </label>
-                      <input type="email" name="email" required value={formData.email} onChange={handleChange} placeholder="john@example.com" style={inputStyle}
+                      <input type="email" name="email" required value={formData.email} onChange={handleChange} placeholder={t('contact.emailPlaceholder', 'john@example.com')} style={inputStyle}
                         onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = 'var(--input-border, #D1D7E0)')} />
                     </div>
                     <div>
-                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px' }}>Phone</label>
-                      <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+234 800 000 0000" style={inputStyle}
+                      <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px' }}>
+                        {t('contact.phoneLabel', 'Phone')}
+                      </label>
+                      <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder={t('contact.phonePlaceholder', '+234 800 000 0000')} style={inputStyle}
                         onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = 'var(--input-border, #D1D7E0)')} />
                     </div>
                   </div>
 
                   <div style={{ marginBottom: '20px' }}>
                     <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px' }}>
-                      Subject <span style={{ color: '#D9041B' }}>*</span>
+                      {t('contact.subjectLabel', 'Subject *')}
                     </label>
-                    <input type="text" name="subject" required value={formData.subject} onChange={handleChange} placeholder="How can we help?" style={inputStyle}
+                    <input type="text" name="subject" required value={formData.subject} onChange={handleChange} placeholder={t('contact.subjectPlaceholder', 'How can we help?')} style={inputStyle}
                       onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = 'var(--input-border, #D1D7E0)')} />
                   </div>
 
                   <div style={{ marginBottom: '24px' }}>
                     <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: 'var(--text-heading, #0A2D73)', marginBottom: '8px' }}>
-                      Message <span style={{ color: '#D9041B' }}>*</span>
+                      {t('contact.messageLabel', 'Message *')}
                     </label>
-                    <textarea name="message" required rows={6} value={formData.message} onChange={handleChange} placeholder="Tell us about your project..."
+                    <textarea name="message" required rows={6} value={formData.message} onChange={handleChange} placeholder={t('contact.messagePlaceholder', 'Tell us about your project...')}
                       style={{ ...inputStyle, resize: 'vertical' }}
                       onFocus={(e) => (e.target.style.borderColor = '#D9041B')} onBlur={(e) => (e.target.style.borderColor = 'var(--input-border, #D1D7E0)')} />
                   </div>
@@ -230,8 +232,8 @@ export default function ContactPage() {
                       boxShadow: '0 4px 16px rgba(217,4,27,0.3)',
                       minHeight: '48px',
                     }}>
-                    {loading ? (<><Loader2 style={{ width: '20px', height: '20px', animation: 'spin 1s linear infinite' }} /> Sending...</>)
-                      : (<><Send style={{ width: '20px', height: '20px' }} /> Send Message</>)}
+                    {loading ? (<><Loader2 style={{ width: '20px', height: '20px', animation: 'spin 1s linear infinite' }} /> {t('contact.sendingBtn', 'Sending...')}</>)
+                      : (<><Send style={{ width: '20px', height: '20px' }} /> {t('contact.submitBtn', 'Send Message')}</>)}
                   </motion.button>
                 </form>
               </ScrollReveal>
@@ -243,7 +245,7 @@ export default function ContactPage() {
                 <div className="text-center lg:text-left mb-8">
                   <div className="mx-auto lg:mx-0 mb-3" style={{ width: '36px', height: '3px', background: '#D9041B', borderRadius: '2px' }} />
                   <h3 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--text-heading, #0A2D73)', fontFamily: "var(--font-heading, 'DM Sans', sans-serif)" }}>
-                    Contact Information
+                    {t('contact.infoTitle', 'Contact Information')}
                   </h3>
                 </div>
 
