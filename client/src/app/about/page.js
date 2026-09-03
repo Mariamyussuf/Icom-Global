@@ -31,8 +31,8 @@ const milestones = [
 ];
 
 const clients = [
-  'Andrews', 'Ericsson', 'Zain', 'MTN', 'WIOCC',
-  'Globacom', 'FiberOne Broadband Limited', 'Mtel', 'Emmavic', 'ZTE', 'Huawei',
+  'Andrews', 'Ericsson', 'Zain', 'MTN', 'WIOCC', 'Globacom',
+  'FiberOne Broadband Limited', 'Mtel', 'Emmavic', 'ZTE', 'Huawei',
 ];
 
 const clientLogos = {
